@@ -68,6 +68,11 @@ class App extends Component {
   render() {
     const { token, lecture } = this.state;
     const { assignHomework } = this;
+    const oauthConfig = {
+      client_id: CLIENT_ID,
+      scope: ["user", "repo"].join(" "),
+      redirect_uri: REDIRECT_URI
+    };
     return (
       <div className="container">
         <div className="columns">
@@ -75,7 +80,9 @@ class App extends Component {
             {!token ? (
               <a
                 className="btn btn-primary"
-                href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
+                href={`https://github.com/login/oauth/authorize?${queryString.stringify(
+                  oauthConfig
+                )}`}
               >
                 Sign in with GitHub
               </a>

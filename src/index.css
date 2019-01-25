@@ -1,4 +1,137 @@
+/* Base */
 html,
 body {
   height: 100%;
+}
+
+/* Root */
+#root {
+  width: 1100px;
+  margin: 5em auto;
+}
+
+/* Author */
+.author {
+  font-size: 14px;
+  padding: 1em;
+  background: whitesmoke;
+  border-radius: 0.5em;
+}
+
+/* Avatar */
+#avatar-wrapper {
+  float: left;
+  width: 5em;
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#avatar {
+  position: relative;
+  display: block;
+  flex: 1 0 auto;
+}
+
+/* Contacts */
+#contacts {
+  list-style: none outside none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  white-space: nowrap;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+#contacts li {
+  margin-bottom: 0.25em;
+  margin-right: 1em;
+  margin-top: 0;
+}
+#contacts li:before {
+  display: none;
+}
+#contacts li a {
+  color: black;
+  transition: color 0.2s ease-in-out;
+}
+#contacts li a:hover {
+  text-decoration: none;
+}
+#contacts li a.facebook:hover {
+  color: #3b5998;
+}
+#contacts li a.github:hover {
+  color: dimgrey;
+}
+#contacts li a.mail:hover {
+  color: dimgrey;
+}
+#contacts li a.skype:hover {
+  color: #00aff0;
+}
+#contacts li a.phone:hover {
+  color: dimgrey;
+}
+#contacts li a.website:hover {
+  color: dimgrey;
+}
+#contacts li a .icon {
+  fill: currentColor;
+  height: 16px;
+  vertical-align: bottom;
+}
+
+/* Profile */
+.profile .name {
+  margin-bottom: 0;
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+.profile .about {
+  margin: 0;
+}
+
+/* Speech bubble */
+.bubble {
+  background: #0084ff;
+  color: white;
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+  margin: -0.25em 1em 1em;
+  float: left;
+  position: relative;
+  overflow: visible;
+}
+.bubble:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -0.75em;
+  left: 1em;
+  height: 0.75em;
+  border-right: 0.75em solid #0084ff;
+  border-top-left-radius: 0.75em;
+}
+.bubble:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -0.75em;
+  left: 1.25em;
+  width: 0.75em;
+  height: 0.75em;
+  background: whitesmoke;
+  border-bottom-left-radius: 0.5em;
+}
+.bubble a {
+  color: inherit;
+}
+
+/* Emoji */
+.emoji {
+  vertical-align: middle;
 }

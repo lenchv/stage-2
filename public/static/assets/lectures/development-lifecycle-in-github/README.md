@@ -1,7 +1,7 @@
-<details>
-   <summary>― Hey, hi! Hola!</summary>
-   My name's Volodymyr and I'm here to help. 📢 It's dangerous to go alone! Take this.<sup>[Git](https://git-scm.com/), [GitHub Desktop](https://desktop.github.com/), [Visual Studio Code](https://code.visualstudio.com/)</sup>.
-</details>
+<div class="bubble">
+  📢 <strong>― Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але!<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>.
+</div>
+<div style="clear: both;"></div>
 
 So the customer logs into Slack and 
 
@@ -15,13 +15,11 @@ Customer doesn't have a portfolio yet, requirements for the blog are not defined
 2. Open up [**GitHub**](https://github.com/) and sign in
 3. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
 4. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
-
    > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
 
    And this is the description for the **Resume** project:
 
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
-
 5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa18")_  
    📢 _― Alright, mate, from now on all the tasks should be listed in the projects! Add new task **now**!_
 6. Update **README.md**. You might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/)  

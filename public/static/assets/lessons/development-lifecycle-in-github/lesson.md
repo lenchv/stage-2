@@ -3,15 +3,42 @@
 </div>
 <div style="clear: both;"></div>
 
-So the customer logs into Slack and 
+Отже, уявімо собі таку ситуацію — студент _(до слова, у Binary працівники вважають себе "student always")_ підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше завдання ("таску"):
 
-### ― Build me a homepage!
+<div>
+  <div>
+    <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-48" alt="" />
+  </div>
+  <div>
+    <div>
+      <span>Volodymyr Kushnir</span>
+      <span>[18:42]</span>
+    </div>
+    <span>окей, без жартів, щоб потім не получилося overdressed/underdressed ― *"черное (частично или полностью)"* може бути однаково валідним при *1.* чорний костюм і біла сорочка, *2.* чорний костюм з трьома білими полосками :athletic_shoe:, *3.* чорна сорочка і сірі (коричневі) брюки :shoe:, 4. чорна сорочка і джинси, 5. біла сорочка і чорні брюки. всі п'ять братків при такому раскладі будуть робити ілюзію відсутності дрес-коду як такого взагалі. а отже, мені треба більше деталей *в тред*.</span>
+    <div class="c-reaction_bar" role="group" aria-label="Reactions">
+      :exploding_head: 1 :laughing: 1 :+1::skin-tone-6: 1
+    </div>
+    <div role="presentation" class="c-message__reply_bar" data-qa="reply_bar">
+      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" />
+      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" />
+      <div>+2</div>
+      15 replies
+      <div>
+        <span>Last reply today at 19:13</span>
+      </div>
+  </div>
+</div>
 
-Customer doesn't have a portfolio yet, requirements for the blog are not defined as well, but there's enough infomation to put together a good enough résumé page! Client wants it to be responsive, accessible, informative, etc. Not only that, but it has to be hosted somewhere, code should be all tidy and neat, good documentation is necessary. Customer also wants to be able to track development progress. You're excited, because it sounds like exactly that type of challenge you usually gladly take on! Well, you take some time to research the topic anyway, see if there's something that you could use straight away or maybe modify in order for it to better suit your needs. Fortunately there is a solution that seems to fit requirements nicely. It even comes with a tutorial, but some technologies are new to you, hence you decide to break it down by tasks and estimate them very carefully, and only then you start your little adventure by calling your customer and saying
+Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію по її створенню. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Студент відповідає замовнику...
 
-### ― Yeah, sure, I'm on it, let's go!
+**― Yeah, sure, I'm on it, let's go! _(don't worry about tasks and milestones, save your time, I'll create them myself accordingly to this tutorial, you'll be able to track progress in GitHub)_**
 
-1. Well, [**this is Git**](https://xkcd.com/1597/). First things first, skim through [**Understanding the GitHub flow**](https://guides.github.com/introduction/flow/) and [**Hello World**](https://guides.github.com/activities/hello-world/) guides to get an overview of terminology and core concepts
+...і береться за ту інструкцію:
+
+1. Well, [**this is Git**](https://xkcd.com/1597/). You'll need it. First things first, skim through [**Understanding the GitHub flow**](https://guides.github.com/introduction/flow/) and [**Hello World**](https://guides.github.com/activities/hello-world/) guides to get an overview of terminology and core concepts
 2. Open up [**GitHub**](https://github.com/) and sign in
 3. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
 4. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
@@ -21,7 +48,9 @@ Customer doesn't have a portfolio yet, requirements for the blog are not defined
 
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
 5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa18")_  
-   📢 _― Alright, mate, from now on all the tasks should be listed in the projects! Add new task **now**!_
+   <div class="bubble">
+      <em>― Alright, mate, from now on all the tasks should be listed in the projects! Add new task **now**!</em>
+   </div>
 6. Update **README.md**. You might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/)  
    📢 _― Psst, don't forget to add this as a task to **Homepage** project, bruv. Oh, also convert it to an issue while you're at it._
 7. Create a new branch based on `master`.  
@@ -59,27 +88,6 @@ Customer doesn't have a portfolio yet, requirements for the blog are not defined
 14. Merge into `master`, setup GitHub Pages
 15. Webhooks and deploy keys
 16. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-17. Subrepositories and monorepos
-18. Forks and licenses
-19. **Закінчити проект з своїми даними.**  
-Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, виставляти бали деяким критеріям буде допомагати бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, десятибальна система:
-    1. **Repository & projects**  
-    Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
-    2. **Tasks & Issues**  
-    Вміння добре складати завдання, чітко описувати проблеми, звітувати про їх вирішення допоможуть знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі (а коли-небудь він буде). В світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues і розуміти як це працює — запорука успіху. Тепер це ваш Google (ну може ше трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі.
-    3. **Branches & GitFlow**  
-    Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо ще стабільну версію, готову до релізу, а також ще версію, в якій ведеться основна розробка. А в єдиній гілці нє.
-    4. **Pull Requests**  
-    Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто її допустив.
-    5. **GitHub Pages**  
-    Клікнути на лінк завжди легше, аніж скачувати репозиторій і відкривати файл на власному комп'ютері. Один бал нараховується тим, хто подарує нам таку зручність.
-    6. **Does it look like a resume?**  
-    «Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно качка».
-    7. **HTML passes W3C validation**  
-    Валідної HTML-розмітки буде достатньо на цьому етапі. Не обов'язково на всі 100%, десь тут і там валідатор може мати зауваження і це окей.
-    8. **CSS seems legit**  
-    Мати хороший CSS можна лиш у випадку, якщо вміти його писати, або якщо його написав хтось інший, хто вміє. Таким чином, варто доповнювати CSS із фреймворку такими своїми правилами, у яких впевнені. Перебивати правила фреймворку, використовуючи `!important`, не буде вважатись за помилку, але по можливості таких ситуацій теж було б варто уникати.
-    9. **Make homepage great!**  
-    Метою проекту є зробити домашню сторінку — доступну, інформативну, зручну, читабельну. Один бал нараховується тим, хто зміг.
-    10. **Beautiful! Gorgeous! Amazing!**  
-    І ще один останній бал для тих, у кого це все ще й гарно виглядає.
+17. [GitHub Actions](https://github.com/features/actions)
+18. Subrepositories and monorepos
+19. Forks and licenses

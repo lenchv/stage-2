@@ -12,10 +12,11 @@ class App extends Component {
     super();
     this.state = {
       token: null,
-      lecture: null,
+      lesson: null,
+      hometask: null,
       homeworkAssigned: false
     };
-    this.assignHomework = this.assignHomework.bind(this);
+    this.assignHometask = this.assignHometask.bind(this);
   }
 
   componentDidMount() {
@@ -32,16 +33,29 @@ class App extends Component {
           });
         });
     }
-    /* Load sample lecture */
     fetch(
       `${
         process.env.PUBLIC_URL
-      }/static/assets/lectures/development-lifecycle-in-github/README.md`
+      }/static/assets/lessons/development-lifecycle-in-github/lesson.md`
     )
       .then(response => response.text())
       .then(text => {
         this.setState({
-          lecture: text.replace(
+          lesson: text.replace(
+            "📢",
+            `<g-emoji class="g-emoji" alias="loudspeaker" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"><img class="emoji" alt="loudspeaker" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"></g-emoji>`
+          )
+        });
+      });
+    fetch(
+      `${
+        process.env.PUBLIC_URL
+      }/static/assets/lessons/development-lifecycle-in-github/hometask.md`
+    )
+      .then(response => response.text())
+      .then(text => {
+        this.setState({
+          hometask: text.replace(
             "📢",
             `<g-emoji class="g-emoji" alias="loudspeaker" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"><img class="emoji" alt="loudspeaker" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"></g-emoji>`
           )
@@ -49,7 +63,7 @@ class App extends Component {
       });
   }
 
-  assignHomework() {
+  assignHometask() {
     const { token } = this.state;
     fetch("https://api.github.com/user/repos", {
       method: "POST",
@@ -69,8 +83,8 @@ class App extends Component {
   }
 
   render() {
-    const { token, lecture } = this.state;
-    const { assignHomework } = this;
+    const { token, lesson, hometask } = this.state;
+    const { assignHometask } = this;
     const oauthConfig = {
       client_id: CLIENT_ID,
       scope: ["user", "repo"].join(" "),
@@ -215,8 +229,9 @@ class App extends Component {
                     </p>
                   </div>
                 </div>
-                <ReactMarkdown source={lecture} escapeHtml={false} />
-                <button className="btn btn-success" onClick={assignHomework}>
+                <ReactMarkdown source={lesson} escapeHtml={false} />
+                <ReactMarkdown source={hometask} escapeHtml={false} />
+                <button className="btn btn-success" onClick={assignHometask}>
                   Assign a hometask
                 </button>
               </main>

@@ -106,6 +106,9 @@
   }
 
   /* Profile */
+  .lecture .profile {
+    margin-left: 6em;
+  }
   .lecture .profile .name {
     margin-bottom: 0;
     font-size: 1.4em;
@@ -179,14 +182,6 @@
           </a>
         </li>
         <li>
-          <a href="tel:+380952600797" rel="author" class="phone">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-              <path d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z" />
-            </svg>
-            <span>+38 (095) 2600797</span>
-          </a>
-        </li>
-        <li>
           <a href="https://volodymyrkushnir.com/" rel="author" class="website">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
               <path
@@ -199,19 +194,19 @@
         </li>
       </ul>
       <p class="about">
-        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже два роки. Він будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#">React</a> та <a href="#">GraphQL</a>.
+        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#">React</a> та <a href="#">GraphQL</a>. Говорить російською із смішним акцентом.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але!<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>.
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але!<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
   <div style="clear: both;"></div>
 </div>
 
 Отже, уявімо собі таку ситуацію — студент _(до слова, у Binary працівники вважають себе "student always")_ підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше завдання ("таску"):
 
-<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
+<div style="overflow: hidden; margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
   <div style="float: left; width: 64px;">
     <img src="https://ca.slack-edge.com/T036H63TN-U5SUCC9SB-g453ccfa0d24-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
   </div>
@@ -255,25 +250,26 @@
 
 ...і береться за ту інструкцію:
 
-1. Well, [**this is Git**](https://xkcd.com/1597/). You'll need it. First things first, skim through [**Understanding the GitHub flow**](https://guides.github.com/introduction/flow/) and [**Hello World**](https://guides.github.com/activities/hello-world/) guides to get an overview of terminology and core concepts
-2. Open up [**GitHub**](https://github.com/) and sign in
-3. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
-4. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
+1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
+   <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
+2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
+3. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
 
    > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
 
    And this is the description for the **Resume** project:
    
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
-
-5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa18")_
+   
    <div class="bubble">
-      Alright, mate, from now on all the tasks should be listed in the projects! Add new task <strong>now</strong>!
+      Alright, mate, from now on all the tasks should be listed in the projects!
    </div>
    <div style="clear: both;"></div>
+
+5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
 6. Update **README.md**. You might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/)  
    <div class="bubble">
-      Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it.
+      Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
    <div style="clear: both;"></div>
 7. Create a new branch based on `master`.  
@@ -307,10 +303,14 @@
    </html>
    ```
 11. Put `<h1>— Hello, world!</h1>` into the `body`
-_Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface (how to use `git clone`, `git branch`, `git checkout`, `git log`, `git status`). Let's also add a fake contact information into the `<head>` (learn to use `git add`, `git commit`, and `git push`)._
+    <div class="bubble">
+      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
+    </div>
+    <div style="clear: both;"></div>
+    _(how to use `git clone`, `git branch`, `git checkout`, `git log`, `git status`). Let's also add a fake contact information into the `<head>` (learn to use `git add`, `git commit`, and `git push`)._
 12. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
 13. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`
-14. Merge into `master`, setup [**GitHub Pages**](https://pages.github.com/)
+14. Merge into `master`, setup **GitHub Pages** <sup><a href="https://pages.github.com/">[1]</a> <a href="https://guides.github.com/features/pages/">[2]</a></sup>
 15. Webhooks and deploy keys
 16. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
 17. [GitHub Actions](https://github.com/features/actions)

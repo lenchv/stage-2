@@ -211,36 +211,47 @@
 
 Отже, уявімо собі таку ситуацію — студент _(до слова, у Binary працівники вважають себе "student always")_ підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше завдання ("таску"):
 
-<div>
-  <div>
-    <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-48" alt="" />
+<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
+  <div style="float: left; width: 64px;">
+    <img src="https://ca.slack-edge.com/T036H63TN-U5SUCC9SB-g453ccfa0d24-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
   </div>
-  <div>
+  <div style="margin-left: 70px;">
     <div>
-      <span>Volodymyr Kushnir</span>
-      <span>[18:42]</span>
+      <strong>Edward Robe</strong>
+      <span style="color: lightgrey;">18:42</span>
     </div>
     <span>окей, без жартів, щоб потім не получилося overdressed/underdressed ― *"черное (частично или полностью)"* може бути однаково валідним при *1.* чорний костюм і біла сорочка, *2.* чорний костюм з трьома білими полосками :athletic_shoe:, *3.* чорна сорочка і сірі (коричневі) брюки :shoe:, 4. чорна сорочка і джинси, 5. біла сорочка і чорні брюки. всі п'ять братків при такому раскладі будуть робити ілюзію відсутності дрес-коду як такого взагалі. а отже, мені треба більше деталей *в тред*.</span>
-    <div class="c-reaction_bar" role="group" aria-label="Reactions">
-      :exploding_head: 1 :laughing: 1 :+1::skin-tone-6: 1
+    <div>😀 1 😂 4 ☺ 15</div>
+    <div style="padding: 0.5em; border-radius: 5px; border: 1px solid lightgrey; overflow: hidden; background: white;">
+      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
+      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
+      <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
+      <div style="float: left; margin-right: 0.25em;">+2</div>
+      <div style="float: left; margin-right: 0.25em;">15 replies</div>
+      <div style="float: left; margin-right: 0.25em;">Last reply today at 19:13</div>
     </div>
-    <div role="presentation" class="c-message__reply_bar" data-qa="reply_bar">
-      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" />
-      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" />
-      <div>+2</div>
-      15 replies
-      <div>
-        <span>Last reply today at 19:13</span>
-      </div>
   </div>
 </div>
 
 Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію по її створенню. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Студент відповідає замовнику...
 
-**― Yeah, sure, I'm on it, let's go! _(don't worry about tasks and milestones, save your time, I'll create them myself accordingly to this tutorial, you'll be able to track progress in GitHub)_**
+<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
+  <div style="float: left; width: 64px;">
+    <img src="https://ca.slack-edge.com/T036H63TN-U6ZHFMGQ1-afd3f167e0ca-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
+  </div>
+  <div style="margin-left: 70px;">
+    <div>
+      <strong>Alexandr Tovmach</strong>
+      <span style="color: lightgrey;">18:45</span>
+    </div>
+    <span>
+      <strong>Yeah, sure, I'm on it, let's go!</strong> <em>(don't worry about tasks and milestones, save your time, I'll create them myself accordingly to this tutorial, you'll be able to track progress in GitHub)</em>
+    </span>
+    <div>👍 4 🏁 4 🚀 3</div>
+  </div>
+</div>
 
 ...і береться за ту інструкцію:
 

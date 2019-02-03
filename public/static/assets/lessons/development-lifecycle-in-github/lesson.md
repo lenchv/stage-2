@@ -18,12 +18,18 @@
   .lecture p {
     margin-bottom: .5rem;
   }
+  .lecture p + blockquote {
+    margin-top: -0.25rem;
+  }
   .lecture blockquote {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+    border-left: .1rem solid #dadee4;
+    margin-left: 0;
+    padding: .25rem .75rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
   }
   .lecture pre {
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
   }
   .lecture pre code {
     display: block;
@@ -124,11 +130,15 @@
     color: white;
     border-radius: 0.25em 1em 1em 1em;
     padding: 0.25em 0.75em;
+    margin-top: 0.25rem;
     float: left;
     position: relative;
     overflow: visible;
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
+  }
+  .lecture .bubble.small {
+    font-size: 0.85em;
   }
   .lecture .author + .bubble,
   .lecture .bubble:hover {
@@ -199,7 +209,7 @@
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але!<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
   <div style="clear: both;"></div>
 </div>
@@ -212,7 +222,7 @@
   </div>
   <div style="margin-left: 70px;">
     <div>
-      <strong>Edward Robe</strong>
+      <strong>Lionel Messi</strong>
       <span style="color: lightgrey;">18:42</span>
     </div>
     <span>окей, без жартів, щоб потім не получилося overdressed/underdressed ― *"черное (частично или полностью)"* може бути однаково валідним при *1.* чорний костюм і біла сорочка, *2.* чорний костюм з трьома білими полосками :athletic_shoe:, *3.* чорна сорочка і сірі (коричневі) брюки :shoe:, 4. чорна сорочка і джинси, 5. біла сорочка і чорні брюки. всі п'ять братків при такому раскладі будуть робити ілюзію відсутності дрес-коду як такого взагалі. а отже, мені треба більше деталей *в тред*.</span>
@@ -248,7 +258,15 @@
   </div>
 </div>
 
-...і береться за ту інструкцію:
+...і береться за ту інструкцію.
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+<div style="margin-bottom: 1em;">
+  <small><em>Level 1</em></small>
+  <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
+  <small><strong>Difficulty:</strong> I Can Win. <strong>Mission:</strong> Get to the Internet!</small>
+</div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
    <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
@@ -261,24 +279,55 @@
    
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
    
-   <div class="bubble">
-      Alright, mate, from now on all the tasks should be listed in the projects!
+   <div class="bubble small">
+      Alright, mate, from now on all the tasks should be added to the projects!
    </div>
    <div style="clear: both;"></div>
 
 5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
-6. Update **README.md**. You might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/)  
-   <div class="bubble">
+6. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_  
+   <div class="bubble small">
       Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
    <div style="clear: both;"></div>
-7. Create a new branch based on `master`.  
-   <div class="bubble">
+7. Create a new branch based on `master`  
+   <div class="bubble small">
       Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
    </div>
    <div style="clear: both;"></div>
-8. Go see the settings for the repository, lock `master` away, default to `develop`
-9. Collect the necessary information (official start of the **"Resume"** project) — it would be very nice if you could utilize GitHub's Labels and Assignees features at this point:
+8. Go to **Settings — Collaborators** and add a collaborator
+9. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
+10. Create **index.html** using the snippet below:
+   ```
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <meta charset="UTF-8">
+       <title>Résumé</title>
+     </head>
+     <body>
+       <h1>&mdash; Hello World! &#x1F609;</h1>
+     </body>
+   </html>
+   ```
+   <div class="bubble small">
+     Give your commits meaningful messages, <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
+   </div>
+   <div style="clear: both;"></div>
+11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
+12. Go to **Settings — Options** and setup **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
+13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be sociable**](https://guides.github.com/activities/socialize/)
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+<div style="margin-bottom: 1em;">
+  <small><em>Level 2</em></small>
+  <h3 style="margin: 0;"><strong>Research</strong></h3>
+  <small><strong>Difficulty:</strong> Bring It On! <strong>Mission:</strong> Learn project management, master issues.</small>
+</div>
+
+1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could utilize GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
+
    1. **Скласти таймлайн**  
    Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
    2. **Скласти інтро**  
@@ -289,30 +338,51 @@
    Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
    5. **Вибрати лейаут**  
    Вибрати лейаут сторінки. Натхнення можна почерпнути з робіт [**Білла Мауїнні**](https://dribbble.com/bilmaw), наприклад. Варто підбирати таке розміщення елементів на сторінці, за якого резюме буде виглядати однаково приємно що на екранах комп'ютерів та мобільних пристроїв, що на папері після друку.
-10. Create **index.html**. You can use the following snippet, but please replace the `%username%` variable:
-   ```
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="UTF-8">
-       <title>%username% &mdash; Résumé</title>
-     </head>
-     <body>
-     
-     </body>
-   </html>
-   ```
-11. Put `<h1>— Hello, world!</h1>` into the `body`
-    <div class="bubble">
-      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
-    </div>
-    <div style="clear: both;"></div>
-    _(how to use `git clone`, `git branch`, `git checkout`, `git log`, `git status`). Let's also add a fake contact information into the `<head>` (learn to use `git add`, `git commit`, and `git push`)._
-12. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
-13. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`
-14. Merge into `master`, setup **GitHub Pages** <sup><a href="https://pages.github.com/">[1]</a> <a href="https://guides.github.com/features/pages/">[2]</a></sup>
-15. Webhooks and deploy keys
-16. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-17. [GitHub Actions](https://github.com/features/actions)
-18. Subrepositories and monorepos
-19. Forks and licenses
+   
+   <div class="bubble small">
+     Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
+   </div>
+   <div style="clear: both;"></div>
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+<div style="margin-bottom: 1em;">
+  <small><em>Level 3</em></small>
+  <h3 style="margin: 0;"><code>git</code></h3>
+  <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Mission:</strong> Learn basic commands.</small>
+</div>
+
+1. Reference https://guides.github.com/introduction/git-handbook/
+1. Put `<h1>— Hello, world!</h1>` into the `body`
+   <div class="bubble">
+     Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
+   </div>
+   <div style="clear: both;"></div>
+   _(how to use `git clone`, `git branch`, `git checkout`, `git log`, `git status`). Let's also add a fake contact information into the `<head>` (learn to use `git add`, `git commit`, and `git push`)._
+2. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+<div style="margin-bottom: 1em;">
+  <small><em>Level 4</em></small>
+  <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
+  <small><strong>Difficulty:</strong> Hardcore. <strong>Mission:</strong> Make it look better.</small>
+</div>
+
+1. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+<div style="margin-bottom: 1em;">
+  <small><em>Level 5</em></small>
+  <h3 style="margin: 0;"><strong>Advanced features</strong></h3>
+  <small><strong>Difficulty:</strong> Nightmare! <strong>Mission:</strong> Survive.</small>
+</div>
+
+1. Webhooks. Deploy keys
+2. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
+3. [GitHub Actions](https://github.com/features/actions)
+4. Subrepositories and monorepos
+5. Forks and licenses
+
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">

@@ -106,8 +106,10 @@ class App extends Component {
             ) : (
               <main class="lecture">
                 <h1>
-                  Життєвий цикл розробки програмного забезпечення на платформі
-                  GitHub
+                  <strong>
+                    Життєвий цикл розробки програмного забезпечення на платформі
+                    GitHub
+                  </strong>
                 </h1>
                 <ReactMarkdown source={lesson} escapeHtml={false} />
                 <ReactMarkdown source={hometask} escapeHtml={false} />

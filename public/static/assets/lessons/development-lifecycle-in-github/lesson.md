@@ -216,7 +216,7 @@
 
 Отже, уявімо собі таку ситуацію — студент _(до слова, у Binary працівники вважають себе "student always")_ підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше завдання ("таску"):
 
-<div style="overflow: hidden; margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
+<div style="overflow: hidden; margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em; border-radius: 10px;">
   <div style="float: left; width: 64px;">
     <img src="https://ca.slack-edge.com/T036H63TN-U5SUCC9SB-g453ccfa0d24-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
   </div>
@@ -242,7 +242,7 @@
 
 Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію по її створенню. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Студент відповідає замовнику...
 
-<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em;">
+<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em; border-radius: 10px;">
   <div style="float: left; width: 64px;">
     <img src="https://ca.slack-edge.com/T036H63TN-U6ZHFMGQ1-afd3f167e0ca-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
   </div>
@@ -339,10 +339,11 @@
    5. **Вибрати лейаут**  
    Вибрати лейаут сторінки. Натхнення можна почерпнути з робіт [**Білла Мауїнні**](https://dribbble.com/bilmaw), наприклад. Варто підбирати таке розміщення елементів на сторінці, за якого резюме буде виглядати однаково приємно що на екранах комп'ютерів та мобільних пристроїв, що на папері після друку.
    
-   <div class="bubble small">
-     Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
-   </div>
-   <div style="clear: both;"></div>
+2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
+<div class="bubble small">
+  You can provide your own information or you could use one of the gists on <a href="#">Andres Iniesta</a>, <a href="#">Donald Trump</a>
+</div>
+<div style="clear: both;"></div>
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
@@ -353,12 +354,27 @@
 </div>
 
 1. Reference https://guides.github.com/introduction/git-handbook/
+2. `git clone` (_ssh_ vs _https_)
+3. `git status`
+4. `git branch`
+5. `git checkout` (`--branch`)
+6. `git add` (`.`)
+7. `git commit` (`--amend`)
+8. `git log`
+9. `git revert`
+10. `git merge` (різні стратегії)
+11. `git reset` (різні стратегії)
+12. `git pull`
+13. `git diff`
+14. `git remote`
+15. `git clean`
+16. `git stash`
+17. `git fetch`
 1. Put `<h1>— Hello, world!</h1>` into the `body`
    <div class="bubble">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
    <div style="clear: both;"></div>
-   _(how to use `git clone`, `git branch`, `git checkout`, `git log`, `git status`). Let's also add a fake contact information into the `<head>` (learn to use `git add`, `git commit`, and `git push`)._
 2. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">

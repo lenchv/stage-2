@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      token: null,
+      token: true,
       lesson: null,
       hometask: null,
       homeworkAssigned: false

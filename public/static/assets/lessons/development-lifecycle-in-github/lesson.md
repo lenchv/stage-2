@@ -227,15 +227,16 @@
     </div>
     <span>окей, без жартів, щоб потім не получилося overdressed/underdressed ― *"черное (частично или полностью)"* може бути однаково валідним при *1.* чорний костюм і біла сорочка, *2.* чорний костюм з трьома білими полосками :athletic_shoe:, *3.* чорна сорочка і сірі (коричневі) брюки :shoe:, 4. чорна сорочка і джинси, 5. біла сорочка і чорні брюки. всі п'ять братків при такому раскладі будуть робити ілюзію відсутності дрес-коду як такого взагалі. а отже, мені треба більше деталей *в тред*.</span>
     <div>😀 1 😂 4 ☺ 15</div>
-    <div style="padding: 0.5em; border-radius: 5px; border: 1px solid lightgrey; overflow: hidden; background: white;">
-      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
-      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
-      <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" style="float: left; border-radius: 4px; margin-right: 0.25em;" />
-      <div style="float: left; margin-right: 0.25em;">+2</div>
-      <div style="float: left; margin-right: 0.25em;">15 replies</div>
-      <div style="float: left; margin-right: 0.25em;">Last reply today at 19:13</div>
+    <div style="padding: 0.25em;border-radius: 5px;border: 1px solid lightgrey;overflow: hidden;background: white;display: flex;">
+      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
+      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
+      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
+      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
+      <div style="position: relative;overflow: hidden;border-radius: 4px;margin-right: 0.25em;">
+        <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" style="display: block;">
+        <div style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;background: rgba(0,0,0,0.5);color: white;font-weight: bold;">+2</div>
+      </div>
+      <div style="margin-right: 0.25em;display: flex;flex: 1 1 auto;align-items: center;font-size: 0.9em;"><span style="margin-right: 1em; font-weight: bold; padding: 0 0.5em;">15 replies</span> <span style="color: grey;">Last reply today at 19:13</span></div>
     </div>
   </div>
 </div>

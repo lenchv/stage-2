@@ -148,7 +148,124 @@
     color: inherit;
   }
   .lecture p + div > .bubble:first-child {
-    margin-top: -0.5rem;
+    margin-top: -0.25rem;
+  }
+
+  /* Messages */
+  .lecture .message {
+    overflow: hidden;
+    margin-bottom: 0.5em;
+    background: #f8f8f8;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+  }
+  .lecture .message:hover {
+    box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
+    background: white;
+  }
+  .lecture .message img {
+    display: block;
+  }
+  .lecture .message__avatar {
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+  }
+  .lecture .message__avatar--big {
+    float: left;
+    height: 64px;
+    width: 64px;
+  }
+  .lecture .message__content {
+    margin-left: calc(64px + 0.5em);
+  }
+  .lecture .message__author {
+    font-weight: bold;
+  }
+  .lecture .message__timestamp {
+    color: lightgrey;
+  }
+  .lecture .message__replies {
+    padding: 0.25em;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    overflow: hidden;
+    background: white;
+    display: flex;
+  }
+  .lecture .message__reply {
+    border-radius: 5px;
+    margin-right: 0.25em;
+    position: relative;
+    overflow: hidden;
+  }
+  .lecture .message__replies--meta {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    font-size: 0.9em;
+  }
+  .lecture .message__replies--count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-weight: bold;
+  }
+  .lecture .message__replies--total {
+    margin-right: 1em;
+    font-weight: bold;
+  }
+  .lecture .message__replies--last {
+    color: grey;
+  }
+  .lecture .message__reactions {
+    display: flex;
+    margin: 0.25em 0;
+  }
+  .lecture .message__reaction {
+    margin-right: 0.25em;
+    font-size: 0.8em;
+    padding: 0 0.25em;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background: white;
+    color: dimgrey;
+  }
+  /* Tabs */
+  .lecture .messages .messages__from:not(:first-of-type) {
+    margin-left: 0.5em;
+  }
+  .lecture .messages .messages__from {
+    vertical-align: middle;
+    opacity: 0.5;
+    transition: all 0.2s linear;
+  }
+  .lecture .messages .messages__from + label {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s linear;
+  }
+  .lecture .messages .messages__from:hover,
+  .lecture .messages .messages__from:hover + label,
+  .lecture .messages .messages__from:checked,
+  .lecture .messages .messages__from:checked + label {
+    opacity: 1;
+  }
+  .lecture .messages input[id="lionel-messi"]:checked ~ div[data-tab="lionel-messi"] { display: block; }
+  .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-tab="andres-iniesta"] { display: block; }
+  .lecture .messages input[id="donald-trump"]:checked ~ div[data-tab="donald-trump"] { display: block; }
+  .lecture .messages input[id="you"]:checked ~ div[data-tab="you"] { display: block; }
+  .lecture .messages .message {
+    margin-top: 0.5em;
+    display: none;
   }
 </style>
 <div>
@@ -209,53 +326,76 @@
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />It's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
   <div style="clear: both;"></div>
 </div>
 
-Отже, уявімо собі таку ситуацію — студент _(до слова, у Binary працівники вважають себе "student always")_ підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше завдання ("таску"):
-
-<div style="overflow: hidden; margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em; border-radius: 10px;">
-  <div style="float: left; width: 64px;">
-    <img src="https://ca.slack-edge.com/T036H63TN-U5SUCC9SB-g453ccfa0d24-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
-  </div>
-  <div style="margin-left: 70px;">
-    <div>
-      <strong>Lionel Messi</strong>
-      <span style="color: lightgrey;">18:42</span>
-    </div>
-    <span>окей, без жартів, щоб потім не получилося overdressed/underdressed ― *"черное (частично или полностью)"* може бути однаково валідним при *1.* чорний костюм і біла сорочка, *2.* чорний костюм з трьома білими полосками :athletic_shoe:, *3.* чорна сорочка і сірі (коричневі) брюки :shoe:, 4. чорна сорочка і джинси, 5. біла сорочка і чорні брюки. всі п'ять братків при такому раскладі будуть робити ілюзію відсутності дрес-коду як такого взагалі. а отже, мені треба більше деталей *в тред*.</span>
-    <div>😀 1 😂 4 ☺ 15</div>
-    <div style="padding: 0.25em;border-radius: 5px;border: 1px solid lightgrey;overflow: hidden;background: white;display: flex;">
-      <img src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
-      <img src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
-      <img src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
-      <img src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="" style="border-radius: 4px;margin-right: 0.25em;">
-      <div style="position: relative;overflow: hidden;border-radius: 4px;margin-right: 0.25em;">
-        <img src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" style="display: block;">
-        <div style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;background: rgba(0,0,0,0.5);color: white;font-weight: bold;">+2</div>
+<div class="messages">
+  Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника (
+  <input type="radio" class="messages__from" name="from" id="lionel-messi" checked>
+  <label for="lionel-messi">Lionel Messi</label>
+  <input type="radio" class="messages__from" name="from" id="andres-iniesta">
+  <label for="andres-iniesta">Andres Iniesta</label>
+  <input type="radio" class="messages__from" name="from" id="donald-trump">
+  <label for="donald-trump">Donald Trump</label>
+  <input type="radio" class="messages__from" name="from" id="you">
+  <label for="you">"я сам собі замовник!"</label>) &mdash;
+  <div class="message" data-tab="lionel-messi">
+    <img class="message__avatar message__avatar--big" src="https://res.cloudinary.com/otro-content/image/upload/w_200,h_200,c_fill/t_media_library_tile/wsgq8mti47ywcwvqltkc.png" alt="" />
+    <div class="message__content">
+      <div class="message__meta">
+        <span class="message__author">Lionel Messi</span>
+        <span class="message__timestamp">18:42</span>
       </div>
-      <div style="margin-right: 0.25em;display: flex;flex: 1 1 auto;align-items: center;font-size: 0.9em;"><span style="margin-right: 1em; font-weight: bold; padding: 0 0.5em;">15 replies</span> <span style="color: grey;">Last reply today at 19:13</span></div>
+      <div class="message__text">
+        <p>How is it like to be Leo Messi? Most of the time it’s nice, but there are moments when I would like to be anonymous and be able to roam the streets unnoticed. Football is always going to be very special for me, but I understand that life is not just about football. The birth of my first son changed my life and altered my perspective altogether — providing me a greater sense of tranquility. I still love playing football, but when the match is over I dedicate that time to my family.</p>
+      </div>
+      <div class="message__reactions">
+        <span class="message__reaction">&#x1f601; 1</span>
+        <span class="message__reaction">&#x1f601; 4</span>
+        <span class="message__reaction">&#x1f60d; 1</span>
+        <span class="message__reaction">&#x1f633; 5</span>
+        <span class="message__reaction">&#x1f62d; 5</span>
+      </div>
+      <div class="message__replies">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
+        <div class="message__reply">
+          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
+          <span class="message__replies--count">+2</span>
+        </div>
+        <div class="message__replies--meta">
+          <span class="message__replies--total">15 replies</span>
+          <span class="message__replies--last">Last reply today at 19:13</span>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="message" data-tab="andres-iniesta">Task A</div>
+  <div class="message" data-tab="donald-trump">Task B</div>
+  <div class="message" data-tab="you">Task C</div>
 </div>
 
 Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію по її створенню. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Студент відповідає замовнику...
 
-<div style="overflow: hidden;margin-bottom: 0.5em; background: #f8f8f8; padding: 0.5em; border-radius: 10px;">
-  <div style="float: left; width: 64px;">
-    <img src="https://ca.slack-edge.com/T036H63TN-U6ZHFMGQ1-afd3f167e0ca-48" alt="" style="height: 100%; width: 100%; border-radius: 5px;" />
-  </div>
-  <div style="margin-left: 70px;">
-    <div>
-      <strong>Alexandr Tovmach</strong>
-      <span style="color: lightgrey;">18:45</span>
+<div class="message">
+  <img class="message__avatar message__avatar--big" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64" alt="" />
+  <div class="message__content">
+    <div class="message__meta">
+      <span class="message__author">You</span>
+      <span class="message__timestamp">19:45</span>
     </div>
-    <span>
-      <strong>Yeah, sure, I'm on it, let's go!</strong> <em>(don't worry about tasks and milestones, save your time, I'll create them myself accordingly to this tutorial, you'll be able to track progress in GitHub)</em>
-    </span>
-    <div>👍 4 🏁 4 🚀 3</div>
+    <div class="message__text">
+      <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
+    </div>
+    <div class="message__reactions">
+      <span class="message__reaction">&#x1f44d; 1</span>
+      <span class="message__reaction">&#x1f3c1; 4</span>
+      <span class="message__reaction">&#x1f680; 1</span>
+    </div>
   </div>
 </div>
 
@@ -266,7 +406,7 @@
 <div style="margin-bottom: 1em;">
   <small><em>Level 1</em></small>
   <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
-  <small><strong>Difficulty:</strong> I Can Win. <strong>Mission:</strong> Get to the Internet!</small>
+  <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
 </div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
@@ -281,7 +421,7 @@
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
    
    <div class="bubble small">
-      Alright, mate, from now on all the tasks should be added to the projects!
+      Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
    <div style="clear: both;"></div>
 
@@ -298,7 +438,7 @@
    <div style="clear: both;"></div>
 8. Go to **Settings — Collaborators** and add a collaborator
 9. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
-10. Create **index.html** using the snippet below:
+10. Create **index.html** using GitHub online editor and the snippet below:
    ```
    <!DOCTYPE html>
    <html>
@@ -307,7 +447,7 @@
        <title>Résumé</title>
      </head>
      <body>
-       <h1>&mdash; Hello World! &#x1F609;</h1>
+       &mdash; Hello World! &#x1F609;
      </body>
    </html>
    ```
@@ -316,33 +456,31 @@
    </div>
    <div style="clear: both;"></div>
 11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
-12. Go to **Settings — Options** and setup **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
-13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be sociable**](https://guides.github.com/activities/socialize/)
+12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
+13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 2</em></small>
   <h3 style="margin: 0;"><strong>Research</strong></h3>
-  <small><strong>Difficulty:</strong> Bring It On! <strong>Mission:</strong> Learn project management, master issues.</small>
+  <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Learn project management, master issues.</small>
 </div>
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could utilize GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
-   1. **Скласти таймлайн**  
-   Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
-   2. **Скласти інтро**  
-   Скласти інтро (вступ), де в 2-4 реченнях описати, що ти робиш, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
-   3. **Скласти блок контактної інформації**  
+   1. **Скласти інтро**  
+   Скласти інтро (вступ), де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
+   2. **Скласти блок контактної інформації**  
    Посилання на соцмережі (Facebook чи Instagram, інші), номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
+   3. **Скласти таймлайн**  
+   Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
    4. **Скласти додаткові інформаційні блоки**  
    Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
-   5. **Вибрати лейаут**  
-   Вибрати лейаут сторінки. Натхнення можна почерпнути з робіт [**Білла Мауїнні**](https://dribbble.com/bilmaw), наприклад. Варто підбирати таке розміщення елементів на сторінці, за якого резюме буде виглядати однаково приємно що на екранах комп'ютерів та мобільних пристроїв, що на папері після друку.
    
 2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
 <div class="bubble small">
-  You can provide your own information or you could use one of the gists on <a href="#">Andres Iniesta</a>, <a href="#">Donald Trump</a>
+  You can provide your own information or you could use one of these gists: <a href="#">Andres Iniesta</a>, <a href="#">Donald Trump</a>
 </div>
 <div style="clear: both;"></div>
 
@@ -351,49 +489,48 @@
 <div style="margin-bottom: 1em;">
   <small><em>Level 3</em></small>
   <h3 style="margin: 0;"><code>git</code></h3>
-  <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Mission:</strong> Learn basic commands.</small>
+  <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
 </div>
 
-1. Reference https://guides.github.com/introduction/git-handbook/
-2. `git clone` (_ssh_ vs _https_)
-3. `git status`
-4. `git branch`
-5. `git checkout` (`--branch`)
-6. `git add` (`.`)
-7. `git commit` (`--amend`)
-8. `git log`
-9. `git revert`
-10. `git merge` (різні стратегії)
-11. `git reset` (різні стратегії)
-12. `git pull`
-13. `git diff`
-14. `git remote`
-15. `git clean`
-16. `git stash`
-17. `git fetch`
-1. Put `<h1>— Hello, world!</h1>` into the `body`
-   <div class="bubble">
+1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https.
+   <div class="bubble small">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
    <div style="clear: both;"></div>
-2. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
+2. `git status`
+3. `git branch`
+4. `git checkout` (`--branch`)
+5. `git add` (`.`)
+6. `git commit` (`--amend`)
+7. `git log`
+8. `git revert`
+9. `git merge` (різні стратегії)
+10. `git reset` (різні стратегії)
+11. `git pull`
+12. `git diff`
+13. `git remote`
+14. `git clean`
+15. `git stash`
+16. `git fetch`   
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 4</em></small>
   <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Mission:</strong> Make it look better.</small>
+  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting, make the résumé look better.</small>
 </div>
 
-1. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`
+1. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
+2. **Вибрати лейаут**  
+   Вибрати лейаут сторінки. Натхнення можна почерпнути з робіт [**Білла Мауїнні**](https://dribbble.com/bilmaw), наприклад. Варто підбирати таке розміщення елементів на сторінці, за якого резюме буде виглядати однаково приємно що на екранах комп'ютерів та мобільних пристроїв, що на папері після друку.
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 5</em></small>
   <h3 style="margin: 0;"><strong>Advanced features</strong></h3>
-  <small><strong>Difficulty:</strong> Nightmare! <strong>Mission:</strong> Survive.</small>
+  <small><strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.</small>
 </div>
 
 1. Webhooks. Deploy keys

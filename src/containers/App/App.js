@@ -55,10 +55,7 @@ class App extends Component {
       .then(response => response.text())
       .then(text => {
         this.setState({
-          hometask: text.replace(
-            "📢",
-            `<g-emoji class="g-emoji" alias="loudspeaker" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"><img class="emoji" alt="loudspeaker" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"></g-emoji>`
-          )
+          hometask: text
         });
       });
   }
@@ -106,14 +103,15 @@ class App extends Component {
             ) : (
               <main class="lecture">
                 <h1>
-                  <strong>
-                    Життєвий цикл розробки програмного забезпечення на платформі
-                    GitHub
-                  </strong>
+                  <strong>How developers work</strong>
                 </h1>
                 <ReactMarkdown source={lesson} escapeHtml={false} />
                 <ReactMarkdown source={hometask} escapeHtml={false} />
-                <button className="btn btn-success" onClick={assignHometask}>
+                <button
+                  className="btn btn-success"
+                  onClick={assignHometask}
+                  style={{ display: "none" }}
+                >
                   Assign a hometask
                 </button>
               </main>

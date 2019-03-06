@@ -232,7 +232,7 @@
   }
   .lecture .message__reaction {
     margin-right: 0.25em;
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding: 0 0.25em;
     border: 1px solid lightgray;
     border-radius: 4px;
@@ -244,7 +244,7 @@
     margin-left: 0.5em;
   }
   .lecture .messages .messages__from {
-    vertical-align: middle;
+    vertical-align: text-top;
     opacity: 0.5;
     transition: all 0.2s linear;
   }
@@ -339,6 +339,8 @@
   <label for="andres-iniesta">Andres Iniesta</label>
   <input type="radio" class="messages__from" name="from" id="donald-trump">
   <label for="donald-trump">Donald Trump</label>
+  <input type="radio" class="messages__from" name="from" id="taras-shevchenko">
+  <label for="taras-shevchenko">Taras Shevchenko</label>
   <input type="radio" class="messages__from" name="from" id="you">
   <label for="you">"я сам собі замовник!"</label>) &mdash;
   <div class="message" data-tab="lionel-messi">
@@ -352,11 +354,11 @@
         <p>How is it like to be Leo Messi? Most of the time it’s nice, but there are moments when I would like to be anonymous and be able to roam the streets unnoticed. Football is always going to be very special for me, but I understand that life is not just about football. The birth of my first son changed my life and altered my perspective altogether — providing me a greater sense of tranquility. I still love playing football, but when the match is over I dedicate that time to my family.</p>
       </div>
       <div class="message__reactions">
-        <span class="message__reaction">&#x1f601; 1</span>
-        <span class="message__reaction">&#x1f601; 4</span>
-        <span class="message__reaction">&#x1f60d; 1</span>
-        <span class="message__reaction">&#x1f633; 5</span>
-        <span class="message__reaction">&#x1f62d; 5</span>
+        <span class="message__reaction">&#x1f601;1</span>
+        <span class="message__reaction">&#x1f601;4</span>
+        <span class="message__reaction">&#x1f60d;1</span>
+        <span class="message__reaction">&#x1f633;5</span>
+        <span class="message__reaction">&#x1f62d;5</span>
       </div>
       <div class="message__replies">
         <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
@@ -392,9 +394,9 @@
       <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
     </div>
     <div class="message__reactions">
-      <span class="message__reaction">&#x1f44d; 1</span>
-      <span class="message__reaction">&#x1f3c1; 4</span>
-      <span class="message__reaction">&#x1f680; 1</span>
+      <span class="message__reaction">&#x1f44d;1</span>
+      <span class="message__reaction">&#x1f3c1;4</span>
+      <span class="message__reaction">&#x1f680;1</span>
     </div>
   </div>
 </div>
@@ -479,10 +481,6 @@
    Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
    
 2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
-<div class="bubble small">
-  You can provide your own information or you could use one of these gists: <a href="#">Andres Iniesta</a>, <a href="#">Donald Trump</a>
-</div>
-<div style="clear: both;"></div>
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 

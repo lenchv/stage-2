@@ -244,7 +244,7 @@
     margin-left: 0.5em;
   }
   .lecture .messages .messages__from {
-    vertical-align: text-top;
+    vertical-align: middle;
     opacity: 0.5;
     transition: all 0.2s linear;
   }
@@ -259,10 +259,11 @@
   .lecture .messages .messages__from:checked + label {
     opacity: 1;
   }
-  .lecture .messages input[id="lionel-messi"]:checked ~ div[data-tab="lionel-messi"] { display: block; }
-  .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-tab="andres-iniesta"] { display: block; }
-  .lecture .messages input[id="donald-trump"]:checked ~ div[data-tab="donald-trump"] { display: block; }
-  .lecture .messages input[id="you"]:checked ~ div[data-tab="you"] { display: block; }
+  .lecture .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
+  .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
+  .lecture .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
+  .lecture .messages input[id="taras-shevchenko"]:checked ~ div[data-from="taras-shevchenko"] { display: block; }
+  .lecture .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
   .lecture .messages .message {
     margin-top: 0.5em;
     display: none;
@@ -333,17 +334,17 @@
 
 <div class="messages">
   Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника (
-  <input type="radio" class="messages__from" name="from" id="lionel-messi" checked>
+  <input type="radio" class="messages__from" name="from" id="donald-trump" checked>
+  <label for="donald-trump">Donald Trump</label>
+  <input type="radio" class="messages__from" name="from" id="lionel-messi">
   <label for="lionel-messi">Lionel Messi</label>
   <input type="radio" class="messages__from" name="from" id="andres-iniesta">
   <label for="andres-iniesta">Andres Iniesta</label>
-  <input type="radio" class="messages__from" name="from" id="donald-trump">
-  <label for="donald-trump">Donald Trump</label>
   <input type="radio" class="messages__from" name="from" id="taras-shevchenko">
   <label for="taras-shevchenko">Taras Shevchenko</label>
   <input type="radio" class="messages__from" name="from" id="you">
   <label for="you">"я сам собі замовник!"</label>) &mdash;
-  <div class="message" data-tab="lionel-messi">
+  <div class="message" data-from="lionel-messi">
     <img class="message__avatar message__avatar--big" src="https://res.cloudinary.com/otro-content/image/upload/w_200,h_200,c_fill/t_media_library_tile/wsgq8mti47ywcwvqltkc.png" alt="" />
     <div class="message__content">
       <div class="message__meta">
@@ -376,12 +377,46 @@
       </div>
     </div>
   </div>
-  <div class="message" data-tab="andres-iniesta">Task A</div>
-  <div class="message" data-tab="donald-trump">Task B</div>
-  <div class="message" data-tab="you">Task C</div>
+  <div class="message" data-from="andres-iniesta">Task A</div>
+  <div class="message" data-from="taras-shevchenko">Task B</div>
+  <div class="message" data-from="donald-trump">
+    <img class="message__avatar message__avatar--big" src="https://www.politiplatform.com/img/politicians/donald_trump/avatar.jpg" alt="" />
+    <div class="message__content">
+      <div class="message__meta">
+        <span class="message__author">Donald Trump &#x1f1fa;&#x1f1f8;</span>
+        <span class="message__timestamp">14:24</span>
+      </div>
+      <div class="message__text">
+        We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. Make America great again!
+      </div>
+      <div class="message__reactions">
+        <span class="message__reaction">&#x1f984;13</span>
+        <span class="message__reaction">&#x1f60d;12</span>
+        <span class="message__reaction">&#x1f601;8</span>
+        <span class="message__reaction">&#x1f633;4</span>
+        <span class="message__reaction">&#x1f62d;10</span>
+        <span class="message__reaction">&#x1f926;11</span>
+      </div>
+      <div class="message__replies">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
+        <div class="message__reply">
+          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
+          <span class="message__replies--count">+2</span>
+        </div>
+        <div class="message__replies--meta">
+          <span class="message__replies--total">17 replies</span>
+          <span class="message__replies--last">Last reply today at 15:45</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="message" data-from="you">Task C</div>
 </div>
 
-Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію по її створенню. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Студент відповідає замовнику...
+Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
 
 <div class="message">
   <img class="message__avatar message__avatar--big" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64" alt="" />
@@ -394,14 +429,15 @@
       <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
     </div>
     <div class="message__reactions">
-      <span class="message__reaction">&#x1f44d;1</span>
-      <span class="message__reaction">&#x1f3c1;4</span>
-      <span class="message__reaction">&#x1f680;1</span>
+      <span class="message__reaction">&#x1f44d;13</span>
+      <span class="message__reaction">&#x1f3c1;8</span>
+      <span class="message__reaction">&#x1f680;10</span>
+      <span class="message__reaction">&#x1f44f;6</span>
     </div>
   </div>
 </div>
 
-...і береться за ту інструкцію.
+...і береться за створення сайту по тій інструкції.
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
@@ -412,7 +448,7 @@
 </div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
-   <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
+   <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
 2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
 3. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
 
@@ -469,7 +505,7 @@
   <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Learn project management, master issues.</small>
 </div>
 
-1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could utilize GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
+1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
    1. **Скласти інтро**  
    Скласти інтро (вступ), де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
@@ -480,7 +516,7 @@
    4. **Скласти додаткові інформаційні блоки**  
    Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
    
-2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done.
+2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
@@ -490,7 +526,7 @@
   <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
 </div>
 
-1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https.
+1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https
    <div class="bubble small">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
@@ -516,12 +552,16 @@
 <div style="margin-bottom: 1em;">
   <small><em>Level 4</em></small>
   <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting, make the résumé look better.</small>
+  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML/CSS and basic SEO</small>
 </div>
 
-1. Use GitHub Desktop to clone the repository on your PC and update your `<head>`. Push it to the remote, check the changes and create your first Pull Request. Meanwhile it's safe to delete the `feature/head` branch, because it was successfully merged into `develop`. Upgrade your `<head>` (use [**HEAD**](https://github.com/joshbuchea/HEAD) for reference, keep your work in a separate branch, see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reference)
-2. **Вибрати лейаут**  
-   Вибрати лейаут сторінки. Натхнення можна почерпнути з робіт [**Білла Мауїнні**](https://dribbble.com/bilmaw), наприклад. Варто підбирати таке розміщення елементів на сторінці, за якого резюме буде виглядати однаково приємно що на екранах комп'ютерів та мобільних пристроїв, що на папері після друку.
+1. Use **GitHub Desktop** to clone the repository on your PC. Use [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference
+   <div class="bubble small">
+     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
+   </div>
+   <div style="clear: both;"></div>
+2. Update `<head>` ― use a new branch (say, `feature/head`), see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why
+3. Update `<body>` ― use a new branch (i.e. `feature/body`)   
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 

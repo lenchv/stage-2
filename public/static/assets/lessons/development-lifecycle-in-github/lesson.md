@@ -450,7 +450,7 @@
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
    <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
 2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
-3. Create two projects — **"Homepage"** and **"Resume"** ― using **Kanban (Automated)** as a project template for both. Here's the description for the **Homepage** project:
+3. Create two projects — **"Homepage"** and **"Resume"** ― using **Automated kanban** as a project template for both. Here's the description for the **Homepage** project:
 
    > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
 
@@ -469,7 +469,7 @@
       Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
    <div style="clear: both;"></div>
-7. Create a new branch based on `master`  
+7. Create a new branch `develop` based on `master`  
    <div class="bubble small">
       Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
    </div>
@@ -502,7 +502,7 @@
 <div style="margin-bottom: 1em;">
   <small><em>Level 2</em></small>
   <h3 style="margin: 0;"><strong>Research</strong></h3>
-  <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Learn project management, master issues.</small>
+  <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.</small>
 </div>
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
@@ -560,8 +560,22 @@
      Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
    </div>
    <div style="clear: both;"></div>
-2. Update `<head>` ― use a new branch (say, `feature/head`), see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why
-3. Update `<body>` ― use a new branch (i.e. `feature/body`)   
+3. Update `<head>` ― use a new branch (say, `feature/head`), see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why
+
+   1. `<link>`
+   2. PR and merge into `develop`
+
+2. Update `<body>` ― use a new branch (i.e. `feature/body`)
+
+   1. Add Main block
+   2. Add Content block
+   3. `serve` (!!! needs Node.js, maybe `php -s`)
+   4. `patch/content/primary` Add primary content (avatar, name, job, contacts, intro)
+   5. `patch/content/secondary` Add secondary content (languages, skills, character, etc.)
+   6. PR and merge into `develop`
+
+3. PR and merge into `master`
+
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 

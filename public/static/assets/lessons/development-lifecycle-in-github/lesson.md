@@ -556,16 +556,12 @@
 </div>
 
 1. Use **GitHub Desktop** to clone the repository on your PC. Use [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference
-   <div class="bubble small">
-     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
-   </div>
-   <div style="clear: both;"></div>
-3. Update `<head>` ― use a new branch (say, `feature/head`), see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why
+2. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update `<head>`:
 
-   1. `<link>`
-   2. PR and merge into `develop`
+   1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
+   2. When done push the branch to the remote, create a pull request and merge into `develop`
 
-2. Update `<body>` ― use a new branch (i.e. `feature/body`)
+3. Create a new branch `feature/body` and use it to edit `<body>`:
 
    1. Add Main block
    2. Add Content block
@@ -574,8 +570,11 @@
    5. `patch/content/secondary` Add secondary content (languages, skills, character, etc.)
    6. PR and merge into `develop`
 
-3. PR and merge into `master`
-
+4. PR and merge into `master`. &#x1f4a5; **Boom, done!**
+   <div class="bubble small">
+     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
+   </div>
+   <div style="clear: both;"></div>
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 

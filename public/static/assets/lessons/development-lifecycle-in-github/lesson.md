@@ -477,7 +477,7 @@
 8. Go to **Settings — Collaborators** and add a collaborator
 9. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
 10. Create **index.html** using GitHub online editor and the snippet below:
-   ```
+   ``` html
    <!DOCTYPE html>
    <html>
      <head>
@@ -584,10 +584,28 @@
   <small><strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.</small>
 </div>
 
-1. Webhooks. Deploy keys
-2. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-3. [GitHub Actions](https://github.com/features/actions)
-4. Subrepositories and monorepos
-5. Forks and licenses
+1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>
+2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/), add a pre-push git hook that generates new **sw.js** before each push to the remote. **.git/hooks/pre-push** file should look roughly like this:
+   ``` bash
+   #!/bin/sh
+   if workbox generateSW workbox-config.js ; then
+     exit 0
+   else
+     echo "Cannot generate sw.js"
+     echo "Aborting"
+   fi
+   ```
+   <div class="bubble small">
+     Make sure it's executable, <code>chmod +x .git/hooks/pre-push</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+   </div>
+   <div style="clear: both;"></div>
+3. gitmodules
+   ``` bash
+   git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
+   ```
+3. Webhooks. Deploy keys
+4. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
+5. [GitHub Actions](https://github.com/features/actions)
+6. Forks and licenses
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">

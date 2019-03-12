@@ -1,0 +1,3 @@
+[submodule "dependencies/homepage"]
+	path = dependencies/homepage
+	url = git@github.com:volodymyr-kushnir/homepage.git

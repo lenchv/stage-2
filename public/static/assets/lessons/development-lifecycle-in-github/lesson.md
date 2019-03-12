@@ -449,7 +449,7 @@
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
    <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
-2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé."
+2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé.", initialize with **README**, ignore **.gitignore**, but choose **"MIT License"**
 3. Create two projects — **"Homepage"** and **"Resume"** ― using **Automated kanban** as a project template for both. Here's the description for the **Homepage** project:
 
    > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
@@ -585,10 +585,11 @@
 </div>
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/), add a pre-push git hook that generates new **sw.js** before each push to the remote. **.git/hooks/pre-push** file should look roughly like this:
+2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/), add a pre-commit git hook that generates new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
    ``` bash
    #!/bin/sh
    if workbox generateSW workbox-config.js ; then
+     git add sw.js
      exit 0
    else
      echo "Cannot generate sw.js"
@@ -596,16 +597,16 @@
    fi
    ```
    <div class="bubble small">
-     Make sure it's executable, <code>chmod +x .git/hooks/pre-push</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+     Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
    </div>
    <div style="clear: both;"></div>
 3. gitmodules
    ``` bash
    git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
    ```
-3. Webhooks. Deploy keys
+3. Webhooks. Integrations. Deploy keys
 4. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-5. [GitHub Actions](https://github.com/features/actions)
-6. Forks and licenses
+5. [GitHub Actions](https://github.com/features/actions/)
+6. [GitHub Developer](https://developer.github.com/)
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">

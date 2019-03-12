@@ -555,7 +555,7 @@
   <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML/CSS and basic SEO</small>
 </div>
 
-1. Use **GitHub Desktop** to clone the repository on your PC. Use [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference
+1. Use **GitHub Desktop** to clone the repository on your PC. Use **volodymyrkushnir.com**'s [**Résumé**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) **Wiki** for reference
 2. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update `<head>`:
 
    1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags

@@ -534,18 +534,20 @@
 2. `git status`
 3. `git branch`
 4. `git checkout` (`--branch`)
-5. `git add` (`.`)
+5. `git add` (`.` and why mask is bad)
 6. `git commit` (`--amend`)
 7. `git log`
-8. `git revert`
-9. `git merge` (різні стратегії)
-10. `git reset` (різні стратегії)
-11. `git pull`
-12. `git diff`
-13. `git remote`
-14. `git clean`
-15. `git stash`
-16. `git fetch`   
+8. `git show` (`HEAD`, `HEAD^`, `HEAD^1`, `HEAD^2`, `HEAD^^`, `HEAD~4`)
+9. `git tag`
+10. `git revert`
+11. `git merge` (різні стратегії)
+12. `git reset` (різні стратегії)
+13. `git pull`
+14. `git diff`
+15. `git remote`
+16. `git clean`
+17. `git stash`
+18. `git fetch`
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 

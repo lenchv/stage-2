@@ -17,6 +17,7 @@ class App extends Component {
       homeworkAssigned: false
     };
     this.assignHometask = this.assignHometask.bind(this);
+    this.getLesson = this.getLesson.bind(this);
   }
 
   componentDidMount() {
@@ -33,17 +34,21 @@ class App extends Component {
           });
         });
     }
+    this.getLesson();
+  }
+
+  getLesson(lesson = "lesson-1") {
     fetch(
       `${
         process.env.PUBLIC_URL
-      }/static/assets/lessons/development-lifecycle-in-github/lesson.md`
+      }/static/assets/lessons/development-lifecycle-in-github/${lesson}.md`
     )
       .then(response => response.text())
       .then(lesson => this.setState({ lesson }));
     fetch(
       `${
         process.env.PUBLIC_URL
-      }/static/assets/lessons/development-lifecycle-in-github/hometask.md`
+      }/static/assets/lessons/development-lifecycle-in-github/${lesson}-hometask.md`
     )
       .then(response => response.text())
       .then(hometask => this.setState({ hometask }));
@@ -70,7 +75,7 @@ class App extends Component {
 
   render() {
     const { token, lesson, hometask } = this.state;
-    const { assignHometask } = this;
+    const { assignHometask, getLesson } = this;
     const oauthConfig = {
       client_id: CLIENT_ID,
       scope: ["user", "repo"].join(" "),
@@ -78,6 +83,14 @@ class App extends Component {
     };
     return (
       <div className="container">
+        <div
+          style={{ margin: "0 0 2em 0", fontSize: "0.75em", opacity: "0.25" }}
+        >
+          <select onChange={event => getLesson(event.target.value)}>
+            <option value="lesson-1">Lesson 1</option>
+            <option value="lesson-2">Lesson 2</option>
+          </select>
+        </div>
         <div className="columns">
           <div className="column col-mx-auto">
             {!token ? (
@@ -90,7 +103,7 @@ class App extends Component {
                 Sign in with GitHub
               </a>
             ) : (
-              <main class="lecture">
+              <main className="lecture">
                 <h1>
                   <strong>How developers work</strong>
                 </h1>

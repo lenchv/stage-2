@@ -272,10 +272,10 @@
 <div>
   <div class="author">
     <div id="avatar-wrapper">
-      <object id="avatar" data="https://volodymyrkushnir.com/assets/images/avatar.svg" role="img" aria-label="My profile picture"></object>
+      <object id="avatar" data="https://volodymyrkushnir.com/assets/images/avatar-roman-sahan.svg" role="img" aria-label="My profile picture"></object>
     </div>
     <div class="profile">
-      <h3 class="name">Володимир Кушнір</h3>
+      <h3 class="name">Роман Саган</h3>
       <ul class="contacts">
         <li>
           <a href="https://www.fb.com/volodyakushnir" rel="author" class="facebook">
@@ -327,23 +327,58 @@
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://docs.google.com/presentation/d/1F-9mMmeup9IGJlF4MjsqjO7fbwlc3f1ZDuQWBmpsBYY/edit#slide=id.g3742b7cb6b_0_22">presentation</a>
   </div>
   <div style="clear: both;"></div>
 </div>
 
 <div class="messages">
   Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника (
-  <input type="radio" class="messages__from" name="from" id="donald-trump" checked>
+  <input type="radio" class="messages__from" name="from" id="ryu" checked>
+  <label for="ryu">Ryu</label>
+  <input type="radio" class="messages__from" name="from" id="donald-trump">
   <label for="donald-trump">Donald Trump</label>
   <input type="radio" class="messages__from" name="from" id="lionel-messi">
   <label for="lionel-messi">Lionel Messi</label>
   <input type="radio" class="messages__from" name="from" id="andres-iniesta">
   <label for="andres-iniesta">Andres Iniesta</label>
-  <input type="radio" class="messages__from" name="from" id="ryu">
-  <label for="ryu">Ryu</label>
   <input type="radio" class="messages__from" name="from" id="you">
   <label for="you">"я сам собі замовник!"</label>) &mdash;
+  <div class="message" data-from="ryu">
+    <div class="message__avatar message__avatar--big" style="background-color: gainsboro;">
+      <img class="message__avatar message__avatar--big" src="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600" alt="" />
+    </div>
+    <div class="message__content">
+      <div class="message__meta">
+        <span class="message__author">Ryu</span>
+        <span class="message__timestamp">16:42</span>
+      </div>
+      <div class="message__text">
+        <p>I don't know if there's anything I can tell you, but if the answer can be found in battle, I will cross fists with you anytime. But a fight without purpose provides no answers. That was a lesson I had to learn as well. Therefore we are going to make a fighting game!</p>
+      </div>
+      <div class="message__reactions">
+        <span class="message__reaction">&#x1f4aa;13</span>
+        <span class="message__reaction">&#x1f947;9</span>
+        <span class="message__reaction">&#x1f3ae;7</span>
+        <span class="message__reaction">&#x1f480;12</span>
+        <span class="message__reaction">&#x1f624;11</span>
+      </div>
+      <div class="message__replies">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
+        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
+        <div class="message__reply">
+          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
+          <span class="message__replies--count">+4</span>
+        </div>
+        <div class="message__replies--meta">
+          <span class="message__replies--total">12 replies</span>
+          <span class="message__replies--last">Last reply today at 18:13</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="message" data-from="lionel-messi">
     <img class="message__avatar message__avatar--big" src="https://res.cloudinary.com/otro-content/image/upload/w_200,h_200,c_fill/t_media_library_tile/wsgq8mti47ywcwvqltkc.png" alt="" />
     <div class="message__content">
@@ -378,7 +413,6 @@
     </div>
   </div>
   <div class="message" data-from="andres-iniesta">Task A</div>
-  <div class="message" data-from="ryu">Task B</div>
   <div class="message" data-from="donald-trump">
     <img class="message__avatar message__avatar--big" src="https://www.politiplatform.com/img/politicians/donald_trump/avatar.jpg" alt="" />
     <div class="message__content">
@@ -443,172 +477,56 @@
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 1</em></small>
-  <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
+  <h3 style="margin: 0;"><strong>Basic JavaScript</strong></h3>
   <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
 </div>
 
-1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
-   <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
-2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé.", initialize with **README**, ignore **.gitignore**, but choose **"MIT License"**
-3. Create two projects — **"Homepage"** and **"Resume"** ― using **Automated kanban** as a project template for both. Here's the description for the **Homepage** project:
-
-   > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
-
-   And this is the description for the **Resume** project:
-   
-   > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
+1. Background
+2. Comments
+3. Declarations
    
    <div class="bubble small">
       Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
    <div style="clear: both;"></div>
 
-5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
-6. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_  
-   <div class="bubble small">
-      Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
-   </div>
-   <div style="clear: both;"></div>
-7. Create a new branch `develop` based on `master`  
-   <div class="bubble small">
-      Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
-   </div>
-   <div style="clear: both;"></div>
-8. Go to **Settings — Collaborators** and add a collaborator
-9. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
-10. Create **index.html** using GitHub online editor and the snippet below:
-   ``` html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="UTF-8">
-       <title>Résumé</title>
-     </head>
-     <body>
-       &mdash; Hello World! &#x1F609;
-     </body>
-   </html>
-   ```
-   <div class="bubble small">
-     Give your commits meaningful messages, <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
-   </div>
-   <div style="clear: both;"></div>
-11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
-12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
-13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
+5. Types
+6. Type coercion
+7. Control flow
+8. Error handling
+9. Loops and iteration
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 2</em></small>
-  <h3 style="margin: 0;"><strong>Research</strong></h3>
+  <h3 style="margin: 0;"><strong>Building a page / ES6</strong></h3>
   <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.</small>
 </div>
 
-1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
-
-   1. **Скласти інтро**  
-   Скласти інтро (вступ), де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
-   2. **Скласти блок контактної інформації**  
-   Посилання на соцмережі (Facebook чи Instagram, інші), номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
-   3. **Скласти таймлайн**  
-   Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
-   4. **Скласти додаткові інформаційні блоки**  
-   Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
-   
-2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
+1. Promises
+2. Async
+3. Generators
+4. Classes
+5. OOP
+6. DOM / Events
+7. Functions
+8. Special objects
+9. Keyed collections
+10. Arrays
+11. Objects
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
 <div style="margin-bottom: 1em;">
   <small><em>Level 3</em></small>
-  <h3 style="margin: 0;"><code>git</code></h3>
+  <h3 style="margin: 0;">Modules, transpiling, bundling, etc.</h3>
   <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
 </div>
 
-1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https
-   <div class="bubble small">
-     Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
-   </div>
-   <div style="clear: both;"></div>
-2. `git status`
-3. `git branch`
-4. `git checkout` (`--branch`)
-5. `git add` (`.` and why mask is bad)
-6. `git commit` (`--amend`)
-7. `git log`
-8. `git show` (`HEAD`, `HEAD^`, `HEAD^1`, `HEAD^2`, `HEAD^^`, `HEAD~4`)
-9. `git tag`
-10. `git revert`
-11. `git merge` (різні стратегії)
-12. `git reset` (різні стратегії)
-13. `git pull`
-14. `git diff`
-15. `git remote`
-16. `git clean`
-17. `git stash`
-18. `git fetch`
-
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
-
-<div style="margin-bottom: 1em;">
-  <small><em>Level 4</em></small>
-  <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML/CSS and basic SEO</small>
-</div>
-
-1. Use **GitHub Desktop** to clone the repository on your PC. Use **volodymyrkushnir.com**'s [**Résumé**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) **Wiki** for reference
-2. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update `<head>`:
-
-   1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
-   2. When done push the branch to the remote, create a pull request and merge into `develop`
-
-3. Create a new branch `feature/body` and use it to edit `<body>`:
-
-   1. Add Main block
-   2. Add Content block
-   3. `serve` (!!! needs Node.js, maybe `php -s`)
-   4. `patch/content/primary` Add primary content (avatar, name, job, contacts, intro)
-   5. `patch/content/secondary` Add secondary content (languages, skills, character, etc.)
-   6. PR and merge into `develop`
-
-4. PR and merge into `master`. &#x1f4a5; **Boom, done!**
-   <div class="bubble small">
-     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
-   </div>
-   <div style="clear: both;"></div>
-
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
-
-<div style="margin-bottom: 1em;">
-  <small><em>Level 5</em></small>
-  <h3 style="margin: 0;"><strong>Advanced features</strong></h3>
-  <small><strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.</small>
-</div>
-
-1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/), add a pre-commit git hook that generates new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
-   ``` bash
-   #!/bin/sh
-   if workbox generateSW workbox-config.js ; then
-     git add sw.js
-     exit 0
-   else
-     echo "Cannot generate sw.js"
-     echo "Aborting"
-   fi
-   ```
-   <div class="bubble small">
-     Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
-   </div>
-   <div style="clear: both;"></div>
-3. gitmodules
-   ``` bash
-   git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
-   ```
-3. Webhooks. Integrations. Deploy keys
-4. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-5. [GitHub Actions](https://github.com/features/actions/)
-6. [GitHub Developer](https://developer.github.com/)
+1. Imperative, declarative, functional, reactive
+2. import/export
+3. babel
+4. webpack
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">

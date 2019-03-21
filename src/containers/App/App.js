@@ -39,25 +39,14 @@ class App extends Component {
       }/static/assets/lessons/development-lifecycle-in-github/lesson.md`
     )
       .then(response => response.text())
-      .then(text => {
-        this.setState({
-          lesson: text.replace(
-            "📢",
-            `<g-emoji class="g-emoji" alias="loudspeaker" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"><img class="emoji" alt="loudspeaker" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png"></g-emoji>`
-          )
-        });
-      });
+      .then(lesson => this.setState({ lesson }));
     fetch(
       `${
         process.env.PUBLIC_URL
       }/static/assets/lessons/development-lifecycle-in-github/hometask.md`
     )
       .then(response => response.text())
-      .then(text => {
-        this.setState({
-          hometask: text
-        });
-      });
+      .then(hometask => this.setState({ hometask }));
   }
 
   assignHometask() {

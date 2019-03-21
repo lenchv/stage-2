@@ -262,7 +262,7 @@
   .lecture .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
   .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
   .lecture .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
-  .lecture .messages input[id="taras-shevchenko"]:checked ~ div[data-from="taras-shevchenko"] { display: block; }
+  .lecture .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
   .lecture .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
   .lecture .messages .message {
     margin-top: 0.5em;
@@ -340,8 +340,8 @@
   <label for="lionel-messi">Lionel Messi</label>
   <input type="radio" class="messages__from" name="from" id="andres-iniesta">
   <label for="andres-iniesta">Andres Iniesta</label>
-  <input type="radio" class="messages__from" name="from" id="taras-shevchenko">
-  <label for="taras-shevchenko">Taras Shevchenko</label>
+  <input type="radio" class="messages__from" name="from" id="ryu">
+  <label for="ryu">Ryu</label>
   <input type="radio" class="messages__from" name="from" id="you">
   <label for="you">"я сам собі замовник!"</label>) &mdash;
   <div class="message" data-from="lionel-messi">
@@ -378,7 +378,7 @@
     </div>
   </div>
   <div class="message" data-from="andres-iniesta">Task A</div>
-  <div class="message" data-from="taras-shevchenko">Task B</div>
+  <div class="message" data-from="ryu">Task B</div>
   <div class="message" data-from="donald-trump">
     <img class="message__avatar message__avatar--big" src="https://www.politiplatform.com/img/politicians/donald_trump/avatar.jpg" alt="" />
     <div class="message__content">

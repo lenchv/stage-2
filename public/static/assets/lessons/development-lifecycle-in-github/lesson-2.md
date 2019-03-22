@@ -230,7 +230,7 @@
     display: flex;
     margin: 0.25em 0;
   }
-  .lecture .message__reaction {
+  .message__reaction {
     margin-right: 0.25em;
     font-size: 0.9em;
     padding: 0 0.25em;
@@ -238,11 +238,35 @@
     border-radius: 4px;
     background: white;
     color: dimgrey;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  .message__reaction:before {
+    content: attr(data-before);
+  }
+  .message__reaction:after {
+    content: attr(data-after);
+  }
+  .message__reaction:hover {
+    border: 1px solid grey;
+    background: whitesmoke;
+  }
+  .message__reaction:checked {
+    border: 1px solid #1d9bd1;
+    background: #e8f5fa;
+    color: #1264a3;
+  }
+  .message__reaction:checked:after {
+    content: attr(data-after-checked);
   }
   .lecture .message__text p:not(:last-child) {
     margin-bottom: .25rem;
   }
   .lecture .message__scene {
+    cursor: default;
     line-height: 1.25em;
     opacity: 0.5;
     font-size: 0.85em;
@@ -330,25 +354,40 @@
         <span class="message__timestamp">16:42</span>
       </div>
       <div class="message__text">
-        <div class="message__scene"><em>(stares intently at you, his headband fluttering in the wind)</em></div>
+        <div class="message__scene">
+          <em>(stares intently at you, his headband fluttering in the wind)</em>
+        </div>
         <p>To live is to fight, and to fight is to live.</p>
-        <div class="message__scene"><em>(clenches his fist)</em></div>
+        <div class="message__scene">
+          <em>(clenches his fist)</em>
+        </div>
         <p>I’ve spent all my life defeating my enemies, perfecting my martial skills, and learning the true essence of what it means to be an honorable warrior. But now my greatest challenge lies before me.</p>
-        <div class="message__scene"><em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em></div>
+        <div class="message__scene">
+          <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
+        </div>
         <p><strong>I need a website.</strong></p>
-        <div class="message__scene"><em>(in the distance, a Japanese flute plays a gentle melody)</em></div>
+        <div class="message__scene" onmouseenter="document.getElementById('flute').play()" onmouseleave="document.getElementById('flute').pause()">
+          <em>(in the distance, a Japanese flute plays a gentle melody)</em>
+          <audio id="flute">
+            <source src="https://volodymyrkushnir.com/assets/sounds/rodrigo-rodriguez-shakuhachi-flute.mp3" type="audio/mpeg">
+          </audio>
+        </div>
         <p>My master tells me that it’s necessary to promote my “brand image.”  I have no idea what he means by that - but then again, I am not one to question his wisdom. I am sure, in time, the “traffic” I will acquire through this website will bring me great strength in the battles to come.</p>
-        <div class="message__scene"><em>(Ryu once again turns his gaze upon you)</em></div>
+        <div class="message__scene">
+          <em>(Ryu once again turns his gaze upon you)</em>
+        </div>
         <p>Please go forth and complete this task for me.  In return, I promise to avenge any relatives who may have been killed by your arch nemesis, or restore your family honor, or… whatever. We’ll work out contract details later.</p>
-        <div class="message__scene"><em>(Ryu turns his back and begins to walk away)</em></div>
+        <div class="message__scene">
+          <em>(Ryu turns his back and begins to walk away)</em>
+        </div>
         <p>For now I will go meditate. Let me know if you have any questions ― wifi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
       </div>
       <div class="message__reactions">
-        <span class="message__reaction">&#x1f4aa;13</span>
-        <span class="message__reaction">&#x1f947;9</span>
-        <span class="message__reaction">&#x1f3ae;7</span>
-        <span class="message__reaction">&#x1f480;12</span>
-        <span class="message__reaction">&#x1f624;11</span>
+        <input class="message__reaction" type="checkbox" data-before="&#x1f4aa;" data-after="13" data-after-checked="14" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f947;" data-after="9" data-after-checked="10" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f3ae;" data-after="7" data-after-checked="8" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f480;" data-after="12" data-after-checked="13" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f624;" data-after="11" data-after-checked="12" />
       </div>
       <div class="message__replies">
         <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
@@ -381,10 +420,10 @@
       <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
     </div>
     <div class="message__reactions">
-      <span class="message__reaction">&#x1f44d;13</span>
-      <span class="message__reaction">&#x1f3c1;8</span>
-      <span class="message__reaction">&#x1f680;10</span>
-      <span class="message__reaction">&#x1f44f;6</span>
+      <input class="message__reaction" type="checkbox" data-before="&#x1f44d;" data-after="13" data-after-checked="14" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f3c1;" data-after="8" data-after-checked="9" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f680;" data-after="10" data-after-checked="11" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f44f;" data-after="6" data-after-checked="7" />
     </div>
   </div>
 </div>

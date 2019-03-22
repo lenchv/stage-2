@@ -230,7 +230,7 @@
     display: flex;
     margin: 0.25em 0;
   }
-  .lecture .message__reaction {
+  .message__reaction {
     margin-right: 0.25em;
     font-size: 0.9em;
     padding: 0 0.25em;
@@ -238,6 +238,29 @@
     border-radius: 4px;
     background: white;
     color: dimgrey;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  .message__reaction:before {
+    content: attr(data-before);
+  }
+  .message__reaction:after {
+    content: attr(data-after);
+  }
+  .message__reaction:hover {
+    border: 1px solid grey;
+    background: whitesmoke;
+  }
+  .message__reaction:checked {
+    border: 1px solid #1d9bd1;
+    background: #e8f5fa;
+    color: #1264a3;
+  }
+  .message__reaction:checked:after {
+    content: attr(data-after-checked);
   }
   .lecture .message__text p:not(:last-child) {
     margin-bottom: .25rem;
@@ -279,6 +302,19 @@
   .lecture .messages .message {
     margin-top: 0.5em;
     display: none;
+  }
+  /* Video wrapper */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 </style>
 <div>
@@ -345,7 +381,7 @@
 </div>
 
 <div class="messages">
-  Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника (
+  Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (наприклад, Slack), і отримує своє перше мега-завдання ("таску") від замовника (
   <input type="radio" class="messages__from" name="from" id="ryu" checked>
   <label for="ryu">Ryu</label>
   <input type="radio" class="messages__from" name="from" id="donald-trump">
@@ -369,11 +405,11 @@
         <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money in web development, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here're the specs of what I want to build ― just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
       </div>
       <div class="message__reactions">
-        <span class="message__reaction">&#x1f4aa;13</span>
-        <span class="message__reaction">&#x1f947;9</span>
-        <span class="message__reaction">&#x1f3ae;7</span>
-        <span class="message__reaction">&#x1f480;12</span>
-        <span class="message__reaction">&#x1f624;11</span>
+        <input class="message__reaction" type="checkbox" data-before="&#x1f4aa;" data-after="13" data-after-checked="14" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f947;" data-after="9" data-after-checked="10" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f3ae;" data-after="7" data-after-checked="8" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f480;" data-after="12" data-after-checked="13" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f624;" data-after="11" data-after-checked="12" />
       </div>
       <div class="message__replies">
         <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
@@ -402,11 +438,11 @@
         <p>How is it like to be Leo Messi? Most of the time it’s nice, but there are moments when I would like to be anonymous and be able to roam the streets unnoticed. Football is always going to be very special for me, but I understand that life is not just about football. The birth of my first son changed my life and altered my perspective altogether — providing me a greater sense of tranquility. I still love playing football, but when the match is over I dedicate that time to my family.</p>
       </div>
       <div class="message__reactions">
-        <span class="message__reaction">&#x1f601;1</span>
-        <span class="message__reaction">&#x1f601;4</span>
-        <span class="message__reaction">&#x1f60d;1</span>
-        <span class="message__reaction">&#x1f633;5</span>
-        <span class="message__reaction">&#x1f62d;5</span>
+        <input class="message__reaction" type="checkbox" data-before="&#x1f601;" data-after="1" data-after-checked="2" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f601;" data-after="4" data-after-checked="5" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f60d;" data-after="1" data-after-checked="2" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f633;" data-after="5" data-after-checked="6" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f62d;" data-after="5" data-after-checked="6" />
       </div>
       <div class="message__replies">
         <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
@@ -436,12 +472,12 @@
         <p>We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. <strong>Make America great again!</strong></p>
       </div>
       <div class="message__reactions">
-        <span class="message__reaction">&#x1f984;13</span>
-        <span class="message__reaction">&#x1f60d;12</span>
-        <span class="message__reaction">&#x1f601;8</span>
-        <span class="message__reaction">&#x1f633;4</span>
-        <span class="message__reaction">&#x1f62d;10</span>
-        <span class="message__reaction">&#x1f926;11</span>
+        <input class="message__reaction" type="checkbox" data-before="&#x1f984;" data-after="13" data-after-checked="14" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f60d;" data-after="12" data-after-checked="13" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f601;" data-after="8" data-after-checked="9" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f633;" data-after="4" data-after-checked="5" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f62d;" data-after="10" data-after-checked="11" />
+        <input class="message__reaction" type="checkbox" data-before="&#x1f926;" data-after="11" data-after-checked="12" />
       </div>
       <div class="message__replies">
         <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
@@ -475,10 +511,10 @@
       <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
     </div>
     <div class="message__reactions">
-      <span class="message__reaction">&#x1f44d;13</span>
-      <span class="message__reaction">&#x1f3c1;8</span>
-      <span class="message__reaction">&#x1f680;10</span>
-      <span class="message__reaction">&#x1f44f;6</span>
+      <input class="message__reaction" type="checkbox" data-before="&#x1f44d;" data-after="13" data-after-checked="14" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f3c1;" data-after="8" data-after-checked="9" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f680;" data-after="10" data-after-checked="11" />
+      <input class="message__reaction" type="checkbox" data-before="&#x1f44f;" data-after="6" data-after-checked="7" />
     </div>
   </div>
 </div>
@@ -491,6 +527,10 @@
   <small><em>Level 1</em></small>
   <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
   <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
+</div>
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.

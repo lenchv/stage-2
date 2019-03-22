@@ -239,6 +239,18 @@
     background: white;
     color: dimgrey;
   }
+  .lecture .message__text p:not(:last-child) {
+    margin-bottom: .25rem;
+  }
+  .lecture .message__scene {
+    line-height: 1.25em;
+    opacity: 0.5;
+    font-size: 0.85em;
+    transition: all 0.2s linear;
+  }
+  .lecture .message__scene:hover {
+    opacity: 1;
+  }
   /* Tabs */
   .lecture .messages .messages__from:not(:first-of-type) {
     margin-left: 0.5em;
@@ -354,7 +366,7 @@
         <span class="message__timestamp">16:42</span>
       </div>
       <div class="message__text">
-        <p>I don't know if there's anything I can tell you, but if the answer can be found in battle, I will cross fists with you anytime. But a fight without purpose provides no answers. That was a lesson I had to learn as well. <strong>Anyway, I need a website!</strong></p>
+        <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money in web development, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here're the specs of what I want to build ― just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
       </div>
       <div class="message__reactions">
         <span class="message__reaction">&#x1f4aa;13</span>
@@ -421,7 +433,7 @@
         <span class="message__timestamp">14:24</span>
       </div>
       <div class="message__text">
-        We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. Make America great again!
+        <p>We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. <strong>Make America great again!</strong></p>
       </div>
       <div class="message__reactions">
         <span class="message__reaction">&#x1f984;13</span>

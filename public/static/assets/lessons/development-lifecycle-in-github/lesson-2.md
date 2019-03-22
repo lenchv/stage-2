@@ -239,34 +239,20 @@
     background: white;
     color: dimgrey;
   }
-  /* Tabs */
-  .lecture .messages .messages__from:not(:first-of-type) {
-    margin-left: 0.5em;
+  .lecture .message__text p:not(:last-child) {
+    margin-bottom: .25rem;
   }
-  .lecture .messages .messages__from {
-    vertical-align: middle;
+  .lecture .message__scene {
+    line-height: 1.25em;
     opacity: 0.5;
+    font-size: 0.85em;
     transition: all 0.2s linear;
   }
-  .lecture .messages .messages__from + label {
-    cursor: pointer;
-    opacity: 0.5;
-    transition: all 0.2s linear;
-  }
-  .lecture .messages .messages__from:hover,
-  .lecture .messages .messages__from:hover + label,
-  .lecture .messages .messages__from:checked,
-  .lecture .messages .messages__from:checked + label {
+  .lecture .message__scene:hover {
     opacity: 1;
   }
-  .lecture .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
-  .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
-  .lecture .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
-  .lecture .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
-  .lecture .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
   .lecture .messages .message {
     margin-top: 0.5em;
-    display: none;
   }
 </style>
 <div>
@@ -333,18 +319,8 @@
 </div>
 
 <div class="messages">
-  Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника (
-  <input type="radio" class="messages__from" name="from" id="ryu" checked>
-  <label for="ryu">Ryu</label>
-  <input type="radio" class="messages__from" name="from" id="donald-trump">
-  <label for="donald-trump">Donald Trump</label>
-  <input type="radio" class="messages__from" name="from" id="lionel-messi">
-  <label for="lionel-messi">Lionel Messi</label>
-  <input type="radio" class="messages__from" name="from" id="andres-iniesta">
-  <label for="andres-iniesta">Andres Iniesta</label>
-  <input type="radio" class="messages__from" name="from" id="you">
-  <label for="you">"я сам собі замовник!"</label>) &mdash;
-  <div class="message" data-from="ryu">
+  Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (нехай це буде Slack), і отримує своє перше мега-завдання ("таску") від замовника &mdash;
+  <div class="message">
     <div class="message__avatar message__avatar--big" style="background-color: gainsboro;">
       <img class="message__avatar message__avatar--big" src="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600" alt="" />
     </div>
@@ -354,7 +330,18 @@
         <span class="message__timestamp">16:42</span>
       </div>
       <div class="message__text">
-        <p>I don't know if there's anything I can tell you, but if the answer can be found in battle, I will cross fists with you anytime. But a fight without purpose provides no answers. That was a lesson I had to learn as well. Therefore we are going to make a fighting game!</p>
+        <div class="message__scene"><em>(stares intently at you, his headband fluttering in the wind)</em></div>
+        <p>To live is to fight, and to fight is to live.</p>
+        <div class="message__scene"><em>(clenches his fist)</em></div>
+        <p>I’ve spent all my life defeating my enemies, perfecting my martial skills, and learning the true essence of what it means to be an honorable warrior. But now my greatest challenge lies before me.</p>
+        <div class="message__scene"><em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em></div>
+        <p><strong>I need a website.</strong></p>
+        <div class="message__scene"><em>(in the distance, a Japanese flute plays a gentle melody)</em></div>
+        <p>My master tells me that it’s necessary to promote my “brand image.”  I have no idea what he means by that - but then again, I am not one to question his wisdom. I am sure, in time, the “traffic” I will acquire through this website will bring me great strength in the battles to come.</p>
+        <div class="message__scene"><em>(Ryu once again turns his gaze upon you)</em></div>
+        <p>Please go forth and complete this task for me.  In return, I promise to avenge any relatives who may have been killed by your arch nemesis, or restore your family honor, or… whatever. We’ll work out contract details later.</p>
+        <div class="message__scene"><em>(Ryu turns his back and begins to walk away)</em></div>
+        <p>For now I will go meditate. Let me know if you have any questions ― wifi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
       </div>
       <div class="message__reactions">
         <span class="message__reaction">&#x1f4aa;13</span>
@@ -379,75 +366,6 @@
       </div>
     </div>
   </div>
-  <div class="message" data-from="lionel-messi">
-    <img class="message__avatar message__avatar--big" src="https://res.cloudinary.com/otro-content/image/upload/w_200,h_200,c_fill/t_media_library_tile/wsgq8mti47ywcwvqltkc.png" alt="" />
-    <div class="message__content">
-      <div class="message__meta">
-        <span class="message__author">Lionel Messi</span>
-        <span class="message__timestamp">18:42</span>
-      </div>
-      <div class="message__text">
-        <p>How is it like to be Leo Messi? Most of the time it’s nice, but there are moments when I would like to be anonymous and be able to roam the streets unnoticed. Football is always going to be very special for me, but I understand that life is not just about football. The birth of my first son changed my life and altered my perspective altogether — providing me a greater sense of tranquility. I still love playing football, but when the match is over I dedicate that time to my family.</p>
-      </div>
-      <div class="message__reactions">
-        <span class="message__reaction">&#x1f601;1</span>
-        <span class="message__reaction">&#x1f601;4</span>
-        <span class="message__reaction">&#x1f60d;1</span>
-        <span class="message__reaction">&#x1f633;5</span>
-        <span class="message__reaction">&#x1f62d;5</span>
-      </div>
-      <div class="message__replies">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
-        <div class="message__reply">
-          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
-          <span class="message__replies--count">+2</span>
-        </div>
-        <div class="message__replies--meta">
-          <span class="message__replies--total">15 replies</span>
-          <span class="message__replies--last">Last reply today at 19:13</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="message" data-from="andres-iniesta">Task A</div>
-  <div class="message" data-from="donald-trump">
-    <img class="message__avatar message__avatar--big" src="https://www.politiplatform.com/img/politicians/donald_trump/avatar.jpg" alt="" />
-    <div class="message__content">
-      <div class="message__meta">
-        <span class="message__author">Donald Trump &#x1f1fa;&#x1f1f8;</span>
-        <span class="message__timestamp">14:24</span>
-      </div>
-      <div class="message__text">
-        We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. Make America great again!
-      </div>
-      <div class="message__reactions">
-        <span class="message__reaction">&#x1f984;13</span>
-        <span class="message__reaction">&#x1f60d;12</span>
-        <span class="message__reaction">&#x1f601;8</span>
-        <span class="message__reaction">&#x1f633;4</span>
-        <span class="message__reaction">&#x1f62d;10</span>
-        <span class="message__reaction">&#x1f926;11</span>
-      </div>
-      <div class="message__replies">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
-        <div class="message__reply">
-          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
-          <span class="message__replies--count">+2</span>
-        </div>
-        <div class="message__replies--meta">
-          <span class="message__replies--total">17 replies</span>
-          <span class="message__replies--last">Last reply today at 15:45</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="message" data-from="you">Task C</div>
 </div>
 
 Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...

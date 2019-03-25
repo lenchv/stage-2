@@ -308,6 +308,9 @@
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
+    transition: all 0.2s linear;
+    border-radius: 0.5em;
+    overflow: hidden;
   }
   .video-wrapper iframe {
     position: absolute;
@@ -315,6 +318,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  .video-wrapper:hover {
+    box-shadow: 0 0 50px 10px rgba(0,0,0,0.25);
   }
 </style>
 <div>
@@ -640,14 +646,14 @@
 <div style="margin-bottom: 1em;">
   <small><em>Level 4</em></small>
   <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML/CSS and basic SEO</small>
+  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML, CSS, and basic SEO</small>
 </div>
 
 1. Use **GitHub Desktop** to clone the repository on your PC. Use **volodymyrkushnir.com**'s [**Résumé**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) **Wiki** for reference
 2. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update `<head>`:
 
    1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
-   2. When done push the branch to the remote, create a pull request and merge into `develop`
+   2. When done &mdash; push the branch to the remote, create a pull request and merge into `develop`
 
 3. Create a new branch `feature/body` and use it to edit `<body>`:
 
@@ -658,7 +664,7 @@
    5. `patch/content/secondary` Add secondary content (languages, skills, character, etc.)
    6. PR and merge into `develop`
 
-4. PR and merge into `master`. &#x1f4a5; **Boom, done!**
+4. PR and merge into `master`. &#x1f4a5;**Boom, done!**
    <div class="bubble small">
      Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
    </div>
@@ -673,7 +679,7 @@
 </div>
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/), add a pre-commit git hook that generates new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
+2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) — pre-commit git hook should generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
    ``` bash
    #!/bin/sh
    if workbox generateSW workbox-config.js ; then

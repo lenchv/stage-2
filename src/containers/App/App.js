@@ -103,7 +103,7 @@ class App extends Component {
                 Sign in with GitHub
               </a>
             ) : (
-              <main className="lecture">
+              <main className="lecture-content">
                 <h1>
                   <strong>How developers work</strong>
                 </h1>

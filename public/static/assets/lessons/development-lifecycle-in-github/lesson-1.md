@@ -1,43 +1,43 @@
 <style>
   /* Elements */
-  .lecture ol,
-  .lecture ul {
+  .lecture-content ol,
+  .lecture-content ul {
     margin: 0.5rem 0 0.5rem 0.5rem;
     padding-left: 1em;
   }
-  .lecture ol {
+  .lecture-content ol {
     list-style: outside decimal;
   }
-  .lecture ul {
+  .lecture-content ul {
     list-style: outside disc;
   }
-  .lecture ol li,
-  .lecture ul li {
+  .lecture-content ol li,
+  .lecture-content ul li {
     margin-top: .5rem;
   }
-  .lecture p {
+  .lecture-content p {
     margin-bottom: .5rem;
   }
-  .lecture p + blockquote {
+  .lecture-content p + blockquote {
     margin-top: -0.25rem;
   }
-  .lecture blockquote {
+  .lecture-content blockquote {
     border-left: .1rem solid #dadee4;
     margin-left: 0;
     padding: .25rem .75rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
-  .lecture pre {
+  .lecture-content pre {
     margin: 0.25rem 0;
   }
-  .lecture pre code {
+  .lecture-content pre code {
     display: block;
     padding: 0.5rem;
   }
 
   /* Author */
-  .lecture .author {
+  .lecture-content .author {
     font-size: 14px;
     padding: 1em;
     background: whitesmoke;
@@ -60,7 +60,7 @@
   }
 
   /* Contacts */
-  .lecture .contacts {
+  .lecture-content .contacts {
     list-style: none outside none;
     display: flex;
     flex-wrap: wrap;
@@ -72,60 +72,60 @@
     font-size: 0.9em;
     font-weight: 400;
   }
-  .lecture .contacts li {
+  .lecture-content .contacts li {
     margin-bottom: 0.25em;
     margin-right: 1em;
     margin-top: 0;
   }
-  .lecture .contacts li:before {
+  .lecture-content .contacts li:before {
     display: none;
   }
-  .lecture .contacts li a {
+  .lecture-content .contacts li a {
     color: black;
     transition: color 0.2s ease-in-out;
   }
-  .lecture .contacts li a:hover {
+  .lecture-content .contacts li a:hover {
     text-decoration: none;
   }
-  .lecture .contacts li a.facebook:hover {
+  .lecture-content .contacts li a.facebook:hover {
     color: #3b5998;
   }
-  .lecture .contacts li a.github:hover {
+  .lecture-content .contacts li a.github:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.mail:hover {
+  .lecture-content .contacts li a.mail:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.skype:hover {
+  .lecture-content .contacts li a.skype:hover {
     color: #00aff0;
   }
-  .lecture .contacts li a.phone:hover {
+  .lecture-content .contacts li a.phone:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.website:hover {
+  .lecture-content .contacts li a.website:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a .icon {
+  .lecture-content .contacts li a .icon {
     fill: currentColor;
     height: 16px;
     vertical-align: bottom;
   }
 
   /* Profile */
-  .lecture .profile {
+  .lecture-content .profile {
     margin-left: 6em;
   }
-  .lecture .profile .name {
+  .lecture-content .profile .name {
     margin-bottom: 0;
     font-size: 1.4em;
     line-height: 1.5em;
   }
-  .lecture .profile .about {
+  .lecture-content .profile .about {
     margin: 0;
   }
 
   /* Speech bubble */
-  .lecture .bubble {
+  .lecture-content .bubble {
     background: linear-gradient(to right, #0084ff, #00c4ff);
     color: white;
     border-radius: 0.25em 1em 1em 1em;
@@ -137,22 +137,22 @@
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
   }
-  .lecture .bubble.small {
+  .lecture-content .bubble.small {
     font-size: 0.85em;
   }
-  .lecture .author + .bubble,
-  .lecture .bubble:hover {
+  .lecture-content .author + .bubble,
+  .lecture-content .bubble:hover {
     opacity: 1;
   }
-  .lecture .bubble a {
+  .lecture-content .bubble a {
     color: inherit;
   }
-  .lecture p + div > .bubble:first-child {
+  .lecture-content p + div > .bubble:first-child {
     margin-top: -0.25rem;
   }
 
   /* Messages */
-  .lecture .message {
+  .lecture-content .message {
     overflow: hidden;
     margin-bottom: 0.5em;
     background: #f8f8f8;
@@ -160,33 +160,33 @@
     border-radius: 10px;
     transition: all 0.2s linear;
   }
-  .lecture .message:hover {
+  .lecture-content .message:hover {
     box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
     background: white;
   }
-  .lecture .message img {
+  .lecture-content .message img {
     display: block;
   }
-  .lecture .message__avatar {
+  .lecture-content .message__avatar {
     border-radius: 5px;
     height: 32px;
     width: 32px;
   }
-  .lecture .message__avatar--big {
+  .lecture-content .message__avatar--big {
     float: left;
     height: 64px;
     width: 64px;
   }
-  .lecture .message__content {
+  .lecture-content .message__content {
     margin-left: calc(64px + 0.5em);
   }
-  .lecture .message__author {
+  .lecture-content .message__author {
     font-weight: bold;
   }
-  .lecture .message__timestamp {
+  .lecture-content .message__timestamp {
     color: lightgrey;
   }
-  .lecture .message__replies {
+  .lecture-content .message__replies {
     padding: 0.25em;
     border-radius: 5px;
     border: 1px solid lightgrey;
@@ -194,19 +194,19 @@
     background: white;
     display: flex;
   }
-  .lecture .message__reply {
+  .lecture-content .message__reply {
     border-radius: 5px;
     margin-right: 0.25em;
     position: relative;
     overflow: hidden;
   }
-  .lecture .message__replies--meta {
+  .lecture-content .message__replies--meta {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
     font-size: 0.9em;
   }
-  .lecture .message__replies--count {
+  .lecture-content .message__replies--count {
     position: absolute;
     top: 0;
     left: 0;
@@ -219,18 +219,18 @@
     color: white;
     font-weight: bold;
   }
-  .lecture .message__replies--total {
+  .lecture-content .message__replies--total {
     margin-right: 1em;
     font-weight: bold;
   }
-  .lecture .message__replies--last {
+  .lecture-content .message__replies--last {
     color: grey;
   }
-  .lecture .message__reactions {
+  .lecture-content .message__reactions {
     display: flex;
     margin: 0.25em 0;
   }
-  .message__reaction {
+  .lecture-content .message__reaction {
     margin-right: 0.25em;
     font-size: 0.9em;
     padding: 0 0.25em;
@@ -244,67 +244,67 @@
     cursor: pointer;
     transition: all 0.2s linear;
   }
-  .message__reaction:before {
+  .lecture-content .message__reaction:before {
     content: attr(data-before);
   }
-  .message__reaction:after {
+  .lecture-content .message__reaction:after {
     content: attr(data-after);
   }
-  .message__reaction:hover {
+  .lecture-content .message__reaction:hover {
     border: 1px solid grey;
     background: whitesmoke;
   }
-  .message__reaction:checked {
+  .lecture-content .message__reaction:checked {
     border: 1px solid #1d9bd1;
     background: #e8f5fa;
     color: #1264a3;
   }
-  .message__reaction:checked:after {
+  .lecture-content .message__reaction:checked:after {
     content: attr(data-after-checked);
   }
-  .lecture .message__text p:not(:last-child) {
+  .lecture-content .message__text p:not(:last-child) {
     margin-bottom: .25rem;
   }
-  .lecture .message__scene {
+  .lecture-content .message__scene {
     line-height: 1.25em;
     opacity: 0.5;
     font-size: 0.85em;
     transition: all 0.2s linear;
   }
-  .lecture .message__scene:hover {
+  .lecture-content .message__scene:hover {
     opacity: 1;
   }
   /* Tabs */
-  .lecture .messages .messages__from:not(:first-of-type) {
+  .lecture-content .messages .messages__from:not(:first-of-type) {
     margin-left: 0.5em;
   }
-  .lecture .messages .messages__from {
+  .lecture-content .messages .messages__from {
     vertical-align: middle;
     opacity: 0.5;
     transition: all 0.2s linear;
   }
-  .lecture .messages .messages__from + label {
+  .lecture-content .messages .messages__from + label {
     cursor: pointer;
     opacity: 0.5;
     transition: all 0.2s linear;
   }
-  .lecture .messages .messages__from:hover,
-  .lecture .messages .messages__from:hover + label,
-  .lecture .messages .messages__from:checked,
-  .lecture .messages .messages__from:checked + label {
+  .lecture-content .messages .messages__from:hover,
+  .lecture-content .messages .messages__from:hover + label,
+  .lecture-content .messages .messages__from:checked,
+  .lecture-content .messages .messages__from:checked + label {
     opacity: 1;
   }
-  .lecture .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
-  .lecture .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
-  .lecture .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
-  .lecture .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
-  .lecture .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
-  .lecture .messages .message {
+  .lecture-content .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
+  .lecture-content .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
+  .lecture-content .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
+  .lecture-content .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
+  .lecture-content .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
+  .lecture-content .messages .message {
     margin-top: 0.5em;
     display: none;
   }
   /* Video wrapper */
-  .video-wrapper {
+  .lecture-content .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
@@ -312,14 +312,14 @@
     border-radius: 0.5em;
     overflow: hidden;
   }
-  .video-wrapper iframe {
+  .lecture-content .video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  .video-wrapper:hover {
+  .lecture-content .video-wrapper:hover {
     box-shadow: 0 0 50px 10px rgba(0,0,0,0.25);
   }
 </style>
@@ -381,7 +381,7 @@
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F;. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
   <div style="clear: both;"></div>
 </div>
@@ -408,7 +408,7 @@
         <span class="message__timestamp">16:42</span>
       </div>
       <div class="message__text">
-        <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money in web development, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here're the specs of what I want to build ― just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
+        <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money on the Internet, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, then maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here's what I want to build ― for starters just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
       </div>
       <div class="message__reactions">
         <input class="message__reaction" type="checkbox" data-before="&#x1f4aa;" data-after="13" data-after-checked="14" />
@@ -504,7 +504,7 @@
   <div class="message" data-from="you">Task C</div>
 </div>
 
-Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
+Отже, в замовника немає портфоліо і специфікація для проекту теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
 
 <div class="message">
   <img class="message__avatar message__avatar--big" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64" alt="" />

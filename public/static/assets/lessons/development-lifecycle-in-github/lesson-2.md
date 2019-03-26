@@ -1,43 +1,43 @@
 <style>
   /* Elements */
-  .lecture ol,
-  .lecture ul {
+  .lecture-content ol,
+  .lecture-content ul {
     margin: 0.5rem 0 0.5rem 0.5rem;
     padding-left: 1em;
   }
-  .lecture ol {
+  .lecture-content ol {
     list-style: outside decimal;
   }
-  .lecture ul {
+  .lecture-content ul {
     list-style: outside disc;
   }
-  .lecture ol li,
-  .lecture ul li {
+  .lecture-content ol li,
+  .lecture-content ul li {
     margin-top: .5rem;
   }
-  .lecture p {
+  .lecture-content p {
     margin-bottom: .5rem;
   }
-  .lecture p + blockquote {
+  .lecture-content p + blockquote {
     margin-top: -0.25rem;
   }
-  .lecture blockquote {
+  .lecture-content blockquote {
     border-left: .1rem solid #dadee4;
     margin-left: 0;
     padding: .25rem .75rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
-  .lecture pre {
+  .lecture-content pre {
     margin: 0.25rem 0;
   }
-  .lecture pre code {
+  .lecture-content pre code {
     display: block;
     padding: 0.5rem;
   }
 
   /* Author */
-  .lecture .author {
+  .lecture-content .author {
     font-size: 14px;
     padding: 1em;
     background: whitesmoke;
@@ -60,7 +60,7 @@
   }
 
   /* Contacts */
-  .lecture .contacts {
+  .lecture-content .contacts {
     list-style: none outside none;
     display: flex;
     flex-wrap: wrap;
@@ -72,60 +72,60 @@
     font-size: 0.9em;
     font-weight: 400;
   }
-  .lecture .contacts li {
+  .lecture-content .contacts li {
     margin-bottom: 0.25em;
     margin-right: 1em;
     margin-top: 0;
   }
-  .lecture .contacts li:before {
+  .lecture-content .contacts li:before {
     display: none;
   }
-  .lecture .contacts li a {
+  .lecture-content .contacts li a {
     color: black;
     transition: color 0.2s ease-in-out;
   }
-  .lecture .contacts li a:hover {
+  .lecture-content .contacts li a:hover {
     text-decoration: none;
   }
-  .lecture .contacts li a.facebook:hover {
+  .lecture-content .contacts li a.facebook:hover {
     color: #3b5998;
   }
-  .lecture .contacts li a.github:hover {
+  .lecture-content .contacts li a.github:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.mail:hover {
+  .lecture-content .contacts li a.mail:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.skype:hover {
+  .lecture-content .contacts li a.skype:hover {
     color: #00aff0;
   }
-  .lecture .contacts li a.phone:hover {
+  .lecture-content .contacts li a.phone:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a.website:hover {
+  .lecture-content .contacts li a.website:hover {
     color: dimgrey;
   }
-  .lecture .contacts li a .icon {
+  .lecture-content .contacts li a .icon {
     fill: currentColor;
     height: 16px;
     vertical-align: bottom;
   }
 
   /* Profile */
-  .lecture .profile {
+  .lecture-content .profile {
     margin-left: 6em;
   }
-  .lecture .profile .name {
+  .lecture-content .profile .name {
     margin-bottom: 0;
     font-size: 1.4em;
     line-height: 1.5em;
   }
-  .lecture .profile .about {
+  .lecture-content .profile .about {
     margin: 0;
   }
 
   /* Speech bubble */
-  .lecture .bubble {
+  .lecture-content .bubble {
     background: linear-gradient(to right, #0084ff, #00c4ff);
     color: white;
     border-radius: 0.25em 1em 1em 1em;
@@ -137,22 +137,22 @@
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
   }
-  .lecture .bubble.small {
+  .lecture-content .bubble.small {
     font-size: 0.85em;
   }
-  .lecture .author + .bubble,
-  .lecture .bubble:hover {
+  .lecture-content .author + .bubble,
+  .lecture-content .bubble:hover {
     opacity: 1;
   }
-  .lecture .bubble a {
+  .lecture-content .bubble a {
     color: inherit;
   }
-  .lecture p + div > .bubble:first-child {
+  .lecture-content p + div > .bubble:first-child {
     margin-top: -0.25rem;
   }
 
   /* Messages */
-  .lecture .message {
+  .lecture-content .message {
     overflow: hidden;
     margin-bottom: 0.5em;
     background: #f8f8f8;
@@ -160,33 +160,33 @@
     border-radius: 10px;
     transition: all 0.2s linear;
   }
-  .lecture .message:hover {
+  .lecture-content .message:hover {
     box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
     background: white;
   }
-  .lecture .message img {
+  .lecture-content .message img {
     display: block;
   }
-  .lecture .message__avatar {
+  .lecture-content .message__avatar {
     border-radius: 5px;
     height: 32px;
     width: 32px;
   }
-  .lecture .message__avatar--big {
+  .lecture-content .message__avatar--big {
     float: left;
     height: 64px;
     width: 64px;
   }
-  .lecture .message__content {
+  .lecture-content .message__content {
     margin-left: calc(64px + 0.5em);
   }
-  .lecture .message__author {
+  .lecture-content .message__author {
     font-weight: bold;
   }
-  .lecture .message__timestamp {
+  .lecture-content .message__timestamp {
     color: lightgrey;
   }
-  .lecture .message__replies {
+  .lecture-content .message__replies {
     padding: 0.25em;
     border-radius: 5px;
     border: 1px solid lightgrey;
@@ -194,19 +194,19 @@
     background: white;
     display: flex;
   }
-  .lecture .message__reply {
+  .lecture-content .message__reply {
     border-radius: 5px;
     margin-right: 0.25em;
     position: relative;
     overflow: hidden;
   }
-  .lecture .message__replies--meta {
+  .lecture-content .message__replies--meta {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
     font-size: 0.9em;
   }
-  .lecture .message__replies--count {
+  .lecture-content .message__replies--count {
     position: absolute;
     top: 0;
     left: 0;
@@ -219,18 +219,18 @@
     color: white;
     font-weight: bold;
   }
-  .lecture .message__replies--total {
+  .lecture-content .message__replies--total {
     margin-right: 1em;
     font-weight: bold;
   }
-  .lecture .message__replies--last {
+  .lecture-content .message__replies--last {
     color: grey;
   }
-  .lecture .message__reactions {
+  .lecture-content .message__reactions {
     display: flex;
     margin: 0.25em 0;
   }
-  .message__reaction {
+  .lecture-content .message__reaction {
     margin-right: 0.25em;
     font-size: 0.9em;
     padding: 0 0.25em;
@@ -244,38 +244,38 @@
     cursor: pointer;
     transition: all 0.2s linear;
   }
-  .message__reaction:before {
+  .lecture-content .message__reaction:before {
     content: attr(data-before);
   }
-  .message__reaction:after {
+  .lecture-content .message__reaction:after {
     content: attr(data-after);
   }
-  .message__reaction:hover {
+  .lecture-content .message__reaction:hover {
     border: 1px solid grey;
     background: whitesmoke;
   }
-  .message__reaction:checked {
+  .lecture-content .message__reaction:checked {
     border: 1px solid #1d9bd1;
     background: #e8f5fa;
     color: #1264a3;
   }
-  .message__reaction:checked:after {
+  .lecture-content .message__reaction:checked:after {
     content: attr(data-after-checked);
   }
-  .lecture .message__text p:not(:last-child) {
+  .lecture-content .message__text p:not(:last-child) {
     margin-bottom: .25rem;
   }
-  .lecture .message__scene {
+  .lecture-content .message__scene {
     cursor: default;
     line-height: 1.25em;
     opacity: 0.5;
     font-size: 0.85em;
     transition: all 0.2s linear;
   }
-  .lecture .message__scene:hover {
+  .lecture-content .message__scene:hover {
     opacity: 1;
   }
-  .lecture .messages .message {
+  .lecture-content .messages .message {
     margin-top: 0.5em;
   }
 </style>
@@ -365,14 +365,14 @@
         <div class="message__scene">
           <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
         </div>
-        <p><strong>I need a website.</strong></p>
+        <p><strong>I need my own video game.</strong></p>
         <div class="message__scene" onmouseenter="document.getElementById('flute').play()" onmouseleave="document.getElementById('flute').pause()">
           <em>(in the distance, a Japanese flute plays a gentle melody)</em>
           <audio id="flute">
             <source src="https://volodymyrkushnir.com/assets/sounds/rodrigo-rodriguez-shakuhachi-flute.mp3" type="audio/mpeg">
           </audio>
         </div>
-        <p>My master tells me that it’s necessary to promote my “brand image.”  I have no idea what he means by that - but then again, I am not one to question his wisdom. I am sure, in time, the “traffic” I will acquire through this website will bring me great strength in the battles to come.</p>
+        <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this video game will bring me great strength in the battles to come.</p>
         <div class="message__scene">
           <em>(Ryu once again turns his gaze upon you)</em>
         </div>
@@ -380,7 +380,7 @@
         <div class="message__scene">
           <em>(Ryu turns his back and begins to walk away)</em>
         </div>
-        <p>For now I will go meditate. Let me know if you have any questions ― wifi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
+        <p>For now I will go meditate. Let me know if you have any questions ― WiFi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
       </div>
       <div class="message__reactions">
         <input class="message__reaction" type="checkbox" data-before="&#x1f4aa;" data-after="13" data-after-checked="14" />

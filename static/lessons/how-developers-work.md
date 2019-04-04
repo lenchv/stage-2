@@ -311,6 +311,7 @@
     transition: all 0.2s linear;
     border-radius: 0.5em;
     overflow: hidden;
+    margin-bottom: 2em;
   }
   .lecture-content .video-wrapper iframe {
     position: absolute;
@@ -323,6 +324,9 @@
     box-shadow: 0 0 50px 10px rgba(0,0,0,0.25);
   }
 </style>
+
+<h1><strong>How developers work</strong></h1>
+
 <div>
   <div class="author">
     <div id="avatar-wrapper">
@@ -381,7 +385,7 @@
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F;. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
   <div style="clear: both;"></div>
 </div>
@@ -529,14 +533,14 @@
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
 
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <div style="margin-bottom: 1em;">
   <small><em>Level 1</em></small>
   <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
   <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
-</div>
-
-<div class="video-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
@@ -547,40 +551,42 @@
    > **Make homepage great!** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
 
    And this is the description for the **Resume** project:
-   
+
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
-   
+
    <div class="bubble small">
       Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
    <div style="clear: both;"></div>
 
-5. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
-6. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_  
+4. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
+5. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_
    <div class="bubble small">
       Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
    <div style="clear: both;"></div>
-7. Create a new branch `develop` based on `master`  
+6. Create a new branch `develop` based on `master`
    <div class="bubble small">
       Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
    </div>
    <div style="clear: both;"></div>
-8. Go to **Settings — Collaborators** and add a collaborator
-9. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
-10. Create **index.html** using GitHub online editor and the snippet below:
-   ``` html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="UTF-8">
-       <title>Résumé</title>
-     </head>
-     <body>
-       &mdash; Hello World! &#x1F609;
-     </body>
-   </html>
-   ```
+7. Go to **Settings — Collaborators** and add a collaborator
+8. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
+9. Create **index.html** using GitHub online editor and the snippet below:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Résumé</title>
+  </head>
+  <body>
+    &mdash; Hello World! &#x1F609;
+  </body>
+</html>
+```
+
    <div class="bubble small">
      Give your commits meaningful messages, <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
    </div>
@@ -600,14 +606,14 @@
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
    1. **Скласти інтро**  
-   Скласти інтро (вступ), де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
+      Скласти інтро (вступ), де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
    2. **Скласти блок контактної інформації**  
-   Посилання на соцмережі (Facebook чи Instagram, інші), номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
+      Посилання на соцмережі (Facebook чи Instagram, інші), номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
    3. **Скласти таймлайн**  
-   Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
+      Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
    4. **Скласти додаткові інформаційні блоки**  
-   Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
-   
+      Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
+
 2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
@@ -680,7 +686,7 @@
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>
 2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) — pre-commit git hook should generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
-   ``` bash
+   ```bash
    #!/bin/sh
    if workbox generateSW workbox-config.js ; then
      git add sw.js
@@ -695,12 +701,36 @@
    </div>
    <div style="clear: both;"></div>
 3. gitmodules
-   ``` bash
+   ```bash
    git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
    ```
-3. Webhooks. Integrations. Deploy keys
-4. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-5. [GitHub Actions](https://github.com/features/actions/)
-6. [GitHub Developer](https://developer.github.com/)
+4. Webhooks. Integrations. Deploy keys
+5. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
+6. [GitHub Actions](https://github.com/features/actions/)
+7. [GitHub Developer](https://developer.github.com/)
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+
+**Закінчити проект з своїми даними.**  
+Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:
+
+1. **Repository & projects**  
+   Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
+2. **Tasks & Issues**  
+   Вміння добре складати завдання, чітко описувати проблеми, звітувати про їх вирішення допоможуть знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). В світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues і розуміти як це працює — запорука успіху. Тепер це ваш Google (ну може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі.
+3. **Branches & GitFlow**  
+   Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (`release`), яка готова до релізу (шляхом злиття в `master`), а також ще версію, в якій ведеться основна розробка (`develop`). А в єдиній гілці нє.
+4. **Pull Requests**  
+   Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав.
+5. **GitHub Pages**  
+   Клікнути на лінк завжди легше, аніж скачувати репозиторій і відкривати файл на власному комп'ютері. Бонуси нараховуються тим, хто подарує перевіряючому таку зручність.
+6. **Does it look like a resume?**  
+   «Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно качка».
+7. **W3C HTML validation and Lighthouse audit**  
+   Валідна HTML-розмітки ― це не так вже й складно. Не обов'язково на всі 100%, десь тут і там валідатор може мати зауваження і це окей.
+8. **CSS seems legit**  
+   Мати хороший CSS можна лиш у випадку, якщо вміти його писати, або якщо його написав хтось інший, хто вміє. Таким чином, варто доповнювати CSS із фреймворку такими своїми правилами, у яких впевнені. Перебивати правила фреймворку, використовуючи `!important`, не буде вважатись за помилку, але по можливості таких ситуацій теж було б варто уникати.
+9. **Make homepage great!**  
+   Метою проекту є зробити домашню сторінку — доступну, інформативну, зручну, читабельну. Бонуси нараховуються тим, хто зміг.
+10. **Beautiful! Gorgeous! Amazing!**  
+    І ще один останній бал для тих, у кого це все ще й гарно виглядає.

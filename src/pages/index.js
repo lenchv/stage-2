@@ -7,6 +7,8 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[]} />
     <Link to="/how-developers-work/">How developers work</Link>
+    <br />
+    <Link to="/es6/">ES6</Link>
   </Layout>
 );
 

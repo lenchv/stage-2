@@ -12,6 +12,7 @@
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-sharp": "2.0.32",
     "gatsby-source-filesystem": "2.0.28",
+    "gatsby-transformer-remark": "2.3.8",
     "gatsby-transformer-sharp": "2.1.17",
     "prop-types": "15.7.2",
     "react": "16.8.6",
@@ -30,8 +31,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "prettify": "prettier --write src/**/*.{js,jsx}",
+    "develop": "gatsby develop -H 192.168.1.128",
+    "prettify": "prettier --write {src/**/*.{js,jsx,json,css,scss},gatsby*.js}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
@@ -49,7 +50,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "src/**/*.{js,jsx,json,css,scss},gatsby*.js": [
       "prettier --write",
       "git add"
     ]

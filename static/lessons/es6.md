@@ -1,43 +1,47 @@
+---
+path: "/es6"
+title: "ES6"
+---
 <style>
   /* Elements */
-  .lecture-content ol,
-  .lecture-content ul {
+  .content ol,
+  .content ul {
     margin: 0.5rem 0 0.5rem 0.5rem;
     padding-left: 1em;
   }
-  .lecture-content ol {
+  .content ol {
     list-style: outside decimal;
   }
-  .lecture-content ul {
+  .content ul {
     list-style: outside disc;
   }
-  .lecture-content ol li,
-  .lecture-content ul li {
+  .content ol li,
+  .content ul li {
     margin-top: .5rem;
   }
-  .lecture-content p {
+  .content p {
     margin-bottom: .5rem;
   }
-  .lecture-content p + blockquote {
+  .content p + blockquote {
     margin-top: -0.25rem;
   }
-  .lecture-content blockquote {
+  .content blockquote {
     border-left: .1rem solid #dadee4;
     margin-left: 0;
     padding: .25rem .75rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
-  .lecture-content pre {
+  .content pre {
     margin: 0.25rem 0;
   }
-  .lecture-content pre code {
+  .content pre code {
     display: block;
     padding: 0.5rem;
   }
 
   /* Author */
-  .lecture-content .author {
+  .content .author {
     font-size: 14px;
     padding: 1em;
     background: whitesmoke;
@@ -60,7 +64,7 @@
   }
 
   /* Contacts */
-  .lecture-content .contacts {
+  .content .contacts {
     list-style: none outside none;
     display: flex;
     flex-wrap: wrap;
@@ -72,60 +76,60 @@
     font-size: 0.9em;
     font-weight: 400;
   }
-  .lecture-content .contacts li {
+  .content .contacts li {
     margin-bottom: 0.25em;
     margin-right: 1em;
     margin-top: 0;
   }
-  .lecture-content .contacts li:before {
+  .content .contacts li:before {
     display: none;
   }
-  .lecture-content .contacts li a {
+  .content .contacts li a {
     color: black;
     transition: color 0.2s ease-in-out;
   }
-  .lecture-content .contacts li a:hover {
+  .content .contacts li a:hover {
     text-decoration: none;
   }
-  .lecture-content .contacts li a.facebook:hover {
+  .content .contacts li a.facebook:hover {
     color: #3b5998;
   }
-  .lecture-content .contacts li a.github:hover {
+  .content .contacts li a.github:hover {
     color: dimgrey;
   }
-  .lecture-content .contacts li a.mail:hover {
+  .content .contacts li a.mail:hover {
     color: dimgrey;
   }
-  .lecture-content .contacts li a.skype:hover {
+  .content .contacts li a.skype:hover {
     color: #00aff0;
   }
-  .lecture-content .contacts li a.phone:hover {
+  .content .contacts li a.phone:hover {
     color: dimgrey;
   }
-  .lecture-content .contacts li a.website:hover {
+  .content .contacts li a.website:hover {
     color: dimgrey;
   }
-  .lecture-content .contacts li a .icon {
+  .content .contacts li a .icon {
     fill: currentColor;
     height: 16px;
     vertical-align: bottom;
   }
 
   /* Profile */
-  .lecture-content .profile {
+  .content .profile {
     margin-left: 6em;
   }
-  .lecture-content .profile .name {
+  .content .profile .name {
     margin-bottom: 0;
     font-size: 1.4em;
     line-height: 1.5em;
   }
-  .lecture-content .profile .about {
+  .content .profile .about {
     margin: 0;
   }
 
   /* Speech bubble */
-  .lecture-content .bubble {
+  .content .bubble {
     background: linear-gradient(to right, #0084ff, #00c4ff);
     color: white;
     border-radius: 0.25em 1em 1em 1em;
@@ -137,22 +141,22 @@
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
   }
-  .lecture-content .bubble.small {
+  .content .bubble.small {
     font-size: 0.85em;
   }
-  .lecture-content .author + .bubble,
-  .lecture-content .bubble:hover {
+  .content .author + .bubble,
+  .content .bubble:hover {
     opacity: 1;
   }
-  .lecture-content .bubble a {
+  .content .bubble a {
     color: inherit;
   }
-  .lecture-content p + div > .bubble:first-child {
+  .content p + div > .bubble:first-child {
     margin-top: -0.25rem;
   }
 
   /* Messages */
-  .lecture-content .message {
+  .content .message {
     overflow: hidden;
     margin-bottom: 0.5em;
     background: #f8f8f8;
@@ -160,33 +164,33 @@
     border-radius: 10px;
     transition: all 0.2s linear;
   }
-  .lecture-content .message:hover {
+  .content .message:hover {
     box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
     background: white;
   }
-  .lecture-content .message img {
+  .content .message img {
     display: block;
   }
-  .lecture-content .message__avatar {
+  .content .message__avatar {
     border-radius: 5px;
     height: 32px;
     width: 32px;
   }
-  .lecture-content .message__avatar--big {
+  .content .message__avatar--big {
     float: left;
     height: 64px;
     width: 64px;
   }
-  .lecture-content .message__content {
+  .content .message__content {
     margin-left: calc(64px + 0.5em);
   }
-  .lecture-content .message__author {
+  .content .message__author {
     font-weight: bold;
   }
-  .lecture-content .message__timestamp {
+  .content .message__timestamp {
     color: lightgrey;
   }
-  .lecture-content .message__replies {
+  .content .message__replies {
     padding: 0.25em;
     border-radius: 5px;
     border: 1px solid lightgrey;
@@ -194,19 +198,19 @@
     background: white;
     display: flex;
   }
-  .lecture-content .message__reply {
+  .content .message__reply {
     border-radius: 5px;
     margin-right: 0.25em;
     position: relative;
     overflow: hidden;
   }
-  .lecture-content .message__replies--meta {
+  .content .message__replies--meta {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
     font-size: 0.9em;
   }
-  .lecture-content .message__replies--count {
+  .content .message__replies--count {
     position: absolute;
     top: 0;
     left: 0;
@@ -219,18 +223,18 @@
     color: white;
     font-weight: bold;
   }
-  .lecture-content .message__replies--total {
+  .content .message__replies--total {
     margin-right: 1em;
     font-weight: bold;
   }
-  .lecture-content .message__replies--last {
+  .content .message__replies--last {
     color: grey;
   }
-  .lecture-content .message__reactions {
+  .content .message__reactions {
     display: flex;
     margin: 0.25em 0;
   }
-  .lecture-content .message__reaction {
+  .content .message__reaction {
     margin-right: 0.25em;
     font-size: 0.9em;
     padding: 0 0.25em;
@@ -244,38 +248,38 @@
     cursor: pointer;
     transition: all 0.2s linear;
   }
-  .lecture-content .message__reaction:before {
+  .content .message__reaction:before {
     content: attr(data-before);
   }
-  .lecture-content .message__reaction:after {
+  .content .message__reaction:after {
     content: attr(data-after);
   }
-  .lecture-content .message__reaction:hover {
+  .content .message__reaction:hover {
     border: 1px solid grey;
     background: whitesmoke;
   }
-  .lecture-content .message__reaction:checked {
+  .content .message__reaction:checked {
     border: 1px solid #1d9bd1;
     background: #e8f5fa;
     color: #1264a3;
   }
-  .lecture-content .message__reaction:checked:after {
+  .content .message__reaction:checked:after {
     content: attr(data-after-checked);
   }
-  .lecture-content .message__text p:not(:last-child) {
+  .content .message__text p:not(:last-child) {
     margin-bottom: .25rem;
   }
-  .lecture-content .message__scene {
+  .content .message__scene {
     cursor: default;
     line-height: 1.25em;
     opacity: 0.5;
     font-size: 0.85em;
     transition: all 0.2s linear;
   }
-  .lecture-content .message__scene:hover {
+  .content .message__scene:hover {
     opacity: 1;
   }
-  .lecture-content .messages .message {
+  .content .messages .message {
     margin-top: 0.5em;
   }
 </style>

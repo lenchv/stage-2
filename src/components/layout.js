@@ -13,11 +13,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <article style={{ margin: "5em auto", maxWidth: "1100px" }}>
-        {children}
-      </article>
-    )}
+    render={data => children}
   />
 );
 

@@ -2,333 +2,6 @@
 path: "/how-developers-work"
 title: "How developers work"
 ---
-<style>
-  /* Elements */
-  .content ol,
-  .content ul {
-    margin: 0.5rem 0 0.5rem 0.5rem;
-    padding-left: 1em;
-  }
-  .content ol {
-    list-style: outside decimal;
-  }
-  .content ul {
-    list-style: outside disc;
-  }
-  .content ol li,
-  .content ul li {
-    margin-top: .5rem;
-  }
-  .content p {
-    margin-bottom: .5rem;
-  }
-  .content p + blockquote {
-    margin-top: -0.25rem;
-  }
-  .content blockquote {
-    border-left: .1rem solid #dadee4;
-    margin-left: 0;
-    padding: .25rem .75rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-  .content pre {
-    margin: 0.25rem 0;
-  }
-  .content pre code {
-    display: block;
-    padding: 0.5rem;
-  }
-
-  /* Author */
-  .content .author {
-    font-size: 14px;
-    padding: 1em;
-    background: whitesmoke;
-    border-radius: 0.5em;
-  }
-
-  /* Avatar */
-  #avatar-wrapper {
-    float: left;
-    width: 5em;
-    margin-right: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #avatar {
-    position: relative;
-    display: block;
-    flex: 1 0 auto;
-  }
-
-  /* Contacts */
-  .content .contacts {
-    list-style: none outside none;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-  .content .contacts li {
-    margin-bottom: 0.25em;
-    margin-right: 1em;
-    margin-top: 0;
-  }
-  .content .contacts li:before {
-    display: none;
-  }
-  .content .contacts li a {
-    color: black;
-    transition: color 0.2s ease-in-out;
-  }
-  .content .contacts li a:hover {
-    text-decoration: none;
-  }
-  .content .contacts li a.facebook:hover {
-    color: #3b5998;
-  }
-  .content .contacts li a.github:hover {
-    color: dimgrey;
-  }
-  .content .contacts li a.mail:hover {
-    color: dimgrey;
-  }
-  .content .contacts li a.skype:hover {
-    color: #00aff0;
-  }
-  .content .contacts li a.phone:hover {
-    color: dimgrey;
-  }
-  .content .contacts li a.website:hover {
-    color: dimgrey;
-  }
-  .content .contacts li a .icon {
-    fill: currentColor;
-    height: 16px;
-    vertical-align: bottom;
-  }
-
-  /* Profile */
-  .content .profile {
-    margin-left: 6em;
-  }
-  .content .profile .name {
-    margin-bottom: 0;
-    font-size: 1.4em;
-    line-height: 1.5em;
-  }
-  .content .profile .about {
-    margin: 0;
-  }
-
-  /* Speech bubble */
-  .content .bubble {
-    background: linear-gradient(to right, #0084ff, #00c4ff);
-    color: white;
-    border-radius: 0.25em 1em 1em 1em;
-    padding: 0.25em 0.75em;
-    margin-top: 0.25rem;
-    float: left;
-    position: relative;
-    overflow: visible;
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in-out;
-  }
-  .content .bubble.small {
-    font-size: 0.85em;
-  }
-  .content .author + .bubble,
-  .content .bubble:hover {
-    opacity: 1;
-  }
-  .content .bubble a {
-    color: inherit;
-  }
-  .content p + div > .bubble:first-child {
-    margin-top: -0.25rem;
-  }
-
-  /* Messages */
-  .content .message {
-    overflow: hidden;
-    margin-bottom: 0.5em;
-    background: #f8f8f8;
-    padding: 0.5em;
-    border-radius: 10px;
-    transition: all 0.2s linear;
-  }
-  .content .message:hover {
-    box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
-    background: white;
-  }
-  .content .message img {
-    display: block;
-  }
-  .content .message__avatar {
-    border-radius: 5px;
-    height: 32px;
-    width: 32px;
-  }
-  .content .message__avatar--big {
-    float: left;
-    height: 64px;
-    width: 64px;
-  }
-  .content .message__content {
-    margin-left: calc(64px + 0.5em);
-  }
-  .content .message__author {
-    font-weight: bold;
-  }
-  .content .message__timestamp {
-    color: lightgrey;
-  }
-  .content .message__replies {
-    padding: 0.25em;
-    border-radius: 5px;
-    border: 1px solid lightgrey;
-    overflow: hidden;
-    background: white;
-    display: flex;
-  }
-  .content .message__reply {
-    border-radius: 5px;
-    margin-right: 0.25em;
-    position: relative;
-    overflow: hidden;
-  }
-  .content .message__replies--meta {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-    font-size: 0.9em;
-  }
-  .content .message__replies--count {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    font-weight: bold;
-  }
-  .content .message__replies--total {
-    margin-right: 1em;
-    font-weight: bold;
-  }
-  .content .message__replies--last {
-    color: grey;
-  }
-  .content .message__reactions {
-    display: flex;
-    margin: 0.25em 0;
-  }
-  .content .message__reaction {
-    margin-right: 0.25em;
-    font-size: 0.9em;
-    padding: 0 0.25em;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    background: white;
-    color: dimgrey;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.2s linear;
-  }
-  .content .message__reaction:before {
-    content: attr(data-before);
-  }
-  .content .message__reaction:after {
-    content: attr(data-after);
-  }
-  .content .message__reaction:hover {
-    border: 1px solid grey;
-    background: whitesmoke;
-  }
-  .content .message__reaction:checked {
-    border: 1px solid #1d9bd1;
-    background: #e8f5fa;
-    color: #1264a3;
-  }
-  .content .message__reaction:checked:after {
-    content: attr(data-after-checked);
-  }
-  .content .message__text p:not(:last-child) {
-    margin-bottom: .25rem;
-  }
-  .content .message__scene {
-    line-height: 1.25em;
-    opacity: 0.5;
-    font-size: 0.85em;
-    transition: all 0.2s linear;
-  }
-  .content .message__scene:hover {
-    opacity: 1;
-  }
-  /* Tabs */
-  .content .messages .messages__from:not(:first-of-type) {
-    margin-left: 0.5em;
-  }
-  .content .messages .messages__from {
-    vertical-align: middle;
-    opacity: 0.5;
-    transition: all 0.2s linear;
-  }
-  .content .messages .messages__from + label {
-    cursor: pointer;
-    opacity: 0.5;
-    transition: all 0.2s linear;
-  }
-  .content .messages .messages__from:hover,
-  .content .messages .messages__from:hover + label,
-  .content .messages .messages__from:checked,
-  .content .messages .messages__from:checked + label {
-    opacity: 1;
-  }
-  .content .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
-  .content .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
-  .content .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
-  .content .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
-  .content .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
-  .content .messages .message {
-    margin-top: 0.5em;
-    display: none;
-  }
-  /* Video wrapper */
-  .content .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    transition: all 0.2s linear;
-    border-radius: 0.5em;
-    overflow: hidden;
-    margin-bottom: 2em;
-  }
-  .content .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .content .video-wrapper:hover {
-    box-shadow: 0 0 50px 10px rgba(0,0,0,0.25);
-  }
-</style>
-
 <h1><strong>How developers work</strong></h1>
 
 <div>
@@ -535,15 +208,28 @@ title: "How developers work"
 
 ...і береться за створення сайту по тій інструкції.
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr />
 
 <div class="video-wrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<div style="margin-bottom: 1em;">
+<div id="table-of-contents" class="">
+  <h2><strong>How to create and host your own website using GitHub</strong></h2>
+  <ol>
+    <li><a href="#setting-up-the-repository">Setting up the repository</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#git"><code>git</code></a></li>
+    <li><a href="#putting-the-website-together">Putting the website together</a></li>
+    <li><a href="#advanced-features">Advanced features</a></li>
+  </ol>
+</div>
+
+<hr class="transparent" />
+
+<div id="setting-up-the-repository" class="level">
   <small><em>Level 1</em></small>
-  <h3 style="margin: 0;"><strong>Setting up the repository</strong></h3>
+  <h3><strong>Setting up the repository</strong></h3>
   <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
 </div>
 
@@ -599,12 +285,17 @@ title: "How developers work"
 12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
 13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr class="transparent" />
 
-<div style="margin-bottom: 1em;">
-  <small><em>Level 2</em></small>
-  <h3 style="margin: 0;"><strong>Research</strong></h3>
-  <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.</small>
+<div id="research" class="level">
+  <small class="level__info">
+    <em class="level__number">Level 2</em>
+    <a class="level__back-to-top" href="#table-of-contents">back to top</a>
+  </small>
+  <h3 class="level__name"><strong>Research</strong></h3>
+  <small class="level__meta">
+    <strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.
+  </small>
 </div>
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
@@ -620,11 +311,11 @@ title: "How developers work"
 
 2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr class="transparent" />
 
-<div style="margin-bottom: 1em;">
+<div id="git" class="level">
   <small><em>Level 3</em></small>
-  <h3 style="margin: 0;"><code>git</code></h3>
+  <h3><code>git</code></h3>
   <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
 </div>
 
@@ -651,12 +342,12 @@ title: "How developers work"
 17. `git stash`
 18. `git fetch`
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr class="transparent" />
 
-<div style="margin-bottom: 1em;">
+<div id="putting-the-website-together" class="level">
   <small><em>Level 4</em></small>
-  <h3 style="margin: 0;"><strong>Putting the résumé together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé look better, learn some HTML, CSS, and basic SEO</small>
+  <h3><strong>Putting the website together</strong></h3>
+  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO</small>
 </div>
 
 1. Use **GitHub Desktop** to clone the repository on your PC. Use **volodymyrkushnir.com**'s [**Résumé**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) **Wiki** for reference
@@ -680,11 +371,11 @@ title: "How developers work"
    </div>
    <div style="clear: both;"></div>
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr class="transparent" />
 
-<div style="margin-bottom: 1em;">
+<div id="advanced-features" class="level">
   <small><em>Level 5</em></small>
-  <h3 style="margin: 0;"><strong>Advanced features</strong></h3>
+  <h3><strong>Advanced features</strong></h3>
   <small><strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.</small>
 </div>
 
@@ -713,7 +404,7 @@ title: "How developers work"
 6. [GitHub Actions](https://github.com/features/actions/)
 7. [GitHub Developer](https://developer.github.com/)
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr />
 
 **Закінчити проект з своїми даними.**  
 Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:

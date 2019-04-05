@@ -31,7 +31,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 192.168.1.128",
+    "develop": "gatsby develop",
     "prettify": "prettier --write {src/**/*.{js,jsx,json,css,scss},gatsby*.js}",
     "start": "npm run develop",
     "serve": "gatsby serve",

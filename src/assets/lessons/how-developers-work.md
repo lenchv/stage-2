@@ -2,6 +2,14 @@
 path: "/how-developers-work"
 title: "How developers work"
 ---
+<div class="icons" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+    <symbol id="fa-long-arrow-up" viewBox="0 0 320 512">
+      <path fill="currentColor" d="M19.716 184.485l19.626 19.626c4.753 4.753 12.484 4.675 17.14-.173L134 123.22V468c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12V123.22l77.518 80.717c4.656 4.849 12.387 4.927 17.14.173l19.626-19.626c4.686-4.686 4.686-12.284 0-16.971L168.485 35.716c-4.686-4.686-12.284-4.686-16.971 0L19.716 167.515c-4.686 4.686-4.686 12.284 0 16.97z"></path>
+    </symbol>
+  </svg>
+</div>
+
 <h1><strong>How developers work</strong></h1>
 
 <div>
@@ -57,7 +65,7 @@ title: "How developers work"
         </li>
       </ul>
       <p class="about">
-        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#">React</a> та <a href="#">GraphQL</a>. Говорить російською із смішним акцентом.
+        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#"><strong>React</strong></a> та <a href="#"><strong>GraphQL</strong></a>. Говорить російською із смішним акцентом.
       </p>
     </div>
   </div>
@@ -214,23 +222,45 @@ title: "How developers work"
   <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<div id="table-of-contents" class="">
+<div id="table-of-contents" class="table-of-contents">
   <h2><strong>How to create and host your own website using GitHub</strong></h2>
-  <ol>
-    <li><a href="#setting-up-the-repository">Setting up the repository</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#git"><code>git</code></a></li>
-    <li><a href="#putting-the-website-together">Putting the website together</a></li>
-    <li><a href="#advanced-features">Advanced features</a></li>
-  </ol>
+  <ul class="step">
+    <li class="step-item">
+      <!-- <a href="#" class="step-time"><small>00:00</small></a> -->
+      <a href="#setting-up-the-repository" class="step-level">Setting up the repository</a>
+    </li>
+    <li class="step-item">
+      <!-- <a href="#" class="step-time"><small>00:00</small></a> -->
+      <a href="#research">Research</a>
+    </li>
+    <li class="step-item">
+      <!-- <a href="#" class="step-time"><small>00:00</small></a> -->
+      <a href="#git"><code>git</code></a>
+    </li>
+    <li class="step-item">
+      <!-- <a href="#" class="step-time"><small>00:00</small></a> -->
+      <a href="#putting-the-website-together">Putting the website together</a>
+    </li>
+    <li class="step-item">
+      <a href="#advanced-features">Advanced features</a>
+    </li>
+  </ul>
 </div>
 
 <hr class="transparent" />
 
 <div id="setting-up-the-repository" class="level">
-  <small><em>Level 1</em></small>
-  <h3><strong>Setting up the repository</strong></h3>
-  <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
+  <small class="level__info">
+    <em class="level__number">Level 1</em>
+    <a class="level__back-to-top" href="#table-of-contents">
+      <svg class="icon" viewBox="0 0 320 512"><use xlink:href="#fa-long-arrow-up"></use></svg>
+      back to top
+    </a>
+  </small>
+  <h3 class="level__name"><strong>Setting up the repository</strong></h3>
+  <small class="level__meta">
+    <strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.
+  </small>
 </div>
 
 1. Well, [**this is Git**](https://xkcd.com/1597/), you'll need it.
@@ -290,7 +320,10 @@ title: "How developers work"
 <div id="research" class="level">
   <small class="level__info">
     <em class="level__number">Level 2</em>
-    <a class="level__back-to-top" href="#table-of-contents">back to top</a>
+    <a class="level__back-to-top" href="#table-of-contents">
+      <svg class="icon" viewBox="0 0 320 512"><use xlink:href="#fa-long-arrow-up"></use></svg>
+      back to top
+    </a>
   </small>
   <h3 class="level__name"><strong>Research</strong></h3>
   <small class="level__meta">
@@ -314,9 +347,17 @@ title: "How developers work"
 <hr class="transparent" />
 
 <div id="git" class="level">
-  <small><em>Level 3</em></small>
-  <h3><code>git</code></h3>
-  <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
+  <small class="level__info">
+    <em class="level__number">Level 3</em>
+    <a class="level__back-to-top" href="#table-of-contents">
+      <svg class="icon" viewBox="0 0 320 512"><use xlink:href="#fa-long-arrow-up"></use></svg>
+      back to top
+    </a>
+  </small>
+  <h3 class="level__name"><code>git</code></h3>
+  <small class="level__meta">
+    <strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.
+  </small>
 </div>
 
 1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https
@@ -345,9 +386,17 @@ title: "How developers work"
 <hr class="transparent" />
 
 <div id="putting-the-website-together" class="level">
-  <small><em>Level 4</em></small>
-  <h3><strong>Putting the website together</strong></h3>
-  <small><strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO</small>
+  <small class="level__info">
+    <em class="level__number">Level 4</em>
+    <a class="level__back-to-top" href="#table-of-contents">
+      <svg class="icon" viewBox="0 0 320 512"><use xlink:href="#fa-long-arrow-up"></use></svg>
+      back to top
+    </a>
+  </small>
+  <h3 class="level__name">Putting the website together</h3>
+  <small class="level__meta">
+    <strong>Difficulty:</strong> Hardcore. <strong>Objectives:</strong> Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO.
+  </small>
 </div>
 
 1. Use **GitHub Desktop** to clone the repository on your PC. Use **volodymyrkushnir.com**'s [**Résumé**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) **Wiki** for reference
@@ -374,9 +423,17 @@ title: "How developers work"
 <hr class="transparent" />
 
 <div id="advanced-features" class="level">
-  <small><em>Level 5</em></small>
-  <h3><strong>Advanced features</strong></h3>
-  <small><strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.</small>
+  <small class="level__info">
+    <em class="level__number">Level 5</em>
+    <a class="level__back-to-top" href="#table-of-contents">
+      <svg class="icon" viewBox="0 0 320 512"><use xlink:href="#fa-long-arrow-up"></use></svg>
+      back to top
+    </a>
+  </small>
+  <h3 class="level__name">Advanced features</h3>
+  <small class="level__meta">
+    <strong>Difficulty:</strong> Nightmare! <strong>Objectives:</strong> Survive.
+  </small>
 </div>
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup>

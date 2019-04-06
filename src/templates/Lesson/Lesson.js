@@ -1,14 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import "../styles/base.css";
+import SEO from "../../components/SEO/SEO";
+import "./Lesson.css";
 
-const Template = ({ data }) => {
+const Lesson = ({ data }) => {
   const { markdownRemark } = data;
   const { html, frontmatter: { title } } = markdownRemark;
   return (
-    <Layout>
+    <>
       <SEO title={title} keywords={[]} />
       <div className="container grid-lg">
         <div className="columns">
@@ -28,12 +27,12 @@ const Template = ({ data }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query getMarkdownRemark($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -44,4 +43,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Template;
+export default Lesson;

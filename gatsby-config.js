@@ -13,13 +13,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/assets/lessons`,
-        name: "markdown-pages"
-      }
-    },
     `gatsby-mdx`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,

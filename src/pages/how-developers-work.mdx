@@ -1,12 +1,8 @@
-import Lesson from "../components/Lesson/Lesson";
-
-<div class="icons" style="display: none;">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-    <symbol id="fa-long-arrow-up" viewBox="0 0 320 512">
-      <path fill="currentColor" d="M19.716 184.485l19.626 19.626c4.753 4.753 12.484 4.675 17.14-.173L134 123.22V468c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12V123.22l77.518 80.717c4.656 4.849 12.387 4.927 17.14.173l19.626-19.626c4.686-4.686 4.686-12.284 0-16.971L168.485 35.716c-4.686-4.686-12.284-4.686-16.971 0L19.716 167.515c-4.686 4.686-4.686 12.284 0 16.97z"></path>
-    </symbol>
-  </svg>
-</div>
+import Lecture from "../components/Lecture/Lecture";
+import Level from "../components/Level/Level";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 <h1><strong>How developers work</strong></h1>
 
@@ -20,9 +16,7 @@ import Lesson from "../components/Lesson/Lesson";
       <ul class="contacts">
         <li>
           <a href="https://www.fb.com/volodyakushnir" rel="author" class="facebook">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z" />
-            </svg>
+            <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
             <span>volodyakushnir</span>
           </a>
         </li>
@@ -70,7 +64,6 @@ import Lesson from "../components/Lesson/Lesson";
   <div class="bubble" style="margin: -0.5em 1em 1em;">
     <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
-  <div style="clear: both;"></div>
 </div>
 
 <div class="messages">
@@ -252,8 +245,7 @@ import Lesson from "../components/Lesson/Lesson";
   <small class="level__info">
     <em class="level__number">Level 1</em>
     <a class="level__back-to-top" href="#table-of-contents">
-      <svg class="icon" viewBox="0 0 320 512"><use xlinkHref="#fa-long-arrow-up"></use></svg>
-      back to top
+      <FontAwesomeIcon icon={faLongArrowUp} /> back to top
     </a>
   </small>
   <h3 class="level__name"><strong>Setting up the repository</strong></h3>
@@ -276,59 +268,44 @@ import Lesson from "../components/Lesson/Lesson";
    <div class="bubble small">
       Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
-   <div style="clear: both;"></div>
 
 4. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
 5. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_
    <div class="bubble small">
       Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
-   <div style="clear: both;"></div>
+
 6. Create a new branch `develop` based on `master`
    <div class="bubble small">
       Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
    </div>
-   <div style="clear: both;"></div>
+
 7. Go to **Settings — Collaborators** and add a collaborator
 8. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
 9. Create **index.html** using GitHub online editor and the snippet below:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Résumé</title>
-  </head>
-  <body>
-    &mdash; Hello World! &#x1F609;
-  </body>
-</html>
-```
-
+   ```html
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <meta charset="UTF-8" />
+       <title>Résumé</title>
+     </head>
+     <body>
+       &mdash; Hello World! &#x1F609;
+     </body>
+   </html>
+   ```
    <div class="bubble small">
      Give your commits meaningful messages, <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
    </div>
-   <div style="clear: both;"></div>
+
 11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
 12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
 13. Share the link to the repository with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
 
 <hr class="transparent" />
 
-<div id="research" class="level">
-  <small class="level__info">
-    <em class="level__number">Level 2</em>
-    <a class="level__back-to-top" href="#table-of-contents">
-      <svg class="icon" viewBox="0 0 320 512"><use xlinkHref="#fa-long-arrow-up"></use></svg>
-      back to top
-    </a>
-  </small>
-  <h3 class="level__name"><strong>Research</strong></h3>
-  <small class="level__meta">
-    <strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.
-  </small>
-</div>
+<Level id="research" number="2" name="Research" difficulty="Bring It On!" objectives="Master issues and project management." />
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
@@ -349,8 +326,7 @@ import Lesson from "../components/Lesson/Lesson";
   <small class="level__info">
     <em class="level__number">Level 3</em>
     <a class="level__back-to-top" href="#table-of-contents">
-      <svg class="icon" viewBox="0 0 320 512"><use xlinkHref="#fa-long-arrow-up"></use></svg>
-      back to top
+      <FontAwesomeIcon icon={faLongArrowUp} /> back to top
     </a>
   </small>
   <h3 class="level__name"><code>git</code></h3>
@@ -363,7 +339,6 @@ import Lesson from "../components/Lesson/Lesson";
    <div class="bubble small">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
-   <div style="clear: both;"></div>
 2. `git status`
 3. `git branch`
 4. `git checkout` (`--branch`)
@@ -388,8 +363,7 @@ import Lesson from "../components/Lesson/Lesson";
   <small class="level__info">
     <em class="level__number">Level 4</em>
     <a class="level__back-to-top" href="#table-of-contents">
-      <svg class="icon" viewBox="0 0 320 512"><use xlinkHref="#fa-long-arrow-up"></use></svg>
-      back to top
+      <FontAwesomeIcon icon={faLongArrowUp} /> back to top
     </a>
   </small>
   <h3 class="level__name">Putting the website together</h3>
@@ -417,7 +391,6 @@ import Lesson from "../components/Lesson/Lesson";
    <div class="bubble small">
      Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
    </div>
-   <div style="clear: both;"></div>
 
 <hr class="transparent" />
 
@@ -425,8 +398,7 @@ import Lesson from "../components/Lesson/Lesson";
   <small class="level__info">
     <em class="level__number">Level 5</em>
     <a class="level__back-to-top" href="#table-of-contents">
-      <svg class="icon" viewBox="0 0 320 512"><use xlinkHref="#fa-long-arrow-up"></use></svg>
-      back to top
+      <FontAwesomeIcon icon={faLongArrowUp} /> back to top
     </a>
   </small>
   <h3 class="level__name">Advanced features</h3>
@@ -450,7 +422,6 @@ import Lesson from "../components/Lesson/Lesson";
    <div class="bubble small">
      Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
    </div>
-   <div style="clear: both;"></div>
 3. gitmodules
    ```bash
    git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
@@ -492,4 +463,4 @@ export const metadata = {
   keywords: ["hola", "guapa"]
 }
 
-export default Lesson;
+export default Lecture;

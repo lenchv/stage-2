@@ -1,7 +1,7 @@
----
-path: "/es6"
-title: "ES6"
----
+import Lecture from "../components/Lecture/Lecture";
+
+<h1><strong>ES6</strong></h1>
+
 <div>
   <div class="author">
     <div id="avatar-wrapper">
@@ -236,3 +236,11 @@ title: "ES6"
 <strong>
 При виконанні домашнього завдання необхідно використати: </strong>
 <em>- block scoping (let) - spread / rest operator - default parameters - string interpolation - arrow functions - classes + inheritance + super</em>
+
+export const metadata = {
+  title: "ES6",
+  description: "",
+  keywords: ["hola", "guapa"]
+}
+
+export default Lecture;

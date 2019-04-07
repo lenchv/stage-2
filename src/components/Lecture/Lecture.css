@@ -148,7 +148,7 @@
   border-radius: 0.25em 1em 1em 1em;
   padding: 0.25em 0.75em;
   margin-top: 0.25rem;
-  float: left;
+  display: inline-block;
   position: relative;
   overflow: visible;
   opacity: 0.5;
@@ -340,7 +340,7 @@
   display: inline-flex;
   align-items: center;
 }
-.content .level .level__back-to-top > .icon {
+.content .level .level__back-to-top > svg {
   height: 1em;
   margin-right: 0.25em;
 }

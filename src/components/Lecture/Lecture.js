@@ -1,8 +1,8 @@
 import React from "react";
 import SEO from "../../components/SEO/SEO";
-import "./Lesson.css";
+import "./Lecture.css";
 
-const Lesson = ({ children, metadata: { title, description, keywords } }) => (
+const Lecture = ({ children, metadata: { title, description, keywords } }) => (
   <>
     <SEO title={title} description={description} keywords={keywords} />
     <div className="container grid-lg">
@@ -71,4 +71,4 @@ const Lesson = ({ children, metadata: { title, description, keywords } }) => (
   </>
 );
 
-export default Lesson;
+export default Lecture;

@@ -1,3 +1,8 @@
+/* Navbar */
+.navbar .logo {
+  height: 2em;
+  display: block;
+}
 /* Elements */
 .content hr {
   border: none;
@@ -22,18 +27,18 @@
 }
 .content ol li,
 .content ul li {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .content p {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .content p + blockquote {
   margin-top: -0.25rem;
 }
 .content blockquote {
-  border-left: .1rem solid #dadee4;
+  border-left: 0.1rem solid #dadee4;
   margin-left: 0;
-  padding: .25rem .75rem;
+  padding: 0.25rem 0.75rem;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
@@ -43,6 +48,9 @@
 .content pre code {
   display: block;
   padding: 0.5rem;
+}
+.content a:hover code {
+  text-decoration: underline;
 }
 
 /* Author */
@@ -170,7 +178,7 @@
   transition: all 0.2s linear;
 }
 .content .message:hover {
-  box-shadow: 0 0 100px 5px rgba(0,0,0,0.125);
+  box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.125);
   background: white;
 }
 .content .message img {
@@ -224,7 +232,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: bold;
 }
@@ -272,7 +280,7 @@
   content: attr(data-after-checked);
 }
 .content .message__text p:not(:last-child) {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 .content .message__scene {
   line-height: 1.25em;
@@ -285,11 +293,34 @@
 }
 
 /* Table of contents */
-.content .table-of-contents {
-
+.content .table-of-contents .step {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
 }
-.content .table-of-contents > li {
-
+.content .table-of-contents .step .step-item:before {
+  content: "";
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  top: 9px;
+  width: 100%;
+  background: rgb(87, 85, 217);
+}
+.content .table-of-contents .step .step-item:last-child:before {
+  width: calc(100% - 20px);
+}
+.content .table-of-contents .step .step-item {
+  text-align: left;
+}
+.content .table-of-contents .step .step-item a:before {
+  left: auto;
+}
+.content .table-of-contents .step .step-item a:hover {
+  text-decoration: underline;
+}
+.content .table-of-contents .step .step-item a:nth-of-type(2) {
+  padding-top: 0;
 }
 
 /* Level */
@@ -304,6 +335,14 @@
 }
 .content .level .level__name {
   margin-bottom: 0;
+}
+.content .level .level__back-to-top {
+  display: inline-flex;
+  align-items: center;
+}
+.content .level .level__back-to-top > .icon {
+  height: 1em;
+  margin-right: 0.25em;
 }
 
 /* Tabs */
@@ -326,11 +365,30 @@
 .content .messages .messages__from:checked + label {
   opacity: 1;
 }
-.content .messages input[id="lionel-messi"]:checked ~ div[data-from="lionel-messi"] { display: block; }
-.content .messages input[id="andres-iniesta"]:checked ~ div[data-from="andres-iniesta"] { display: block; }
-.content .messages input[id="donald-trump"]:checked ~ div[data-from="donald-trump"] { display: block; }
-.content .messages input[id="ryu"]:checked ~ div[data-from="ryu"] { display: block; }
-.content .messages input[id="you"]:checked ~ div[data-from="you"] { display: block; }
+.content
+  .messages
+  input[id="lionel-messi"]:checked
+  ~ div[data-from="lionel-messi"] {
+  display: block;
+}
+.content
+  .messages
+  input[id="andres-iniesta"]:checked
+  ~ div[data-from="andres-iniesta"] {
+  display: block;
+}
+.content
+  .messages
+  input[id="donald-trump"]:checked
+  ~ div[data-from="donald-trump"] {
+  display: block;
+}
+.content .messages input[id="ryu"]:checked ~ div[data-from="ryu"] {
+  display: block;
+}
+.content .messages input[id="you"]:checked ~ div[data-from="you"] {
+  display: block;
+}
 .content .messages .message {
   margin-top: 0.5em;
   display: none;
@@ -354,5 +412,5 @@
   height: 100%;
 }
 .content .video-wrapper:hover {
-  box-shadow: 0 0 50px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.25);
 }

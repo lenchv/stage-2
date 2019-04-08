@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/lectures`,
   siteMetadata: {
     title: `BSA19 2nd stage lessons`,
     description: `Lessons for the 2nd stage of Binary Studio Academy 2019`,
@@ -10,7 +11,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets/images`
+        path: `${__dirname}/src/assets`
       }
     },
     `gatsby-mdx`,
@@ -21,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `lectures`,
+        short_name: `lectures`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

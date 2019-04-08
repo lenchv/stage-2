@@ -15,15 +15,15 @@
     "@fortawesome/react-fontawesome": "0.1.4",
     "@mdx-js/mdx": "0.20.3",
     "@mdx-js/tag": "0.20.3",
-    "gatsby": "2.3.14",
+    "gatsby": "2.3.15",
     "gatsby-image": "2.0.37",
     "gatsby-mdx": "0.4.5",
-    "gatsby-plugin-manifest": "2.0.26",
+    "gatsby-plugin-manifest": "2.0.27",
     "gatsby-plugin-offline": "2.0.25",
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-sass": "2.0.11",
     "gatsby-plugin-sharp": "2.0.32",
-    "gatsby-source-filesystem": "2.0.28",
+    "gatsby-source-filesystem": "2.0.29",
     "gatsby-transformer-remark": "2.3.8",
     "gatsby-transformer-sharp": "2.1.17",
     "node-sass": "4.11.0",
@@ -35,6 +35,7 @@
     "spectre.css": "0.5.8"
   },
   "devDependencies": {
+    "gh-pages": "2.0.1",
     "husky": "1.3.1",
     "lint-staged": "8.1.5",
     "prettier": "1.16.4"
@@ -49,14 +50,16 @@
     "prettify": "prettier --write {src/**/*.{js,jsx,json,css,scss},gatsby*.js}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "predeploy": "gatsby clean && gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyr-kushnir/bsa19-stage-2"
+    "url": "https://github.com/volodymyr-kushnir/lectures"
   },
   "bugs": {
-    "url": "https://github.com/volodymyr-kushnir/bsa19-stage-2/issues"
+    "url": "https://github.com/volodymyr-kushnir/lectures/issues"
   },
   "husky": {
     "hooks": {

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
+import "./Level.css";
 
 const Level = ({
   number = "",
@@ -26,7 +27,7 @@ const Level = ({
       </a>
     </small>
     <h3 className="level__name">
-      <strong>{name}</strong>
+      {name}
     </h3>
     <small className="level__meta">
       <strong>{difficultyLabel}</strong> {difficulty}{" "}
@@ -36,15 +37,15 @@ const Level = ({
 );
 
 Level.propTypes = {
-  number: PropTypes.string,
-  name: PropTypes.string,
-  difficulty: PropTypes.string,
-  objectives: PropTypes.string,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  difficulty: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  objectives: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   labels: PropTypes.shape({
-    level: PropTypes.string,
-    backToTop: PropTypes.string,
-    difficulty: PropTypes.string,
-    objectives: PropTypes.string
+    level: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    backToTop: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    difficulty: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    objectives: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
   })
 };
 

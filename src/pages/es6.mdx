@@ -1,6 +1,6 @@
-import Lecture from "../components/Lecture/Lecture";
+import { Lecture, Message, TimelineOfContents, Level } from "../components";
 
-<h1><strong>ES6</strong></h1>
+<div><h1><strong>ES6</strong></h1></div>
 
 <div>
   <div class="author">
@@ -62,113 +62,105 @@ import Lecture from "../components/Lecture/Lecture";
   <div class="bubble" style="margin: -0.5em 1em 1em;">
     <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! (дісклеймери?)<br />Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://docs.google.com/presentation/d/1F-9mMmeup9IGJlF4MjsqjO7fbwlc3f1ZDuQWBmpsBYY/edit#slide=id.g3742b7cb6b_0_22">presentation</a>
   </div>
-  <div style="clear: both;"></div>
 </div>
 
 <div class="messages">
   Студент все ще проходить випробувальний термін у своїй новій компанії і все ще використовує Slack для співпраці з іншими розробниками та комунікації з клієнтами. Одного весняного вечора в чат пише Ryu — колишній клієнт <em>(returning customer, ya-a-a-ay!)</em>, для якого раніше було зроблене онлайн-резюме. Він повністю задоволений якістю нашої роботи і хоче довірити нам ще один проект. Цього разу мова піде про симулятор "вуличної бійки" &mdash;
-  <div class="message">
-    <div class="message__avatar message__avatar--big" style="background-color: gainsboro;">
-      <img class="message__avatar message__avatar--big" src="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600" alt="" />
+  <Message
+    senderId="ryu"
+    senderName="Ryu"
+    senderAvatarUrl="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600"
+    reactions={[
+      { emoji: "💪", count: 13 },
+      { emoji: "🥇", count: 9 },
+      { emoji: "🎮", count: 7 },
+      { emoji: "💀", count: 12 },
+      { emoji: "😤", count: 11 },
+      { emoji: "🐲", count: 5 }
+    ]}
+    replies={[
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+    ]}
+  >
+    <div class="message__scene">
+      <em>(stares intently at you, his headband fluttering in the wind)</em>
     </div>
-    <div class="message__content">
-      <div class="message__meta">
-        <span class="message__author">Ryu</span>
-        <span class="message__timestamp">16:42</span>
-      </div>
-      <div class="message__text">
-        <div class="message__scene">
-          <em>(stares intently at you, his headband fluttering in the wind)</em>
-        </div>
-        <p>To live is to fight, and to fight is to live.</p>
-        <div class="message__scene">
-          <em>(clenches his fist)</em>
-        </div>
-        <p>I’ve spent all my life defeating my enemies, perfecting my martial skills, and learning the true essence of what it means to be an honorable warrior. But now my greatest challenge lies before me.</p>
-        <div class="message__scene">
-          <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
-        </div>
-        <p><strong>I need my own video game.</strong></p>
-        <div class="message__scene" onmouseenter="document.getElementById('flute').play()" onmouseleave="document.getElementById('flute').pause()">
-          <em>(in the distance, a Japanese flute plays a gentle melody)</em>
-          <audio id="flute">
-            <source src="https://volodymyrkushnir.com/assets/sounds/rodrigo-rodriguez-shakuhachi-flute.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this video game will bring me great strength in the battles to come.</p>
-        <div class="message__scene">
-          <em>(Ryu once again turns his gaze upon you)</em>
-        </div>
-        <p>Please go forth and complete this task for me.  In return, I promise to avenge any relatives who may have been killed by your arch nemesis, or restore your family honor, or… whatever. We’ll work out contract details later.</p>
-        <div class="message__scene">
-          <em>(Ryu turns his back and begins to walk away)</em>
-        </div>
-        <p>For now I will go meditate. Let me know if you have any questions ― WiFi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
-      </div>
-      <div class="message__reactions">
-        <input class="message__reaction" type="checkbox" data-before="&#x1f4aa;" data-after="13" data-after-checked="14" />
-        <input class="message__reaction" type="checkbox" data-before="&#x1f947;" data-after="9" data-after-checked="10" />
-        <input class="message__reaction" type="checkbox" data-before="&#x1f3ae;" data-after="7" data-after-checked="8" />
-        <input class="message__reaction" type="checkbox" data-before="&#x1f480;" data-after="12" data-after-checked="13" />
-        <input class="message__reaction" type="checkbox" data-before="&#x1f624;" data-after="11" data-after-checked="12" />
-      </div>
-      <div class="message__replies">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" alt="">
-        <img class="message__reply message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" alt="">
-        <div class="message__reply">
-          <img class="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="">
-          <span class="message__replies--count">+4</span>
-        </div>
-        <div class="message__replies--meta">
-          <span class="message__replies--total">12 replies</span>
-          <span class="message__replies--last">Last reply today at 18:13</span>
-        </div>
-      </div>
+    <p>To live is to fight, and to fight is to live.</p>
+    <div class="message__scene">
+      <em>(clenches his fist)</em>
     </div>
-  </div>
+    <p>I’ve spent all my life defeating my enemies, perfecting my martial skills, and learning the true essence of what it means to be an honorable warrior. But now my greatest challenge lies before me.</p>
+    <div class="message__scene">
+      <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
+    </div>
+    <p><strong>I need my own video game.</strong></p>
+    <div class="message__scene" onmouseenter="document.getElementById('flute').play()" onmouseleave="document.getElementById('flute').pause()">
+      <em>(in the distance, a Japanese flute plays a gentle melody)</em>
+      <audio id="flute">
+        <source src="https://volodymyrkushnir.com/assets/sounds/rodrigo-rodriguez-shakuhachi-flute.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this video game will bring me great strength in the battles to come.</p>
+    <div class="message__scene">
+      <em>(Ryu once again turns his gaze upon you)</em>
+    </div>
+    <p>Please go forth and complete this task for me.  In return, I promise to avenge any relatives who may have been killed by your arch nemesis, or restore your family honor, or… whatever. We’ll work out contract details later.</p>
+    <div class="message__scene">
+      <em>(Ryu turns his back and begins to walk away)</em>
+    </div>
+    <p>For now I will go meditate. Let me know if you have any questions ― WiFi is a bit spotty up at the Mountain Temple, but I’ll check my email whenever I get the chance.</p>
+  </Message>
 </div>
 
 Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
 
-<div class="message">
-  <img class="message__avatar message__avatar--big" src="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64" alt="" />
-  <div class="message__content">
-    <div class="message__meta">
-      <span class="message__author">You</span>
-      <span class="message__timestamp">19:45</span>
-    </div>
-    <div class="message__text">
-      <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
-    </div>
-    <div class="message__reactions">
-      <input class="message__reaction" type="checkbox" data-before="&#x1f44d;" data-after="13" data-after-checked="14" />
-      <input class="message__reaction" type="checkbox" data-before="&#x1f3c1;" data-after="8" data-after-checked="9" />
-      <input class="message__reaction" type="checkbox" data-before="&#x1f680;" data-after="10" data-after-checked="11" />
-      <input class="message__reaction" type="checkbox" data-before="&#x1f44f;" data-after="6" data-after-checked="7" />
-    </div>
-  </div>
-</div>
+<Message
+  senderId="you"
+  senderName="You"
+  senderAvatarUrl="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64"
+  reactions={[
+    { emoji: "👍", count: 13 },
+    { emoji: "🏁", count: 8 },
+    { emoji: "🚀", count: 10 },
+    { emoji: "👏", count: 6 }
+  ]}
+  replies={[
+    { name: "N/A", avatarUrl: "http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" }
+  ]}
+>
+  <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
+</Message>
 
 ...і береться за створення сайту по тій інструкції.
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
-
-<div style="margin-bottom: 1em;">
-  <small><em>Level 1</em></small>
-  <h3 style="margin: 0;"><strong>Basic JavaScript</strong></h3>
-  <small><strong>Difficulty:</strong> I Can Win. <strong>Objectives:</strong> Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it.</small>
+<div id="table-of-contents" class="table-of-contents">
+  <TimelineOfContents timeline={[{
+    linkTo: "#basic-javascript",
+    title: "Basic javaScript",
+    time: undefined
+  }, {
+    linkTo: "#building-a-page-with-es6",
+    title: "Building a page with ES6",
+    time: undefined
+  }, {
+    linkTo: "#modules-transpiling-bundling-etc",
+    title: "Modules, transpiling, bundling, etc.",
+    time: undefined
+  }]} />
 </div>
+
+<Level id="basic-javascript" number="1" name="Basic JavaScript" difficulty="I Can Win." objectives="Get to the &#x1F681; Internet! Learn the GitHub platfrom while you're at it." />
 
 1. Background
 2. Comments
 3. Declarations
-
    <div class="bubble small">
       Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
-   <div style="clear: both;"></div>
 
 4. Types
 5. Type coercion
@@ -176,13 +168,7 @@ import Lecture from "../components/Lecture/Lecture";
 7. Error handling
 8. Loops and iteration
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
-
-<div style="margin-bottom: 1em;">
-  <small><em>Level 2</em></small>
-  <h3 style="margin: 0;"><strong>Building a page / ES6</strong></h3>
-  <small><strong>Difficulty:</strong> Bring It On! <strong>Objectives:</strong> Master issues and project management.</small>
-</div>
+<Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Bring It On!" objectives="Master issues and project management." />
 
 1. Promises
 2. Async
@@ -196,20 +182,14 @@ import Lecture from "../components/Lecture/Lecture";
 10. Arrays
 11. Objects
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
-
-<div style="margin-bottom: 1em;">
-  <small><em>Level 3</em></small>
-  <h3 style="margin: 0;">Modules, transpiling, bundling, etc.</h3>
-  <small><strong>Difficulty:</strong> Hurt Me Plenty. <strong>Objectives:</strong> Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</small>
-</div>
+<Level id="modules-transpiling-bundling-etc" number="3" name="Modules, transpiling, bundling, etc." difficulty="Hurt Me Plenty." objectives="N/A" />
 
 1. Imperative, declarative, functional, reactive
 2. import/export
 3. babel
 4. webpack
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;">
+<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
 
 **Закінчити проект.**
 

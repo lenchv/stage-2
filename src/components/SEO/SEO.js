@@ -72,12 +72,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
                   : []
               )
               .concat(meta)}
-          >
-            <link
-              rel="stylesheet"
-              href="https://unpkg.com/spectre.css/dist/spectre.min.css"
-            />
-          </Helmet>
+          />
         );
       }}
     />

@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../../components/SEO/SEO";
-import "./Lecture.css";
+import "./Lecture.scss";
 
 const Lecture = ({ children, metadata: { title, description, keywords } }) => (
   <>
@@ -51,13 +51,13 @@ const Lecture = ({ children, metadata: { title, description, keywords } }) => (
                 </a>
               </div>
               <div className="navbar-section">
-                <a href="#" className="btn btn-link">
+                <a href="/whats-this/ua" className="btn btn-link">
                   Це як?
                 </a>
-                <a href="#" className="btn btn-link">
+                <a href="/whats-this/en" className="btn btn-link">
                   What's this?
                 </a>
-                <a href="#" className="btn btn-link">
+                <a href="/whats-this/ru" className="btn btn-link">
                   Как это?
                 </a>
               </div>

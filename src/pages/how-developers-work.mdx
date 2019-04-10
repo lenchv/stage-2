@@ -215,18 +215,18 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. **The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.**
 
-   <div class="bubble small">
+   <div class="bubble small subtle">
       Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
    </div>
 
 4. Add topics _(e.g. "pesonal website homepage resume gh-pages html css binary-studio-academy bsa19")_
 5. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_
-   <div class="bubble small">
+   <div class="bubble small subtle">
       Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
    </div>
 
 6. Create a new branch `develop` based on `master`
-   <div class="bubble small">
+   <div class="bubble small subtle">
       Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
    </div>
 
@@ -245,7 +245,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
      </body>
    </html>
    ```
-   <div class="bubble small">
+   <div class="bubble small subtle">
      Give your commits meaningful messages, <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
    </div>
 
@@ -271,7 +271,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 <Level id="learning-git" number="3" name={<span>Learning <code>git</code></span>} difficulty="Hurt Me Plenty." objectives={<span>Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</span>} />
 
 1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https
-   <div class="bubble small">
+   <div class="bubble small subtle">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
 2. `git status`
@@ -310,9 +310,29 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
    6. PR and merge into `develop`
 
 4. PR and merge into `master`. &#x1f4a5;**Boom, done!**
-   <div class="bubble small">
-     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of [**Bill Mawhinney**](https://dribbble.com/bilmaw). https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9
-   </div>
+5. **Закінчити проект з своїми даними.**  
+   Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:
+
+   1. **Repository & projects**  
+      Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
+   2. **Tasks & Issues**  
+      Вміння добре складати завдання, чітко описувати проблеми, звітувати про їх вирішення допоможуть знайти спільну мову з    проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). В світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues і розуміти як це працює — запорука успіху. Тепер це ваш Google (ну може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а    вже потім по всій мережі.
+   3. **Branches & GitFlow**  
+      Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію    (`release`), яка готова до релізу (шляхом злиття в `master`), а також ще версію, в якій ведеться основна розробка (`develop`). А в єдиній гілці нє.
+   4. **Pull Requests**  
+      Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав.
+   5. **GitHub Pages**  
+      Клікнути на лінк завжди легше, аніж скачувати репозиторій і відкривати файл на власному комп'ютері. Бонуси нараховуються тим, хто подарує перевіряючому таку зручність.
+   6. **Does it look like a resume?**  
+      «Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно качка».
+   7. **W3C HTML validation and Lighthouse audit**  
+      Валідна HTML-розмітки ― це не так вже й складно. Не обов'язково на всі 100%, десь тут і там валідатор може мати зауваження і це окей.
+   8. **CSS seems legit**  
+      Мати хороший CSS можна лиш у випадку, якщо вміти його писати, або якщо його написав хтось інший, хто вміє. Таким чином, варто доповнювати CSS із фреймворку такими своїми правилами, у яких впевнені. Перебивати правила фреймворку, використовуючи `!important`, не буде вважатись за помилку, але по можливості таких ситуацій теж було б варто уникати.
+   9. **Make homepage great!**  
+      Метою проекту є зробити домашню сторінку — доступну, інформативну, зручну, читабельну. Бонуси нараховуються тим, хто зміг.
+   10. **Beautiful! Gorgeous! Amazing!**  
+       І ще один останній бал для тих, у кого це все ще й гарно виглядає.
 
 <Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives="Survive." />
 
@@ -328,7 +348,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
      echo "Aborting"
    fi
    ```
-   <div class="bubble small">
+   <div class="bubble small subtle">
      Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
    </div>
 3. gitmodules
@@ -340,31 +360,9 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 6. [GitHub Actions](https://github.com/features/actions/)
 7. [GitHub Developer](https://developer.github.com/)
 
-<hr />
-
-**Закінчити проект з своїми даними.**  
-Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:
-
-1. **Repository & projects**  
-   Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
-2. **Tasks & Issues**  
-   Вміння добре складати завдання, чітко описувати проблеми, звітувати про їх вирішення допоможуть знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). В світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues і розуміти як це працює — запорука успіху. Тепер це ваш Google (ну може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі.
-3. **Branches & GitFlow**  
-   Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (`release`), яка готова до релізу (шляхом злиття в `master`), а також ще версію, в якій ведеться основна розробка (`develop`). А в єдиній гілці нє.
-4. **Pull Requests**  
-   Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав.
-5. **GitHub Pages**  
-   Клікнути на лінк завжди легше, аніж скачувати репозиторій і відкривати файл на власному комп'ютері. Бонуси нараховуються тим, хто подарує перевіряючому таку зручність.
-6. **Does it look like a resume?**  
-   «Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно качка».
-7. **W3C HTML validation and Lighthouse audit**  
-   Валідна HTML-розмітки ― це не так вже й складно. Не обов'язково на всі 100%, десь тут і там валідатор може мати зауваження і це окей.
-8. **CSS seems legit**  
-   Мати хороший CSS можна лиш у випадку, якщо вміти його писати, або якщо його написав хтось інший, хто вміє. Таким чином, варто доповнювати CSS із фреймворку такими своїми правилами, у яких впевнені. Перебивати правила фреймворку, використовуючи `!important`, не буде вважатись за помилку, але по можливості таких ситуацій теж було б варто уникати.
-9. **Make homepage great!**  
-   Метою проекту є зробити домашню сторінку — доступну, інформативну, зручну, читабельну. Бонуси нараховуються тим, хто зміг.
-10. **Beautiful! Gorgeous! Amazing!**  
-    І ще один останній бал для тих, у кого це все ще й гарно виглядає.
+<div class="bubble">
+  Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of <a href="https://dribbble.com/bilmaw"><strong>Bill Mawhinney</strong></a>
+</div>
 
 export const metadata = {
   title: "How developers work",

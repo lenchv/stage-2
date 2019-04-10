@@ -1,28 +1,35 @@
 import { Lecture, Message, TimelineOfContents, Level } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faFacebookSquare, faGithub } from "@fortawesome/free-brands-svg-icons";
-import pavelNemchenkoAvatar from "../assets/avatars/pavel-nemchenko.svg";
+import nikitaKrasnovAvatar from "../assets/avatars/nikita-krasnov.svg";
 
-<div><h1><strong>PHP</strong></h1></div>
+<div><h1><strong>.NET</strong></h1></div>
 
 <div>
   <div class="author">
     <div id="avatar-wrapper">
-      <object id="avatar" data={pavelNemchenkoAvatar} role="img" aria-label="My profile picture"></object>
+      <object id="avatar" data={nikitaKrasnovAvatar} role="img" aria-label="My profile picture"></object>
     </div>
     <div class="profile">
-      <h3 class="name">Павел Немченко</h3>
+      <h3 class="name">Никита Краснов</h3>
       <ul class="contacts">
         <li>
-          <a href="https://www.facebook.com/nempavel" rel="author" class="facebook">
+          <a href="https://www.facebook.com/" rel="author" class="facebook">
             <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
-            <span>nempavel</span>
+            <span>?</span>
           </a>
         </li>
         <li>
-          <a href="https://github.com/nemoipaha" rel="author" class="github">
+          <a href="https://github.com/alexandrtovmach" rel="author" class="github">
             <FontAwesomeIcon icon={faGithub} className="icon" />
-            <span>nemoipaha</span>
+            <span>alexandrtovmach</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://alexandrtovmach.com/" rel="author" class="website">
+            <FontAwesomeIcon icon={faGlobe} className="icon" />
+            <span>https://alexandrtovmach.com/</span>
           </a>
         </li>
       </ul>
@@ -36,20 +43,8 @@ import pavelNemchenkoAvatar from "../assets/avatars/pavel-nemchenko.svg";
   </div>
 </div>
 
-<div id="table-of-contents" class="table-of-contents">
-  <TimelineOfContents timeline={[{
-    linkTo: "#php",
-    title: "PHP",
-    time: undefined
-  }, {
-    linkTo: "#php-standard-recommendations",
-    title: "PHP Standard Recommendations",
-    time: undefined
-  }]} />
-</div>
-
 export const metadata = {
-  title: "PHP",
+  title: ".NET",
   description: "",
   keywords: ["hola", "guapa"]
 }

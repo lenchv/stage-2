@@ -1,5 +1,7 @@
 import React from "react";
 import SEO from "../../components/SEO/SEO";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopyright } from "@fortawesome/pro-regular-svg-icons";
 import "./Lecture.scss";
 
 const Lecture = ({ children, metadata: { title, description, keywords } }) => (
@@ -64,7 +66,11 @@ const Lecture = ({ children, metadata: { title, description, keywords } }) => (
             </nav>
           </header>
           <article className="content">{children}</article>
-          <footer className="hero hero-sm">Good luck!</footer>
+          <footer className="hero hero-sm">
+            <div className="text-gray">
+              Copyright © 2019 <a href="#" style={{ color: "inherit" }}><strong>Contributors</strong></a>. All rights reserved.
+            </div>
+          </footer>
         </div>
       </div>
     </div>

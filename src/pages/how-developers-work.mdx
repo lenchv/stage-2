@@ -1,4 +1,4 @@
-import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, ThatsAllFolks } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
@@ -67,7 +67,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
   <input type="radio" class="messages__from" name="from" id="andres-iniesta" />
   <label for="andres-iniesta">Andres Iniesta</label>
   <input type="radio" class="messages__from" name="from" id="you" />
-  <label for="you">"я сам собі замовник!"</label>) &mdash;
+  <label for="you">"я сам собі замовник!"</label>) ―
   <Message
     senderId="ryu"
     senderName="Ryu"
@@ -108,7 +108,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
       { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
     ]}
   >
-    <p>We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website &mdash; and nobody builds websites better than me, believe me &mdash; and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. <strong>Make America great again!</strong></p>
+    <p>We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website ― and nobody builds websites better than me, believe me ― and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. <strong>Make America great again!</strong></p>
   </Message>
   <div class="message" data-from="lionel-messi">
     <img class="message__avatar message__avatar--big" src="https://res.cloudinary.com/otro-content/image/upload/w_200,h_200,c_fill/t_media_library_tile/wsgq8mti47ywcwvqltkc.png" alt="" />
@@ -241,7 +241,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
        <title>Résumé</title>
      </head>
      <body>
-       &mdash; Hello World! &#x1F609;
+       ― Hello World! &#x1F609;
      </body>
    </html>
    ```
@@ -270,7 +270,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 
 <Level id="learning-git" number="3" name={<span>Learning <code>git</code></span>} difficulty="Hurt Me Plenty." objectives={<span>Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</span>} />
 
-1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and &mdash; if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> &mdash; execute `git clone` to copy the repository via ssh or https
+1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and ― if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> ― execute `git clone` to copy the repository via ssh or https
    <div class="bubble small subtle">
      Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
    </div>
@@ -298,7 +298,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 2. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update `<head>`:
 
    1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
-   2. When done &mdash; push the branch to the remote, create a pull request and merge into `develop`
+   2. When done ― push the branch to the remote, create a pull request and merge into `develop`
 
 3. Create a new branch `feature/body` and use it to edit `<body>`:
 
@@ -312,6 +312,10 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 4. PR and merge into `master`. &#x1f4a5;**Boom, done!**
 5. **Закінчити проект з своїми даними.**  
    Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:
+   
+   <div class="bubble small subtle">
+     Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of <a href="https://dribbble.com/bilmaw"><strong>Bill Mawhinney</strong></a>
+   </div>
 
    1. **Repository & projects**  
       Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
@@ -360,8 +364,9 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 6. [GitHub Actions](https://github.com/features/actions/)
 7. [GitHub Developer](https://developer.github.com/)
 
-<div class="bubble">
-  Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of <a href="https://dribbble.com/bilmaw"><strong>Bill Mawhinney</strong></a>
+<ThatsAllFolks />
+<div class="bubble small subtle">
+  🙏 Дякую за увагу! Cподобалася лекція? Лайк, шейр, репост, сабскра-а-а-айб! Коментуйте та задавайте питання під цією лекцією у вашому особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Успіхів у виконанні домашнього завдання і до нових зустрічей, чірз!
 </div>
 
 export const metadata = {

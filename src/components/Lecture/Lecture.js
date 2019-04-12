@@ -1,7 +1,5 @@
 import React from "react";
 import SEO from "../../components/SEO/SEO";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopyright } from "@fortawesome/pro-regular-svg-icons";
 import "./Lecture.scss";
 
 const Lecture = ({ children, metadata: { title, description, keywords } }) => (

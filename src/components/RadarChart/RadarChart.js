@@ -9,24 +9,24 @@ class RadarChart extends Component {
       type: "radar",
       data: {
         labels: [
-          "Git & GitFlow",
-          "Repository & project management",
-          "Yellow",
-          "Creativity",
-          "UI/UX",
-          "Orange"
+          "Repository management",
+          "Project management",
+          "git",
+          "GitFlow",
+          "HTML/CSS/JS",
+          "Creativity, UI/UX"
         ],
         datasets: [{
           label: "You",
-          data: [6, 6, 6, 6, 6, 6],
+          data: [5, 5, 5, 5, 5, 5],
           borderColor: "rgba(0, 173, 238, 1)",
           backgroundColor: "rgba(0, 173, 238, 0.125)",
           pointBorderColor: "white",
-          pointBackgroundColor: "rgba(0, 173, 238, 1)",
+          pointBackgroundColor: context => context.dataIndex % 2 === 0 ? "rgb(255, 199, 18)" : "rgb(236, 24, 72)",
           pointHoverBorderColor: "white"
         }, {
           label: "Joe Average",
-          data: [6, 6, 6, 6, 6, 6],
+          data: [5, 5, 5, 5, 5, 5],
           borderColor: "rgba(0, 0, 0, 0.125)",
           backgroundColor: "rgba(0, 0, 0, 0.0625)",
           pointRadius: 0,

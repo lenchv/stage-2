@@ -1,7 +1,7 @@
 .message {
   overflow: hidden;
   margin: 0.5em 0;
-  background: #f8f8f8;
+  background: whitesmoke;
   padding: 0.5em;
   border-radius: 10px;
   transition: all 0.2s linear;

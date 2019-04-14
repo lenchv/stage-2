@@ -11,7 +11,7 @@ class ThatsAllFolks extends Component {
         <span onMouseEnter={this.play} onMouseLeave={this.pause}>
           <strong><em>― That's all, folks!</em></strong> 🐷
         </span>
-        <audio ref={audio => this.audio = audio}>
+        <audio ref={audio => this.audio = audio} preload="auto">
           <source src={thatsAllFolksAudio} type="audio/mpeg" />
         </audio>
       </h4>

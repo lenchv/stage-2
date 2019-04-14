@@ -1,17 +1,6 @@
-/*
 .radar-chart {
   position: relative;
+  height: 500px;
+  background: white;
+  border-radius: 0.5em;
 }
-.radar-chart:before {
-  display: block;
-  content: "";
-  padding-top: 100%;
-}
-.radar-chart canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-*/

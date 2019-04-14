@@ -66,7 +66,7 @@ const Lecture = ({ children, metadata: { title, description, keywords } }) => (
           <article className="content">{children}</article>
           <footer className="hero hero-sm">
             <div className="text-gray">
-              Copyright © 2019 <a href="#" style={{ color: "inherit" }}><strong>Contributors</strong></a>. All rights reserved.
+              Copyright © 2019 <a href="https://github.com/" style={{ color: "inherit" }}><strong>Contributors</strong></a>. All rights reserved.
             </div>
           </footer>
         </div>

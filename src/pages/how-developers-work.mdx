@@ -1,4 +1,4 @@
-import { Lecture, Message, TimelineOfContents, Level, RadarChart, ThatsAllFolks } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
@@ -307,79 +307,21 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
    3. `serve` (!!! needs Node.js, maybe `php -s`)
    4. `patch/content/primary` Add primary content (avatar, name, job, contacts, intro)
    5. `patch/content/secondary` Add secondary content (languages, skills, character, etc.)
-   6. PR and merge into `develop`
+   6. Merge both branches into `develop` using pull requests
 
-4. PR and merge into `master`. &#x1f4a5;**Boom, done!**
-5. **Закінчити проект з своїми даними.**  
-   Не обов'язково це має бути твоє резюме — підійде інший персонаж, про якого буде, що сказати (мама, тато, Тоні Старк, Андрес Іньєста, Дональд Трамп, тощо). Оцінювати результат ми само собою будемо вручну — дуже вже хочеться подивитись і почитати сайт кожного студента. Втім, по деяких критеріях допомагати з оцінкою буде бот (щоби швидше було, але швидше все рівно не буде), тому дуже важливо його не обдурити. Отже, на що звертати увагу:
+4. Open a pull request and merge `develop` into `master`
+5. Please iterate further and fix bugs, add metadata, implement your own additional features and add more visual effects (if necessary).
+5. 💥**Boom, done, готово!** 
    
+   <GradingHometask1 />
    <div class="bubble small subtle">
      Choose a layout for your web page. It's important to pick a layout which will look great on large and small screens, and on paper too. You could find inspiration in the works of <a href="https://dribbble.com/bilmaw"><strong>Bill Mawhinney</strong></a>
    </div>
-   <RadarChart />
-   <div class="container">
-     <div class="columns">
-       <div class="column col-4">
-         <h6>Repository management</h6>
-         <div>
-           (Repository & projects) Репозиторій створений і проекти заведені. Окрім того, можна вказати більше топіків, але ніяк не менше, аніж той список, що вказаний у завданні — бот очевидно по них буде ходити. Також студенти теж зможуть шукати по тих тегах у GitHub'і, щоб побачити чим займаються інші студенти.
-         </div>
-       </div>
-       <div class="column col-4">
-         <h6>Project management</h6>
-         <div>
-           (Tasks & Issues) Вміння добре складати завдання, чітко описувати проблеми, звітувати про їх вирішення допоможуть знайти спільну мову з    проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). В світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues і розуміти як це працює — запорука успіху. Тепер це ваш Google (ну може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а    вже потім по всій мережі.
-         </div>
-       </div>
-       <div class="column col-4">
-         <h6><code>git</code></h6>
-         <div></div>
-       </div>
-       <div class="column col-4">
-         <h6>GitFlow</h6>
-         <div>
-           (Branches & Commits) Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (`release`), яка готова до релізу (шляхом злиття в `master`), а також ще версію, в якій ведеться основна розробка (`develop`). А в єдиній гілці нє.
-           (Pull Requests) Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав.
-         </div>
-       </div>
-       <div class="column col-4">
-         <h6>HTML/CSS/JS and copy-pasting skills</h6>
-         <div></div>
-       </div>
-       <div class="column col-4">
-         <h6>Creativity, attention to details, UI/UX</h6>
-         <div>
-           <div class="accordion">
-             <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden />
-             <label class="accordion-header" for="accordion-1">
-               <i class="icon icon-arrow-right"></i> Title
-             </label>
-             <div class="accordion-body">
-               Hey
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-
-   5. **GitHub Pages**  
-      Клікнути на лінк завжди легше, аніж скачувати репозиторій і відкривати файл на власному комп'ютері. Бонуси нараховуються тим, хто подарує перевіряючому таку зручність.
-   6. **Does it look like a resume?**  
-      «Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно качка».
-   7. **W3C HTML validation and Lighthouse audit**  
-      Валідна HTML-розмітки ― це не так вже й складно. Не обов'язково на всі 100%, десь тут і там валідатор може мати зауваження і це окей.
-   8. **CSS seems legit**  
-      Мати хороший CSS можна лиш у випадку, якщо вміти його писати, або якщо його написав хтось інший, хто вміє. Таким чином, варто доповнювати CSS із фреймворку такими своїми правилами, у яких впевнені. Перебивати правила фреймворку, використовуючи `!important`, не буде вважатись за помилку, але по можливості таких ситуацій теж було б варто уникати.
-   9. **Make homepage great!**  
-      Метою проекту є зробити домашню сторінку — доступну, інформативну, зручну, читабельну. Бонуси нараховуються тим, хто зміг.
-   10. **Beautiful! Gorgeous! Amazing!**  
-       І ще один останній бал для тих, у кого це все ще й гарно виглядає.
 
 <Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives="Survive." />
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup></div>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) — pre-commit git hook should generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
+2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) using **pre-commit** git hook that will generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
    ```bash
    #!/bin/sh
    if workbox generateSW workbox-config.js ; then

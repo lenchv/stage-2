@@ -2,6 +2,7 @@
   background: whitesmoke;
   border-radius: 0.5em;
   padding: 0.5em;
+  margin-bottom: 0.25em;
 }
 .grading-hometask .accordion .accordion-header {
   display: flex;

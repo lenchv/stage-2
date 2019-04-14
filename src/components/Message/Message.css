@@ -1,4 +1,4 @@
-.message {
+.content .message {
   overflow: hidden;
   margin: 0.5em 0;
   background: whitesmoke;
@@ -6,33 +6,33 @@
   border-radius: 10px;
   transition: all 0.2s linear;
 }
-.message:hover {
+.content .message:hover {
   box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.125);
   background: white;
 }
-.message img {
+.content .message img {
   display: block;
 }
-.message__avatar {
+.content .message__avatar {
   border-radius: 5px;
   height: 32px;
   width: 32px;
 }
-.message__avatar--big {
+.content .message__avatar--big {
   float: left;
   height: 64px;
   width: 64px;
 }
-.message__content {
+.content .message__content {
   margin-left: calc(64px + 0.5em);
 }
-.message__author {
+.content .message__author {
   font-weight: bold;
 }
-.message__timestamp {
+.content .message__timestamp {
   color: lightgrey;
 }
-.message__replies {
+.content .message__replies {
   padding: 0.25em;
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -40,19 +40,19 @@
   background: white;
   display: flex;
 }
-.message__reply {
+.content .message__reply {
   border-radius: 5px;
   margin-right: 0.25em;
   position: relative;
   overflow: hidden;
 }
-.message__replies--meta {
+.content .message__replies--meta {
   display: flex;
   flex: 1 1 auto;
   align-items: center;
   font-size: 0.9em;
 }
-.message__replies--count {
+.content .message__replies--count {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,18 +65,18 @@
   color: white;
   font-weight: bold;
 }
-.message__replies--total {
+.content .message__replies--total {
   margin-right: 1em;
   font-weight: bold;
 }
-.message__replies--last {
+.content .message__replies--last {
   color: grey;
 }
-.message__reactions {
+.content .message__reactions {
   display: flex;
   margin: 0.25em 0;
 }
-.message__reaction {
+.content .message__reaction {
   margin-right: 0.25em;
   font-size: 0.9em;
   padding: 0 0.25em;
@@ -90,33 +90,33 @@
   cursor: pointer;
   transition: all 0.2s linear;
 }
-.message__reaction:before {
+.content .message__reaction:before {
   content: attr(data-before);
 }
-.message__reaction:after {
+.content .message__reaction:after {
   content: attr(data-after);
 }
-.message__reaction:hover {
+.content .message__reaction:hover {
   border: 1px solid grey;
   background: whitesmoke;
 }
-.message__reaction:checked {
+.content .message__reaction:checked {
   border: 1px solid #1d9bd1;
   background: #e8f5fa;
   color: #1264a3;
 }
-.message__reaction:checked:after {
+.content .message__reaction:checked:after {
   content: attr(data-after-checked);
 }
-.message__text p:not(:last-child) {
+.content .message__text p:not(:last-child) {
   margin-bottom: 0.25rem;
 }
-.message__scene {
+.content .message__scene {
   line-height: 1.25em;
   opacity: 0.5;
   font-size: 0.85em;
   transition: all 0.2s linear;
 }
-.message__scene:hover {
+.content .message__scene:hover {
   opacity: 1;
 }

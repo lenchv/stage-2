@@ -34,12 +34,15 @@ const Message = ({
             {replies.map(({ name, avatarUrl }, index) => (
               <img key={`replies-item-${index}`} className="message__reply message__avatar" src={avatarUrl} alt={name} />
             ))}
-            <div className="message__reply">
-              <img className="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" />
-              <span className="message__replies--count">+{repliesCount - replies.length}</span>
-            </div>
+            {
+              repliesCount - replies.length > 0 &&
+              <div className="message__reply">
+                <img className="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" />
+                <span className="message__replies--count">+{repliesCount - replies.length}</span>
+              </div>
+            }
             <div className="message__replies--meta">
-              <span className="message__replies--total">{repliesCount} replies</span>
+              <span className="message__replies--total">{Math.max(repliesCount, replies.length)} replies</span>
               <span className="message__replies--last">Last reply today at 15:45</span>
             </div>
           </div>

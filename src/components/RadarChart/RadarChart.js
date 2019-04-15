@@ -14,7 +14,7 @@ class RadarChart extends Component {
           "git",
           "GitFlow",
           "HTML/CSS/JS",
-          "Creativity, UI/UX"
+          "Bonus points",
         ],
         datasets: [{
           label: "You",

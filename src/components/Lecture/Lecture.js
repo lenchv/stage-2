@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../../components/SEO/SEO";
 import "./Lecture.scss";
 
-const Lecture = ({ children, metadata: { title, description, keywords } }) => (
+const Lecture = ({ children, metadata: { author, title, description, keywords } }) => (
   <>
     <SEO title={title} description={description} keywords={keywords} />
     <div className="container grid-lg">
@@ -66,7 +66,7 @@ const Lecture = ({ children, metadata: { title, description, keywords } }) => (
           <article className="content">{children}</article>
           <footer className="hero hero-sm">
             <div className="text-gray">
-              Copyright © 2019 <a href="https://github.com/" style={{ color: "inherit" }}><strong>Contributors</strong></a>. All rights reserved.
+              Copyright © 2019 <strong>{author}</strong>. All rights reserved.
             </div>
           </footer>
         </div>

@@ -28,6 +28,7 @@
 }
 .content .message__author {
   font-weight: bold;
+  margin-right: 0.5em;
 }
 .content .message__timestamp {
   color: lightgrey;

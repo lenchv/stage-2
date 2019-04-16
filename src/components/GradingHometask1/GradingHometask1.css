@@ -1,3 +1,4 @@
+/* Main container */
 .grading-hometask {
   background: whitesmoke;
   border-radius: 0.5em;
@@ -27,4 +28,67 @@
 }
 .grading-hometask .accordion .accordion-body {
   margin-bottom: 0;
+}
+.grading-hometask .accordion input:checked ~ .accordion-body,
+.grading-hometask .accordion[open] .accordion-body {
+  max-height: 150rem;
+}
+
+/* Radar chart */
+.radar-chart {
+  position: relative;
+  height: 500px;
+  background: white;
+  border-radius: 0.5em;
+}
+.radar-chart .final-grade {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  padding: 0 0.5em;
+  background: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s linear;
+  box-shadow: 0 0 20px 20px rgba(0,0,0,0.025);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+.radar-chart .final-grade:hover {
+  box-shadow: 0 0 20px 20px rgba(0,0,0,0.05);
+}
+.radar-chart .final-grade:active {
+  transition: none;
+  color: rgba(0, 173, 238, 1);
+}
+.radar-chart .final-grade .icon {
+  font-size: 0.7em;
+  margin-left: 0.5rem;
+}
+.radar-chart .reset-grades {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  transition: all 0.2s linear;
+}
+.radar-chart .reset-grades:hover {
+  opacity: 0.75;
+}
+.radar-chart .reset-grades:active {
+  opacity: 0.75;
+}
+.radar-chart .reset-grades .icon {
+  font-size: 0.7em;
+  margin-right: 0.25em;
 }

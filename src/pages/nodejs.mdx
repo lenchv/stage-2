@@ -1,7 +1,7 @@
-import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
-import { faFacebookSquare, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookSquare, faGithub, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach.svg";
 
 <div><h1><strong>Node.js</strong></h1></div>
@@ -9,15 +9,15 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach.svg";
 <div>
   <div class="author">
     <div id="avatar-wrapper">
-      <object id="avatar" data={alexandrTovmachAvatar} role="img" aria-label="My profile picture"></object>
+      <object id="avatar" data={alexandrTovmachAvatar} role="img" aria-label="Alex profile picture"></object>
     </div>
     <div class="profile">
       <h3 class="name">Александр Товмач</h3>
       <ul class="contacts">
         <li>
-          <a href="https://www.facebook.com/" rel="author" class="facebook">
-            <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
-            <span>?</span>
+          <a href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach?tab=profile" rel="author" class="facebook">
+            <FontAwesomeIcon icon={faStackOverflow} className="icon" />
+            <span>alexandr-tovmach</span>
           </a>
         </li>
         <li>
@@ -29,24 +29,282 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach.svg";
         <li>
           <a href="https://alexandrtovmach.com/" rel="author" class="website">
             <FontAwesomeIcon icon={faGlobe} className="icon" />
-            <span>https://alexandrtovmach.com/</span>
+            <span>https://alexandrtovmach.com</span>
           </a>
         </li>
       </ul>
       <p class="about">
-        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#"><strong>React</strong></a> та <a href="#"><strong>GraphQL</strong></a>. Говорить російською із смішним акцентом.
+        Full-stack разработчик из <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> ― Александр, который пишет статьи на <a href="https://dou.ua/users/aleksandr-tovmach/articles/"><strong>DOU</strong></a> и <a href="https://habr.com/ru/users/alexandrtovmach/posts"><strong>Habr</strong></a>, хочет изменить этот мир, но руки не доходят.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Приветствую!</strong><br />Опережая всех хейтеров прошу прощения ― эта лекция будет на русском. Я вырос в русскоязычной семье в городе Кривой Рог и для меня более привычно так изъяснятся, особенно в технических вопросах.<br /> Лекция разделена на блоки, которые максимально независимы друг от друга, поэтому если вы, прочитав заголовок, чувствуете что это уже пройденный этап, смело его пропускайте.<br />Желаю удачи!
   </div>
+</div>
+
+
+<div class="messages">
+  Ryu очень доволен тем что у него есть свой собственный онлайн-файтинг, которым он хвастается перед всеми своими друзьями. 
+  <Message
+    senderId="ryu"
+    senderName="Ryu"
+    senderAvatarUrl="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600"
+    reactions={[
+      { emoji: "💪", count: 13 },
+      { emoji: "🥇", count: 9 },
+      { emoji: "🎮", count: 7 },
+      { emoji: "💀", count: 12 },
+      { emoji: "😤", count: 11 },
+      { emoji: "🐲", count: 5 }
+    ]}
+    replies={[
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+    ]}
+  >
+    <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money on the Internet, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, then maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here's what I want to build ― for starters just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
+  </Message>
+  <Message
+    senderId="donald-trump"
+    senderName="Donald Trump 🇺🇸"
+    senderAvatarUrl="https://www.politiplatform.com/img/politicians/donald_trump/avatar.jpg"
+    reactions={[
+      { emoji: "🦄", count: 13 },
+      { emoji: "😍", count: 12 },
+      { emoji: "😁", count: 8 },
+      { emoji: "😳", count: 4 },
+      { emoji: "😭", count: 10 },
+      { emoji: "🤦", count: 11 }
+    ]}
+    replies={[
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
+      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+    ]}
+  >
+    <p>We have a 5 billion dollar website. I have so many websites. I have them all over the place... I hire people... it costs me three dollars. The beauty of me is that I'm <em>very rich</em>. You know, it really doesn't matter what the media write, as long as you've got <em>a young and beautiful piece of ass</em>. Despite the constant negative press covfefe. <a href="https://gist.github.com/volodymyr-kushnir/1f78eeee07e9e5d2aef0cfb7bcc38e0c"><strong>Anyway, shut up, build me a website</strong></a>. We will build a great website ― and nobody builds websites better than me, believe me ― and I'll build them very inexpensively. I will build a great, great website on our southern border, and I will make Mexico pay for that website. Mark my words. Your fake news! What you’re seeing and what you’re reading is not what’s happening. Nobody has ever done so much in the first two years of a presidency as this administration. Nobody. <em>Nobody</em>. <strong>Make America great again!</strong></p>
+  </Message>
+  <div class="message" data-from="you">Task C</div>
+</div>
+
+Отже, в замовника немає портфоліо і специфікація для проекту теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і "форкнути" (клонувати) його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
+
+<Message
+  senderId="you"
+  senderName="You"
+  senderAvatarUrl="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64"
+  reactions={[
+    { emoji: "👍", count: 13 },
+    { emoji: "🏁", count: 8 },
+    { emoji: "🚀", count: 10 },
+    { emoji: "👏", count: 6 }
+  ]}
+  replies={[
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+  ]}
+>
+  <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
+</Message>
+
+...і береться за створення сайту по тій інструкції.
+
+<hr />
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+</div>
+
+<div id="table-of-contents" class="table-of-contents">
+  <h2><strong>How to create and host your own website using GitHub</strong></h2>
+  <TimelineOfContents timeline={[{
+    linkTo: "#setting-up-the-repository",
+    title: "Setting up the repository",
+    time: undefined
+  }, {
+    linkTo: "#researching-and-planning",
+    title: "Researching and planning",
+    time: undefined
+  }, {
+    linkTo: "#setting-up-the-repository",
+    title: <code>git</code>,
+    time: undefined
+  }, {
+    linkTo: "#putting-the-website-together",
+    title: "Putting the website together",
+    time: undefined
+  }, {
+    linkTo: "#using-advanced-features",
+    title: "Using advanced features",
+    time: undefined
+  }]} />
+</div>
+
+<Level id="setting-up-the-repository" number="1" name="Setting up the repository" difficulty="I Can Win." objectives="Get to the &#x1F681; Internet! Learn the GitHub platform while you're at it." />
+
+1. Well, [**this is Git**](https://xkcd.com/1597/), [**you'll need it**](../assets/images/y-u-no-git.png).
+   <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts</div>
+2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé.", initialize with **README**, ignore **.gitignore**, but choose **"MIT License"**
+3. Add topics _(e.g. "personal website homepage resume gh-pages html css binary-studio-academy bsa19")_
+   <div class="bubble small subtle">
+     Hmmm, adding proper topics helps to SEO your repository...
+   </div>
+4. Create two projects — **"Homepage"** and **"Resume"** ― using **Automated kanban** as a project template for both. Here's the description for the **Homepage** project:
+
+   > ****Make homepage great!**** Make it responsive, accessible, informative, credible, readable, descriptive, compatible, consistent, uncluttered, simple, secure, up-to-date. Alternatively, just give up.
+
+   And this is the description for the **Resume** project:
+
+   > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. ****The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.****
+
+   <div class="bubble small subtle">
+      Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
+   </div>
+
+5. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_
+   <div class="bubble small subtle">
+      Psst, don't forget to add this as a task to <strong>Homepage</strong> project, bruv. Oh, also convert it to an issue while you're at it
+   </div>
+
+6. Create a new branch `develop` based on `master`
+   <div class="bubble small subtle">
+      Hey, c'mon fam, are you even trying?! I've asked you to put tasks into projects, so puh-leeeeeze!
+   </div>
+
+7. Go to **Settings — Collaborators** and add a collaborator
+8. Go to **Settings — Branches** and set default branch to `develop`, lock `master` away
+9. Create **index.html** using GitHub online editor and the snippet below:
+   ```html
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <meta charset="UTF-8" />
+       <title>Résumé</title>
+     </head>
+     <body>
+       ― Hello World! &#x1F609;
+     </body>
+   </html>
+   ```
+   <div class="bubble small subtle">
+     That's right, <code>&amp;#x1F609;</code> is a <a href="http://unicode.org/emoji/charts-12.0/full-emoji-list.html#1f609"><strong>Unicode code for an emoji</strong></a>. BTW, please give your commits meaningful messages, maybe even <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
+   </div>
+
+11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
+12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
+13. Share the link to the repository with the "customer", poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
+
+<Level id="researching-and-planning" number="2" name="Researching and planning" difficulty="Bring It On!" objectives="Master issues and project management." />
+
+1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
+
+   1. **Скласти інтро**  
+      Скласти інтро _(вступ)_, де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
+   2. **Скласти блок контактної інформації**  
+      Посилання на соцмережі _(Facebook чи Instagram, тощо)_, номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
+   3. **Скласти таймлайн**  
+      Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
+   4. **Скласти додаткові інформаційні блоки**  
+      Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
+
+2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
+
+<Level id="learning-git" number="3" name={<span>Learning <code>git</code></span>} difficulty="Hurt Me Plenty." objectives={<span>Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</span>} />
+
+1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and ― if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> ― execute `git clone` to copy the repository via ssh or https
+   
+   <div class="bubble small subtle">
+     Let's take a pause and be a caveman for a second — or a hacker, if you will — let's go and see how it looks like for the guys without graphical user interface
+   </div>
+
+2. `git status`
+3. `git branch`
+4. `git checkout` (`--branch`)
+5. `git add` (`.` and why mask is bad)
+6. `git commit` (`--amend`)
+7. `git log`
+8. `git show` (`HEAD`, `HEAD^`, `HEAD^1`, `HEAD^2`, `HEAD^^`, `HEAD~4`)
+9. `git tag`
+10. `git revert`
+11. `git merge` (різні стратегії)
+12. `git reset` (різні стратегії)
+13. `git pull`
+14. `git diff`
+15. `git remote`
+16. `git clean`
+17. `git stash`
+18. `git fetch`
+
+<Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+
+1. Use [**GitHub Desktop**](https://desktop.github.com/) to clone the repository on your PC
+2. Build a website using the stylesheet from [**https://volodymyrkushnir.com/**](https://volodymyrkushnir.com/) as a foundation _(see [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference)_:
+   1. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update [**`<head>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#head):
+      1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
+      2. When done ― push the branch to the remote, create a new pull request and merge into `develop`
+   2. Create a new branch named `feature/body` and use it to edit [**`<body>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#body):
+      1. Add [**`<main>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#main)
+      2. Add [**Content**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#content)
+      3. Preview the website in a browser
+         
+         <div class="bubble small subtle">
+           One way to do it is to <code>npm install --global serve</code> and then <code>cd</code> to your working directory and run <code>serve</code>
+         </div>
+
+      4. Create `patch/content/primary` branch and add primary content _(e.g. avatar, name, job, contacts, intro, etc.)_
+      5. Create `patch/content/secondary` branch and add secondary content _(e.g. languages, skills, character, etc.)_
+      6. Iterate further and fix bugs, add metadata, implement your own additional features and add more visual effects _(if necessary)_, maybe run [**Lighthouse**](https://developers.google.com/web/tools/lighthouse/) audits and check if the page is responsive and accessible, etc.
+      7. Merge both branches into `feature/body` using pull requests
+   
+   3. Merge `feature/body` into `develop` using pull request
+   4. Open a pull request and merge `develop` into `master`. 💥**Boom, done, готово!**
+   
+<GradingHometask1 />
+<div class="bubble small subtle">
+  Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить навпаки. В першу чергу постарайся робити те, що тобі подобається і отримати максимум задоволення від процесу. Якщо ти при цьому всьому ще й зможеш зайти в незнайому чи некомфортну для cебе область і досягнеш успіхів там — то це взагалі супер! В кінці кінців, ми більше зацікавлені в тому, щоби побачити, що розробники можуть створити в короткий строк, аніж нав'язувати наше бачення правильного чи неправильного способу виконання абстрактних завдань.
+</div>
+
+<Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives="Survive." />
+
+1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup></div>
+2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) using **pre-commit** git hook that will generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
+   ```bash
+   #!/bin/sh
+   if workbox generateSW workbox-config.js ; then
+     git add sw.js
+     exit 0
+   else
+     echo "Cannot generate sw.js"
+     echo "Aborting"
+   fi
+   ```
+   <div class="bubble small subtle">
+     Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+   </div>
+3. gitmodules
+   ```bash
+   git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
+   ```
+4. Webhooks. Integrations. Deploy keys
+5. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
+6. [GitHub Actions](https://github.com/features/actions/)
+7. [GitHub Developer](https://developer.github.com/)
+
+<ThatsAllFolks />
+<div class="bubble">
+  Дякую за увагу 🙏! Cподобалася лекція? Лайк, шейр, репост, сабскра-а-а-айб! Коментуйте та задавайте питання під цією лекцією у вашому особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Успіхів у виконанні домашнього завдання і до нових зустрічей, чірз! 👋
 </div>
 
 export const metadata = {
   title: "Node.js",
   description: "",
-  keywords: ["hola", "guapa"]
+  keywords: ["nodejs", "alexandrtovmach", "lecture-3"]
 }
 
 export default Lecture;

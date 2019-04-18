@@ -97,6 +97,7 @@
   align-items: center;
   border: none;
   outline: none;
+  background: none;
   opacity: 0.5;
   transition: all 0.2s linear;
 }

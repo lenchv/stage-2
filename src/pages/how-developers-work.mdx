@@ -135,10 +135,6 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 
 <hr />
 
-<div class="video-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/t2ERrUvpVlQ" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-</div>
-
 <div id="table-of-contents" class="table-of-contents">
   <h2><strong>How to create and host your own website using GitHub</strong></h2>
   <TimelineOfContents timeline={[{
@@ -222,6 +218,10 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
+   <div class="bubble small subtle">
+     Вміння добре складати завдання, чітко описувати проблеми і звітувати про їх вирішення допоможе знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). Окрім  того, в світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues, тому розуміти як це працює — запорука успіху. Тепер це ваш Google (ну, може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі.
+   </div>
+
    1. **Скласти інтро**  
       Скласти інтро _(вступ)_, де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
    2. **Скласти блок контактної інформації**  
@@ -264,6 +264,11 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 1. Use [**GitHub Desktop**](https://desktop.github.com/) to clone the repository on your PC
 2. Build a website using the stylesheet from [**https://volodymyrkushnir.com/**](https://volodymyrkushnir.com/) as a foundation _(see [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference)_:
    1. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update [**`<head>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#head):
+      
+      <div class="bubble small subtle">
+        Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (<code>release</code>), яка готова до релізу (шляхом злиття в <code>master</code>), а також ще версію, в якій ведеться основна розробка (<code>develop</code>). А в одній єдиній гілці так не вийде. Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав 😁.
+      </div>
+      
       1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
       2. When done ― push the branch to the remote, create a new pull request and merge into `develop`
    2. Create a new branch named `feature/body` and use it to edit [**`<body>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#body):

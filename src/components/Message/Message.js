@@ -2,26 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Message.css";
 
-const MINUTE = 1000*60;
+const MINUTE = 1000 * 60;
 
 const Message = ({
   senderId = "",
   senderName = "",
   senderAvatarUrl = "",
-  senderTime = Date.now(),
+  senderDate = Date.now(),
   children,
   reactions = [],
   replies = [],
   ...rest
 }) => {
   const repliesCount = Math.floor(Math.random() * 20) + 1;
+  const senderTime = new Date(senderDate - 130 * MINUTE).toTimeString().slice(0, 5);
+  const lastReplyTime = new Date(senderDate - 116 * MINUTE).toTimeString().slice(0, 5);
   return (
     <div className="message" data-from={senderId} {...rest}>
       <img className="message__avatar message__avatar--big" src={senderAvatarUrl} alt="" />
       <div className="message__content">
         <div className="message__meta">
           <span className="message__author">{senderName}</span>
-          <span className="message__timestamp">{new Date(senderTime - MINUTE*130).toTimeString().slice(0, 5)}</span>
+          <span className="message__timestamp">{senderTime}</span>
         </div>
         <div className="message__text">
           {children}
@@ -46,7 +48,7 @@ const Message = ({
             }
             <div className="message__replies--meta">
               <span className="message__replies--total">{Math.max(repliesCount, replies.length)} replies</span>
-              <span className="message__replies--last">Last reply today at {new Date(senderTime - MINUTE*116).toTimeString().slice(0, 5)}</span>
+              <span className="message__replies--last">Last reply today at {lastReplyTime}</span>
             </div>
           </div>
         }

@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Message.css";
 
+const MINUTE = 1000*60;
+
 const Message = ({
   senderId = "",
   senderName = "",
   senderAvatarUrl = "",
+  senderTime = Date.now(),
   children,
   reactions = [],
   replies = [],
@@ -18,7 +21,7 @@ const Message = ({
       <div className="message__content">
         <div className="message__meta">
           <span className="message__author">{senderName}</span>
-          <span className="message__timestamp">14:24</span>
+          <span className="message__timestamp">{new Date(senderTime - MINUTE*130).toTimeString().slice(0, 5)}</span>
         </div>
         <div className="message__text">
           {children}
@@ -43,7 +46,7 @@ const Message = ({
             }
             <div className="message__replies--meta">
               <span className="message__replies--total">{Math.max(repliesCount, replies.length)} replies</span>
-              <span className="message__replies--last">Last reply today at 15:45</span>
+              <span className="message__replies--last">Last reply today at {new Date(senderTime - MINUTE*116).toTimeString().slice(0, 5)}</span>
             </div>
           </div>
         }

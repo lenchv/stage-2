@@ -4,6 +4,7 @@ import { faEnvelope, faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
 import { faFacebookSquare, faGithub, faSkype } from "@fortawesome/free-brands-svg-icons";
 import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
+import ryuAvatar from "../assets/avatars/ryu.png";
 
 <div><h1><strong>How developers work</strong></h1></div>
 
@@ -67,7 +68,7 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
   <Message
     senderId="ryu"
     senderName="Ryu"
-    senderAvatarUrl="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600"
+    senderAvatarUrl={ryuAvatar}
     reactions={[
       { emoji: "💪", count: 13 },
       { emoji: "🥇", count: 9 },
@@ -296,28 +297,80 @@ import volodymyrKushnirAvatar from "../assets/avatars/volodymyr-kushnir.svg";
 <Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives="Survive." />
 
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup></div>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) using **pre-commit** git hook that will generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
-   ```bash
-   #!/bin/sh
-   if workbox generateSW workbox-config.js ; then
-     git add sw.js
-     exit 0
-   else
-     echo "Cannot generate sw.js"
-     echo "Aborting"
-   fi
-   ```
+2. <p>Add <strong>volodymyrkushnir.com</strong> as a submodule by running <code>git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com</code> <sup><strong><a href="https://git-scm.com/docs/git-submodule" title="git-submodule">[1]</a></strong></sup></p>
+   
    <div class="bubble small subtle">
-     Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+     Keep in mind that <a href="https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/7646931"><strong>removing a submodule</strong></a> is somewhat a tricky process
    </div>
-3. gitmodules
-   ```bash
-   git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
-   ```
-4. Webhooks. Integrations. Deploy keys
-5. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-6. [GitHub Actions](https://github.com/features/actions/)
-7. [GitHub Developer](https://developer.github.com/)
+
+3. <p>Use <strong>pre-commit</strong> git hook <sup><strong><a href="https://git-scm.com/docs/githooks" title="githooks">[1]</a></strong></sup> to generate new <strong>Service Worker</strong> based on <a href="https://developers.google.com/web/tools/workbox/" title="Workbox"><strong>Workbox</strong></a> before each commit</p>
+   1. Run `npm install --global workbox-cli` to install Workbox globally
+   2. Create **workbox-config.js** with the following content:
+      ```js
+      module.exports = {
+        "globDirectory": "./",
+        "globPatterns": [
+          "**/*.{png,svg,ico,jpg,mp3,css,html}"
+        ],
+        "swDest": "sw.js"
+      };
+      ```
+   3. Create **.git/hooks/pre-commit** file that should look roughly like this:
+      ```bash
+      #!/bin/sh
+      if workbox generateSW workbox-config.js ; then
+        git add sw.js
+        exit 0
+      else
+        echo "Cannot generate sw.js"
+        echo "Aborting"
+      fi
+      ```
+      <div class="bubble small subtle">
+        Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+      </div>
+4. Add a webhook by setting up a basic CI/CD process using [**Travis CI**](https://travis-ci.org) and [**AWS**](https://aws.amazon.com)
+   1. Log in to [**AWS Console**](https://console.aws.amazon.com/), go to **S3** service, create two buckets named **homepage-staging** and **homepage-production**, edit their public access settings (uncheck everything), go to bucket properties and enable static website hosting, then go to **My Security Credentials** and generate a new set of access keys. Phew! 😌
+   2. Create **.travis.yml**:
+       ```yaml
+       language: node_js
+       node_js:
+         - "stable"
+       script:
+         - npm install --global workbox-cli
+         - workbox generateSW workbox-config.js
+       deploy:
+         - provider: s3
+           skip_cleanup: true
+           access_key_id: $ACCESS_KEY_ID
+           secret_access_key: $SECRET_ACCESS_KEY
+           bucket: homepage-staging
+           region: eu-central-1
+           acl: public_read
+           on:
+             branch: develop
+         - provider: s3
+           skip_cleanup: true
+           access_key_id: $ACCESS_KEY_ID
+           secret_access_key: $SECRET_ACCESS_KEY
+           bucket: homepage-production
+           region: eu-central-1
+           acl: public_read
+           on:
+             branch: master
+       ```
+5. Add your first integration by subscribing to [**Zeit Now**](https://zeit.co/now)
+   1. Execute `sudo npm install --global --unsafe-perm now`
+   2. Create **now.json**:
+      ```js
+      {
+        "name": "homepage"
+      }
+      ```
+   3. Run `now` to deploy the project
+   4. Head over to **Zeit Now** Dashboard, delete the project, and try to deploy again using **Now for GitHub** this time
+6. Explore [**GitHub Developer**](https://developer.github.com/)
+7. Sign up for [**GitHub Actions**](https://github.com/features/actions/)
 
 <ThatsAllFolks />
 <div class="bubble">

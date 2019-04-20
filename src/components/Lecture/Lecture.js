@@ -49,7 +49,7 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
                     </g>
                   </svg>
                 </a>
-                <div><strong>Binary Studio Academy 2019 &bull; </strong>Stage 2</div>
+                <div><strong>Binary Studio Academy 2019 &bull; </strong>Stage 2 <span style={{ color: "grey", fontWeight: 300 }}>(alpha)</span></div>
               </div>
               <div className="navbar-section">
                 <a href="/whats-this/ua" className="btn btn-link">

@@ -38,18 +38,12 @@
 .content p:last-child {
   margin-bottom: 0;
 }
-.content p + div {
-  margin-top: -0.25em;
-}
-.content p + blockquote {
-  margin-top: -0.25rem;
-}
 .content blockquote {
   border-left: 0.1rem solid #dadee4;
   margin-left: 0;
-  padding: 0.25rem 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  padding: 0 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .content pre {
   margin: 0.25rem 0;

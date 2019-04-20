@@ -185,11 +185,13 @@
   margin-left: 0.5em;
 }
 .content .messages .messages__from {
-  vertical-align: middle;
+  vertical-align: text-top;
+  cursor: pointer;
   opacity: 0.5;
   transition: all 0.2s linear;
 }
 .content .messages .messages__from + label {
+  padding-left: 0.25em;
   cursor: pointer;
   opacity: 0.5;
   transition: all 0.2s linear;

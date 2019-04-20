@@ -14,7 +14,7 @@ const Message = ({
   replies = [],
   ...rest
 }) => {
-  const repliesCount = Math.floor(Math.random() * 20) + 1;
+  const repliesCount = Math.floor(Math.random() * 10) + 7;
   const senderTime = new Date(senderDate - 130 * MINUTE).toTimeString().slice(0, 5);
   const lastReplyTime = new Date(senderDate - 116 * MINUTE).toTimeString().slice(0, 5);
   return (
@@ -36,13 +36,15 @@ const Message = ({
         {
           replies && replies.length > 0 &&
           <div className="message__replies">
-            {replies.map(({ name, avatarUrl }, index) => (
-              <img key={`replies-item-${index}`} className="message__reply message__avatar" src={avatarUrl} alt={name} />
+            {replies.slice(0, replies.length - 1).map(({ name, avatarUrl }, index) => (
+              <span key={`replies-item-${index}`} className="tooltip" data-tooltip={name}>
+                <img className="message__reply message__avatar" src={avatarUrl} alt={name} />
+              </span>
             ))}
             {
               repliesCount - replies.length > 0 &&
               <div className="message__reply">
-                <img className="message__avatar" src="https://ca.slack-edge.com/T036H63TN-U0L5FEL3U-48e06b52480b-24" alt="" />
+                <img className="message__avatar" src={replies.slice(replies.length - 1)[0].avatarUrl} alt="" />
                 <span className="message__replies--count">+{repliesCount - replies.length}</span>
               </div>
             }
@@ -62,14 +64,14 @@ Message.propTypes = {
   senderId: PropTypes.string,
   senderName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   senderAvatarUrl: PropTypes.string,
-  reactions: PropTypes.shape({
+  reactions: PropTypes.arrayOf(PropTypes.shape({
     emoji: PropTypes.string,
     count: PropTypes.number
-  }),
-  replies: PropTypes.shape({
+  })),
+  replies: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     avatarUrl: PropTypes.string
-  })
+  }))
 };
 
 Message.defaultProps = {

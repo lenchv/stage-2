@@ -302,13 +302,13 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 8. Look at the current history with `git log`, view detailed information about particular commit with `git show` (`HEAD`, `HEAD~1`, `HEAD^1`)
 9. Remove last line from the README.md and see the difference! Using `git diff`, that is. Commit with `git commit -a -m "Undobracadabra"`, add a tag to the latest commit with `git tag undobracadabra`
 10. Revert the latest commit with `git revert undobracadabra`, add a tag `git tag redobracadabra`
-11. Now switch to your primary branch (`git checkout develop`) and merge your latest developments into this branch by running `git merge patch/README.md`
+11. Now switch to your primary branch (`git checkout develop`) and merge your latest developments into this branch by running `git merge patch/README.md`. Push to the remote with `git push`
 
     <div class="bubble small subtle">
       Також можна мерджити гілки, використовуючи <code>git merge --squash patch/README.md</code> (зліпить всі комміти в один, тим самим відкидаючи історію), або ж <code>git rebase</code> (переграє локальні зміни після останнього комміту базової гілки)
     </div>
 
-12. Try to `git fetch`, `git status`, use GitHub online editor to create a new file named **dummy.html**, and then `git fetch` and `git status` again. Finally, use `git pull --rebase`.
+12. Try to `git fetch`, `git status`, use GitHub online editor to create a new file named **dummy.html** in `develop` branch, and then try to `git fetch` and `git status` again. Finally, use `git pull --rebase`.
     
     <div class="bubble small subtle">
        Зазвичай ключ <code>--rebase</code> не вказують, тому мердж відбувається або фаст-форвардом, або через мердж комміт
@@ -351,8 +351,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
       5. Create `patch/content/secondary` branch and add secondary content _(e.g. languages, skills, character, etc.)_
       6. Iterate further and fix bugs, add metadata, implement your own additional features and add more visual effects _(if necessary)_, maybe run [**Lighthouse**](https://developers.google.com/web/tools/lighthouse/) audits and check if the page is responsive and accessible, etc.
       7. Merge both branches into `feature/body` using pull requests
-   
-   3. Merge `feature/body` into `develop` using pull request
+      8. Merge `feature/body` into `develop` using pull request
    4. Open a pull request and merge `develop` into `master`. 💥**Boom, done, готово!**
    
 <GradingHometask1 />

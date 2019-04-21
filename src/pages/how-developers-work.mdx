@@ -172,7 +172,7 @@ import yuriyStetsulaAvatar from "../assets/avatars/yuriy-stetsula.png";
     title: "Researching and planning",
     time: undefined
   }, {
-    linkTo: "#setting-up-the-repository",
+    linkTo: "#learning-git",
     title: <code>git</code>,
     time: undefined
   }, {
@@ -263,8 +263,17 @@ import yuriyStetsulaAvatar from "../assets/avatars/yuriy-stetsula.png";
 
 Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em>
 
+<div class="bubble small subtle">
+  Хороші новини! В цьому розділі тасків у проектах створювати не потрібно! Happy days!
+</div>
+
 1. Execute `git clone` to copy the repository (use https endpoint, clone into two different directories)
 2. Check current status with `git status`
+
+   <div class="bubble small subtle">
+     origin — це псевдонім групи URL-ів, які використовуються для вивантаження і завантаження репозиторію до віддаленого серверу. переглянути ті URL-и можна командою <code>git remote show origin</code>
+   </div>
+
 3. Create new branch with `git branch patch/README.md`, list branches with `git branch`
 4. Use `git checkout patch/README.md` to switch branch
 
@@ -284,10 +293,10 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
      <code>--all</code> можна використовувати для того, щоби закоммітити всі змінені і видалені файли (нові файли не коммітнуться). <code>--amend</code> можна використати, щоби змінити повідомлення комміту (обережно, ця операція переписує історію!)
    </div>
 
-7. Try to upload your local changes with `git push --tags`. It'll fail, because there's no such branch on the remote server. Follow Git suggestion and use `--set-upstream origin patch/README.md`
+7. Try to upload your local changes with `git push --tags`. If it fails, it's most likely because there's no such branch on the remote server. Follow Git suggestion and use `--set-upstream origin patch/README.md`
 
    <div class="bubble small subtle">
-     origin — це псевдонім групи URL-ів, які використовуються для вивантаження і завантаження репозиторію до віддаленого серверу. переглянути ті URL-и можна командою <code>git remote show origin</code>. по замовчуванню <code>git</code> не пушить теги
+     По замовчуванню <code>git</code> не пушить теги, тому ключ <code>--tags</code> корисний для того, щоб запушити теги, якщо вони є. У випадку, якщо їх немає, можна просто використовувати <code>git push</code>
    </div>
 
 8. Look at the current history with `git log`, view detailed information about particular commit with `git show` (`HEAD`, `HEAD~1`, `HEAD^1`)
@@ -299,7 +308,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
       Також можна мерджити гілки, використовуючи <code>git merge --squash patch/README.md</code> (зліпить всі комміти в один, тим самим відкидаючи історію), або ж <code>git rebase</code> (переграє локальні зміни після останнього комміту базової гілки)
     </div>
 
-12. Try to `git fetch`, `git status`, create a new file named **dummy.html**, and then `git status` again. Finally, use `git pull --rebase`.
+12. Try to `git fetch`, `git status`, use GitHub online editor to create a new file named **dummy.html**, and then `git fetch` and `git status` again. Finally, use `git pull --rebase`.
     
     <div class="bubble small subtle">
        Зазвичай ключ <code>--rebase</code> не вказують, тому мердж відбувається або фаст-форвардом, або через мердж комміт
@@ -308,7 +317,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 13. Dismiss everything you did with `git reset --hard abracadabra^`, do `git clean --force` if necessary
 
     <div class="bubble small subtle">
-      Режим за промовчанням — <code>--mixed</code> — ресетне індекс, але не робоче дерево, тому всі зміни будуть збережені, а файли треба буде самостійно застейджити для комміту. <code>--hard</code> ресетне все, тому всі зміни будуть втрачені. <code>--soft</code> 
+      Режим за промовчанням — <code>--mixed</code> — ресетне індекс, але не робоче дерево, тому всі зміни будуть збережені, а файли треба буде самостійно застейджити для комміту. <code>--hard</code> ресетне все, тому всі зміни будуть втрачені. <code>--soft</code> переставить HEAD на вказаний комміт, але не зачіпатиме індекс чи робоче дерево.
     </div>
 
 <Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />

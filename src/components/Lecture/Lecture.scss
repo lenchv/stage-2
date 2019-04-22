@@ -47,10 +47,23 @@
 }
 .content pre {
   margin: 0.25rem 0;
+  padding: 0.5em;
 }
 .content pre code {
   display: block;
-  padding: 0.5rem;
+  padding: 0;
+  background: none;
+  font-size: 85%;
+  line-height: 1.4;
+  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+}
+.content :not(pre) > code {
+  font-size: 85%;
+  line-height: 1.25;
+  border-radius: 0.1rem;
+  padding: .1rem .2rem;
+  background: #fcf2f2;
+  color: #d73e48;
 }
 .content a:hover code {
   text-decoration: underline;

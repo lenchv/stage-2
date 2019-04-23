@@ -51,15 +51,23 @@ module.exports = {
               showLineNumbers: false,
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
+              noInlineHighlight: false
+            }
+          }
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

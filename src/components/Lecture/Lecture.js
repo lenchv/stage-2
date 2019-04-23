@@ -64,7 +64,9 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
               </div>
             </nav>
           </header>
-          <article className="content">{children}</article>
+          <article className="content">
+            {children}
+          </article>
           <footer className="hero hero-sm">
             <div className="text-gray">
               Copyright © 2019 <strong>{author || "Contributors"}</strong>. All rights reserved.

@@ -36,24 +36,6 @@
   max-height: 150rem;
 }
 
-/* Columns and panels */
-.grading-hometask .column {
-  padding: 0.4rem;
-}
-.grading-hometask .panel .panel-header h6 {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.grading-hometask .panel .panel-header,
-.grading-hometask .panel .panel-footer {
-  padding: 1em;
-}
-.grading-hometask .panel .panel-body {
-  padding: 0 1em 1em;
-}
-
 /* Radar chart */
 .radar-chart {
   position: relative;
@@ -70,7 +52,7 @@
   background: white;
   border-radius: 0.5rem;
   transition: all 0.2s linear;
-  box-shadow: 0 0 20px 20px rgba(0,0,0,0.025);
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.025);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -78,7 +60,7 @@
   outline: none;
 }
 .radar-chart .final-grade:hover {
-  box-shadow: 0 0 20px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.05);
 }
 .radar-chart .final-grade:active {
   transition: none;

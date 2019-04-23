@@ -1,1 +1,3 @@
-export { default as roundToTwoDecimals } from "./roundToTwoDecimals/roundToTwoDecimals";
+export {
+  default as roundToTwoDecimals
+} from "./roundToTwoDecimals/roundToTwoDecimals";

@@ -1,5 +1,15 @@
 @import "node_modules/spectre.css/src/spectre";
 
+/* Headings */
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
+}
+
 /* Navbar */
 .navbar .logo {
   height: 2em;
@@ -25,7 +35,7 @@
 }
 .content ol li,
 .content ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   margin-top: 0;
 }
 .content ol li:last-child,
@@ -38,12 +48,15 @@
 .content p:last-child {
   margin-bottom: 0;
 }
+.content img {
+  max-width: 100%;
+}
 .content blockquote {
   border-left: 0.1rem solid #dadee4;
   margin-left: 0;
   padding: 0 0.75rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .content pre {
   margin: 0.25rem 0;
@@ -55,13 +68,14 @@
   background: none;
   font-size: 85%;
   line-height: 1.4;
-  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
+    monospace;
 }
 .content :not(pre) > code {
   font-size: 85%;
   line-height: 1.25;
   border-radius: 0.1rem;
-  padding: .1rem .2rem;
+  padding: 0.1rem 0.2rem;
   background: #fcf2f2;
   color: #d73e48;
 }
@@ -288,4 +302,24 @@
 }
 .content .video-wrapper:hover {
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Columns */
+.column {
+  padding: 0.4rem;
+}
+
+/* Panels */
+.panel .panel-header h6 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panel .panel-header,
+.panel .panel-footer {
+  padding: 1em;
+}
+.panel .panel-body:last-child {
+  padding: 0 1em 1em;
 }

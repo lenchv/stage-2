@@ -165,24 +165,19 @@ import yuriyStetsulaAvatar from "../assets/avatars/yuriy-stetsula.png";
   <h2><strong>How to create and host your own website using GitHub</strong></h2>
   <TimelineOfContents timeline={[{
     linkTo: "#setting-up-the-repository",
-    title: "Setting up the repository",
-    time: undefined
+    title: "Setting up the repository"
   }, {
     linkTo: "#researching-and-planning",
-    title: "Researching and planning",
-    time: undefined
+    title: "Researching and planning"
   }, {
     linkTo: "#learning-git",
-    title: <code>git</code>,
-    time: undefined
+    title: <code>git</code>
   }, {
     linkTo: "#putting-the-website-together",
-    title: "Putting the website together",
-    time: undefined
+    title: "Putting the website together"
   }, {
     linkTo: "#using-advanced-features",
-    title: "Using advanced features",
-    time: undefined
+    title: "Using advanced features"
   }]} />
 </div>
 
@@ -372,7 +367,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
    
    1. Run `npm install --global workbox-cli` to install Workbox globally
    2. Create **workbox-config.js** with the following content:
-      ```js
+      ```json
       module.exports = {
         "globDirectory": "./",
         "globPatterns": [
@@ -428,7 +423,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 5. Add your first integration by subscribing to [**Zeit Now**](https://zeit.co/now)
    1. Execute `sudo npm install --global --unsafe-perm now`
    2. Create **now.json**:
-      ```js
+      ```json
       {
         "name": "homepage"
       }

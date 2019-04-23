@@ -975,33 +975,12 @@ function numbersAsIterator(): iterable
   <div class="accordion-body">
 
 `Throwable` is the base interface for any object that can be thrown via a `throw` statement in PHP 7, including `Error` and `Exception`. PHP classes cannot implement the `Throwable` interface directly, and must instead extend `Exception`.
+<ul><li>Throwable<ul><li><code class="language-text">Exception implements Throwable</code><ul><li>LogicException<ul><li>BadFunctionCallException<ul><li>BadMethodCallException</li></ul></li><li>DomainException</li><li>InvalidArgumentException</li><li>LengthException</li><li>OutOfRangeException</li></ul></li><li>RuntimeException<ul><li>OutOfBoundsException</li><li>OverflowException</li><li>RangeException</li><li>UnderflowException</li><li>UnexpectedValueException</li></ul></li></ul></li><li><code class="language-text">Error implements Throwable</code><ul><li>AssertionError</li><li>ArithmeticError</li><li>DivisionByZeroError</li><li>ParseError</li><li>TypeError</li></ul></li></ul></li></ul>
 
   </div>
 </div>
 </li>
 </ul>
-
-* Throwable
-  * `Exception implements Throwable`
-    * LogicException
-      * BadFunctionCallException
-        * BadMethodCallException
-      * DomainException
-      * InvalidArgumentException
-      * LengthException
-      * OutOfRangeException
-    * RuntimeException
-      * OutOfBoundsException
-      * OverflowException
-      * RangeException
-      * UnderflowException
-      * UnexpectedValueException
-  * `Error implements Throwable`
-    * AssertionError
-    * ArithmeticError
-    * DivisionByZeroError
-    * ParseError
-    * TypeError
 
 <Level id="php-ecosystem" number="3" name="PHP ecosystem" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
 

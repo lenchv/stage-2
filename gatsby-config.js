@@ -61,14 +61,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /assets/
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `stage-2`,

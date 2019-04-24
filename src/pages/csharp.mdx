@@ -1,0 +1,52 @@
+import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
+import { faFacebookSquare, faGithub } from "@fortawesome/free-brands-svg-icons";
+import rostyslavDiakivAvatar from "../assets/avatars/rostyslav-diakiv-2019.svg";
+
+<div><h1><strong>C#</strong></h1></div>
+
+<div>
+  <div class="author">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={rostyslavDiakivAvatar} role="img" aria-label="My profile picture"></object>
+    </div>
+    <div class="profile">
+      <h3 class="name">Ростислав Дяків</h3>
+      <ul class="contacts">
+        <li>
+          <a href="https://www.facebook.com/" rel="author" class="facebook">
+            <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
+            <span>?</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/alexandrtovmach" rel="author" class="github">
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+            <span>alexandrtovmach</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://alexandrtovmach.com/" rel="author" class="website">
+            <FontAwesomeIcon icon={faGlobe} className="icon" />
+            <span>https://alexandrtovmach.com/</span>
+          </a>
+        </li>
+      </ul>
+      <p class="about">
+        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#"><strong>React</strong></a> та <a href="#"><strong>GraphQL</strong></a>. Говорить російською із смішним акцентом.
+      </p>
+    </div>
+  </div>
+  <div class="bubble" style="margin: -0.5em 1em 1em;">
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+  </div>
+</div>
+
+export const metadata = {
+  title: ".NET",
+  description: "",
+  keywords: ["hola", "guapa"]
+}
+
+export default Lecture;

@@ -1,15 +1,5 @@
 @import "node_modules/spectre.css/src/spectre";
 
-/* Headings */
-h1:last-child,
-h2:last-child,
-h3:last-child,
-h4:last-child,
-h5:last-child,
-h6:last-child {
-  margin-bottom: 0;
-}
-
 /* Navbar */
 .navbar .logo {
   height: 2em;
@@ -94,7 +84,7 @@ h6:last-child {
 /* Avatar */
 #avatar-wrapper {
   float: left;
-  width: 5em;
+  width: 6em;
   margin-right: 1em;
   display: flex;
   align-items: center;

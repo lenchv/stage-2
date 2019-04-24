@@ -160,29 +160,257 @@ import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
 
 <Level id="basic-javascript" number="1" name="Basic JavaScript" difficulty="Nothing special 🤷‍♂️" objectives="Get a general idea about JS" />
 
-1. Ready to try [**JavaScript**](https://www.javascript.com/)?
+1. **Ready to try [JavaScript](https://www.javascript.com/)?**
 
-    To start with, here are **the main points** you should remember about JS: _Brendan Eich, EcmaScript, Dynamic typing, First-class functions, OOP, Asynchronous, Single-thread_.
+    To start with, here are **the main points** you should remember about JS:
+    <span class="chip">Brendan Eich</span><span class="chip">EcmaScript</span><span class="chip">script language</span><span class="chip">dynamic language</span><span class="chip">dynamically typed</span><span class="chip">first-class functions</span><span class="chip">object-oriented</span><span class="chip">prototype-based</span><span class="chip">asynchronous</span><span class="chip">single-threaded</span>
 
-2. [**Putting comments in code**](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83).
+2. **[Putting comments in code](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)**
 
-3. Declaring variables: `var`, `let` and `const`.
+   The syntax of comments is the same as in C++ and in many other languages. Comments behave like white space and are discarded during script execution.
 
-4. Data Types.
+   ```javascript
+   const style = {
+     display: 'flex',
+     flexWrap: 'wrap'
+     // dominantBaseline: central;  not supported by IE 9 :(
+   }
+   ```
+   ```javascript
+   /**
+    * returns the name of the lecture
+    * @param {string} course 'js' | 'php' | 'net'
+    * @returns {string} 
+    */
+   function getLectureName(course) {
+     switch(course) {
+       case 'js': return 'Introduction to JavaScript';
+       case 'php': return 'Laravel - The PHP Framework';
+       case 'net': return 'C# and .NET framework';
+     }
+   }
+   ```
+
+3. **Declaring variables: `var`, `let` and `const`**
+
+   There are three kinds of declarations in JavaScript:
+    * `var` declares a variable, optionally initializing it to a value
+      ```javascript
+      var message;
+      message = 'Hello World'; 
+
+      var name = 'John', 
+          age = 24;
+      ```
+    * `let`  declares a block-scoped, local variable, optionally initializing it to a value
+      ```javascript
+      let count = 10;
+      if (count > 5) {
+        let count = 5; // count = 5
+      }
+      // count here still equal 10
+      ```
+    * `const` declares a block-scoped, read-only named constant
+      ```javascript
+      const user = {
+        name: 'John',
+        age: 24
+      };
+      
+      const PRIMARY_COLOR = '#ccc';
+      ```
+
+4. **Data Types**
 
     According to the **ECMAScript**, there are six primitive types and everything else is an Object type. Let’s run over those one by one.
+    **ECMAScript** standard defines seven data types.
+    
+    1. **Boolean**  
+       The boolean type has two values: `true`  and `false`.
+       ```javascript
+       let isValid = true;
+       isValid = false;
+       ```
+    2. **Number**  
+       An integer or floating point number.
+       ```javascript
+       const age = 23;
+       const coef = 12.345;
+       ```
+       ```javascript
+       const hex = 0x00111; // hexadecimal, base 16 starts with 0x
+       const octal = 0o01; // octal, base 8 starts with 0o
+       const binary = 0b0011; // binary, base 2 starts with 0b
+       ```
+       The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
+       ```javascript
+       const result = 2 / "text"; // NaN
+       isNaN(result); // true
+       ```
+    3. **String**  
+       A sequence of characters that represent a text value. JavaScript strings are **immutable**.
+       ```javascript
+       let str = "Hello world"; 
+       str = 'new string';
+       
+       let age = 23;
+       let newStr = `age - ${age}`;
+       console.log(`first line
+       second line`);
+       ```
+       ```javascript
+       str.length // 10
+       str.charAt(2) // w
+       str.toLowerCase() // "new string"
+       str.toUpperCase() // "NEW STRING"
+       str.indexOf('str') // 4
+       newStr.substring(11, 17) // second
+       newStr.substr(11, 6) // second
+       ```
+    4. **null**  
+       `null` is a special keyword denoting a null value.
+       ```javascript
+       let x = null;
+       ```
+    5. **undefined**  
+       `undefined` is a top-level property whose value is not defined.
+       ```javascript
+       let y; // undefined
+       ```
+    6. **Symbol**  
+       A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.
+       ```javascript
+       let isAdmin = Symbol('isAdmin');
+       
+       let user = {
+         name: 'Jhon',
+         [isAdmin]: true
+       }
+       
+       user.isAdmin; // undefined
+       user[isAdmin]; // true
+       ```
 
-5. [**Type coercion**](https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839).
+5. [**Type coercion**](https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839)
 
-    Getting essential knowledge how type coercion works.
+   JavaScript variables can be converted to a new variable and another data type either by the use of a JavaScript function or automatically by JavaScript itself:
 
-6. [**Control flow**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling).
+   Converting to **string**
+   ```javascript
+   String(null) // "null"
+   false.toString();  // "false"
+   12 + 'px' // "12px"
+   ```
+   Converting to **numbers**
+   ```javascript
+   Number(true) // 1
+   parseInt('3.14', 10) // 3
+   parseFloat('3.14') // 3.14
+   12 - '4' // 8
+   12 + '4' // "124"
+   12 + +'4' // 16
+   ```
+   Converting to **boolean**
+   ```javascript
+   0, '', null, undefined, NaN -> false
+   if (12) { }
+   Boolean(undefined) // false
+   console.log(!!'text'); // true
+   ```
 
-    An overview of control flow statements that you can use to incorporate a great deal of interactivity in your application.
+6. [**Control flow**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 
-7. [**Loops and iteration**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration).
+   * Block statement
+   * Conditional statements
+     * `if...else` statement
+       ```javascript
+       if (age < 18) {
+         ageCategory = 'young';
+       } else if (age > 50) {
+         ageCategory = 'old';
+       } else {
+         ageCategory = 'adult';
+       }
+       ```
+     * `switch` statement
+       ```javascript
+       switch(ageCategory) {
+         case 'young': 
+           console.log('less than 18');
+         case 'adult': 
+           console.log('from 18 to 50');
+           break;
+         case 'old': 
+           console.log('older then 50'); 
+           break;
+         default: 
+           console.log('unknown');
+       }
+       ```
 
-    Introduces the different iteration statements available to JavaScript.
+7. [**Loops and iteration**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+    Loops offer a quick and easy way to do something repeatedly. The statements for loops provided in JavaScript are:
+
+    * `for` statement   
+    * `break` statement
+    * `continue` statement
+      ```javascript
+      for (let step = 0; step < stepCount; step++) {
+        const value = step * intervalComputed;
+
+        if (value === 0) {
+          labelsFromRange.push('0');
+          continue;
+        }
+
+        const labelText = formatNumber(value, decimalSeparator);
+        const labelWidth = getTextWidth(labelText);
+        const isLastStep = step === stepCountWithMargin;
+
+        if (isLastStep && remainingAxisLength < labelWidth) {
+          break;
+        }
+
+        labelsFromRange.push(labelText);
+      }
+      ```
+    * `while` statement
+      ```javascript
+      let level = currentLevel;
+
+      while(level >= 0) {
+        // do something
+        level--;
+      }
+      ```
+    * `do...while` statement
+      ```javascript
+      do {
+        // do something
+        level--;
+      } while (lavel >= 0);
+      ```
+    * `for...of` statement
+      ```javascript
+      const user = { firstName: 'Mike', lastName: 'Din' };  
+
+      for (let value of user) {  
+        console.log(value); // Mike, Din  
+      }
+
+      Object.keys(user).forEach((key) => { ... });
+      ```
+    * `for...in` statement
+      ```javascript
+      Array.prototype.customFunction = function() {};
+
+      let weekends = ['Sat', 'Sun'];
+
+      for (let i in weekends ) {
+        console.log(i); // 0, 1, "customFunction"
+      }
+      ```
 
 <Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Lets spice it up 🔥" objectives="Gain practical knowledge" />
 
@@ -247,6 +475,7 @@ import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
 <em>- block scoping (let) - spread / rest operator - default parameters - string interpolation - arrow functions - classes + inheritance + super</em>
 
 export const metadata = {
+  author: "Roman Sahan",
   title: "ES6",
   description: "",
   keywords: ["hola", "guapa"]

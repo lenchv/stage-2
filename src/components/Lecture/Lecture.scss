@@ -83,11 +83,12 @@
   padding: 1em;
   background: whitesmoke;
   border-radius: 0.5em;
+  display: flex;
 }
 
 /* Avatar */
 #avatar-wrapper {
-  float: left;
+  flex: 0 0 6em;
   width: 6em;
   margin-right: 1em;
   display: flex;
@@ -155,9 +156,6 @@
 }
 
 /* Profile */
-.content .profile {
-  margin-left: 6em;
-}
 .content .profile .name {
   margin-bottom: 0;
   font-size: 1.4em;

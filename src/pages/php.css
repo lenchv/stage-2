@@ -9,22 +9,6 @@
   filter: contrast(0) grayscale(1);
 }
 
-/* PHP 7 features */
-.content ul.php-7-features li {
-  list-style: none outside none;
-}
-.content ul.php-7-features .accordion .accordion-header {
-  padding: 0;
-  cursor: pointer;
-  margin-left: -1rem;
-}
-.content ul.php-7-features .accordion .accordion-header .icon {
-  display: inline-block;
-}
-.content ul.php-7-features .accordion .accordion-body:last-child {
-  margin-bottom: 0;
-}
-
 /* PHP frameworks */
 .content ul.php-frameworks {
   padding-left: 1.5em;

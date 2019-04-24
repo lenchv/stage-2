@@ -1,5 +1,8 @@
 import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/pro-solid-svg-icons";
 import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
+import "./es6.css";
 
 <div><h1><strong>ES6</strong></h1></div>
 
@@ -160,257 +163,497 @@ import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
 
 <Level id="basic-javascript" number="1" name="Basic JavaScript" difficulty="Nothing special 🤷‍♂️" objectives="Get a general idea about JS" />
 
-1. **Ready to try [JavaScript](https://www.javascript.com/)?**
+<ol>
+  <li>
+    <p><strong>Ready to try <a href="https://www.javascript.com/">JavaScript</a>?</strong></p>
+    <p>To start with, here are <strong>the main points</strong> you should remember about JS:</p>
+    <p><span class="chip">Brendan Eich</span><span class="chip">EcmaScript</span><span class="chip">script language</span><span class="chip">dynamic language</span><span class="chip">dynamically typed</span><span class="chip">first-class functions</span><span class="chip">object-oriented</span><span class="chip">prototype-based</span><span class="chip">asynchronous</span><span class="chip">single-threaded</span></p>
+  </li>
+  <li>
+    <p><strong><a href="https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83">Putting comments in code</a></strong></p>
+    <p>The syntax of comments is the same as in C++ and in many other languages. Comments behave like white space and are discarded during script execution.</p>
 
-    To start with, here are **the main points** you should remember about JS:
-    <span class="chip">Brendan Eich</span><span class="chip">EcmaScript</span><span class="chip">script language</span><span class="chip">dynamic language</span><span class="chip">dynamically typed</span><span class="chip">first-class functions</span><span class="chip">object-oriented</span><span class="chip">prototype-based</span><span class="chip">asynchronous</span><span class="chip">single-threaded</span>
+```javascript
+const style = {
+  display: 'flex',
+  flexWrap: 'wrap'
+  // dominantBaseline: central;  not supported by IE 9 :(
+}
+```
+```javascript
+/**
+* returns the name of the lecture
+* @param {string} course 'js' | 'php' | 'net'
+* @returns {string} 
+*/
+function getLectureName(course) {
+  switch(course) {
+    case 'js': return 'Introduction to JavaScript';
+    case 'php': return 'Laravel - The PHP Framework';
+    case 'net': return 'C# and .NET framework';
+  }
+}
+```
 
-2. **[Putting comments in code](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)**
+  </li>
+  <li>
+    <p><strong>Declaring variables: <code>var</code>, <code>let</code> and <code>const</code></strong></p>
+    <p>There are three kinds of declarations in JavaScript:</p>
+    <ul class="collapsible">
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-3-1" hidden />
+          <label class="accordion-header" for="accordion-3-1">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>var</code> declares a variable, optionally initializing it to a value
+          </label>
+  <div class="accordion-body">
 
-   The syntax of comments is the same as in C++ and in many other languages. Comments behave like white space and are discarded during script execution.
+```javascript
+var message;
+message = 'Hello World'; 
 
-   ```javascript
-   const style = {
-     display: 'flex',
-     flexWrap: 'wrap'
-     // dominantBaseline: central;  not supported by IE 9 :(
-   }
-   ```
-   ```javascript
-   /**
-    * returns the name of the lecture
-    * @param {string} course 'js' | 'php' | 'net'
-    * @returns {string} 
-    */
-   function getLectureName(course) {
-     switch(course) {
-       case 'js': return 'Introduction to JavaScript';
-       case 'php': return 'Laravel - The PHP Framework';
-       case 'net': return 'C# and .NET framework';
-     }
-   }
-   ```
+var name = 'John', 
+    age = 24;
+```
+  
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-3-2" hidden />
+          <label class="accordion-header" for="accordion-3-2">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>let</code> declares a block-scoped, local variable, optionally initializing it to a value
+          </label>
+  <div class="accordion-body">
 
-3. **Declaring variables: `var`, `let` and `const`**
+```javascript
+let count = 10;
+if (count > 5) {
+  let count = 5; // count = 5
+}
+// count here still equal 10
+```
+  
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-3-3" hidden />
+          <label class="accordion-header" for="accordion-3-3">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>const</code> declares a block-scoped, read-only named constant
+          </label>
+  <div class="accordion-body">
 
-   There are three kinds of declarations in JavaScript:
-    * `var` declares a variable, optionally initializing it to a value
-      ```javascript
-      var message;
-      message = 'Hello World'; 
+```javascript
+const user = {
+  name: 'John',
+  age: 24
+};
 
-      var name = 'John', 
-          age = 24;
-      ```
-    * `let`  declares a block-scoped, local variable, optionally initializing it to a value
-      ```javascript
-      let count = 10;
-      if (count > 5) {
-        let count = 5; // count = 5
-      }
-      // count here still equal 10
-      ```
-    * `const` declares a block-scoped, read-only named constant
-      ```javascript
-      const user = {
-        name: 'John',
-        age: 24
-      };
-      
-      const PRIMARY_COLOR = '#ccc';
-      ```
+const PRIMARY_COLOR = '#ccc';
+```
+  
+  </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Data Types</strong></p>
+    <p>According to the <strong>ECMAScript</strong>, there are six primitive types and everything else is an Object type. Let’s run over those one by one.</p>
+    <ul class="collapsible">
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-1" hidden />
+          <label class="accordion-header" for="accordion-4-1">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>Boolean</strong>
+          </label>
+  <div class="accordion-body">
+    <p>The boolean type has two values: <code>true</code> and <code>false</code>.</p>
 
-4. **Data Types**
+```javascript
+let isValid = true;
+isValid = false;
+```
 
-    According to the **ECMAScript**, there are six primitive types and everything else is an Object type. Let’s run over those one by one.
-    **ECMAScript** standard defines seven data types.
-    
-    1. **Boolean**  
-       The boolean type has two values: `true`  and `false`.
-       ```javascript
-       let isValid = true;
-       isValid = false;
-       ```
-    2. **Number**  
-       An integer or floating point number.
-       ```javascript
-       const age = 23;
-       const coef = 12.345;
-       ```
-       ```javascript
-       const hex = 0x00111; // hexadecimal, base 16 starts with 0x
-       const octal = 0o01; // octal, base 8 starts with 0o
-       const binary = 0b0011; // binary, base 2 starts with 0b
-       ```
-       The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
-       ```javascript
-       const result = 2 / "text"; // NaN
-       isNaN(result); // true
-       ```
-    3. **String**  
-       A sequence of characters that represent a text value. JavaScript strings are **immutable**.
-       ```javascript
-       let str = "Hello world"; 
-       str = 'new string';
-       
-       let age = 23;
-       let newStr = `age - ${age}`;
-       console.log(`first line
-       second line`);
-       ```
-       ```javascript
-       str.length // 10
-       str.charAt(2) // w
-       str.toLowerCase() // "new string"
-       str.toUpperCase() // "NEW STRING"
-       str.indexOf('str') // 4
-       newStr.substring(11, 17) // second
-       newStr.substr(11, 6) // second
-       ```
-    4. **null**  
-       `null` is a special keyword denoting a null value.
-       ```javascript
-       let x = null;
-       ```
-    5. **undefined**  
-       `undefined` is a top-level property whose value is not defined.
-       ```javascript
-       let y; // undefined
-       ```
-    6. **Symbol**  
-       A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.
-       ```javascript
-       let isAdmin = Symbol('isAdmin');
-       
-       let user = {
-         name: 'Jhon',
-         [isAdmin]: true
-       }
-       
-       user.isAdmin; // undefined
-       user[isAdmin]; // true
-       ```
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-2" hidden />
+          <label class="accordion-header" for="accordion-4-2">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>Number</strong>
+          </label>
+  <div class="accordion-body">
+    <p>An integer or floating point number.</p>
 
-5. [**Type coercion**](https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839)
+```javascript
+const age = 23;
+const coef = 12.345;
+```
+```javascript
+const hex = 0x00111; // hexadecimal, base 16 starts with 0x
+const octal = 0o01; // octal, base 8 starts with 0o
+const binary = 0b0011; // binary, base 2 starts with 0b
+```
+The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
+```javascript
+const result = 2 / "text"; // NaN
+isNaN(result); // true
+```
 
-   JavaScript variables can be converted to a new variable and another data type either by the use of a JavaScript function or automatically by JavaScript itself:
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-3" hidden />
+          <label class="accordion-header" for="accordion-4-3">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>String</strong>
+          </label>
+  <div class="accordion-body">
+    <p>A sequence of characters that represent a text value. JavaScript <strong>strings are immutable</strong>.</p>
 
-   Converting to **string**
-   ```javascript
-   String(null) // "null"
-   false.toString();  // "false"
-   12 + 'px' // "12px"
-   ```
-   Converting to **numbers**
-   ```javascript
-   Number(true) // 1
-   parseInt('3.14', 10) // 3
-   parseFloat('3.14') // 3.14
-   12 - '4' // 8
-   12 + '4' // "124"
-   12 + +'4' // 16
-   ```
-   Converting to **boolean**
-   ```javascript
-   0, '', null, undefined, NaN -> false
-   if (12) { }
-   Boolean(undefined) // false
-   console.log(!!'text'); // true
-   ```
+```javascript
+let str = "Hello world"; 
+str = 'new string';
 
-6. [**Control flow**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+let age = 23;
+let newStr = `age - ${age}`;
+console.log(`first line
+second line`);
+```
+```javascript
+str.length // 10
+str.charAt(2) // w
+str.toLowerCase() // "new string"
+str.toUpperCase() // "NEW STRING"
+str.indexOf('str') // 4
+newStr.substring(11, 17) // second
+newStr.substr(11, 6) // second
+```
 
-   * Block statement
-   * Conditional statements
-     * `if...else` statement
-       ```javascript
-       if (age < 18) {
-         ageCategory = 'young';
-       } else if (age > 50) {
-         ageCategory = 'old';
-       } else {
-         ageCategory = 'adult';
-       }
-       ```
-     * `switch` statement
-       ```javascript
-       switch(ageCategory) {
-         case 'young': 
-           console.log('less than 18');
-         case 'adult': 
-           console.log('from 18 to 50');
-           break;
-         case 'old': 
-           console.log('older then 50'); 
-           break;
-         default: 
-           console.log('unknown');
-       }
-       ```
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-4" hidden />
+          <label class="accordion-header" for="accordion-4-4">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>null</strong>
+          </label>
+  <div class="accordion-body">
+    <p><code>null</code> is a special keyword denoting a null value.</p>
 
-7. [**Loops and iteration**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+```javascript
+let x = null;
+```
 
-    Loops offer a quick and easy way to do something repeatedly. The statements for loops provided in JavaScript are:
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-5" hidden />
+          <label class="accordion-header" for="accordion-4-5">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>undefined</strong>
+          </label>
+  <div class="accordion-body">
+    <p><code>undefined</code> is a top-level property whose value is not defined.</p>
 
-    * `for` statement   
-    * `break` statement
-    * `continue` statement
-      ```javascript
-      for (let step = 0; step < stepCount; step++) {
-        const value = step * intervalComputed;
+```javascript
+let y; // undefined
+```
 
-        if (value === 0) {
-          labelsFromRange.push('0');
-          continue;
-        }
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-4-6" hidden />
+          <label class="accordion-header" for="accordion-4-6">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <strong>Symbol</strong>
+          </label>
+  <div class="accordion-body">
+    <p>A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.</p>
 
-        const labelText = formatNumber(value, decimalSeparator);
-        const labelWidth = getTextWidth(labelText);
-        const isLastStep = step === stepCountWithMargin;
+```javascript
+let isAdmin = Symbol('isAdmin');
 
-        if (isLastStep && remainingAxisLength < labelWidth) {
-          break;
-        }
+let user = {
+  name: 'Jhon',
+  [isAdmin]: true
+}
 
-        labelsFromRange.push(labelText);
-      }
-      ```
-    * `while` statement
-      ```javascript
-      let level = currentLevel;
+user.isAdmin; // undefined
+user[isAdmin]; // true
+```
 
-      while(level >= 0) {
-        // do something
-        level--;
-      }
-      ```
-    * `do...while` statement
-      ```javascript
-      do {
-        // do something
-        level--;
-      } while (lavel >= 0);
-      ```
-    * `for...of` statement
-      ```javascript
-      const user = { firstName: 'Mike', lastName: 'Din' };  
+  </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Type coercion</a></strong></p>
+    <p>JavaScript variables can be converted to a new variable and another data type either by the use of a JavaScript function or automatically by JavaScript itself:</p>
+    <p>Converting to <strong>string</strong></p>
 
-      for (let value of user) {  
-        console.log(value); // Mike, Din  
-      }
+```javascript
+String(null) // "null"
+false.toString();  // "false"
+12 + 'px' // "12px"
+```
 
-      Object.keys(user).forEach((key) => { ... });
-      ```
-    * `for...in` statement
-      ```javascript
-      Array.prototype.customFunction = function() {};
+<p>Converting to <strong>numbers</strong></p>
 
-      let weekends = ['Sat', 'Sun'];
+```javascript
+Number(true) // 1
+parseInt('3.14', 10) // 3
+parseFloat('3.14') // 3.14
+12 - '4' // 8
+12 + '4' // "124"
+12 + +'4' // 16
+```
 
-      for (let i in weekends ) {
-        console.log(i); // 0, 1, "customFunction"
-      }
-      ```
+<p>Converting to <strong>boolean</strong></p>
+
+```javascript
+0, '', null, undefined, NaN -> false
+if (12) { }
+Boolean(undefined) // false
+console.log(!!'text'); // true
+```
+
+  </li>
+  <li>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" title="Control flow"><strong>Control flow</strong></a></p>
+    <ul>
+      <li>Block statement</li>
+      <li>
+        Conditional statements
+        <ul class="collapsible">
+          <li>
+            <div class="accordion">
+              <input type="checkbox" id="accordion-6-1" hidden />
+              <label class="accordion-header" for="accordion-6-1">
+                <span className="icon">
+                  <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+                </span>
+                <code>if...else</code> statement
+              </label>
+  <div class="accordion-body">
+
+```javascript
+if (age < 18) {
+  ageCategory = 'young';
+} else if (age > 50) {
+  ageCategory = 'old';
+} else {
+  ageCategory = 'adult';
+}
+```
+  
+  </div>
+            </div>
+          </li>
+          <li>
+            <div class="accordion">
+              <input type="checkbox" id="accordion-6-2" hidden />
+              <label class="accordion-header" for="accordion-6-2">
+                <span className="icon">
+                  <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+                </span>
+                <code>switch</code> statement
+              </label>
+  <div class="accordion-body">
+
+```javascript
+switch(ageCategory) {
+  case 'young': 
+    console.log('less than 18');
+  case 'adult': 
+    console.log('from 18 to 50');
+    break;
+  case 'old': 
+    console.log('older then 50'); 
+    break;
+  default: 
+    console.log('unknown');
+}
+```
+  
+  </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" title="Loops and iteration"><strong>Loops and iteration</strong></a></p>
+    <p>Loops offer a quick and easy way to do something repeatedly. The statements for loops provided in JavaScript are:</p>
+    <ul class="collapsible">
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-7-1" hidden />
+          <label class="accordion-header" for="accordion-7-1">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>for</code> statement, <code>break</code> statement, <code>continue</code> statement
+          </label>
+  <div class="accordion-body">
+
+```javascript
+for (let step = 0; step < stepCount; step++) {
+  const value = step * intervalComputed;
+
+  if (value === 0) {
+    labelsFromRange.push('0');
+    continue;
+  }
+
+  const labelText = formatNumber(value, decimalSeparator);
+  const labelWidth = getTextWidth(labelText);
+  const isLastStep = step === stepCountWithMargin;
+
+  if (isLastStep && remainingAxisLength < labelWidth) {
+    break;
+  }
+
+  labelsFromRange.push(labelText);
+}
+```
+
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-7-2" hidden />
+          <label class="accordion-header" for="accordion-7-2">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>while</code> statement
+          </label>
+  <div class="accordion-body">
+
+```javascript
+let level = currentLevel;
+
+while(level >= 0) {
+  // do something
+  level--;
+}
+```
+
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-7-3" hidden />
+          <label class="accordion-header" for="accordion-7-3">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>do...while</code> statement
+          </label>
+  <div class="accordion-body">
+
+```javascript
+do {
+  // do something
+  level--;
+} while (lavel >= 0);
+```
+
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-7-4" hidden />
+          <label class="accordion-header" for="accordion-7-4">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>for...of</code> statement
+          </label>
+  <div class="accordion-body">
+
+```javascript
+const user = { firstName: 'Mike', lastName: 'Din' };  
+
+for (let value of user) {  
+  console.log(value); // Mike, Din  
+}
+
+Object.keys(user).forEach((key) => { ... });
+```
+  
+  </div>
+        </div>
+      </li>
+      <li>
+        <div class="accordion">
+          <input type="checkbox" id="accordion-7-5" hidden />
+          <label class="accordion-header" for="accordion-7-5">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+            </span>
+            <code>for...in</code> statement
+          </label>
+  <div class="accordion-body">
+
+```javascript
+Array.prototype.customFunction = function() {};
+
+let weekends = ['Sat', 'Sun'];
+
+for (let i in weekends ) {
+  console.log(i); // 0, 1, "customFunction"
+}
+```
+  
+  </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 <Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Lets spice it up 🔥" objectives="Gain practical knowledge" />
 

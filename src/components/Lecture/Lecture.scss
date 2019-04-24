@@ -18,8 +18,8 @@
 }
 .content ol,
 .content ul {
-  margin: 0.5rem 0 0.5rem 0.5rem;
-  padding-left: 1em;
+  margin: 0.25rem 0 0.5rem 0rem;
+  padding-left: 1.25rem;
 }
 .content ol {
   list-style: outside decimal;
@@ -75,6 +75,24 @@
 }
 .content a:hover code {
   text-decoration: underline;
+}
+
+/* Collapsible */
+.content ul.collapsible li {
+  list-style: none outside none;
+}
+.content ul.collapsible .accordion .accordion-header {
+  padding: 0;
+  cursor: pointer;
+  margin-left: -1.25rem;
+}
+.content ul.collapsible .accordion .accordion-header .icon {
+  display: inline-block;
+  width: 1.25rem;
+  text-align: center;
+}
+.content ul.collapsible .accordion .accordion-body:last-child {
+  margin-bottom: 0;
 }
 
 /* Author */

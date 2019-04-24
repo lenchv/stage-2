@@ -56,8 +56,6 @@ import "./php.css";
 
 <Level id="welcome-to-php" number="1" name="Welcome to PHP" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
 
-![php7](https://www.fastwebhost.in/blog/wp-content/uploads/2016/08/PHP7-ELEPHANT.png)
-
 [**PHP: Hypertext Preprocessor**](https://www.php.net/) _(or simply PHP)_ is a general-purpose programming language originally designed for web development. Originally PHP was just a "**p**ersonal **h**ome **p**age" created by [Rasmus Lerdorf](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D0%B4%D0%BE%D1%80%D1%84,_%D0%A0%D0%B0%D1%81%D0%BC%D1%83%D1%81) in 1995. But hey, it's 2019 already, isn't it dead?! [Hell, no.](https://w3techs.com/technologies/details/pl-php/all/all) Let's list some of the [fine folks who use PHP in production](https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites), so that you understand how serious it is:
 
 <div class="columns php-users">
@@ -98,7 +96,7 @@ import "./php.css";
   <strong>PHP</strong> <em>(ПХП, похапэ, пэхэпэ, пиашпи, пых-пых, ПиЭйчПи)</em> — один из немногих языков программирования, владея которым, можно заработать себе на хлеб, $ало и воду.
 </div>
 
-------
+<hr class="small" />
 
 ### High-level language
 ```php
@@ -203,8 +201,6 @@ $kernel->terminate($request, $response);
 [Why do we use $ in php?](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
 
 <Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
-
-![php7 rules](https://www.pvsm.ru/images/2016/12/20/uluchshenie-proizvoditelnosti-PHP-7.jpg)
 
 https://www.php.net/manual/en/migration70.new-features.php
 
@@ -1086,125 +1082,125 @@ So with PHP, you have the freedom of choosing an operating system and a web serv
   </div>
 </div>
 
-#### PHP-FIG & PSR
+<hr class="small" />
 
-[https://www.php-fig.org/](https://www.php-fig.org/)
+#### Standards and specifications
 
-#### Composer & Pecl
-![composer](https://getcomposer.org/img/logo-composer-transparent2.png)
+The [**PHP Standard Recommendation**](https://www.php-fig.org/psr/) <sup><small><strong>PSR</strong></small></sup> is a PHP specification published by the [**PHP Framework Interop Group**](https://www.php-fig.org/) <sup><small><strong>PHP-FIG</strong></small></sup>. Similar to Java Specification Request for Java, it serves the standardization of programming concepts in PHP. The aim is to enable interoperability of components and to provide a common technical basis for implementation of proven concepts for optimal programming and testing practices. The PHP-FIG is formed by several PHP frameworks founders. Each PSR is suggested by members and voted according to an established protocol to act consistently and in line with their agreed upon processes.
 
-Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+<hr class="small" />
 
-[https://getcomposer.org/download/](https://getcomposer.org/download/)
+#### Package management
 
-[https://github.com/laravel/laravel/blob/master/composer.json](https://github.com/laravel/laravel/blob/master/composer.json)
+<h5>
+  <img src="https://getcomposer.org/img/logo-composer-transparent2.png" alt="Composer logo" style={{
+    display: "inline-block",
+    height: "1.2em",
+    marginRight: "0.25em",
+    verticalAlign: "top"
+  }} />
+  <a href="https://getcomposer.org/" title="Composer"><strong>Composer</strong></a>
+</h5>
 
-Commands:
-* composer init
-* composer require vendor/package-name
-* composer install
-* composer dump-autoload
+**Composer** is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. _Composer is not a package manager in the same sense as Yum or Apt are_. Yes, it deals with "packages" or libraries, but it manages them on a per-project basis, installing them in a directory (e.g. **/vendor**) inside your project. By default it does not install anything globally. Thus, it is a dependency manager. It does however support a "global" project for convenience via the `global` command. This idea is not new and Composer is strongly inspired by node's **npm** and ruby's **bundler**.
 
-##### composer.lock
-[https://phpprofi.ru/blogs/post/15](https://phpprofi.ru/blogs/post/15)
+1. **composer.json**  
+   To start using Composer in your project, all you need is a **composer.json** file. This file describes the dependencies of your project and may contain other metadata as well. Take a look on [**Laravel's composer.json**](https://github.com/laravel/laravel/blob/master/composer.json)
+2. **Composer commands**  
+   `composer init`, `composer require vendor/package-name`, `composer install`, `composer dump-autoload`
+3. **composer.lock**  
+   Composer uses the exact versions listed in composer.lock to ensure that the package versions are consistent for everyone working on your project. As a result you will have all dependencies requested by your composer.json file, but they may not all be at the very latest available versions (some of the dependencies listed in the composer.lock file may have released newer versions since the file was created). This is by design, it ensures that your project does not break because of unexpected changes in dependencies. [**Composer: Всё о .lock файле**](https://phpprofi.ru/blogs/post/15)
+4. **Composer autoload & PSR-4**  
+   💩**index.php** before:  
+   ```php
+   require __DIR__ . '/Academy.php';
+   require __DIR__ . '/PHP.php';
+ 
+   Academy::start();
+   PHP::rock();
+   ```
+   💡**vendor/autoload.php**:  
+   ```json
+   "autoload": {
+     "psr-4": {
+       "App\\": "app/"
+     },
+     "classmap": [
+       "directory1",
+       "directory2"
+     ],
+     "files": [
+       "MyClass.php"
+     ]
+   },
+   "autoload-dev": {
+     "psr-4": {
+       "Tests\\": "tests/"
+     }
+   }
+   ```
+   🎉**index.php** after:
+   ```php
+   require __DIR__ . '/vendor/autoload.php';
+ 
+   Academy::start();
+   PHP::rock();
+   ```
+5. [**packagist.org**](https://packagist.org/)
+   <div class="bubble small subtle">
+     When you search for a package take a look at GitHub stars, resolved issues, and last commit date.
+   </div>
+
+##### [**PECL**](https://pecl.php.net)
 
 **PECL** is a repository for PHP Extensions, providing a directory of all known extensions and hosting facilities for downloading and development of PHP extensions.
 
-[https://pecl.php.net/](https://pecl.php.net)
+<hr class="small" />
 
-#### Composer autoload & PSR-4
-```
-"autoload": {
-    "psr-4": {
-        "App\\": "app/"
-    },
-    "classmap": [
-        "directory1",
-        "directory2"
-    ],
-    "files": [
-        "MyClass.php"
-    ]
-},
-"autoload-dev": {
-    "psr-4": {
-        "Tests\\": "tests/"
-    }
-}
-```
+#### PHP & Web servers
 
+* PHP built-in local web server → `php -S localhost:8888`
+* apache web server → **mod-php**
+* nginx web server → **php-fpm**
 
-```php
-// before
-require __DIR__ . '/Academy.php';
-require __DIR__ . '/PHP.php';
+<small>Sample nginx php-fpm configuration — <strong>mywebsite.nginx.conf</strong></small>
 
-Academy::start();
-PHP::rock();
-
-// after(entry point file aka index.php)
-require __DIR__ . '/vendor/autoload.php';
-
-Academy::start();
-PHP::rock();
-```
-
-[**packagist.org**](https://packagist.org/)
-
-*When you search for a package take a look at github stars, resolved issues and last commit date.*
-
-#### PHP & webservers
-
-* Local web server `php -S localhost:8888`
-* nginx, php-fpm
-* apache, mod-php
-
-How it is working?
-
-![php-fpm_nginx](https://datadog-prod.imgix.net/img/blog/nginx-502-bad-gateway-errors-php-fpm/php-fpm-health-3.png?fit=max)
-
-*mywebsite.nginx.conf*
 ```
 server {
-    listen 80;
-
-    root /var/www/app/public;
-
-    index index.php index.htm index.html;
-    
-    # ...settings
-    
-    location ~ \.php$ {
-        # php-fpm container url
-        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_buffers 16 16k;
-        fastcgi_buffer_size 32k;
-        include fastcgi_params;
-    }
+  listen 80;
+  root /var/www/app/public;
+  index index.php index.htm index.html;
+  
+  # ...settings
+  
+  # proxy files that end with ".php" through php-fpm
+  location ~ \.php$ {
+    fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_buffers 16 16k;
+    fastcgi_buffer_size 32k;
+    include fastcgi_params;
+  }
 }
 ```
-
-![dark side php](https://cs8.pikabu.ru/post_img/2017/03/06/11/1488825124234724523.jpg)
+![php-fpm_nginx](https://datadog-prod.imgix.net/img/blog/nginx-502-bad-gateway-errors-php-fpm/php-fpm-health-3.png?fit=max)
 
 <Level id="typical-php-development-environment" number="4" name="Typical PHP development environment" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
 
-* Use OS(Linux, Windows, MAC)
-* Use Version control system(Git)
-* Use linters: phpstan, phpmd, phpcs
-* Use debuggers: xdebug, zend debugger
-* Use profilers to optimize memory: blackfire.io, xhprof
+* OS: Linux, Windows, MacOS
+* Version control system: Git
+* Smart IDE: [PHPStorm](https://www.jetbrains.com/phpstorm/), [VSCode](https://code.visualstudio.com/)
+* Linters: phpstan, phpmd, phpcs
+* Debuggers: xdebug, zend debugger
+* Profilers for memory optimization: blackfire.io, xhprof
 * Standardize dev environment: [vagrant-homestead](https://laravel.com/docs/5.8/homestead), [docker-laradock](https://laradock.io/)
-* Use smart IDE: [PHPStorm](https://www.jetbrains.com/phpstorm/), [VSCode](https://code.visualstudio.com/)
 
 ## Links
 * [clean-code-php](https://github.com/jupeter/clean-code-php)
 * [awesome-php](https://github.com/ziadoz/awesome-php)
 * [Laracasts](https://laracasts.com/)
 * [codecourse](https://www.youtube.com/channel/UCpOIUW62tnJTtpWFABxWZ8g)
-
-![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
 
 export const metadata = {
   author: "Pavel Nemchenko",

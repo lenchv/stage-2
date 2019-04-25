@@ -114,7 +114,7 @@ import "./es6.css";
     </div>
     <p>I’ve spent all my life defeating my enemies, perfecting my martial skills, and learning the true essence of what it means to be an honorable warrior. But now my greatest challenge lies before me.</p>
     <div class="message__scene">
-      <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
+      <em>(raising his hand into the air, Ryu’s hand is engulfed in flame, and he brings it cr-r-r-r-rashing down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
     </div>
     <p><strong>I need my own video game.</strong></p>
     <Flute />
@@ -183,14 +183,14 @@ import "./es6.css";
     <p><strong><a href="https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83">Putting comments in code</a></strong></p>
     <p>The syntax of comments is the same as in C++ and in many other languages. Comments behave like white space and are discarded during script execution.</p>
 
-```javascript
+```js
 const style = {
   display: 'flex',
   flexWrap: 'wrap'
   // dominantBaseline: central;  not supported by IE 9 :(
 }
 ```
-```javascript
+```js
 /**
 * returns the name of the lecture
 * @param {string} course 'js' | 'php' | 'net'
@@ -209,19 +209,15 @@ function getLectureName(course) {
   <li>
     <p><strong>Declaring variables: <code>var</code>, <code>let</code> and <code>const</code></strong></p>
     <p>There are three kinds of declarations in JavaScript:</p>
-    <ul class="collapsible">
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-3-1" hidden />
-          <label class="accordion-header" for="accordion-3-1">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>var</code> declares a variable, optionally initializing it to a value
-          </label>
-  <div class="accordion-body">
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1" />
+        <label class="summary" for="accordion-3-1">
+          <code>var</code> declares a variable, optionally initializing it to a value
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 var message;
 message = 'Hello World'; 
 
@@ -230,20 +226,15 @@ var name = 'John',
 ```
   
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-3-2" hidden />
-          <label class="accordion-header" for="accordion-3-2">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>let</code> declares a block-scoped, local variable, optionally initializing it to a value
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-3-2" />
+        <label class="summary" for="accordion-3-2">
+          <code>let</code> declares a block-scoped, local variable, optionally initializing it to a value
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 let count = 10;
 if (count > 5) {
   let count = 5; // count = 5
@@ -252,20 +243,15 @@ if (count > 5) {
 ```
   
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-3-3" hidden />
-          <label class="accordion-header" for="accordion-3-3">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>const</code> declares a block-scoped, read-only named constant
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-3-3" />
+        <label class="summary" for="accordion-3-3">
+          <code>const</code> declares a block-scoped, read-only named constant
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 const user = {
   name: 'John',
   age: 24
@@ -275,77 +261,62 @@ const PRIMARY_COLOR = '#ccc';
 ```
   
   </div>
-        </div>
       </li>
     </ul>
   </li>
   <li>
     <p><strong>Data Types</strong></p>
     <p>According to the <strong>ECMAScript</strong>, there are six primitive types and everything else is an Object type. Let’s run over those one by one.</p>
-    <ul class="collapsible">
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-1" hidden />
-          <label class="accordion-header" for="accordion-4-1">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>Boolean</strong>
-          </label>
-  <div class="accordion-body">
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-4-1" />
+        <label class="summary" for="accordion-4-1">
+          <strong>Boolean</strong>
+        </label>
+  <div class="details-body">
     <p>The boolean type has two values: <code>true</code> and <code>false</code>.</p>
 
-```javascript
+```js
 let isValid = true;
 isValid = false;
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-2" hidden />
-          <label class="accordion-header" for="accordion-4-2">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>Number</strong>
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-4-2" />
+        <label class="summary" for="accordion-4-2">
+          <strong>Number</strong>
+        </label>
+  <div class="details-body">
     <p>An integer or floating point number.</p>
 
-```javascript
+```js
 const age = 23;
 const coef = 12.345;
 ```
-```javascript
+```js
 const hex = 0x00111; // hexadecimal, base 16 starts with 0x
 const octal = 0o01; // octal, base 8 starts with 0o
 const binary = 0b0011; // binary, base 2 starts with 0b
 ```
 The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
-```javascript
+```js
 const result = 2 / "text"; // NaN
 isNaN(result); // true
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-3" hidden />
-          <label class="accordion-header" for="accordion-4-3">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>String</strong>
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-4-3" />
+        <label class="summary" for="accordion-4-3">
+          <strong>String</strong>
+        </label>
+  <div class="details-body">
     <p>A sequence of characters that represent a text value. JavaScript <strong>strings are immutable</strong>.</p>
 
-```javascript
+```js
 let str = "Hello world"; 
 str = 'new string';
 
@@ -354,7 +325,7 @@ let newStr = `age - ${age}`;
 console.log(`first line
 second line`);
 ```
-```javascript
+```js
 str.length // 10
 str.charAt(2) // w
 str.toLowerCase() // "new string"
@@ -365,59 +336,44 @@ newStr.substr(11, 6) // second
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-4" hidden />
-          <label class="accordion-header" for="accordion-4-4">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>null</strong>
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-4-4" />
+        <label class="summary" for="accordion-4-4">
+          <strong>null</strong>
+        </label>
+  <div class="details-body">
     <p><code>null</code> is a special keyword denoting a null value.</p>
 
-```javascript
+```js
 let x = null;
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-5" hidden />
-          <label class="accordion-header" for="accordion-4-5">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>undefined</strong>
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-4-5" />
+        <label class="summary" for="accordion-4-5">
+          <strong>undefined</strong>
+        </label>
+  <div class="details-body">
     <p><code>undefined</code> is a top-level property whose value is not defined.</p>
 
-```javascript
+```js
 let y; // undefined
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-4-6" hidden />
-          <label class="accordion-header" for="accordion-4-6">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <strong>Symbol</strong>
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-4-6" />
+        <label class="summary" for="accordion-4-6">
+          <strong>Symbol</strong>
+        </label>
+  <div class="details-body">
     <p>A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.</p>
 
-```javascript
+```js
 let isAdmin = Symbol('isAdmin');
 
 let user = {
@@ -430,7 +386,6 @@ user[isAdmin]; // true
 ```
 
   </div>
-        </div>
       </li>
     </ul>
   </li>
@@ -440,7 +395,7 @@ user[isAdmin]; // true
 
 Converting to **string**
 
-```javascript
+```js
 String(null) // "null"
 false.toString();  // "false"
 12 + 'px' // "12px"
@@ -448,7 +403,7 @@ false.toString();  // "false"
 
 Converting to **numbers**
 
-```javascript
+```js
 Number(true) // 1
 parseInt('3.14', 10) // 3
 parseFloat('3.14') // 3.14
@@ -459,7 +414,7 @@ parseFloat('3.14') // 3.14
 
 Converting to **boolean**
 
-```javascript
+```js
 0, '', null, undefined, NaN -> false
 if (12) { }
 Boolean(undefined) // false
@@ -473,19 +428,15 @@ console.log(!!'text'); // true
       <li>Block statement</li>
       <li>
         Conditional statements
-        <ul class="collapsible">
-          <li>
-            <div class="accordion">
-              <input type="checkbox" id="accordion-6-1" hidden />
-              <label class="accordion-header" for="accordion-6-1">
-                <span className="icon">
-                  <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-                </span>
-                <code>if...else</code> statement
-              </label>
-  <div class="accordion-body">
+        <ul>
+          <li class="details">
+            <input type="checkbox" id="accordion-6-1" />
+            <label class="summary" for="accordion-6-1">
+              <code>if...else</code> statement
+            </label>
+  <div class="details-body">
 
-```javascript
+```js
 if (age < 18) {
   ageCategory = 'young';
 } else if (age > 50) {
@@ -496,20 +447,15 @@ if (age < 18) {
 ```
   
   </div>
-            </div>
           </li>
-          <li>
-            <div class="accordion">
-              <input type="checkbox" id="accordion-6-2" hidden />
-              <label class="accordion-header" for="accordion-6-2">
-                <span className="icon">
-                  <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-                </span>
-                <code>switch</code> statement
-              </label>
-  <div class="accordion-body">
+          <li class="details">
+            <input type="checkbox" id="accordion-6-2" />
+            <label class="summary" for="accordion-6-2">
+              <code>switch</code> statement
+            </label>
+  <div class="details-body">
 
-```javascript
+```js
 switch(ageCategory) {
   case 'young': 
     console.log('less than 18');
@@ -525,7 +471,6 @@ switch(ageCategory) {
 ```
   
   </div>
-            </div>
           </li>
         </ul>
       </li>
@@ -534,19 +479,15 @@ switch(ageCategory) {
   <li>
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" title="Loops and iteration"><strong>Loops and iteration</strong></a></p>
     <p>Loops offer a quick and easy way to do something repeatedly. The statements for loops provided in JavaScript are:</p>
-    <ul class="collapsible">
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-7-1" hidden />
-          <label class="accordion-header" for="accordion-7-1">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>for</code> statement, <code>break</code> statement, <code>continue</code> statement
-          </label>
-  <div class="accordion-body">
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-7-1" />
+        <label class="summary" for="accordion-7-1">
+          <code>for</code> statement, <code>break</code> statement, <code>continue</code> statement
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 for (let step = 0; step < stepCount; step++) {
   const value = step * intervalComputed;
 
@@ -568,20 +509,15 @@ for (let step = 0; step < stepCount; step++) {
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-7-2" hidden />
-          <label class="accordion-header" for="accordion-7-2">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>while</code> statement
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-7-2" />
+        <label class="summary" for="accordion-7-2">
+          <code>while</code> statement
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 let level = currentLevel;
 
 while(level >= 0) {
@@ -591,20 +527,15 @@ while(level >= 0) {
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-7-3" hidden />
-          <label class="accordion-header" for="accordion-7-3">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>do...while</code> statement
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-7-3" />
+        <label class="summary" for="accordion-7-3">
+          <code>do...while</code> statement
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 do {
   // do something
   level--;
@@ -612,20 +543,15 @@ do {
 ```
 
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-7-4" hidden />
-          <label class="accordion-header" for="accordion-7-4">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>for...of</code> statement
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-7-4" />
+        <label class="summary" for="accordion-7-4">
+          <code>for...of</code> statement
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 const user = { firstName: 'Mike', lastName: 'Din' };  
 
 for (let value of user) {  
@@ -636,20 +562,15 @@ Object.keys(user).forEach((key) => { ... });
 ```
   
   </div>
-        </div>
       </li>
-      <li>
-        <div class="accordion">
-          <input type="checkbox" id="accordion-7-5" hidden />
-          <label class="accordion-header" for="accordion-7-5">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-            </span>
-            <code>for...in</code> statement
-          </label>
-  <div class="accordion-body">
+      <li class="details">
+        <input type="checkbox" id="accordion-7-5" />
+        <label class="summary" for="accordion-7-5">
+          <code>for...in</code> statement
+        </label>
+  <div class="details-body">
 
-```javascript
+```js
 Array.prototype.customFunction = function() {};
 
 let weekends = ['Sat', 'Sun'];
@@ -660,7 +581,6 @@ for (let i in weekends ) {
 ```
   
   </div>
-        </div>
       </li>
     </ul>
   </li>
@@ -668,27 +588,906 @@ for (let i in weekends ) {
 
 <Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Lets spice it up 🔥" objectives="Gain practical knowledge" />
 
-1. Get data from remote api, using `fetch` method.
+<ol>
+  <li>
+    Get data from remote API, using <code>fetch</code> method
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-1-1" />
+        <label class="summary" for="accordion-2-1-1">
+          <code>fetch</code> data
+        </label>
+  <div class="details-body">
 
-2. Check data types from response (`Arrays` and `Objects`).
+```js
+const API_URL = 'https://api.github.com/repos/sahanr/street-fighter/contents/fighters.json';
 
-3. [**Standard built-in objects**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) (`RegExp`, `JSON`, `Number`, `Math`, etc._).
+fetch(API_URL);
+```
+  
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-1-2" />
+        <label class="summary" for="accordion-2-1-2">
+          What is a <code>Promise</code>?
+        </label>
+  <div class="details-body">
 
-4. Display data using **DOM** api.
+```js
+const responsePromise = fetch(API_URL);
+console.log(responsePromise);
+```
+  
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-1-3" />
+        <label class="summary" for="accordion-2-1-3">
+          Add <code>then</code> method
+        </label>
+  <div class="details-body">
 
-6. Let's get back to **promises**.
- 
-7. Add more **functions** (_arrow functions, async functions, generators, function arguments_).
+```js
+responsePromise.then(response => { console.log(response) });
+```
+  
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-1-4" />
+        <label class="summary" for="accordion-2-1-4">
+          Get response body
+        </label>
+  <div class="details-body">
 
-8. **Handle errors** using `try...catch` statement.
+```js
+responsePromise.then(response => { response.json() });
+```
+  
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-1-5" />
+        <label class="summary" for="accordion-2-1-5">
+          Get file content and parse it (<code>Promise</code> chain)
+        </label>
+  <div class="details-body">
 
-9. Create more **DOM elements** and add **event listeners**.
+```js
+const API_URL = 'https://api.github.com/repos/sahanr/street-fighter/contents/fighters.json';
 
-10. Using [**spread/rest operator**](https://medium.freecodecamp.org/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e).
+fetch(API_URL)
+  .then(response => response.json())
+  .then(file => {
+    const fighters = JSON.parse(atob(file.content));
+    console.log(fighters);
+  });
+```
+  
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Check data types from response
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-2-1" />
+        <label class="summary" for="accordion-2-2-1">
+          <code>Array</code> and <code>Object</code>
+        </label>
+  <div class="details-body">
 
-11. Use **keyed collection** (`Map`, `Set`).
+```js
+const names = fighters.map(it => it.name).join('\n');
+```
+  
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects"><strong>Standard built-in objects</strong></a>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-3-1" />
+        <label class="summary" for="accordion-2-3-1">
+          <code>RegExp</code>, <code>JSON</code>, <code>Number</code>, <code>Math</code>, etc.
+        </label>
+  <div class="details-body">
 
-12. Add **classes** (_using inheritance and static propertis_).
+```js
+const regexp = /ab+c/;
+const regexp = new RegExp('ab+c');
+```
+
+```js
+const date = new Date();
+date.getFullYear();
+```
+
+```js
+Number.MAX_VALUE;
+Number.parseInt();
+```
+
+```js
+Math.max();
+```
+  
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Display data using <strong>DOM API</strong>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-4-1" />
+        <label class="summary" for="accordion-2-4-1">
+          <code>getElementById</code>, <code>getElementsByClassName</code>, <code>querySelector</code>, etc.
+        </label>
+  <div class="details-body">
+
+```js
+const rootElement = document.getElementById('root');
+
+rootElement.innerText = 'Loading...';
+
+fetch(API_URL)
+  .then(response => response.json())
+  .then(file => {
+    const fighters = JSON.parse(atob(file.content));
+    const names = fighters.map(it => it.name).join('\n');
+    rootElement.innerText = names;
+  });
+```
+  
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Let's get back to <strong>Promises</strong>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-1" />
+        <label class="summary" for="accordion-2-5-1">
+          onRejected handler
+        </label>
+  <div class="details-body">
+
+```js
+fetch(API_URL)
+  .then(
+    response => { return response.json(); }, 
+    error => { console.warn(error); }
+  )
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-2" />
+        <label class="summary" for="accordion-2-5-2">
+          <code>catch</code> method
+        </label>
+  <div class="details-body">
+
+```js
+fetch(API_URL)
+  .then()
+  .then()
+  .catch(error => {
+    console.warn(error);
+    root.innerText = 'Failed to load data';
+  });
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-3" />
+        <label class="summary" for="accordion-2-5-3">
+          throw new Error
+        </label>
+  <div class="details-body">
+
+```js
+fetch(API_URL)
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Failed load data');
+		}
+		return response.json();
+	})
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-4" />
+        <label class="summary" for="accordion-2-5-4">
+          <code>Promise.reject</code>
+        </label>
+  <div class="details-body">
+
+```js
+if (!response.ok) {
+  Promise.reject(new Error('Failed load data'));
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-5" />
+        <label class="summary" for="accordion-2-5-5">
+          Add loading overlay
+        </label>
+  <div class="details-body">
+
+```html
+<div id="loading-overlay">
+  <img src="resources/logo.png"/>
+</div>
+```
+```js
+const loadingElement = document.getElementById('loading-overlay');
+
+loadingElement.remove();
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-6" />
+        <label class="summary" for="accordion-2-5-6">
+          <code>finally</code>
+        </label>
+  <div class="details-body">
+
+```js
+fetch(API_URL)
+  .then()
+  .then()
+  .catch()
+  .finally(() => {
+    loadingElement.remove(); 
+  });
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-7" />
+        <label class="summary" for="accordion-2-5-7">
+          <code>Promise.resolve</code>
+        </label>
+  <div class="details-body">
+
+```js
+const greetingPromise = Promise.resolve({ value: 'Hello World' });  
+greetingPromise.then(res=> { console.log(res.value + '!') });  
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-8" />
+        <label class="summary" for="accordion-2-5-8">
+          <code>new Promise</code>
+        </label>
+  <div class="details-body">
+
+```js
+const promise = new Promise((resolve, reject) => {
+  // some asynchronous code
+  let isValid = true 
+	
+  if (isValid) {  
+    resolve("Success");  
+  } else {  
+    reject(Error("Error"));  
+  }  
+});
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-5-9" />
+        <label class="summary" for="accordion-2-5-9">
+          <code>Promise.race</code> and <code>Promise.all</code>
+        </label>
+  <div class="details-body">
+
+```js
+function createPromise(message, ms) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(message), ms);
+  });
+}
+
+const one = createPromise('first resolved', 2000);
+const two = createPromise('second resolved', 3000);  
+
+const promiseRace = Promise.race([one, two]);
+const promiseAll = Promise.all([one, two]);
+
+promiseRace.then(res => console.log(res)); // first resolved
+promiseAll.then(res => console.log(res)); // ['first resolved', 'second resolved']
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Add more <strong>Functions</strong>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-6-1" />
+        <label class="summary" for="accordion-2-6-1">
+          ???
+        </label>
+  <div class="details-body">
+
+```js
+const API_URL = 'https://api.github.com/';
+const rootElement = document.getElementById('root');
+const loadingElement = document.getElementById('loading-overlay');
+
+const startApp = function() {
+  const endpoint = 'repos/sahanr/street-fighter/contents/fighters.json';
+  const fightersPromise = callApi(endpoint, 'GET');
+  
+  fightersPromise.then(fighters => {
+    const fightersNames = getFightersNames(fighters);
+    rootElement.innerText = fightersNames;
+  });	
+}
+
+function callApi(endpoind, method) {
+  const url = API_URL + endpoind;
+  const options = {
+    method
+  };
+
+  return fetch(url, options)
+    .then(response => response.ok ? response.json() : Promise.reject(Error('Failed to load')))
+    .then(file => JSON.parse(atob(file.content)))
+    .catch(error => {
+      console.warn(error);
+      rootElement.innerText = 'Failed to load data';
+    })
+    .finally(() => {
+      loadingElement.remove();
+    });
+}
+
+function getFightersNames(fighters) {
+  const names = fighters.map(it => it.name).join('\n');
+  return names;
+}
+
+startApp();
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-6-2" />
+        <label class="summary" for="accordion-2-6-2">
+          Arrow functions
+        </label>
+  <div class="details-body">
+
+```js
+const getFightersNames = () => fighters.map(it => it.name).join('\n');
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-6-3" />
+        <label class="summary" for="accordion-2-6-3">
+          Arguments
+        </label>
+  <div class="details-body">
+
+```js
+function callApi(endpoind, method = 'GET') {
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-6-4" />
+        <label class="summary" for="accordion-2-6-4">
+          Async await 
+        </label>
+  <div class="details-body">
+
+```js
+const API_URL = 'https://api.github.com/';
+
+async function startApp() {
+  const endpoint = 'repos/sahanr/street-fighter/contents/fighters.json';
+  const fighters = await callApi(endpoint, 'GET');
+  rootElement.innerText = getFightersNames(fighters);
+}
+```
+```js
+  const fighters = await callApi(endpoint, 'GET');
+  const fightersArr = await callApi(endpoint, 'GET');
+```
+```js
+  const [fighters, fightersArr] = await Promise.all([
+    callApi(endpoint, 'GET'),
+    callApi(endpoint, 'GET')
+  ]);
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-6-5" />
+        <label class="summary" for="accordion-2-6-5">
+          Generators
+        </label>
+  <div class="details-body">
+
+```js
+function* generateSequence() {
+  const result = yield 1;
+  console.log(result); // 'args'
+  yield 2;
+  yield 3;
+}
+
+let generator = generateSequence();
+let one = generator.next(); // {value: 1, done: false}
+let two = generator.next('args'); // {value: 2, done: false}
+let three = generator.next(); // {value: 3, done: true}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Handle errors</strong>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-7-1" />
+        <label class="summary" for="accordion-2-7-1">
+          Use <code>try...catch</code> statement
+        </label>
+  <div class="details-body">
+
+```js
+// add styles visibility to loading
+async function startApp() {
+  try {
+    loadingElement.style.visibility = 'visible';
+    
+    const endpoint = 'repos/sahanr/street-fighter/contents/fighters.json';
+    const fighters = await callApi(endpoint, 'GET');
+    
+    rootElement.innerText = getFightersNames(fighters);
+  } catch (error) {
+    console.warn(error);
+    rootElement.innerText = 'Failed to load data';
+  } finally {
+    loadingElement.style.visibility = 'hidden';
+  }
+}
+
+function callApi(endpoind, method) {
+  const url = API_URL + endpoind
+  const options = {
+    method
+  };
+
+  return fetch(url, options)
+    .then(response => 
+      response.ok 
+        ? response.json() 
+        : Promise.reject(Error('Failed to load'))
+    )
+    .then(file => JSON.parse(atob(file.content)))
+    .catch(error => { throw error });
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Create more <strong>DOM elements</strong> and add <strong>event listeners</strong>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-1" />
+        <label class="summary" for="accordion-2-8-1">
+          Add the helper function for creating a DOM element
+        </label>
+  <div class="details-body">
+
+```js
+function createElement({ tagName, className = '', attributes = {} }) {
+  const element = document.createElement(tagName);
+  element.classList.add(className);
+	
+  Object
+    .keys(attributes)
+    .forEach(key => element.setAttribute(key, attributes[key]));
+
+  return element;
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-2" />
+        <label class="summary" for="accordion-2-8-2">
+          Create name and image elements
+        </label>
+  <div class="details-body">
+
+```js
+function createName(name) {
+  const nameElement = createElement({ tagName: 'span', className: 'name' });
+  nameElement.innerText = name;
+
+  return nameElement;
+}
+
+function createImage(source) {
+  const attributes = { src: source };
+  const imgElement = createElement({
+    tagName: 'img',
+    className: 'fighter-image',
+    attributes
+  });
+
+  return imgElement;
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-3" />
+        <label class="summary" for="accordion-2-8-3">
+          Create fighter
+        </label>
+  <div class="details-body">
+
+```js
+function createFighter(fighter) {
+  const { name, source } = fighter;
+  const nameElement = createName(name);
+  const imageElement = createImage(source);
+  const element = createElement({ tagName: 'div', className: 'fighter' });
+
+  element.append(imageElement, nameElement);
+
+  return element;
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-4" />
+        <label class="summary" for="accordion-2-8-4">
+          Create fighters
+        </label>
+  <div class="details-body">
+
+```js
+function createFighters(fighters) {
+  const fighterElements = fighters.map(fighter => createFighter(fighter));
+  const element = createElement({ tagName: 'div', className: 'fighters' });
+
+  element.append(...fighterElements);
+
+  return element;
+}
+```
+
+  <p>Using the <a href="https://medium.freecodecamp.org/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e"><strong>spread operator and rest parameter</strong></a>:</p>
+  <ul>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-8-4-1" />
+      <label class="summary" for="accordion-2-8-4-1">
+        How to <strong>spread</strong>?
+      </label>
+  <div class="details-body">
+
+```js 
+const newFighters = [...fighters];
+newFighters.push({ name: 'Some new fighter' });
+```
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-8-4-2" />
+      <label class="summary" for="accordion-2-8-4-2">
+        How to <strong>rest</strong>?
+      </label>
+  <div class="details-body">
+
+```js 
+const [firstFighter, secondFighter, ...restFighters] = fighters;
+```
+
+  </div>
+    </li>
+  </ul>
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-5" />
+        <label class="summary" for="accordion-2-8-5">
+          Append fighters to the root element
+        </label>
+  <div class="details-body">
+
+```js
+const fightersElement = createFighters(fighters);
+
+rootElement.appendChild(fightersElement);
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-8-6" />
+        <label class="summary" for="accordion-2-8-6">
+          Adding events
+        </label>
+  <div class="details-body">
+
+```js
+element.addEventListener('click', (event) => handleClick(event, 'wrapper'), false)
+imgElement.addEventListener('click', (event) => handleClick(event, 'image'), false)
+
+function handleClick(event, el) {
+  console.log(el);
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Use <strong>keyed collection</strong> to hold key-value pairs
+    <ul>
+      <li class="details">
+          <input type="checkbox" id="accordion-2-9-1" />
+          <label class="summary" for="accordion-2-9-1">
+            <code>Map</code> or <code>Set</code>
+          </label>
+  <div class="details-body">
+
+```js
+handleFighterClick(event, fighter) {
+  const { _id } = fighter;
+
+  if(!this.fightersDetailsMap.has(_id)) {
+    // send request here
+    this.fightersDetailsMap.set(_id, fighter);
+  }
+
+  console.log(this.fightersDetailsMap.get(_id));
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Add <strong>classes</strong> (use inheritance and static properties)
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-10-1" />
+        <label class="summary" for="accordion-2-10-1">
+          Add <code>View</code> class
+        </label>
+  <div class="details-body">
+
+```js
+class View {
+  element;
+
+  createElement({ tagName, className = '', attributes = {} }) {
+    const element = document.createElement(tagName);
+    element.classList.add(className);
+    
+    Object.keys(attributes).forEach(key => element.setAttribute(key, attributes[key]));
+
+    return element;
+  }
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-10-2" />
+        <label class="summary" for="accordion-2-10-2">
+          What are <em>getters</em> and <em>setters</em>?
+        </label>
+  <div class="details-body">
+
+```js
+get element() {
+	return this.fighters;
+}
+
+set element(value) {
+	this.fighters = value;
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-10-3" />
+        <label class="summary" for="accordion-2-10-3">
+          Create <code>Fighters</code> and <code>Fighter</code> class
+        </label>
+  <div class="details-body">
+
+```js
+class FighterView extends View {
+  constructor(fighter, handleClick) {
+    super();
+
+    this.createFighter(fighter, handleClick);
+  }
+
+  createFighter(fighter, handleClick) {
+    const { name, source } = fighter;
+    const nameElement = this.createName(name);
+    const imageElement = this.createImage(source);
+
+    this.element = this.createElement({ tagName: 'div', className: 'fighter' });
+    this.element.append(imageElement, nameElement);
+    this.element.addEventListener('click', event => handleClick(event, fighter), false);
+  }
+
+  createName(name) {
+    const nameElement = this.createElement({ tagName: 'span', className: 'name' });
+    nameElement.innerText = name;
+
+    return nameElement;
+  }
+
+  createImage(source) {
+    const attributes = { src: source };
+    const imgElement = this.createElement({
+      tagName: 'img',
+      className: 'fighter-image',
+      attributes
+    });
+
+    return imgElement;
+  }
+}
+
+class FightersView extends View {
+  constructor(fighters) {
+    super();
+    
+    this.createFighters(fighters);
+  }
+
+  fightersDetailsMap = new Map();
+
+  createFighters(fighters) {
+    const fighterElements = fighters.map(fighter => {
+      const fighterView = new FighterView(fighter, this.handleFighterClick);
+      return fighterView.element;
+    });
+
+    this.element = this.createElement({ tagName: 'div', className: 'fighters' });
+    this.element.append(...fighterElements);
+  }
+
+  handleFighterClick(event, fighter) {
+    this.fightersDetailsMap.set(fighter._id, fighter);
+    console.log('clicked')
+    // get from map or load info and add to fightersMap
+    // show modal with fighter info
+    // allow to edit health and power in this modal
+  }
+}
+```
+
+  </div>
+      </li>
+      <li>
+        What is <code>super()</code> and <code>super.parentMethod()</code>?
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-10-4" />
+        <label class="summary" for="accordion-2-10-4">
+          Add <code>App</code> class
+        </label>
+  <div class="details-body">
+
+```js
+class App {
+  constructor() {
+    this.startApp();
+  }
+
+  static rootElement = document.getElementById('root');
+  static loadingElement = document.getElementById('loading-overlay');
+
+  async startApp() {
+    try {
+      App.loadingElement.style.visibility = 'visible';
+      
+      const fighters = await fighterService.getFighters();
+      const fightersView = new FightersView(fighters);
+      const fightersElement = fightersView.element;
+
+      App.rootElement.appendChild(fightersElement);
+    } catch (error) {
+      console.warn(error);
+      App.rootElement.innerText = 'Failed to load data';
+    } finally {
+      App.loadingElement.style.visibility = 'hidden';
+    }
+  }
+}
+
+new App();
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-2-10-5" />
+        <label class="summary" for="accordion-2-10-5">
+          <code>bind</code>, <code>call</code>, and <code>apply</code>
+        </label>
+  <div class="details-body">
+
+```js
+class FightersView extends View {
+  constructor(fighters) {
+    super();
+    
+    this.handleClick = this.handleFighterClick.bind(this);
+    this.createFighters(fighters);
+  }
+
+  createFighters(fighters) {
+    const fighterElements = fighters.map(fighter => {
+      const fighterView = new FighterView(fighter, this.handleFighterClick);
+      return fighterView.element;
+    });
+  }
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 <Level id="modules-transpiling-bundling-etc" number="3" name="Modules, transpiling, bundling, etc." difficulty="And now we gonna roll 🤸" objectives="Get the most out of the JS" />
 
@@ -698,35 +1497,11 @@ for (let i in weekends ) {
 
 3. **ES6 modules**: what’s great about them?
 
-4. [**Wepback**](https://webpack.js.org/) - module bundler for JavaScript applications.
+4. [**Wepback**](https://webpack.js.org/) — module bundler for JavaScript applications.
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
-
-**Закінчити проект.**
-
-<strong>Створити класс “Fighter”. Клас повиненин приймати значення name, power і health. Також клас повинен мати методи “setDamage” та “hit”.</strong>
-
-Метод <em>“setDamage”</em> приймає значення “damage” і наносить урон змінюючи значення <em>health (health = health - damage)</em>, і виводить в консоль строку <em>“health: ”</em>.
-
-Метод <em>“hit”</em> приймає значення <em>“enemy”, “point”</em>, і в середині викликає метод переданого обекту <em>“enemy.setDamage(damage)”</em>. “damage” вираховується наступним чином - <em>damage = point \* power</em>, де <em>point</em> - змінний параметр, прийнятий в функцію <em>"fight"</em>, power - це властивість об'єкту який наносить урон.
-
-<strong>
-Створити клас ImprovedFighter, який буде наслідуватися від класу Fighter, з його властивостями і методами.</strong>
-
-Для цього класу створити метод <em>doubleHit</em>, який буде викликати наслідуваний метод <em>“hit”</em>, і передавати туди подвоєне значення <em>“point”</em>.
-
-Від обох класів породити по екземпляру відповідно <em>fighter</em>, <em>improvedFighter</em>.
-
-<strong>
-Створити функцію <em>fight</em>, яка прийматиме параметри - <em>fighter, improvedFighter</em>, і point.</strong>
-
-<em>fight</em> може приймати довільну кількість параметрів. Наприклад, <em>fight(fighter, improvedFighter, 25, 13, 45)</em>, де <em>point = [25, 13, 45]</em>.
-
-Ця функція запускатиме процес гри: гравці по черзі наносять удар один одному за допомогою методу <em>hit</em>, що приймає відповідне значення point. Якщо один із них помирає <em>(health = 0)</em>, то гра закінчується і результат виводиться в консоль.
-
-<strong>
-При виконанні домашнього завдання необхідно використати: </strong>
-<em>- block scoping (let) - spread / rest operator - default parameters - string interpolation - arrow functions - classes + inheritance + super</em>
+<div class="bubble">
+  Дякую за увагу 🙏! Cподобалася лекція? Лайк, шейр, репост, сабскра-а-а-айб! Коментуйте та задавайте питання під цією лекцією у вашому особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Успіхів у виконанні домашнього завдання і до нових зустрічей, чірз! 👋
+</div>
 
 export const metadata = {
   author: "Roman Sahan",

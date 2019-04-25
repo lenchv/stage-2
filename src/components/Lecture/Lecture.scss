@@ -1,5 +1,112 @@
 @import "node_modules/spectre.css/src/spectre";
 
+/* Spectre.css overrides */
+.content ul,
+.content ol {
+  list-style: none outside none;
+  padding-left: 1.5em;
+}
+.content ol {
+  counter-reset: ol-counter;
+}
+.content li {
+  list-style: none outside none;
+}
+.content ul > li:before {
+  content: "●";
+  font-family: "Arial";
+  float: left;
+  width: 1.5em;
+  margin-left: -1.5em;
+  text-align: center;
+}
+.content ol > li:before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  float: left;
+  width: 1rem;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  font-weight: bold;
+  font-size: 0.85em;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(-1.5rem + 0.5rem / 2);
+  height: 1rem;
+  line-height: 1rem;
+  margin-top: calc(0.25rem / 2);
+}
+.content ol.inverted > li:before {
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+
+/* Alternative to <details> compatible with Safari */
+.details > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.details > input:after {
+  content: " ";
+  border-top: 0.35em solid transparent;
+  border-bottom: 0.35em solid transparent;
+  border-left: 0.5em solid black;
+  position: relative;
+  width: 0.5em;
+  height: 0.7em;
+  cursor: pointer;
+}
+.details > input:checked {
+  transform: rotate(90deg);
+}
+.details > label.summary {
+  cursor: pointer;
+  display: inline-block;
+}
+.details > input:checked ~ div {
+  display: block;
+}
+.details > div {
+  display: none;
+}
+.details > div.labels {
+  margin-top: 0.5em;
+}
+.details > div:after {
+  content: " ";
+  clear: both;
+  display: block;
+}
+
+/* Details as a list item */
+.content li.details {
+  list-style-type: none;
+}
+.content li.details:before {
+  display: none;
+}
+.content li.details > input {
+  float: left;
+  margin-left: -1.5em;
+  width: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 1.5em;
+  outline: none;
+}
+
 /* Navbar */
 .navbar .logo {
   height: 2em;
@@ -19,7 +126,6 @@
 .content ol,
 .content ul {
   margin: 0.25rem 0 0.5rem 0rem;
-  padding-left: 1.25rem;
 }
 .content ol {
   list-style: outside decimal;
@@ -334,4 +440,10 @@
 }
 .panel .panel-body:last-child {
   padding: 0 1em 1em;
+}
+
+/* Accordions */
+.accordion input:checked ~ .accordion-body,
+.accordion[open] .accordion-body {
+  max-height: 100rem;
 }

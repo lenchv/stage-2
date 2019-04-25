@@ -12,7 +12,7 @@
 .content li {
   list-style: none outside none;
 }
-.content ul > li:before {
+.content ul:not(.step) > li:before {
   content: "●";
   font-family: "Arial";
   float: left;

@@ -1518,7 +1518,106 @@ class FightersView extends View {
 
 <Level id="modules-transpiling-bundling-etc" number="3" name="Modules, transpiling, bundling, etc." difficulty="And now we gonna roll 🤸" objectives="Get the most out of the JS" />
 
-1. [**How JavaScript Classes Work Under the Hood**](https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d)
+<ol>
+  <li>
+    <p><a href="https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d"><strong>How JavaScript Classes Work Under the Hood</strong></a></p>
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1-1" />
+        <label class="summary" for="accordion-3-1-1">
+          <code>__proto__</code>
+        </label>
+  <div class="details-body">
+
+```js
+const person = {
+  walk: true
+};
+
+const student = {
+  study: true
+};
+
+student.__proto__ = person;
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1-2" />
+        <label class="summary" for="accordion-3-1-2">
+          <code>constructor</code>
+        </label>
+  <div class="details-body">
+
+```js
+function Animal(name, sound) {
+  this.name = name; 
+  this.sound = sound;
+}
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1-3" />
+        <label class="summary" for="accordion-3-1-3">
+          create instance
+        </label>
+  <div class="details-body">
+
+```js
+const cat = new Animal("Sam", "meowing");
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1-4" />
+        <label class="summary" for="accordion-3-1-4">
+          add method
+        </label>
+  <div class="details-body">
+
+```js
+Animal.prototype.makeSound = function() {
+  console.log(`${this.name} ${this.sound}`);
+};
+
+cat.makeSound();
+```
+
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-1-5" />
+        <label class="summary" for="accordion-3-1-5">
+          inheritance
+        </label>
+  <div class="details-body">
+
+```js
+function Bird(name, sound) {
+  Animal.apply(this, arguments);
+  const _home = "tree"; 
+}
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.fly = function() {
+  Animal.prototype.makeSound.apply(this);
+  console.log(`Bird ${this.name} fly`);
+};
+
+const bird = new Bird("Kiwi", "singing");
+bird.fly();
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 2. **Transpilers**: what & why? Learn more about [**Babel**](https://babeljs.io/)
 
@@ -1527,6 +1626,8 @@ class FightersView extends View {
 4. [**Wepback**](https://webpack.js.org/) — module bundler for JavaScript applications
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
+
+[lint to the repository](https://github.com/sahanr/es-lecture/tree/master)
 
 #### Закінчити проект
 

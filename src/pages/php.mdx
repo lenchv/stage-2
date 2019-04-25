@@ -1,6 +1,5 @@
 import { Lecture, Message, TimelineOfContents, Level } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/pro-solid-svg-icons";
 import { faFacebookSquare, faWikipediaW, faVk, faGoogle, faYahoo, faGithub, faSymfony, faLaravel, faWordpress, faJoomla, faDrupal, faMagento, faOpencart } from "@fortawesome/free-brands-svg-icons";
 import pavelNemchenkoAvatar from "../assets/avatars/pavel-nemchenko-2017.svg";
 import "./php.css";
@@ -215,17 +214,13 @@ The following are some of the new features in PHP 7:
 * iterable type
 * anonymous classes
 
-<ul class="collapsible">
-<li>
-<div class="accordion">
+<ul>
+<li class="details">
   <input type="checkbox" id="accordion-1" hidden />
-  <label class="accordion-header" for="accordion-1">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-1">
     Deprecated tags
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
   ```php
   <script language="php">
@@ -238,18 +233,13 @@ The following are some of the new features in PHP 7:
   ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-2" hidden />
-  <label class="accordion-header" for="accordion-2">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-2">
     Deprecated mysql_* functions
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
   ```php
   $query = 'SELECT * FROM USERS WHERE 1 = 1';
@@ -262,18 +252,13 @@ The following are some of the new features in PHP 7:
   ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-3" hidden />
-  <label class="accordion-header" for="accordion-3">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-3">
     Deprecated PHP 4 style constructors
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 class A 
@@ -293,18 +278,13 @@ class A
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-4" hidden />
-  <label class="accordion-header" for="accordion-4">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-4">
     Deprecated functions
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 ereg();
@@ -315,18 +295,13 @@ ereg_replace();
 Use **preg_\*** functions like `preg_match();`.
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-5" hidden />
-  <label class="accordion-header" for="accordion-5">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-5">
     Array destructuring
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 $user = ['John', 'Doe', 29];
@@ -346,18 +321,13 @@ list($firstname, $lastname, $age) = $user;
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-6" hidden />
-  <label class="accordion-header" for="accordion-6">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-6">
     New variable call combinations
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 $foo = function() {
@@ -371,18 +341,13 @@ $foo()['bar']();
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-7" hidden />
-  <label class="accordion-header" for="accordion-7">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-7">
     String character access
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 function getUserName() {
@@ -393,18 +358,13 @@ echo getUserName(){0};
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-8" hidden />
-  <label class="accordion-header" for="accordion-8">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-8">
     Object public property access from array
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 $ball = new stdClass();
@@ -417,18 +377,13 @@ echo [$ball, $ball1][0]->type;
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-9" hidden />
-  <label class="accordion-header" for="accordion-9">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-9">
     Nested double colons ::
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 class Student
@@ -479,18 +434,13 @@ $students['Rachel']->getCredits()::getCreditsPerYear();
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-10" hidden />
-  <label class="accordion-header" for="accordion-10">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-10">
     Nested functions call
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 function foo(): callable {
@@ -534,18 +484,13 @@ A::bar()();
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-11" hidden />
-  <label class="accordion-header" for="accordion-11">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-11">
     General expressions dereferencing schema
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 // array key
@@ -571,18 +516,13 @@ A::bar()();
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-12" hidden />
-  <label class="accordion-header" for="accordion-12">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-12">
     Null coalescing operator <code>??</code>
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 // PHP 5
@@ -592,18 +532,13 @@ $key = $request->get('access_token') ?? null;
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-13" hidden />
-  <label class="accordion-header" for="accordion-13">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-13">
     Spaceship operator <code>&lt;=&gt;</code>
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 $a = 5;
@@ -621,18 +556,13 @@ usort($list, function(int $a, int $b) {
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-14" hidden />
-  <label class="accordion-header" for="accordion-14">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-14">
     Constant arrays using <code>define()</code>
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 define('COLORS', [
@@ -657,18 +587,13 @@ echo Drawer::COLORS['red'];
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-15" hidden />
-  <label class="accordion-header" for="accordion-15">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-15">
     Multiple catch
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 try {
@@ -685,18 +610,13 @@ try {
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-16" hidden />
-  <label class="accordion-header" for="accordion-16">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-16">
     Integer division aka intdiv()
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 $a = intdiv(8, 3);
@@ -710,18 +630,13 @@ try {
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-17" hidden />
-  <label class="accordion-header" for="accordion-17">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-17">
     Binding Closure
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 class Greeting {
@@ -736,18 +651,13 @@ echo $closure->call(new Greeting(), 'Bob');
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-18" hidden />
-  <label class="accordion-header" for="accordion-18">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-18">
     Group use statements
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 use Some\Namespace{ClassA, ClassB};
@@ -756,18 +666,13 @@ use const Some\Namespace{CONST_A, CONST_B};
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-19" hidden />
-  <label class="accordion-header" for="accordion-19">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-19">
     Anonymous classes
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 interface Logger {}
@@ -808,18 +713,13 @@ $util->setLogger(
 Object of anonymous class lives once at runtime. Can be used in test code to mock objects. Think before use :)
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-20" hidden />
-  <label class="accordion-header" for="accordion-20">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-20">
     Type hinting
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 
 * bool
@@ -834,18 +734,13 @@ function typed(string $a, bool $b, float $c): array {}
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-21" hidden />
-  <label class="accordion-header" for="accordion-21">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-21">
     Strict types
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 declare(strict_types=1);
@@ -864,18 +759,13 @@ intSum(0.1, 2);
 Use types everywhere! )
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-22" hidden />
-  <label class="accordion-header" for="accordion-22">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-22">
     Nullables
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 class Profile
@@ -902,18 +792,13 @@ class Profile
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-23" hidden />
-  <label class="accordion-header" for="accordion-23">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-23">
     Void type
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 // php 7.1
@@ -925,18 +810,13 @@ function doSomething(): void
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-24" hidden />
-  <label class="accordion-header" for="accordion-24">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-24">
     Iterable type
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 ```php
 function render(iterable $list)
@@ -957,24 +837,18 @@ function numbersAsIterator(): iterable
 ```
 
   </div>
-</div>
 </li>
-<li>
-<div class="accordion">
+<li class="details">
   <input type="checkbox" id="accordion-25" hidden />
-  <label class="accordion-header" for="accordion-25">
-    <span className="icon">
-      <FontAwesomeIcon icon={faCaretRight} fixedWidth />
-    </span>
+  <label class="summary" for="accordion-25">
     Exceptions <sup><em>new hierarchy</em></sup>
   </label>
-  <div class="accordion-body">
+  <div class="details-body">
 
 `Throwable` is the base interface for any object that can be thrown via a `throw` statement in PHP 7, including `Error` and `Exception`. PHP classes cannot implement the `Throwable` interface directly, and must instead extend `Exception`.
 <ul><li>Throwable<ul><li><code class="language-text">Exception implements Throwable</code><ul><li>LogicException<ul><li>BadFunctionCallException<ul><li>BadMethodCallException</li></ul></li><li>DomainException</li><li>InvalidArgumentException</li><li>LengthException</li><li>OutOfRangeException</li></ul></li><li>RuntimeException<ul><li>OutOfBoundsException</li><li>OverflowException</li><li>RangeException</li><li>UnderflowException</li><li>UnexpectedValueException</li></ul></li></ul></li><li><code class="language-text">Error implements Throwable</code><ul><li>AssertionError</li><li>ArithmeticError</li><li>DivisionByZeroError</li><li>ParseError</li><li>TypeError</li></ul></li></ul></li></ul>
 
   </div>
-</div>
 </li>
 </ul>
 

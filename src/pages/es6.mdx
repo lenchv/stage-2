@@ -1,7 +1,17 @@
-import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, Flute } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/pro-solid-svg-icons";
 import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
+import ryuAvatar from "../assets/avatars/slack/ryu.png";
+import youAvatar from "../assets/avatars/slack/you.png";
+import alexandrTovmachAvatar from "../assets/avatars/slack/alexandr-tovmach.png";
+import andriiKarunAvatar from "../assets/avatars/slack/andrii-karun.png";
+import artemManukianAvatar from "../assets/avatars/slack/artem-manukian.png";
+import olegChulanovskyiAvatar from "../assets/avatars/slack/oleg-chulanovskyi.png";
+import oleksandrKovalovAvatar from "../assets/avatars/slack/oleksandr-kovalov.png";
+import yuriyStetsulaAvatar from "../assets/avatars/slack/yuriy-stetsula.png";
+import alyonaRapovaAvatar from "../assets/avatars/slack/alyona-rapova.png";
+import nikitaSemenistyiAvatar from "../assets/avatars/slack/nikita-semenistyi.png";
 import "./es6.css";
 
 <div><h1><strong>ES6</strong></h1></div>
@@ -73,11 +83,11 @@ import "./es6.css";
 </div>
 
 <div class="messages">
-  Студент все ще проходить випробувальний термін у своїй новій компанії і все ще використовує Slack для співпраці з іншими розробниками та комунікації з клієнтами. Одного весняного вечора в чат пише Ryu — колишній клієнт <em>(returning customer, ya-a-a-ay!)</em>, для якого раніше було зроблене онлайн-резюме. Він повністю задоволений якістю нашої роботи і хоче довірити нам ще один проект. Цього разу мова піде про симулятор "вуличної бійки" &mdash;
+  Студент все ще проходить випробувальний термін у своїй новій компанії і все ще використовує Slack для співпраці з іншими розробниками та комунікації з клієнтами. Одного теплого весняного вечора в чат пише Ryu — колишній клієнт <em>(returning customer, ya-a-a-ay!)</em>, для якого раніше було зроблене онлайн-резюме. Він повністю задоволений якістю нашої роботи і хоче довірити нам ще один проект. Цього разу мова піде про симулятор "вуличної бійки" &mdash;
   <Message
     senderId="ryu"
     senderName="Ryu"
-    senderAvatarUrl="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600"
+    senderAvatarUrl={ryuAvatar}
     reactions={[
       { emoji: "💪", count: 13 },
       { emoji: "🥇", count: 9 },
@@ -87,10 +97,12 @@ import "./es6.css";
       { emoji: "🐲", count: 5 }
     ]}
     replies={[
-      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
-      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
-      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
-      { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+      { name: "Oleksandr Kovalov", avatarUrl: oleksandrKovalovAvatar },
+      { name: "Andrii Karun", avatarUrl: andriiKarunAvatar },
+      { name: "Oleg Chulanovskyi", avatarUrl: olegChulanovskyiAvatar },
+      { name: "Alexandr Tovmach", avatarUrl: alexandrTovmachAvatar },
+      { name: "Artem Manukian", avatarUrl: artemManukianAvatar },
+      { name: "Yuriy Stetsula", avatarUrl: yuriyStetsulaAvatar }
     ]}
   >
     <div class="message__scene">
@@ -105,12 +117,7 @@ import "./es6.css";
       <em>(raising his hand into the air, Ryu’s hand is engulfed in <span style="color: orange; font-weight: bold;">🔥flame</span>, and he brings it <span style="color: black; font-weight: bold;">⚡cr-r-r-r-rashing</span> down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
     </div>
     <p><strong>I need my own video game.</strong></p>
-    <div class="message__scene" onmouseenter="document.getElementById('flute').play()" onmouseleave="document.getElementById('flute').pause()">
-      <em>(in the distance, a Japanese flute plays a gentle melody)</em>
-      <audio id="flute">
-        <source src="https://volodymyrkushnir.com/assets/sounds/rodrigo-rodriguez-shakuhachi-flute.mp3" type="audio/mpeg" />
-      </audio>
-    </div>
+    <Flute />
     <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this video game will bring me great strength in the battles to come.</p>
     <div class="message__scene">
       <em>(Ryu once again turns his gaze upon you)</em>
@@ -128,7 +135,7 @@ import "./es6.css";
 <Message
   senderId="you"
   senderName="You"
-  senderAvatarUrl="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64"
+  senderAvatarUrl={youAvatar}
   reactions={[
     { emoji: "👍", count: 13 },
     { emoji: "🏁", count: 8 },
@@ -136,8 +143,11 @@ import "./es6.css";
     { emoji: "👏", count: 6 }
   ]}
   replies={[
-    { name: "N/A", avatarUrl: "http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600" },
-    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" }
+    { name: "Ryu", avatarUrl: ryuAvatar },
+    { name: "Andrii Karun", avatarUrl: andriiKarunAvatar },
+    { name: "Oleksandr Kovalov", avatarUrl: oleksandrKovalovAvatar },
+    { name: "Alyona Rapova", avatarUrl: alyonaRapovaAvatar },
+    { name: "Nikita Semenistyi", avatarUrl: nikitaSemenistyiAvatar }
   ]}
 >
   <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
@@ -427,7 +437,8 @@ user[isAdmin]; // true
   <li>
     <p><strong><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Type coercion</a></strong></p>
     <p>JavaScript variables can be converted to a new variable and another data type either by the use of a JavaScript function or automatically by JavaScript itself:</p>
-    <p>Converting to <strong>string</strong></p>
+
+Converting to **string**
 
 ```javascript
 String(null) // "null"
@@ -435,7 +446,7 @@ false.toString();  // "false"
 12 + 'px' // "12px"
 ```
 
-<p>Converting to <strong>numbers</strong></p>
+Converting to **numbers**
 
 ```javascript
 Number(true) // 1
@@ -446,7 +457,7 @@ parseFloat('3.14') // 3.14
 12 + +'4' // 16
 ```
 
-<p>Converting to <strong>boolean</strong></p>
+Converting to **boolean**
 
 ```javascript
 0, '', null, undefined, NaN -> false

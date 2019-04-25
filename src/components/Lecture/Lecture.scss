@@ -259,6 +259,8 @@
 }
 .content .messages .message {
   margin-top: 0.5em;
+}
+.content .messages input + label ~ .message {
   display: none;
 }
 

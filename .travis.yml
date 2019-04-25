@@ -1,8 +1,9 @@
 language: node_js
 node_js:
   - 11.13.0
+cache: npm
 script:
-  - npm run build
+  - npm build
 deploy:
   provider: pages
   skip_cleanup: true

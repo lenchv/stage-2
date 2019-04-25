@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - 11.13.0
-cache: npm
+cache:
+  - npm
+  - yarn
 script:
   - npm build
 deploy:

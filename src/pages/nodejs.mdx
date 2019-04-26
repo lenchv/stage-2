@@ -14,6 +14,7 @@ import {
   faStackOverflow
 } from "@fortawesome/free-brands-svg-icons";
 import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach-2018.svg";
+import "./nodejs.css";
 
 <div>
   <h1>
@@ -102,9 +103,6 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach-2018.svg";
   reactions={[
     { emoji: "👍", count: 42 }
   ]}
-  replies={[
-    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
-  ]}
 >
   <p>Sraka motika</p>
 </Message>
@@ -120,24 +118,6 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach-2018.svg";
     { emoji: "🏁", count: 8 },
     { emoji: "🚀", count: 10 },
     { emoji: "👏", count: 6 }
-  ]}
-  replies={[
-    {
-      name: "N/A",
-      avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24"
-    },
-    {
-      name: "N/A",
-      avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24"
-    },
-    {
-      name: "N/A",
-      avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24"
-    },
-    {
-      name: "N/A",
-      avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24"
-    }
   ]}
 >
   Ebala jaba gaduku
@@ -161,6 +141,11 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach-2018.svg";
       {
         linkTo: "#preparation",
         title: "Подготовка",
+        time: undefined
+      },
+      {
+        linkTo: "#package-manager",
+        title: "Пакетные менеджеры",
         time: undefined
       },
       {
@@ -190,7 +175,22 @@ import alexandrTovmachAvatar from "../assets/avatars/alexandr-tovmach-2018.svg";
   objectives="Понять что такое сервер, где его место в web и как с этим жить."
 />
 
-Начнем с того, что когда web-разработчик говорит слово ["сервер"](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80_(%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)) он подразумевает ["веб-сервер"](https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80) и мы будем работать со вторым. 
+Для начала разберемся с вопросами "что?" и "зачем?":
+
+1. Что такое сервер? ― простыми словами, когда пользователь вводит запрос в адресной строке, браузер запрашивает данные на удаленном компьютере (сервере) по HTTP. В ответ он получает файл или данные, для отображения в браузере. [Немного детальнее здесь.](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/How_the_Web_works#%D0%A7%D1%82%D0%BE_%D0%B6%D0%B5_%D0%BD%D0%B0_%D1%81%D0%B0%D0%BC%D0%BE%D0%BC_%D0%B4%D0%B5%D0%BB%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D1%82)
+
+  <div class="bubble small subtle">
+  Когда web-разработчик говорит слово <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80_(%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)">"сервер"</a> он подразумевает <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80">"веб-сервер"</a> и мы работаем именно со вторым.
+  </div>
+
+![client-server-model](../assets/images/client-server-model.png)
+
+
+2. Зачем нужен сервер? ― для хранения и обработки ресурсов в интернете. 
+
+
+Современный подход в серверной разработке рекомендует использовать микросервисную архитектуру в своих приложениях.
+![microservice](../assets/images/microservice.jpg)
 
 <Level
   id="researching-and-planning"

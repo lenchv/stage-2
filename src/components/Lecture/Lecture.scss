@@ -55,6 +55,14 @@
   background: none;
   transition: 0.2s;
   cursor: pointer;
+  width: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 1.5em;
+  vertical-align: top;
+  outline: none;
 }
 .details > input:after {
   content: " ";
@@ -98,13 +106,6 @@
 .content li.details > input {
   float: left;
   margin-left: -1.5em;
-  width: 1.5em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  height: 1.5em;
-  outline: none;
 }
 
 /* Navbar */

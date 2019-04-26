@@ -1733,6 +1733,150 @@ import { callApi apiHelper } from '../helpers/apiHelper';
   </li>
   <li>
     <p><a href="https://webpack.js.org/"><strong>Wepback</strong></a> — module bundler for JavaScript applications</p>
+    <ul>
+      <li>
+        <p>install Webpack</p>
+        <p><code>npm i webpack webpack-cli --save-dev</code></p>
+      </li>
+      <li>
+        <p>configure Webpack</p>
+        <p>create <code>webpack.config.js</code> file</p>
+  <div>
+
+```js
+const path = require('path');
+
+module.exports = {
+    entry: './index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'), 
+        filename: 'bundle.js'
+    },
+    mode: 'development'
+}
+```
+
+  </div>
+      </li>
+      <li>
+        <p>change <code>build</code> comand in <em>package.json</em></p>
+        <p><code>"build": "webpack"</code></p>
+      </li>
+      <li>
+        <p>loaders</p>
+        <ul>
+          <li class="details">
+            <input type="checkbox" id="accordion-3-4-1" />
+            <label class="summary" for="accordion-3-4-1">
+              <code>babel-loader</code>
+            </label>
+  <div class="details-body">
+
+add modules to config
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              configFile: "./babel.config.js",
+              cacheDirectory: true
+            }
+          }
+        ]
+      }
+    ]
+  }
+```
+
+rename `.babelrc` to `babel.config.js` and change inner content
+
+```js
+const preset = [[
+    "@babel/preset-env", 
+    {
+        "targets": {
+          "chrome": "68",
+          "firefox": "60"
+        }
+    }    
+    ]
+]
+
+const plugins = ["@babel/plugin-proposal-class-properties"];
+
+module.export = { preset, plugins }
+```
+
+  </div>
+          </li>
+          <li class="details">
+            <input type="checkbox" id="accordion-3-4-2" />
+            <label class="summary" for="accordion-3-4-2">
+              <p><code>style-loader</code> and <code>css-loader</code></p>
+            </label>
+  <div class="details-body">
+
+install packages
+
+`npm i css-loader style-loader --save-dev`
+
+add them to webpack config
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      ...
+    ]
+  }
+```
+
+<p>import styles in <em>index.js</em> file</p>
+
+`import './src/styles/styles.css';`
+
+  </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><code>webpack-dev-server</code></p>
+        <p>install package</p>
+        <p><code>npm i webpack-dev-server --save-dev</code></p>
+        <p>turn on dev-server</p>
+  <div>
+
+```javascript 
+  devServer: {
+    inline: true
+  }
+
+  ...
+
+  output: {
+    ...
+    publicPath: '/dist/'
+  }
+```
+
+  </div>
+        <p>add script to start dev-server</p>
+        <p><code>"start": "webpack-dev-server"</code></p>
+      </li>
+      <li>
+        <p><code>devtool</code></p>
+        <p>add devtool option to webpack config for better debugging experience - <code>devtool: "source-map"</code></p>
+      </li>
+    </ul>
   </li>
 </ol>
 

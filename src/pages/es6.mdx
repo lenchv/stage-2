@@ -1617,13 +1617,124 @@ bird.fly();
       </li>
     </ul>
   </li>
+  <li>
+    <p><strong>Transpilers</strong>: what & why? Learn more about <a href="https://babeljs.io/"><strong>Babel</strong></a></p>
+    <ul>
+      <li>
+        install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>
+      </li>
+      <li>
+        Open <strong>Terminal</strong> in VS code (<em>Terminal</em> -> <em>New Terminal</em>)
+      </li>
+      <li>
+        init repository <code>npm init</code>
+      </li>
+      <li>
+        install <strong>babel</strong> <code>npm i --save-dev @babel/core @babel/cli</code>
+      </li>
+      <li>
+        add script to <code>package.json</code> file
+  <div>
+
+```js
+"scripts": {
+  "build": "babel src -d dist"
+}
+```
+
+  </div>
+        in terminal run <code>npm run build</code>
+      </li>
+      <li>
+        transform ES2015+ code
+        <ul>
+          <li>create <code>.babelrc</code> file</li>
+          <li>install package for transformation <code>npm install @babel/preset-env --save-dev</code></li>
+          <li>add <code>presets</code> to <code>.babelrc</code></li>
+        </ul>
+
+  <div>
+
+```js
+{
+  "presets": [["@babel/preset-env", 
+    {
+      "targets": {
+        "chrome": "67",
+        "firefox": "60"
+      }
+    }
+  ]]
+} 
+```
+
+  </div>
+      </li>
+      <li>
+        <p>install plugin <code>npm i @babel/plugin-proposal-class-properties --save-dev</code></p>
+        add plugin to <code>.babelrc</code>
+
+  <div>
+
+```js
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+} 
+```
+
+  </div>
+      </li>
+      <li>
+        <p>watch for changes (add <code>-w</code> flag)</p>
+
+  <div>
+
+```js
+"scripts": {
+  "build": "babel src -d dist -w"
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ES6 modules</strong>: what’s great about them?</p>
+
+`export`
+
+```js
+export const fighterService = new FighterService();
+
+export { callApi as apiHelper };
+
+export default View;
+
+export { default } from './View';
+
+export * from './apiHelper';
+```
+
+`import`
+
+```js
+import * as helper from '../helpers/apiHelper';
+helper.callApi()
+
+import App from './src/javascript/app';
+
+import { fighterService } from './services/fightersService';
+
+import { callApi apiHelper } from '../helpers/apiHelper';
+```
+
+  </li>
+  <li>
+    <p><a href="https://webpack.js.org/"><strong>Wepback</strong></a> — module bundler for JavaScript applications</p>
+  </li>
 </ol>
-
-2. **Transpilers**: what & why? Learn more about [**Babel**](https://babeljs.io/)
-
-3. **ES6 modules**: what’s great about them?
-
-4. [**Wepback**](https://webpack.js.org/) — module bundler for JavaScript applications
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
 

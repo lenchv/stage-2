@@ -24,20 +24,20 @@
   content: counter(ol-counter);
   counter-increment: ol-counter;
   float: left;
-  width: 1rem;
-  border-radius: 2px;
+  width: 0.9rem;
+  border-radius: 0.25em;
   background: transparent;
   color: inherit;
   font-weight: bold;
-  font-size: 0.85em;
+  font-size: 0.7em;
   font-family: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: calc(-1.5rem + 0.5rem / 2);
-  height: 1rem;
+  height: 0.9rem;
   line-height: 1rem;
-  margin-top: calc(0.25rem / 2);
+  margin-top: calc((0.8rem * 1.5 - 1rem) / 2 + 0.05rem);
 }
 .content ol.inverted > li:before {
   background: black;

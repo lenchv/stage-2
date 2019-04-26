@@ -15,8 +15,10 @@
   margin: 0;
 }
 .content ul.php-frameworks li.with-logo {
-  list-style: none outside none;
   margin-left: -1.5em;
+}
+.content ul.php-frameworks li.with-logo:before {
+  display: none;
 }
 .content ul.php-frameworks li.with-logo .logo {
   margin-right: 0.25em;

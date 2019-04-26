@@ -41,14 +41,14 @@ import "./es6.css";
         <li>
           <a href="https://www.linkedin.com/in/roman-sahan-35847512a/" rel="author" class="skype">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z" />
+              <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
             </svg>
             <span>roman-sahan</span>
           </a>
         </li>
       </ul>
       <p class="about">
-        Роман пройшов Академію у 2016-му і залишився у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Працює на проекті, який займаєтся візуалізацією величезної кількості данних, а ще він любить підкорювати гори і фреймворки та з задоволенням дивиться і грає у футбол ⚽.
+        Роман пройшов Академію у 2016-му і залишився у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Працює на проекті, який займаєтся візуалізацією величезної кількості даних, а ще він любить підкорювати гори і фреймворки та з задоволенням дивиться і грає у футбол ⚽.
       </p>
     </div>
   </div>
@@ -565,7 +565,7 @@ for (let i in weekends ) {
   </li>
 </ol>
 
-<Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Lets spice it up 🔥" objectives="Gain practical knowledge" />
+<Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Let's spice it up 🔥" objectives="Gain practical knowledge" />
 
 <ol>
   <li>
@@ -1617,13 +1617,268 @@ bird.fly();
       </li>
     </ul>
   </li>
+  <li>
+    <p><strong>Transpilers</strong>: what & why? Learn more about <a href="https://babeljs.io/"><strong>Babel</strong></a></p>
+    <ul>
+      <li>
+        install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>
+      </li>
+      <li>
+        Open <strong>Terminal</strong> in VS code (<em>Terminal</em> -> <em>New Terminal</em>)
+      </li>
+      <li>
+        init repository <code>npm init</code>
+      </li>
+      <li>
+        install <strong>babel</strong> <code>npm i --save-dev @babel/core @babel/cli</code>
+      </li>
+      <li>
+        add script to <code>package.json</code> file
+  <div>
+
+```js
+"scripts": {
+  "build": "babel src -d dist"
+}
+```
+
+  </div>
+        in terminal run <code>npm run build</code>
+      </li>
+      <li>
+        transform ES2015+ code
+        <ul>
+          <li>create <code>.babelrc</code> file</li>
+          <li>install package for transformation <code>npm install @babel/preset-env --save-dev</code></li>
+          <li>add <code>presets</code> to <code>.babelrc</code></li>
+        </ul>
+
+  <div>
+
+```js
+{
+  "presets": [["@babel/preset-env", 
+    {
+      "targets": {
+        "chrome": "67",
+        "firefox": "60"
+      }
+    }
+  ]]
+} 
+```
+
+  </div>
+      </li>
+      <li>
+        <p>install plugin <code>npm i @babel/plugin-proposal-class-properties --save-dev</code></p>
+        add plugin to <code>.babelrc</code>
+
+  <div>
+
+```js
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+} 
+```
+
+  </div>
+      </li>
+      <li>
+        <p>watch for changes (add <code>-w</code> flag)</p>
+
+  <div>
+
+```js
+"scripts": {
+  "build": "babel src -d dist -w"
+}
+```
+
+  </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ES6 modules</strong>: what’s great about them?</p>
+
+`export`
+
+```js
+export const fighterService = new FighterService();
+
+export { callApi as apiHelper };
+
+export default View;
+
+export { default } from './View';
+
+export * from './apiHelper';
+```
+
+`import`
+
+```js
+import * as helper from '../helpers/apiHelper';
+helper.callApi()
+
+import App from './src/javascript/app';
+
+import { fighterService } from './services/fightersService';
+
+import { callApi apiHelper } from '../helpers/apiHelper';
+```
+
+  </li>
+  <li>
+    <p><a href="https://webpack.js.org/"><strong>Wepback</strong></a> — module bundler for JavaScript applications</p>
+    <ul>
+      <li>
+        <p>install Webpack</p>
+        <p><code>npm i webpack webpack-cli --save-dev</code></p>
+      </li>
+      <li>
+        <p>configure Webpack</p>
+        <p>create <code>webpack.config.js</code> file</p>
+  <div>
+
+```js
+const path = require('path');
+
+module.exports = {
+    entry: './index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'), 
+        filename: 'bundle.js'
+    },
+    mode: 'development'
+}
+```
+
+  </div>
+      </li>
+      <li>
+        <p>change <code>build</code> comand in <em>package.json</em></p>
+        <p><code>"build": "webpack"</code></p>
+      </li>
+      <li>
+        <p>loaders</p>
+        <ul>
+          <li class="details">
+            <input type="checkbox" id="accordion-3-4-1" />
+            <label class="summary" for="accordion-3-4-1">
+              <code>babel-loader</code>
+            </label>
+  <div class="details-body">
+
+add modules to config
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              configFile: "./babel.config.js",
+              cacheDirectory: true
+            }
+          }
+        ]
+      }
+    ]
+  }
+```
+
+rename `.babelrc` to `babel.config.js` and change inner content
+
+```js
+const preset = [[
+    "@babel/preset-env", 
+    {
+        "targets": {
+          "chrome": "68",
+          "firefox": "60"
+        }
+    }    
+    ]
+]
+
+const plugins = ["@babel/plugin-proposal-class-properties"];
+
+module.export = { preset, plugins }
+```
+
+  </div>
+          </li>
+          <li class="details">
+            <input type="checkbox" id="accordion-3-4-2" />
+            <label class="summary" for="accordion-3-4-2">
+              <p><code>style-loader</code> and <code>css-loader</code></p>
+            </label>
+  <div class="details-body">
+
+install packages
+
+`npm i css-loader style-loader --save-dev`
+
+add them to webpack config
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      ...
+    ]
+  }
+```
+
+<p>import styles in <em>index.js</em> file</p>
+
+`import './src/styles/styles.css';`
+
+  </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><code>webpack-dev-server</code></p>
+        <p>install package</p>
+        <p><code>npm i webpack-dev-server --save-dev</code></p>
+        <p>turn on dev-server</p>
+  <div>
+
+```javascript 
+  devServer: {
+    inline: true
+  }
+
+  ...
+
+  output: {
+    ...
+    publicPath: '/dist/'
+  }
+```
+
+  </div>
+        <p>add script to start dev-server</p>
+        <p><code>"start": "webpack-dev-server"</code></p>
+      </li>
+      <li>
+        <p><code>devtool</code></p>
+        <p>add devtool option to webpack config for better debugging experience - <code>devtool: "source-map"</code></p>
+      </li>
+    </ul>
+  </li>
 </ol>
-
-2. **Transpilers**: what & why? Learn more about [**Babel**](https://babeljs.io/)
-
-3. **ES6 modules**: what’s great about them?
-
-4. [**Wepback**](https://webpack.js.org/) — module bundler for JavaScript applications
 
 <hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
 

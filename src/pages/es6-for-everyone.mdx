@@ -1,4 +1,6 @@
 import { Lecture, Message, TimelineOfContents, Level, Flute } from "../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
 import ryuAvatar from "../assets/avatars/slack/ryu.png";
 import youAvatar from "../assets/avatars/slack/you.png";
@@ -10,9 +12,9 @@ import oleksandrKovalovAvatar from "../assets/avatars/slack/oleksandr-kovalov.pn
 import yuriyStetsulaAvatar from "../assets/avatars/slack/yuriy-stetsula.png";
 import alyonaRapovaAvatar from "../assets/avatars/slack/alyona-rapova.png";
 import nikitaSemenistyiAvatar from "../assets/avatars/slack/nikita-semenistyi.png";
-import "./es6.css";
+import "./es6-for-everyone.css";
 
-<div><h1><strong>ES6</strong></h1></div>
+<div><h1><strong>ES6 for everyone</strong></h1></div>
 
 <div>
   <div class="author">
@@ -24,45 +26,42 @@ import "./es6.css";
       <ul class="contacts">
         <li>
           <a href="https://www.facebook.com/roman.sahan.4" rel="author" class="facebook">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z" />
-            </svg>
+            <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
             <span>roman.sahan</span>
           </a>
         </li>
         <li>
           <a href="https://github.com/sahanr" rel="author" class="github">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-            </svg>
+            <FontAwesomeIcon icon={faGithub} className="icon" />
             <span>sahanr</span>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/roman-sahan-35847512a/" rel="author" class="skype">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
-            </svg>
+          <a href="https://www.linkedin.com/in/roman-sahan-35847512a/" rel="author" class="linkedin">
+            <FontAwesomeIcon icon={faLinkedin} className="icon" />
             <span>roman-sahan</span>
           </a>
         </li>
       </ul>
       <p class="about">
-        Роман пройшов Академію у 2016-му і залишився у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Працює на проекті, який займаєтся візуалізацією величезної кількості даних, а ще він любить підкорювати гори і фреймворки та з задоволенням дивиться і грає у футбол ⚽.
+        Роман пройшов Академію у 2016-му і залишився у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Працює на проекті, що візуалізує величезну кількість даних за допомогою <a href="https://reactjs.org/"><strong>React</strong></a>. А ще він любить підкорювати гори і фреймворки, а також із задоволенням дивиться і грає у футбол ⚽.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hello, World!</strong><br />Декілька дісклеймерів:<br />
-    1) деякі терміни та технології розглядаються поверхнево<br />
-    2) лінки на документацію та статті - up to you<br />
-    3) на старті лекція повинна була бути цікавою та по максимуму інформативною, але як вже вийшло... have fun 🙃<br />
-    Just a heads up: вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a>, <a href="https://github.com/sahanr/js-lecture"><strong>Source code</strong></a>
+    <strong>Hello, world! 👋</strong><br />
+    Перед тим як розпочати — декілька дісклеймерів про зміст лекції:<br />
+    <ol class="disclaimers">
+      <li>Деякі терміни та технології розглядаються поверхнево.</li>
+      <li>"— А клікати на всі лінки на документацію і читати всі-всі статті?" Ну-у-у-у-у, up to you.</li>
+      <li>Все мало би бути цікаво та по максимуму інформативно, але тут вже як вийде... Have fun! 🙃</li>
+    </ol>
+    І ще один <strong>heads up</strong>— вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a> і <a href="https://github.com/sahanr/js-lecture"><strong>стартер проекту</strong></a> (складатиму його по ходу лекції)
   </div>
 </div>
 
 <div class="messages">
-  Студент все ще проходить випробувальний термін у своїй новій компанії і все ще використовує Slack для співпраці з іншими розробниками та комунікації з клієнтами. Одного теплого весняного вечора в чат пише Ryu — колишній клієнт <em>(returning customer, ya-a-a-ay!)</em>, для якого раніше було зроблене онлайн-резюме. Він повністю задоволений якістю нашої роботи і хоче довірити нам ще один проект. Цього разу мова піде про симулятор "вуличної бійки" &mdash;
+  Студент все ще проходить випробувальний термін у своїй новій компанії і все ще використовує Slack для співпраці з іншими розробниками та комунікації з клієнтами. Одного теплого весняного вечора в чат пише Ryu — колишній клієнт <em>(returning customer, ya-a-a-ay!)</em>, для якого раніше було зроблене онлайн-резюме. Він повністю задоволений якістю нашої роботи і хоче довірити нам ще один проект &mdash;
   <Message
     senderId="ryu"
     senderName="Ryu"
@@ -95,9 +94,9 @@ import "./es6.css";
     <div class="message__scene">
       <em>(raising his hand into the air, Ryu’s hand is engulfed in flame, and he brings it cr-r-r-r-rashing down to the ground, splitting the Earth in two as a hot knife would cut through butter)</em>
     </div>
-    <p><strong>I need my own video game.</strong></p>
+    <p><strong>I need my own browser game.</strong></p>
     <Flute />
-    <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this video game will bring me great strength in the battles to come.</p>
+    <p>My master tells me that it’s necessary to promote my “brand image”. I have no idea what he means by that, but then again, I am not one to question his wisdom. I am sure, in time, the “fanbase” I will acquire through this game will bring me great strength in the battles to come.</p>
     <div class="message__scene">
       <em>(Ryu once again turns his gaze upon you)</em>
     </div>
@@ -109,7 +108,28 @@ import "./es6.css";
   </Message>
 </div>
 
-Отже, в замовника немає портфоліо і специфікація для блогу теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! Нарешті за гроші, ясне діло. І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмнаго продукту з відкритим кодом і форкнути його або запропонувати функціонал, якого не вистарчає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
+Отже, жодної специфікації немає, але схоже на те, що цього разу мова йде про симулятор "вуличної бійки" — гру, в якій гравець вибирає двох бійців, які в свою чергу проводять поєдинок, луплячи один одного руками, ногами, своєю головою. У кого скорше "закінчиться життя", той і програв. Насправді ж вони не вмирають, бо вони віртуальні.
+
+<Message
+  senderId="ryu"
+  senderName="Ryu"
+  senderAvatarUrl={ryuAvatar}
+  reactions={[
+    { emoji: "😤", count: 1 },
+    { emoji: "😡", count: 1 },
+    { emoji: "🙏", count: 1 },
+    { emoji: "😂", count: 10 },
+    { emoji: "🤣", count: 8 }
+  ]}
+  replies={[
+    { name: "You", avatarUrl: youAvatar },
+    { name: "Ryu", avatarUrl: ryuAvatar }
+  ]}
+>
+  Who isn't real? Me not real?! Your not real, 🤬!
+</Message>
+
+🤭Ой... _Ммм, дійсно, а може таки вмирають і це турнір, в якому переможе лише один?..._ Замовник не надав жодного конкретного технічного завдання, тому складемо його собі самі. Так само і дизайн. Нехай на початках це буде просто браузерна гра, в якій один персонаж систематично б'є іншого і навпаки, а помірної складності алгоритм визначає, якої сили був нанесений удар і скільки життя залишилось в того повільного невдахи, що не встиг ухилитись від "з локтя у носа". А там далі вже подивимось, який новий функціонал чи дизайн можна встигнути закодити до дедлайну. Що ж, запевнити клієнта, що все під контролем і до роботи?
 
 <Message
   senderId="you"
@@ -129,10 +149,11 @@ import "./es6.css";
     { name: "Nikita Semenistyi", avatarUrl: nikitaSemenistyiAvatar }
   ]}
 >
-  <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
+  <strong>Yeah, sure, I'm on it, let's go!</strong> I'm gonna target modern browsers and will start with the plain JavaScript using new ES6 features where necessary. Sometime in the future, when the project evolves, we'll use libraries like React or Vue.js, but for now, vanilla JavaScript will do the job just fine.
 </Message>
 
-...і береться за створення сайту по тій інструкції.
+<br />
+<br />
 
 <div id="table-of-contents" class="table-of-contents">
   <TimelineOfContents timeline={[{
@@ -140,8 +161,8 @@ import "./es6.css";
     title: "Basic JavaScript",
     time: undefined
   }, {
-    linkTo: "#building-a-page-with-es6",
-    title: "Building a page with ES6",
+    linkTo: "#building-a-webpage-with-es6",
+    title: "Building a webpage with ES6",
     time: undefined
   }, {
     linkTo: "#modules-transpiling-bundling-etc",
@@ -166,7 +187,7 @@ import "./es6.css";
 const style = {
   display: 'flex',
   flexWrap: 'wrap'
-  // dominantBaseline: central;  not supported by IE 9 :(
+  // dominantBaseline: central; not supported by IE 9 :(
 }
 ```
 ```js
@@ -565,7 +586,7 @@ for (let i in weekends ) {
   </li>
 </ol>
 
-<Level id="building-a-page-with-es6" number="2" name="Building a page with ES6" difficulty="Let's spice it up 🔥" objectives="Gain practical knowledge" />
+<Level id="building-a-webpage-with-es6" number="2" name="Building a webpage with ES6" difficulty="Let's spice it up 🔥" objectives="Gain practical knowledge" />
 
 <ol>
   <li>
@@ -1917,7 +1938,7 @@ Cтворити додаткові елементи для реалізації 
 
 export const metadata = {
   author: "Roman Sahan",
-  title: "ES6",
+  title: "ES6 for everyone",
   description: "",
   keywords: ["hola", "guapa"]
 }

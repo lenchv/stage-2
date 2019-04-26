@@ -60,7 +60,7 @@ import "./php.css";
   }]} />
 </div>
 
-<Level id="welcome-to-php" number="1" name="Welcome to PHP" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="welcome-to-php" number="1" name="Welcome to PHP" difficulty="Hardcore." objectives="Get some knowledge about $php features." />
 
 [**PHP: Hypertext Preprocessor**](https://www.php.net/) _(or simply PHP)_ is a general-purpose programming language originally designed for web development. Originally PHP was just a "**p**ersonal **h**ome **p**age" created by [Rasmus Lerdorf](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D0%B4%D0%BE%D1%80%D1%84,_%D0%A0%D0%B0%D1%81%D0%BC%D1%83%D1%81) in 1995. But hey, it's 2019 already, isn't it dead?! [Hell, no.](https://w3techs.com/technologies/details/pl-php/all/all) Let's list some of the [fine folks who use PHP in production](https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites), so that you understand how serious it is:
 
@@ -206,9 +206,11 @@ $kernel->terminate($request, $response);
 ```
 [Why do we use $ in php?](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
 
-<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Learn what PHP 7 can offer for us." />
 
 https://www.php.net/manual/en/migration70.new-features.php
+
+![php7 rules](https://www.pvsm.ru/images/2016/12/20/uluchshenie-proizvoditelnosti-PHP-7.jpg)
 
 The following are some of the new features in PHP 7:
 * [PHP 5.6 vs 7.0](http://www.phpbenchmarks.com/en/comparator/php)
@@ -860,7 +862,7 @@ try {
 </li>
 </ul>
 
-<Level id="php-ecosystem" number="3" name="PHP ecosystem" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="php-ecosystem" number="3" name="PHP ecosystem" difficulty="Hardcore." objectives="Learn composer & autoloading basics, explore ecosystem." />
 
 #### What can I build?
 
@@ -1001,7 +1003,7 @@ The [**PHP Standard Recommendation**](https://www.php-fig.org/psr/) <sup><small>
    Academy::start();
    PHP::rock();
    ```
-   💡**vendor/autoload.php**:  
+   💡**composer.json**:  
    ```json
    "autoload": {
      "psr-4": {
@@ -1068,7 +1070,7 @@ server {
 ```
 ![php-fpm_nginx](https://datadog-prod.imgix.net/img/blog/nginx-502-bad-gateway-errors-php-fpm/php-fpm-health-3.png?fit=max)
 
-<Level id="typical-php-development-environment" number="4" name="Typical PHP development environment" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="typical-php-development-environment" number="4" name="Typical PHP development environment" difficulty="Hardcore." objectives="Setup your own development environment." />
 
 * OS: Linux, Windows, MacOS
 * Version control system: Git
@@ -1083,6 +1085,8 @@ server {
 * [awesome-php](https://github.com/ziadoz/awesome-php)
 * [Laracasts](https://laracasts.com/)
 * [codecourse](https://www.youtube.com/channel/UCpOIUW62tnJTtpWFABxWZ8g)
+
+![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
 
 export const metadata = {
   author: "Pavel Nemchenko",

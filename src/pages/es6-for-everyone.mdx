@@ -1,4 +1,4 @@
-import { Lecture, Message, TimelineOfContents, Level, Flute } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, Flute, ThatsAllFolks, GradingHometask1 } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import romanSahanAvatar from "../assets/avatars/roman-sahan-2017.svg";
@@ -192,10 +192,10 @@ const style = {
 ```
 ```js
 /**
-* returns the name of the lecture
-* @param {string} course 'js' | 'php' | 'net'
-* @returns {string} 
-*/
+ * returns the name of the lecture
+ * @param {string} course 'js' | 'php' | 'net'
+ * @returns {string} 
+ */
 function getLectureName(course) {
   switch(course) {
     case 'js': return 'Introduction to JavaScript';
@@ -1518,18 +1518,21 @@ class FightersView extends View {
       </li>
     </ul>
   </li>
+  <li>
+    💥<strong>Boom, done! Половина є!</strong>
+  </li>
 </ol>
 
 <Level id="modules-transpiling-bundling-etc" number="3" name="Modules, transpiling, bundling, etc." difficulty="And now we gonna roll 🤸" objectives="Get the most out of the JS" />
 
 <ol>
   <li>
-    <p><a href="https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d"><strong>How JavaScript Classes Work Under the Hood</strong></a></p>
+    <p>Hold on, <a href="https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d"><strong>How JavaScript Classes Work Under the Hood</strong></a> again?</p>
     <ul>
       <li class="details">
         <input type="checkbox" id="accordion-3-1-1" />
         <label class="summary" for="accordion-3-1-1">
-          <code>__proto__</code>
+          What's <code>__proto__</code>?
         </label>
   <div class="details-body">
 
@@ -1550,7 +1553,7 @@ student.__proto__ = person;
       <li class="details">
         <input type="checkbox" id="accordion-3-1-2" />
         <label class="summary" for="accordion-3-1-2">
-          <code>constructor</code>
+          And the <code>constructor</code>?
         </label>
   <div class="details-body">
 
@@ -1566,7 +1569,7 @@ function Animal(name, sound) {
       <li class="details">
         <input type="checkbox" id="accordion-3-1-3" />
         <label class="summary" for="accordion-3-1-3">
-          create instance
+          How to create an instance?
         </label>
   <div class="details-body">
 
@@ -1579,7 +1582,7 @@ const cat = new Animal("Sam", "meowing");
       <li class="details">
         <input type="checkbox" id="accordion-3-1-4" />
         <label class="summary" for="accordion-3-1-4">
-          add method
+          How to add a method?
         </label>
   <div class="details-body">
 
@@ -1596,7 +1599,7 @@ cat.makeSound();
       <li class="details">
         <input type="checkbox" id="accordion-3-1-5" />
         <label class="summary" for="accordion-3-1-5">
-          inheritance
+          But how does inheritance works?
         </label>
   <div class="details-body">
 
@@ -1622,22 +1625,16 @@ bird.fly();
     </ul>
   </li>
   <li>
-    <p><strong>Transpilers</strong>: what & why? Learn more about <a href="https://babeljs.io/"><strong>Babel</strong></a></p>
+    <p>Let's learn more about the <strong>transpilers</strong> — tools that read source code written in one programming language, and produce the equivalent code in another language. The most popular one, <a href="https://babeljs.io/"><strong>Babel</strong></a>, is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Let's try it out:</p>
     <ul>
       <li>
-        install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>
+        Install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>, open <strong>Terminal</strong> in Visual Studio Code <sup><em>Terminal</em> &rarr; <em>New Terminal</em></sup>, and run <code>npm init</code>.
       </li>
       <li>
-        Open <strong>Terminal</strong> in VS code (<em>Terminal</em> -> <em>New Terminal</em>)
+        Now install <strong>babel</strong> with <code>npm install --save-dev @babel/core @babel/cli</code>
       </li>
       <li>
-        init repository <code>npm init</code>
-      </li>
-      <li>
-        install <strong>babel</strong> <code>npm i --save-dev @babel/core @babel/cli</code>
-      </li>
-      <li>
-        add script to <code>package.json</code> file
+        Add <code>"scripts"</code> to the <strong>package.json</strong> file
   <div>
 
 ```js
@@ -1647,16 +1644,10 @@ bird.fly();
 ```
 
   </div>
-        in terminal run <code>npm run build</code>
+        and run <code>npm run build</code> in the terminal to see if it works
       </li>
       <li>
-        transform ES2015+ code
-        <ul>
-          <li>create <code>.babelrc</code> file</li>
-          <li>install package for transformation <code>npm install @babel/preset-env --save-dev</code></li>
-          <li>add <code>presets</code> to <code>.babelrc</code></li>
-        </ul>
-
+        Set up transpiling of ES2015+ code — <code>npm install @babel/preset-env --save-dev</code>, create a <strong>.babelrc</strong> in the root of your project, with the following content:
   <div>
 
 ```js
@@ -1675,8 +1666,7 @@ bird.fly();
   </div>
       </li>
       <li>
-        <p>install plugin <code>npm i @babel/plugin-proposal-class-properties --save-dev</code></p>
-        add plugin to <code>.babelrc</code>
+        We need more nice things — <code>npm install @babel/plugin-proposal-class-properties --save-dev</code> and add that plugin to <strong>.babelrc</strong>:
 
   <div>
 
@@ -1690,7 +1680,7 @@ bird.fly();
   </div>
       </li>
       <li>
-        <p>watch for changes (add <code>-w</code> flag)</p>
+        Let's watch for changes by running <code>babel</code> with <code>-w</code> flag
 
   <div>
 
@@ -1705,9 +1695,14 @@ bird.fly();
     </ul>
   </li>
   <li>
-    <p><strong>ES6 modules</strong>: what’s great about them?</p>
-
-`export`
+    What’s great about <strong>ES6 modules</strong>?
+    <ul>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-3-1" />
+        <label class="summary" for="accordion-3-3-1">
+          Export functions, objects, or primitive values from the module with <code>export</code> statement
+        </label>
+  <div class="details-body">
 
 ```js
 export const fighterService = new FighterService();
@@ -1721,11 +1716,18 @@ export { default } from './View';
 export * from './apiHelper';
 ```
 
-`import`
+  </div>
+      </li>
+      <li class="details">
+        <input type="checkbox" id="accordion-3-3-2" />
+        <label class="summary" for="accordion-3-3-2">
+          👆Load that stuff with <code>import</code> statement
+        </label>
+  <div class="details-body">
 
 ```js
 import * as helper from '../helpers/apiHelper';
-helper.callApi()
+helper.callApi();
 
 import App from './src/javascript/app';
 
@@ -1734,49 +1736,46 @@ import { fighterService } from './services/fightersService';
 import { callApi apiHelper } from '../helpers/apiHelper';
 ```
 
+  </div>
+      </li>
+    </ul>
   </li>
   <li>
-    <p><a href="https://webpack.js.org/"><strong>Webpack</strong></a> — module bundler for JavaScript applications</p>
+    Alright, let's <span style="text-decoration: line-through;"><em>npminstall everything</em></span> set up <a href="https://webpack.js.org/"><strong>Webpack</strong></a> — a module bundler for JavaScript applications:
     <ul>
       <li>
-        <p>install Webpack</p>
-        <p><code>npm i webpack webpack-cli --save-dev</code></p>
-      </li>
-      <li>
-        <p>configure Webpack</p>
-        <p>create <code>webpack.config.js</code> file</p>
+        Install Webpack by running <code>npm install webpack webpack-cli --save-dev</code>, then create a file named <strong>webpack.config.js</strong> in the root of your project, with the following content:
   <div>
 
 ```js
 const path = require('path');
 
 module.exports = {
-    entry: './index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'), 
-        filename: 'bundle.js'
-    },
-    mode: 'development'
+  entry: './index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'), 
+    filename: 'bundle.js'
+  },
+  mode: 'development'
 }
 ```
 
   </div>
       </li>
       <li>
-        <p>change <code>build</code> command in <em>package.json</em></p>
-        <p><code>"build": "webpack"</code></p>
+        Set <code>build</code> command in <strong>package.json</strong>'s <code>scripts</code> key to <code>"build": "webpack"</code>
       </li>
       <li>
-        <p>loaders</p>
+        <p>Set up <a href="https://webpack.js.org/loaders/"><strong>loaders</strong></a>:</p>
         <ul>
           <li class="details">
             <input type="checkbox" id="accordion-3-4-1" />
             <label class="summary" for="accordion-3-4-1">
-              <code>babel-loader</code>
+              Add <code>babel-loader</code> to transpile code, as was mentioned before
             </label>
   <div class="details-body">
 
-add modules to config
+<code>npm install babel-loader --save-dev</code> and edit <strong>webpack.config.js</strong> to include <code>module</code> key:
 
 ```js
   module: {
@@ -1798,7 +1797,7 @@ add modules to config
   }
 ```
 
-rename `.babelrc` to `babel.config.js` and change inner content
+Rename **.babelrc** to **babel.config.js** and change it's content:
 
 ```js
 const preset = [[
@@ -1822,15 +1821,11 @@ module.export = { preset, plugins }
           <li class="details">
             <input type="checkbox" id="accordion-3-4-2" />
             <label class="summary" for="accordion-3-4-2">
-              <p><code>style-loader</code> and <code>css-loader</code></p>
+              Add <code>style-loader</code> and <code>css-loader</code>, so that you could import styles in your JavaScript files with <code>import './src/styles/styles.css';</code>
             </label>
   <div class="details-body">
 
-install packages
-
-`npm i css-loader style-loader --save-dev`
-
-add them to webpack config
+As usual, just `npm install css-loader style-loader --save-dev` and edit <strong>webpack.config.js</strong> to include new rules:
 
 ```js
   module: {
@@ -1839,84 +1834,74 @@ add them to webpack config
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
-      ...
+      // other rules
     ]
   }
 ```
-
-<p>import styles in <em>index.js</em> file</p>
-
-`import './src/styles/styles.css';`
 
   </div>
           </li>
         </ul>
       </li>
       <li>
-        <p><code>webpack-dev-server</code></p>
-        <p>install package</p>
-        <p><code>npm i webpack-dev-server --save-dev</code></p>
-        <p>turn on dev-server</p>
+        Add <a href="https://webpack.js.org/configuration/dev-server/"><strong>Webpack DevServer</strong></a> — <code>npm install webpack-dev-server --save-dev</code> and modify <strong>webpack.config.js</strong> to include <code>devServer</code> and <code>publicPath</code> keys:
   <div>
 
 ```javascript 
   devServer: {
     inline: true
-  }
-
-  ...
-
+  },
+  // other Webpack settings
   output: {
-    ...
+    // other output settings
     publicPath: '/dist/'
   }
 ```
 
   </div>
-        <p>add script to start dev-server</p>
-        <p><code>"start": "webpack-dev-server"</code></p>
+        <p>Add <code>"start": "webpack-dev-server"</code> to <strong>package.json</strong>'s <code>scripts</code> key</p>
       </li>
       <li>
-        <p><code>devtool</code></p>
-        <p>add devtool option to webpack config for better debugging experience - <code>devtool: "source-map"</code></p>
+        Maybe add <code>devtool</code> option to the <strong>webpack.config.js</strong> for much better debugging experience — <code>devtool: "source-map"</code>
+      </li>
+      <li>
+        Use <code>npm run start</code> and <code>npm run build</code> to start and build your project respectively
       </li>
     </ul>
   </li>
+  <li>
+    🥁<strong>Badum tss! Відрефакторено!</strong>
+  </li>
 </ol>
 
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
+<hr />
 
-[lint to the repository](https://github.com/sahanr/es-lecture/tree/master)
-
-#### Закінчити проект
-
-У класі `FighterService` створити метод для отримання детальної інформації про бійця. Додати можливість її перегляду: для цього реалізувати метод, який би опрацьовував клік по бійцю і, якщо інформації про нього ще немає на клієнті, 
-то надіслати запит і записати інформацію у колекцію. Дані можна відобразити у вигляді невеликого діалогового вікна з можливістю їх редагування. 
-
-Створити клас `Fighter`, який міститиме інформацію необхідну бійцю для бою (`name`, `health`, etc), а також методи, які б відповідали за отримання <em>"урону"</em> чи за його нанесення. 
- Кількість завданої шкоди здоров'ю бійця повина вираховуватись за формулою: `power * point`, де `point` - це рандомне число від 1 до 3, яке зробить результат гри більш непередбачуваним.
-
-Створити функцію `fight`, яка прийматиме бійців як параметри та запускатиме процес гри. Гравці по черзі наносять удар один одному. Якщо один із них помирає, то гра закінчується і результат виводиться на екран.
-
-<div class="bubble small subtle">
-  Придумати логіку бійки: бійці можуть самі наносити удари по черзі, з певним інтервалом або ж можуть це робити за допомого певного UI елементу на сторінці
+<div class="details">
+  <label class="summary" for="accordion-4">
+    <h4 style="margin: 0;">🏠 <strong>Закінчити проект</strong></h4>
+  </label>
+  <input type="checkbox" id="accordion-4" style="vertical-align: bottom;" />
+  <div class="details-body">
+    <ul style="filter: blur(5px);">
+      <li>У класі `FighterService` створити метод для отримання детальної інформації про бійця. Додати можливість її перегляду: для цього реалізувати метод, який би опрацьовував клік по бійцю і, якщо інформації про нього ще немає на клієнті, то надіслати запит і записати інформацію у колекцію. Дані можна відобразити у вигляді невеликого діалогового вікна з можливістю їх редагування.</li>
+      <li>Створити клас `Fighter`, який міститиме інформацію необхідну бійцю для бою (`name`, `health`, etc), а також методи,які б відповідали за отримання <em>"урону"</em> чи за його нанесення. Кількість завданої шкоди здоров'ю бійця повина вираховуватись за формулою: `power * point`, де `point` - це рандомне число від 1 до 3, яке зробить результат гри більш непередбачуваним.</li>
+      <li>
+        Створити функцію `fight`, яка прийматиме бійців як параметри та запускатиме процес гри. Гравці по черзі наносять удар один одному. Якщо один із них помирає, то гра закінчується і результат виводиться на екран.
+        <div class="bubble small subtle">
+          Придумати логіку бійки — наприклад, бійці можуть самі наносити удари по черзі, з певним інтервалом, або ж можуть це робити за допомого певного UI елементу на сторінці
+        </div>
+      </li>
+      <li>Cтворити додаткові елементи для реалізації гри — елемент для вибору бійців для бійки (може бути звичайний `<input type="checkbox" />`), кнопка, яка починає бійку, індикатор здоров'я, тощо.</li>
+    </ul>
+    <GradingHometask1 />
+  </div>
 </div>
 
-Cтворити додаткові елементи для реалізації гри:
-- елемент для вибору бійців для бійки;
+<hr />
 
-<div class="bubble small subtle">
-  може бути звичайний checkbox
-</div>
-
-- кнопка, яка починає бійку;
-- індикатор здоров'я;
-- тощо.
-
-<hr style="border: none; height: 2px; background: lightgrey; margin: 2em 0;" />
-
+<ThatsAllFolks />
 <div class="bubble">
-  Якщо ти доскролив до цього моменту, то вітаю - це вже фініш 🙂. Чекаю на запитання та коментарі. Успіхів з домашкою! Enjoy 🙃
+  Якщо ти доскролив аж до цього моменту, то тоді вітаю — це вже фініш 🙂. Дякую за увагу 🙏! Чекаю на запитання та коментарі під цією лекцією у особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. І звичайно ж — успіхів з домашкою! <strong>Enjoy 🙃</strong>
 </div>
 
 export const metadata = {

@@ -28,12 +28,19 @@ import "./php.css";
         </li>
       </ul>
       <p class="about">
-        Паша Немченко закончил курс Академии по РНР в 2016 году, и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и иногда с удовольствием. Любит ходить на технические митапы, читать мемы, пить кофе и разбираться в новых технологиях по выходным.
+        Паша Немченко закончил курс Академии по РНР и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и иногда с удовольствием. Любит ходить на технические митапы, читать мемы, пить кофе и разбираться в новых технологиях по выходным.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Привет!</strong><br />Вашему вниманию первая профильная лекция или "Make PHP great again"! Но вначале дисклеймер: 
+      <br /> 1) часть материала вам уже знакома и это гуд :)
+      <br /> 2) лекция обещает быть интересной и познавательной<em>(за употребление слов-паразитов, жаргона и нецензурной брани сразу простите)</em>. 
+      <br /> 3) С собой: 
+        Терминал(командная строка),&nbsp;
+        <a href="https://git-scm.com/"><strong>Git</strong></a>,&nbsp;
+        <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a>&nbsp;||&nbsp;
+        <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>&nbsp;      
   </div>
 </div>
 
@@ -598,12 +605,6 @@ echo Drawer::COLORS['red'];
 ```php
 try {
     // code
-} catch (Throwable $e) {
-    // catch all possible errors
-}
-
-try {
-    // code
 } catch (InvalidArgumentException | MyException $e) {
     // catch only specific
 }
@@ -763,7 +764,7 @@ Use types everywhere! )
 <li class="details">
   <input type="checkbox" id="accordion-22" hidden />
   <label class="summary" for="accordion-22">
-    Nullables
+    <span class="badge" data-badge="7.1">Nullables</span>
   </label>
   <div class="details-body">
 
@@ -848,6 +849,13 @@ function numbersAsIterator(): iterable
 `Throwable` is the base interface for any object that can be thrown via a `throw` statement in PHP 7, including `Error` and `Exception`. PHP classes cannot implement the `Throwable` interface directly, and must instead extend `Exception`.
 <ul><li>Throwable<ul><li><code class="language-text">Exception implements Throwable</code><ul><li>LogicException<ul><li>BadFunctionCallException<ul><li>BadMethodCallException</li></ul></li><li>DomainException</li><li>InvalidArgumentException</li><li>LengthException</li><li>OutOfRangeException</li></ul></li><li>RuntimeException<ul><li>OutOfBoundsException</li><li>OverflowException</li><li>RangeException</li><li>UnderflowException</li><li>UnexpectedValueException</li></ul></li></ul></li><li><code class="language-text">Error implements Throwable</code><ul><li>AssertionError</li><li>ArithmeticError</li><li>DivisionByZeroError</li><li>ParseError</li><li>TypeError</li></ul></li></ul></li></ul>
 
+```php
+try {
+    // code
+} catch (Throwable $e) {
+    // catch all possible errors
+}
+```
   </div>
 </li>
 </ul>

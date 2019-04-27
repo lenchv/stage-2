@@ -2,9 +2,9 @@ import { Lecture, Message, TimelineOfContents, Level, ThatsAllFolks } from "../c
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faWikipediaW, faVk, faGoogle, faYahoo, faGithub, faSymfony, faLaravel, faWordpress, faJoomla, faDrupal, faMagento, faOpencart } from "@fortawesome/free-brands-svg-icons";
 import pavelNemchenkoAvatar from "../assets/avatars/pavel-nemchenko-2017.svg";
-import "./php.css";
+import "./php-7-features-and-ecosystem.css";
 
-<div><h1><strong>PHP</strong></h1></div>
+<div><h1><strong>PHP 7 features and ecosystem</strong></h1></div>
 
 <div>
   <div class="author">
@@ -33,14 +33,13 @@ import "./php.css";
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Привет!</strong><br />Вашему вниманию первая профильная лекция или "Make PHP great again"! Но вначале дисклеймер: 
-      <br /> 1) часть материала вам уже знакома и это гуд :)
-      <br /> 2) лекция обещает быть интересной и познавательной<em>(за употребление слов-паразитов, жаргона и нецензурной брани сразу простите)</em>. 
-      <br /> 3) С собой: 
-        Терминал(командная строка),&nbsp;
-        <a href="https://git-scm.com/"><strong>Git</strong></a>,&nbsp;
-        <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a>&nbsp;||&nbsp;
-        <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>&nbsp;      
+    <strong>Привет! 👋</strong><br />
+    Вашему вниманию первая профильная лекция или "Make PHP great again"! Но вначале дисклеймер:
+    <ol class="disclaimers">
+      <li>часть материала вам уже знакома и это гуд 😊</li>
+      <li>лекция обещает быть интересной и познавательной <em>(за употребление слов-паразитов, жаргона и нецензурной брани сразу простите)</em></li>
+    </ol>
+    С собой: терминал (командная строка), <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a> или <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
 </div>
 
@@ -104,7 +103,14 @@ import "./php.css";
 
 <hr class="small" />
 
-### High-level language
+<ul>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-1" />
+    <label class="summary" for="accordion-1-1">
+      <strong>High-level language</strong>
+    </label>
+  <div class="details-body">
+
 ```php
 // C/C++ language allocate memory
 int *testArray = malloc(5 * sizeof(int));
@@ -116,16 +122,30 @@ $testArray[] = 'Hi!';
 
 // cleanup memory by garbage collector
 ```
-Memory is managed dynamically. Written in Zend engine using C language.
+Memory is managed dynamically. [Written in Zend engine using C language.](https://github.com/php)
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-2" />
+    <label class="summary" for="accordion-1-2">
+      <strong>PHP is interpreted</strong>
+    </label>
+  <div class="details-body">
 
-[https://github.com/php](https://github.com/php)
-
-### PHP is interpreted
 ```php
 php hello.php
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-3" />
+    <label class="summary" for="accordion-1-3">
+      <strong>OOP vs FP vs procedural</strong>
+    </label>
+  <div class="details-body">
 
-### OOP vs FP vs procedural
 ```php
 // oop
 namespace A;
@@ -162,8 +182,16 @@ function content() {
     echo '<div>content</div>';
 }
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-4" />
+    <label class="summary" for="accordion-1-4">
+      <strong>Weak typing system</strong>
+    </label>
+  <div class="details-body">
 
-### Weak typing system
 ```php
 $one = '1';
 $two = 2;
@@ -180,8 +208,7 @@ var_dump($foo == $bar);
 // false
 var_dump($foo === $bar);
 ```
-
-But from PHP 7.0
+But starting from PHP 7.0
 ```php
 declare(strict_types=1);
 
@@ -190,13 +217,27 @@ function tuple(int $a, int $b): array
     return [$x, $y];
 }
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-5" />
+    <label class="summary" for="accordion-1-5">
+      <strong>Single threaded</strong>
+    </label>
+  <div class="details-body">
 
-### Single threaded 
-Multi thread with POSIX and `--pthreads` extension.
+Multi thread with POSIX and `--pthreads` extension. High-load tasks with message queue systems (RabbitMQ, etc.).
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-6" />
+    <label class="summary" for="accordion-1-6">
+      <strong>Too many dollars $$$</strong>
+    </label>
+  <div class="details-body">
 
-High-load tasks with message queue systems(RabbitMQ, etc.).
-
-### Too many dollars $$$
 ```php
 $kernel = new Kernel($_SERVER['APP_ENV'], $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
@@ -204,24 +245,18 @@ $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
 ```
-[Why do we use $ in php?](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
+[**Why do we use $ in PHP?**](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
+  
+  </div>
+  </li>
+</ul>
 
-<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Learn what PHP 7 can offer for us." />
 
-https://www.php.net/manual/en/migration70.new-features.php
+<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Learn what PHP 7 can offer us." />
 
 ![php7 rules](https://www.pvsm.ru/images/2016/12/20/uluchshenie-proizvoditelnosti-PHP-7.jpg)
 
-The following are some of the new features in PHP 7:
-* [PHP 5.6 vs 7.0](http://www.phpbenchmarks.com/en/comparator/php)
-* memory optimized
-* new exception hierarchy
-* syntax sugar `??, <=>`
-* nullables `?string`
-* scalar type declarations
-* `void` return type
-* iterable type
-* anonymous classes
+The following are some of the new features in PHP 7 — it is faster ([PHP 5.6 vs 7.0](http://www.phpbenchmarks.com/en/comparator/php)), memory optimized, has new exception hierarchy, introduces new syntax sugar (`??, <=>`), nullables (`?string`), scalar type declarations, , `void` return type, iterable type, anonymous classes. Let's take a look at some of the features in detail:
 
 <ul>
 <li class="details">
@@ -1080,24 +1115,19 @@ server {
 * Profilers for memory optimization: blackfire.io, xhprof
 * Standardize dev environment: [vagrant-homestead](https://laravel.com/docs/5.8/homestead), [docker-laradock](https://laradock.io/)
 
-## Links
+<h3><strong>Useful links</strong></h3>
 * [clean-code-php](https://github.com/jupeter/clean-code-php)
 * [awesome-php](https://github.com/ziadoz/awesome-php)
 * [Laracasts](https://laracasts.com/)
 * [codecourse](https://www.youtube.com/channel/UCpOIUW62tnJTtpWFABxWZ8g)
 
-![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
-
 <hr />
 
-<ThatsAllFolks />
-<div class="bubble">
-  Спасибо за внимание 🙏!
-</div>
+![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
 
 export const metadata = {
   author: "Pavel Nemchenko",
-  title: "PHP",
+  title: "PHP 7 features and ecosystem",
   description: "",
   keywords: ["hola", "guapa"]
 }

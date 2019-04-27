@@ -1,3 +1,9 @@
+/* Disclaimers */
+.content ol.disclaimers,
+.content ol.disclaimers li {
+  margin: 0;
+}
+
 /* PHP users */
 .content .php-users {
   margin-bottom: 0.25rem;

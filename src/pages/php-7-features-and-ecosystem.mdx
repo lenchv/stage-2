@@ -1,10 +1,10 @@
-import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { Lecture, Message, TimelineOfContents, Level, ThatsAllFolks } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faWikipediaW, faVk, faGoogle, faYahoo, faGithub, faSymfony, faLaravel, faWordpress, faJoomla, faDrupal, faMagento, faOpencart } from "@fortawesome/free-brands-svg-icons";
 import pavelNemchenkoAvatar from "../assets/avatars/pavel-nemchenko-2017.svg";
-import "./php.css";
+import "./php-7-features-and-ecosystem.css";
 
-<div><h1><strong>PHP</strong></h1></div>
+<div><h1><strong>PHP 7 features and ecosystem</strong></h1></div>
 
 <div>
   <div class="author">
@@ -28,12 +28,18 @@ import "./php.css";
         </li>
       </ul>
       <p class="about">
-        Паша Немченко закончил курс Академии по РНР в 2016 году, и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и иногда с удовольствием. Любит ходить на технические митапы, читать мемы, пить кофе и разбираться в новых технологиях по выходным.
+        Паша Немченко закончил курс Академии по РНР и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и иногда с удовольствием. Любит ходить на технические митапы, читать мемы, пить кофе и разбираться в новых технологиях по выходным.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Привет! 👋</strong><br />
+    Вашему вниманию первая профильная лекция или "Make PHP great again"! Но вначале дисклеймер:
+    <ol class="disclaimers">
+      <li>часть материала вам уже знакома и это гуд 😊</li>
+      <li>лекция обещает быть интересной и познавательной <em>(за употребление слов-паразитов, жаргона и нецензурной брани сразу простите)</em></li>
+    </ol>
+    С собой: терминал (командная строка), <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a> или <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
   </div>
 </div>
 
@@ -53,7 +59,7 @@ import "./php.css";
   }]} />
 </div>
 
-<Level id="welcome-to-php" number="1" name="Welcome to PHP" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="welcome-to-php" number="1" name="Welcome to PHP" difficulty="Hardcore." objectives="Get some knowledge about $php features." />
 
 [**PHP: Hypertext Preprocessor**](https://www.php.net/) _(or simply PHP)_ is a general-purpose programming language originally designed for web development. Originally PHP was just a "**p**ersonal **h**ome **p**age" created by [Rasmus Lerdorf](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D1%80%D0%B4%D0%BE%D1%80%D1%84,_%D0%A0%D0%B0%D1%81%D0%BC%D1%83%D1%81) in 1995. But hey, it's 2019 already, isn't it dead?! [Hell, no.](https://w3techs.com/technologies/details/pl-php/all/all) Let's list some of the [fine folks who use PHP in production](https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites), so that you understand how serious it is:
 
@@ -97,7 +103,14 @@ import "./php.css";
 
 <hr class="small" />
 
-### High-level language
+<ul>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-1" />
+    <label class="summary" for="accordion-1-1">
+      <strong>High-level language</strong>
+    </label>
+  <div class="details-body">
+
 ```php
 // C/C++ language allocate memory
 int *testArray = malloc(5 * sizeof(int));
@@ -109,16 +122,30 @@ $testArray[] = 'Hi!';
 
 // cleanup memory by garbage collector
 ```
-Memory is managed dynamically. Written in Zend engine using C language.
+Memory is managed dynamically. [Written in Zend engine using C language.](https://github.com/php)
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-2" />
+    <label class="summary" for="accordion-1-2">
+      <strong>PHP is interpreted</strong>
+    </label>
+  <div class="details-body">
 
-[https://github.com/php](https://github.com/php)
-
-### PHP is interpreted
 ```php
 php hello.php
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-3" />
+    <label class="summary" for="accordion-1-3">
+      <strong>OOP vs FP vs procedural</strong>
+    </label>
+  <div class="details-body">
 
-### OOP vs FP vs procedural
 ```php
 // oop
 namespace A;
@@ -155,8 +182,16 @@ function content() {
     echo '<div>content</div>';
 }
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-4" />
+    <label class="summary" for="accordion-1-4">
+      <strong>Weak typing system</strong>
+    </label>
+  <div class="details-body">
 
-### Weak typing system
 ```php
 $one = '1';
 $two = 2;
@@ -173,8 +208,7 @@ var_dump($foo == $bar);
 // false
 var_dump($foo === $bar);
 ```
-
-But from PHP 7.0
+But starting from PHP 7.0
 ```php
 declare(strict_types=1);
 
@@ -183,13 +217,27 @@ function tuple(int $a, int $b): array
     return [$x, $y];
 }
 ```
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-5" />
+    <label class="summary" for="accordion-1-5">
+      <strong>Single threaded</strong>
+    </label>
+  <div class="details-body">
 
-### Single threaded 
-Multi thread with POSIX and `--pthreads` extension.
+Multi thread with POSIX and `--pthreads` extension. High-load tasks with message queue systems (RabbitMQ, etc.).
+  
+  </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-6" />
+    <label class="summary" for="accordion-1-6">
+      <strong>Too many dollars $$$</strong>
+    </label>
+  <div class="details-body">
 
-High-load tasks with message queue systems(RabbitMQ, etc.).
-
-### Too many dollars $$$
 ```php
 $kernel = new Kernel($_SERVER['APP_ENV'], $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
@@ -197,22 +245,18 @@ $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
 ```
-[Why do we use $ in php?](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
+[**Why do we use $ in PHP?**](https://www.quora.com/Why-do-we-use-a-dollar-symbol-before-variables-in-PHP)
+  
+  </div>
+  </li>
+</ul>
 
-<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
 
-https://www.php.net/manual/en/migration70.new-features.php
+<Level id="whats-new-in-php-7" number="2" name="What's new in PHP 7" difficulty="Hardcore." objectives="Learn what PHP 7 can offer us." />
 
-The following are some of the new features in PHP 7:
-* [PHP 5.6 vs 7.0](http://www.phpbenchmarks.com/en/comparator/php)
-* memory optimized
-* new exception hierarchy
-* syntax sugar `??, <=>`
-* nullables `?string`
-* scalar type declarations
-* `void` return type
-* iterable type
-* anonymous classes
+![php7 rules](https://www.pvsm.ru/images/2016/12/20/uluchshenie-proizvoditelnosti-PHP-7.jpg)
+
+The following are some of the new features in PHP 7 — it is faster ([PHP 5.6 vs 7.0](http://www.phpbenchmarks.com/en/comparator/php)), memory optimized, has new exception hierarchy, introduces new syntax sugar (`??, <=>`), nullables (`?string`), scalar type declarations, , `void` return type, iterable type, anonymous classes. Let's take a look at some of the features in detail:
 
 <ul>
 <li class="details">
@@ -598,12 +642,6 @@ echo Drawer::COLORS['red'];
 ```php
 try {
     // code
-} catch (Throwable $e) {
-    // catch all possible errors
-}
-
-try {
-    // code
 } catch (InvalidArgumentException | MyException $e) {
     // catch only specific
 }
@@ -763,7 +801,7 @@ Use types everywhere! )
 <li class="details">
   <input type="checkbox" id="accordion-22" hidden />
   <label class="summary" for="accordion-22">
-    Nullables
+    <span class="badge" data-badge="7.1">Nullables</span>
   </label>
   <div class="details-body">
 
@@ -848,11 +886,18 @@ function numbersAsIterator(): iterable
 `Throwable` is the base interface for any object that can be thrown via a `throw` statement in PHP 7, including `Error` and `Exception`. PHP classes cannot implement the `Throwable` interface directly, and must instead extend `Exception`.
 <ul><li>Throwable<ul><li><code class="language-text">Exception implements Throwable</code><ul><li>LogicException<ul><li>BadFunctionCallException<ul><li>BadMethodCallException</li></ul></li><li>DomainException</li><li>InvalidArgumentException</li><li>LengthException</li><li>OutOfRangeException</li></ul></li><li>RuntimeException<ul><li>OutOfBoundsException</li><li>OverflowException</li><li>RangeException</li><li>UnderflowException</li><li>UnexpectedValueException</li></ul></li></ul></li><li><code class="language-text">Error implements Throwable</code><ul><li>AssertionError</li><li>ArithmeticError</li><li>DivisionByZeroError</li><li>ParseError</li><li>TypeError</li></ul></li></ul></li></ul>
 
+```php
+try {
+    // code
+} catch (Throwable $e) {
+    // catch all possible errors
+}
+```
   </div>
 </li>
 </ul>
 
-<Level id="php-ecosystem" number="3" name="PHP ecosystem" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="php-ecosystem" number="3" name="PHP ecosystem" difficulty="Hardcore." objectives="Learn composer & autoloading basics, explore ecosystem." />
 
 #### What can I build?
 
@@ -993,7 +1038,7 @@ The [**PHP Standard Recommendation**](https://www.php-fig.org/psr/) <sup><small>
    Academy::start();
    PHP::rock();
    ```
-   💡**vendor/autoload.php**:  
+   💡**composer.json**:  
    ```json
    "autoload": {
      "psr-4": {
@@ -1060,7 +1105,7 @@ server {
 ```
 ![php-fpm_nginx](https://datadog-prod.imgix.net/img/blog/nginx-502-bad-gateway-errors-php-fpm/php-fpm-health-3.png?fit=max)
 
-<Level id="typical-php-development-environment" number="4" name="Typical PHP development environment" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+<Level id="typical-php-development-environment" number="4" name="Typical PHP development environment" difficulty="Hardcore." objectives="Setup your own development environment." />
 
 * OS: Linux, Windows, MacOS
 * Version control system: Git
@@ -1070,15 +1115,19 @@ server {
 * Profilers for memory optimization: blackfire.io, xhprof
 * Standardize dev environment: [vagrant-homestead](https://laravel.com/docs/5.8/homestead), [docker-laradock](https://laradock.io/)
 
-## Links
+<h3><strong>Useful links</strong></h3>
 * [clean-code-php](https://github.com/jupeter/clean-code-php)
 * [awesome-php](https://github.com/ziadoz/awesome-php)
 * [Laracasts](https://laracasts.com/)
 * [codecourse](https://www.youtube.com/channel/UCpOIUW62tnJTtpWFABxWZ8g)
 
+<hr />
+
+![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
+
 export const metadata = {
   author: "Pavel Nemchenko",
-  title: "PHP",
+  title: "PHP 7 features and ecosystem",
   description: "",
   keywords: ["hola", "guapa"]
 }

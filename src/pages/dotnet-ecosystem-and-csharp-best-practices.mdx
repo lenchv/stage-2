@@ -1,0 +1,1953 @@
+import { Lecture, Message, TimelineOfContents, Level } from "../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare, faGithub, faLinkedin, faSkype } from "@fortawesome/free-brands-svg-icons";
+import rostyslavDiakivAvatar from "../assets/avatars/rostyslav-diakiv-2019.svg";
+
+<div><h1><strong>.NET ecosystem and C# best practices</strong></h1></div>
+
+<div>
+  <div class="author">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={rostyslavDiakivAvatar} role="img" aria-label="My profile picture"></object>
+    </div>
+    <div class="profile">
+      <h3 class="name">Ростислав Дяків</h3>
+      <ul class="contacts">
+        <li>
+          <a href="https://www.facebook.com/rostislav.dyakiv" rel="author" class="facebook">
+            <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
+            <span>rostislav.dyakiv</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/rostyslav-diakiv" rel="author" class="github">
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+            <span>rostyslav-diakiv</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/rostyslav-diakiv/" rel="author" class="linkedin">
+            <FontAwesomeIcon icon={faLinkedin} className="icon" />
+            <span>rostyslav-diakiv</span>
+          </a>
+        </li>
+        <li>
+          <a href="skype:rostik8803" rel="author" class="skype">
+            <FontAwesomeIcon icon={faSkype} className="icon" />
+            <span>rostik8803</span>
+          </a>
+        </li>
+      </ul>
+      <p class="about">
+        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#"><strong>React</strong></a> та <a href="#"><strong>GraphQL</strong></a>. Говорить російською із смішним акцентом.
+      </p>
+    </div>
+  </div>
+  <div class="bubble" style="margin: -0.5em 1em 1em;">
+    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+  </div>
+</div>
+
+<div id="table-of-contents" class="table-of-contents">
+  <TimelineOfContents timeline={[{
+    linkTo: "#everything-you-should-know-about-csharp-to-get-started",
+    title: "Everything you should know about C# to get started"
+  }, {
+    linkTo: "csharp-software-development-principles",
+    title: "C# software development principles"
+  }]} />
+</div>
+
+#### Slide - це те що по ідеї має бути на слайді поки я розказую текст який після #### Text
+
+#### Text - це по суті транскрипт що я буду розказувати коли цей слайд на екрані
+
+### .Net Platform - наприклад на 1 Slide-ом і 1 Text-ом - це назва слайду
+
+
+# .Net Ecosystem - Title
+
+## Lecture outline, disclaimer
+Тема лекції **Ecosystem-a .Net**
+
+У ній я зібрав матеріали та практики, потрібні для створення `C#` додатків та 
+є необхідною базою для продовження вивчення `.Net`-y.
+
+Це загальноприйняті стандарти розробки програмного забеспечення на платформі `.Net`, 
+але не є обов'язковими для дотримання при написанні програм.
+
+Це просто так званий гайдлайн про те, як писати код так, щоб іншим розробникам було 
+зрозуміло та легко читати і використовувати ваш код.
+
+Також ми розглянемо різні практики написання та використання засобів мови 
+програмування `C#` компонентів `.Net`
+
+
+## Agenda
+
+#### Slide
+
+1. Everything you should know about `C#` to get started
+    * .Net Platform
+      * NuGet
+    * CLR
+      * C# ==> IL Code
+      * Value and Reference type
+      * Stack and Heap
+      * ref, out
+      * Boxing - Unboxing
+    * Class vs Struct
+    * Interface vs Abstract Class
+    * Extension methods
+    * Generics
+    * Tuples
+    * Events & Delegates + Lambdas
+    * Collections
+    * Exceptions
+2. 
+   * Coding Standards
+   *  DRY
+   *  KISS
+   *  SOLID
+3. IDE, Статичні аналізатори коду
+    * Також швиденько пройдемось по IDE в яких можна писати код під `.Net`, та поговоримо про статичні аналізатори коду, 
+для підтримки якості та запобіганню виникнення помилок у вашій програмі
+
+#### Text
+
+Отже, переходимо до Agend-и і подивимось що нас чекає.
+
+Тож Лекція розділена на 3 частини:
+1. У першій частині ми розглядатимемо структури данних у `.Net`, можливості та особливості мови `С#`
+2. Друга частина складатимется з пояснення таких термінів як `KISS`, `DRY` та `SOLID`
+3. І у останній частині ми поговоримо про `Текстові Редактори` в яких можна писати код під `.Net`, а також що таке `Статичні аналізатори коду`, навіщо вони потрібні та їх імплементації(приклади)
+
+
+## Presentation of contents (slides)
+
+#### Text
+
+Що ж, переходимо до 1-го слайду лекції:
+
+### .Net Platform
+
+#### Slide
+Platform scheme:
+
+![Platform scheme](assets/platform-scheme.jpg)
+
+#### Text
+Зараз інфраструктура `.Net-y` виглядає наступним чином. Є 3 шляхи створення `.Net` додатків:
+1. Це використовувати старий добрий `.Net Framework`, запускати його на віндовс і радіти життю
+2. Це писати крос-платформні веб додатки за допомогою web-framework-y `ASP.NET Core`. 
+Або ж гібридні додатки з `UWP- Universal Windows Platform`, що дозволяє запускати програму 
+написану на цій технології на `Windows` машині, `X-Box`-i, `Hololens`-i та ще якісь біді від Майкрософт.
+3. І третя вітка це - Xamarin. Платформа для створення мобільних додатків для IOS i Android, використовуючи `C#` та `.Net`
+
+Код який написаний під спеціальний фреймворк, як `WPF`, `Asp.Net Core` чи `Android` не можна перевикористати на іншій платформі із зрозумілих сподіваюсь причин, так як він заточений для роботи з так званими `Platform-specific API` який відрізняється у них всіх.
+
+Для вирішення цієї проблеми, а саме перевикористання коду бізнес-логіки, хелпер методів, меделей, класів і так далі у іншій платформі створили `.Net Standart` - який надає набір доступних `АPI`, що працює на усіх платформах:
+* Настільних програмах
+* Веб-додатках
+* Мобільних додатках і іграх
+* А також хмарних службах
+
+
+### Nuget Package Manager
+
+#### Slide
+
+![NuGet Logo](assets/nuget-logo.png)
+
+#### Text
+
+Ключовий інструмент для будь-якої сучасної платформи розробки - це механізм, за допомогою якого розробники можуть створювати, передавати один одному і використовувати корисний код. 
+
+Часто такий код розподілений по "`пакетах`", що включає скомпільований код (у вигляді бібліотек `DLL`).
+
+Для `.NET`-у механізмом спільного використання коду, підтримуваним `Майкрософт`, є `NuGet`.
+
+За допомогою `NuGet` ви можете скачувати пакети з кодом із центрального репозиторія `NuGet Gallery`, який уже налічує близько `100_000` унікальних пакетів. 
+
+Також якщо ви написали якусь круту бібліотеку для роботи з чимось - наприклад з файловою чистемою whatever. Ви з легкістю можете самі створити `NuGet пакет` та запаблішити його, щоб інші розробники могли використовувати ваш труд.
+
+Простіше кажучи, пакет `NuGet` є окремим `ZIP-файл` з розширенням .nupkg, який містить скомпільований код (`DLL`), інші файли, пов'язані з цим кодом та маніфест.
+
+### CLR
+
+#### Slide
+Execution path:
+
+![code-lifecycle](assets/code-lifecycle.jpg)
+
+#### Text
+Сьогодні у `.Net` світі 3 найпоширеніші мови програмування це `C#`, `F#` та `Visual Basic .Net`.
+
+У кожної є свій компілятор, який перетворює код написаний на цій мові у `IL - Intermediate Language Code`,
+який представляє з себе набір інструкцій для віртуальної машини `.Net` - `CLR - Common Language Runtime`.
+
+Основні етапи виконання програми `.Net`
+1) Спочатку написаний нами код, компілятор `C#` перетворить `C#` code на `IL`.
+2) Тоді, коли прийде час для виконання частини нашого коду в програмі - `CLR` за допомогою `JIT - Just in Time компілятора ` перетворить код `IL` на `машинний код`.
+
+Важливо зазначити, що перетворення `IL` в `машинний код` відбувається лише тоді коли потрібно, тобто буде перетворена тільки та частина коду, яка має виконатись в певний(теперішній) момент часу.
+
+Результатом білда `.Net` програми є файл з розширенням `.exe` - executable файл, або: `dll` - `Dynamic Link Library`
+
+### C# ==> IL Code
+
+#### Slide
+Звичайний `C#` код: 
+```c#
+public void SumTwoNumbers()
+{
+    int firstNumber = 10;
+    var secondNumber = 200;
+
+    Console.WriteLine(firstNumber + secondNumber);
+}
+```
+
+C# код скомпільований в CIL:
+```
+.method public hidebysig 
+	instance void SumTwoNumbers () cil managed 
+{
+	// Method begins at RVA 0x2070
+	// Code size 18 (0x12)
+	.maxstack 2
+	.locals init (
+		[0] int32 firstNumber,
+		[1] int32 secondNumber
+	)
+
+	IL_0000: ldc.i4.s 10
+	IL_0002: stloc.0
+	IL_0003: ldc.i4 200
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: add
+	IL_000c: call void [mscorlib]System.Console::WriteLine(int32)
+	IL_0011: ret
+}
+```
+
+#### Text
+`C# компілятор` перетворить код написаний вище у проміжну мову, яка виглядатиме так: 
+
+На цьому слайді можна побачити у який `IL Code` перетвориться функція, написана на `C#` 
+
+
+### Value and Reference types
+
+#### Text
+На найвищому рівні у `С#` є 2 типи даних - це значимі типи(`value types`) і ссилочні типи (`reference types`).
+
+Важливо розуміти відмінності між ними.
+
+До значимих типів у `.Net` відносяться: `Целочисленні типи`, `Типи з плаваючою крапкою`, `decimal`, `bool`, `enum`-и та `структури`
+
+До `Ссилочних`: тип `object`, `string`, `класи`, `інтерфейси` та `делегати`
+
+Різниця між ними у тому, де вони зберігаються у пам'яті та як передаються у метод.
+
+#### Slide
+Значимі типи:
+* Целочисленні типи (byte, sbyte, char, short, ushort, int, uint, long, ulong)
+* Типи з плаваючою комою (float, double)
+* Тип decimal
+* Тип bool
+* Перечислення enum
+* Структури (struct)
+
+Ссилочні типи:
+* Тип object
+* Тип string
+* Класи (class)
+* Інтерфейси (interface)
+* Делегати (delegate)
+
+
+### Stack and Heap
+
+#### Slide
+Stack and Heap:
+
+![Platform scheme](assets/stack_and_heap.gif)
+
+#### Text
+У `.NET`-і пам'ять ділиться на два типи: на `стек` і `кучу`
+
+`Стек` являє собою структуру даних, яка росте знизу вгору: кожен новий елемент, поміщається поверх попереднього.
+
+У стеку зберігаються `Значимі типи` та посилання на `Ссилочні типи`, що у свою чергу розміщуться на `кучі`
+
+`Кучу` можна уявити як невпорядкований набір різнорідних об'єктів.
+
+При створенні об'єкту `Ссилочного типу` в `стек` додається посилання на адресу цього об'єкту в `кучі`.
+ 
+Коли об'єкт `Ссилочного типу` перестає використовуватися, то посилання з стеку видаляється, і пам'ять очищається.
+
+Після цього у справу вступає автоматичний зборщик мусору - `Garbage Collector`: він бачить, що на об'єкт в кучі більше немає посилань, видаляє цей об'єкт та очищує пам'ять.
+
+### ref, out parameters
+
+#### Slide
+
+1.
+```c#
+static void Main(string[] args)
+{
+    int c = 20;
+    
+    MethodValue(c);
+    
+    Console.WriteLine(c); // 20
+}
+
+static void MethodValue(int variableCopy) // pass copy of the value
+{
+    variableCopy = 1;
+}
+```
+
+2.
+```c#
+static void Main(string[] args)
+{
+    int d = 30;
+            
+    MethodValueRef(ref d);
+
+    Console.WriteLine(d); // 2
+}
+
+static void MethodValueRef(ref int variable) // pass value by reference 
+{
+    variable = 2;
+}
+```
+
+3.
+```c#
+static void Main(string[] args)
+{
+    int e;  
+    
+    MethodValueOut(out e);
+    
+    Console.WriteLine(e); // 3
+}
+
+static void MethodValueOut(out int variable) // pass value by reference
+{
+    variable = 3;
+}
+```
+
+4.
+```c#
+class City
+{
+    public int code;
+    public City(int code)
+    {
+        this.code = code;
+    }
+}
+    
+static void Main(string[] args)
+{
+    City city = new City(12);
+            
+    MethodReference(city);
+    
+    Console.WriteLine(city.code); // 0
+}
+
+static void MethodReference(City city) // pass the reference to the object on heap
+{
+    city.code = 0;
+}
+```
+
+#### Text
+Важливий момент у тому, як змінні `Значимих` та `Ссилочних` типів передаються у метод.
+
+> На першому прикладі показано як цілочисельна змінна `c` - 20 передається до методу, змінюється на 1, але на після виконання методу залишається з базовим значенням.
+
+> У другому прикладі показано як цілочисельна змінна `d` - 30 передається до методу за посиланням, змінюється на 2, і після виконання методу її значення буде дорівнювати 2-ом, через те що ми її передали у метод, використавши оператор `ref`, який дозволяє нам передавати значимі типи за посиланням.
+
+> У третьому прикладі показано як цілочисельна змінна - `e` передається до методу за посиланням, де ініціалізується значенням 3, і після виконання методу її значення буде дорівнювати 3-ом, через те що ми її передали у метод, використавши оператор `out`. Відмінність між `ref` і `out` у тому, що `ref` вимагає що змінна має бути попередньо ініціалізована і те що при `out` ми забов'язані призвоїти значення змінній.
+
+> У останньому прикладі показано як створюється екземпляр класу `City` із публічним членом `code` з першочерговим значенням - 12. Далі посилання на об'єкт на кучі city передається у метод, де його поле `code` змінюється на 0. Після виконання методу ми бачимо очікуваний результат, що поле об'єкту ссилочного типу змінилось на нуль.  
+
+### Boxing - Unboxing
+
+#### Slide
+
+```c#
+int i = 123;      // a value type
+object o = i;     // boxing
+int j = (int)o;   // unboxing
+```
+
+What actually happened:
+
+![box-unbox](assets/box-unbox.gif)
+
+#### Text
+
+Операція упаковки - `boxing`-гу характеризується виділенням пам'яті на кучі під об'єкт значимого типу - value type і присвоєння ссилки на цю ділянку пам'яті змінної в стеці.
+
+Розпакування `unboxing`, навпаки, виділяє пам'ять в стеку під об'єкт, отриманий з кучі за допомогою ссилки.
+
+### Class vs Struct
+
+#### Slide
+
+![Class vs Struct](assets/class_vs_structure.jpeg)
+
+#### Text
+
+`Kлас` проти `Cтруктури`. `Структури` синтаксично дуже схожі на класи, але існує принципова відмінність, яка згадувалась раніше, те що клас - це (reference type) і передається по ссилці, а структура - (value type) і передається за значенням (тобто копіюється).
+
+Структури краще використовувати для невеликих класів, маленьких структур даних та легковєсних об'єктів
+
+Ось наприклад, у мові C # примітивні типи данних такі як int, float, bool є алaясами для структур System.Int32, System.Single, System.Boolean відповідно. 
+
+Ці структури мають поля і методи, які ми зазвичай викликаємо при логічній роботі з ними. Наприклад: Equals, ToString, TryParse і так далі. 
+
+Також у перелічених структур є статичні поля, наприклад, Int32.MaxValue або Int32.MinValue.
+
+Варто зазначити, що DateTime також являється структурою.
+
+Щодо класів, то можна сказати що у всіх випадках де вам незручно використовувати структури, або вас обмежують правила її використання і вам не обійтись без класу, то краще не ускладнювати собі життя.
+
+Класи чудово підходять для того щоб бути частиною ієрархії сутностей. 
+
+Структури данних з вкладеними об'єктами, об'єкти з великою кількістю бізнес логіки та внутрішнім станом також чудові кандидати щоб бути класами.
+
+### Static members
+
+#### Slide
+
+```c#
+class Wallet
+{
+    public static int Bonus = 100;
+    public int balance;
+    public Wallet(int bal)
+    {
+        balance = bal; 
+    }
+
+    public int GetBalance()
+    {
+        return balance + Bonus;
+    }
+
+    public static int GetPureBalance()
+    {
+        // Error: Cannot access non-static field in static context
+        return balance;
+    }
+}
+
+static void Main(string[] args)
+{
+    Console.WriteLine(Wallet.Bonus);      // 100
+    Wallet.Bonus += 200;
+     
+    var wallet1 = new Wallet(150);
+    Console.WriteLine(wallet1.balance);   // 450
+
+    var wallet2 = new Wallet(1000);
+    Console.WriteLine(wallet2.balance);   // 1300
+}
+```
+
+#### Text
+
+Клас може мати статичні поля, методи та властивості. Якщо член класу статичний, то він відносяться до всього класу і для звернення до нього не треба створювати екземпляр класу.
+
+На прикладі показано що статичне поле є спільним для усіх об'єктів класу і може використовуватись і нестатичний методах. У той час як у статичний методах у нас немає доступу до нестатичних членів класу. 
+
+### Params
+
+#### Slide
+
+```c#
+public class Program
+{
+    public static void UseParams(string str, params int[] list)
+    {
+        Console.Write(str);
+        for (int i = 0; i < list.Length; i++)
+        {
+            Console.Write(list[i] + " ");
+        }
+    }
+
+    static void Main()
+    {
+        // You can send a comma-separated list of arguments
+        // of the specified type.
+        UseParams("params: ", 1, 2, 3, 4);
+        // params: 
+        // 1 2 3 4
+    }
+}
+```
+
+#### Text
+
+Використовуючи ключове слово params, ви можете вказати параметр методу, що він приймає довільну кількість аргументів - нуль або більше.
+
+Далі ці аргументи в тілі методі можна використовувати в контексті масиву.
+
+Передавати аргументи у метод в якого змінна кількість параметрів можна просто перераховуючи їх через кому як показано на слайді.
+
+Варто зазначити, що аргумент `params` повинен бути останнім і йти після усіх строго визначений аргументів методу.
+
+### Nullable
+
+#### Slide
+
+Оголошення `Nullable` змінних
+```c#
+int? f = null;
+Nullable<int> g = null; 
+```
+
+Сигнатура структури `Nullable`
+```c#
+public struct Nullable<T> where T : struct
+```
+
+Приклад використання `Nullable`
+```c#
+int? f = 8;
+if (x.HasValue)
+{
+    Console.WriteLine($"f is {x.Value}");
+}
+else
+{
+    Console.WriteLine("f does not have a value");
+}
+```
+
+#### Text
+
+Явно структурному типу даних ми не можемо присвоїти `null`. Щоб це зробити, на потрібно оголосити змінну з модифікатором `?`. Цей модифікатором являється алаясом до структури `Nullable<T>`, що є так званою обгорткою для структур, що і показано на сигнатурі.
+
+Обгортаючи змінну в `Nullable` тип у нас з'являється новий `АРІ` для взаємодії з цією змінною.
+
+* А саме власливіть `HasValue`, що повертає `true`, якщо змінна містить значення, або `false`, якщо вона `null`
+
+* Та `Value` повертає реальне значення яке зберігається у змінній, якщо `HasValue` дорівнює `true`. Інакще, викидає InvalidOperationException, якщо змінна `null`.
+
+### Interface vs Abstract Class
+
+#### Slide
+
+![Interface vs Abstract Class](assets/spiderman.jpg)
+
+#### Text
+
+А ми рухаємось далі і переходимо до... `абстрактних класів` та  `інтерфейсів`
+
+У C# `абстракція` використовується для приховання деталей реалізації. 
+
+Це означає, що ми зосерджуємось на тому, що об'єкт може робити, а не на тому, як він це робить. Це особливо використовується для великих і складних програм. 
+
+Щоб цього досягти використовуються `абстрактні класи` та  `інтерфейси`.
+
+У `абстрактном класі` ми можемо створити функціональність, яка має бути реалізована у похідному класі. 
+
+З свого боку `інтерфейс` дозволяє визначити функціональні можливості або функції, але не може їх реалізувати. 
+
+Клас імплеменує інтерфейс та обов'язуово реалізує ці методи, якщо він не є `абстрактним`.
+
+Розглянемо кілька ключових відмінностей між ними...
+
+### Different examples section:
+
+#### Slide
+
+![Interface vs Abstract Class](assets/n1.jpg)
+
+```c#
+interface TestInterface  
+{  
+    // Causes syntax error
+    protected void GetMethod();  
+
+    public string PublicProp { get; set; } 
+}
+```
+
+```c#
+abstract class TestAbstractClass  
+{ 
+    public abstract string GetStuff();
+
+    public abstract void DoSmth();
+}  
+```
+#### Text
+
+`Інтерфейс` не може мати модифікаторів доступу до членів - все що є в `інтерфейсі` по дефолтну є публічним.
+
+У абстрактного класу все залишається як і звичайного класу
+
+--------------------------------------------------------------------
+#### Slide
+
+![Interface vs Abstract Class](assets/n2.jpg)
+
+```c#
+interface TestInterface  
+{  
+    // Only signature
+    void GetMethod();  
+}
+```
+
+```c#
+abstract class TestAbstractClass  
+{ 
+    // Complete method implementation
+    public string GetStuff()
+    {
+        Console.WriteLine("Stuff");
+        return "Stuff";
+    }  
+}  
+```
+#### Text
+
+Ми не можемо явно створити інстанс `Інтерфейсі` чи `абстрактного класу` викликавши конструкор.
+
+Хоча нагадаю що у `абстрактного класу` він може бути.
+
+Він здебільшого використовується для виклику у конструкторі `похідного класу`, щоб не дублювати код ініціалізації полів чи властивостей `абстрактного класу`.
+
+В `Інтерфейсі` ми можемо лише описати сигнатуру методу без його імплементації
+
+У `Абстрактного класі` ми можемо повнісю імплементувати метод який нас цікавить. Для цього у метод має бути не абстрактним.
+
+
+--------------------------------------------------------------------
+#### Slide
+
+![Interface vs Abstract Class](assets/n3.png)
+
+```c#
+interface TestInterface
+{
+    // Causes syntax error:
+    // "Interfaces cannot contain instance constructors"
+    TestInterface()
+    {
+    }
+
+    public TestInterface(int s)
+    {
+    }
+} 
+```
+
+```c#
+abstract class TestAbstractClass  
+{  
+    public int a;  
+    public string b;
+
+    // Everything is OK - we can do that
+    public TestAbstractClass(int a, string b)  
+    {  
+        this.a = a;
+        this.b = b;
+    }  
+}  
+```
+#### Text
+
+Ми не можемо оголосити конструктор у тілі інтерфейсу, ні з модифікатором доступу ні без нього.
+
+У Абстрактному класі ми можемо оголошувати конструктори з тими самими правилами, що і у звичайних класах
+
+
+--------------------------------------------------------------------
+#### Slide
+
+![Interface vs Abstract Class](assets/n4.jpg)
+
+```c#
+static void Main(string[] args)
+{
+    // Causes syntax error
+    TestInterface testInterface = TestInterface();
+
+    // Causes syntax error as well
+    TestAbstractClass abstractClass = TestAbstractClass();
+}
+```
+#### Text
+
+Ми не можемо явно створити інстанс `ітерфейсу` чи `абстрактного класу` викликавши конструкор.
+
+Хоча нагадаю що у `абстрактного класу` він може бути.
+
+Він здебільшого використовується для виклику у конструкторі `похідного класу`, щоб не дублювати код ініціалізації полів чи властивостей `абстрактного класу`.
+
+--------------------------------------------------------------------
+#### Slide
+
+![Interface vs Abstract Class](assets/n5.jpg)
+
+```c#
+interface TestInterface  
+{  
+    // Causes syntax error
+    int field;
+
+    const string name;
+}
+```
+
+```c#
+abstract class TestAbstractClass  
+{ 
+    // 
+    public static int n = 1;
+    protected const int m = 3;
+    private int k = 3;  
+}  
+```
+#### Text
+
+`Інтерфейс` не може мати модифікаторів доступу до членів - все що є в `інтерфейсі` по дефолтну є публічним.
+
+У `абстрактного класу` все залишається як і звичайного класу
+
+--------------------------------------------------------------------
+#### Slide
+
+![Interface vs Abstract Class](assets/n6.jpg)
+
+```c#
+interface TestInterface  
+{  
+    // Fully abstract without body
+    void GetMethod();  
+}
+```
+
+```c#
+abstract class TestAbstractClass  
+{ 
+    // Non-abstract method + implementation with body
+    public string GetStuff()
+    {
+        Console.WriteLine("Stuff");
+        return "Stuff";
+    }  
+}  
+```
+#### Text
+
+Абсолютно всі члени `інтерфейсу` є абстрактними, тобто немають реалізації.
+
+А щодo `абстрактного класу`, то в ньому можуть бути як абстрактні методи та властивості так і не абстрактні - з повною, або частковою реалізацією.
+
+--------------------------------------------------------------------
+### Interface vs Abstract Class - Conclusion 
+
+#### Slide
+
+![Interface vs Abstract Class](assets/Interface_vs_Abstract-Class.jpg)
+
+#### Text
+
+Отже, коли ми дізналися про головні характеристики `абстрактного класу` та  `інтерфейсу`, назріває питання - 'що і коли вибрати?'.
+
+Інтерфейс краще підходить у випадках, коли потрібно, щоб кілька класів імплементували інтерфейс.
+
+Члени інтерфейсу не можуть бути статичними. Абстрактний клас надає можливіть зберігати стан класу в цілому, а не окремого объекту.
+
+C# не підтримує множинне наслідування, як С++, а інтерфейси в основному використовуються щоб це зробити. Так як клас може реалізовувати більше одного інтерфейсу і наслідуватись лише від одного абстрактного класу. 
+
+Абстрактний клас використовується якщо ми хочемо його включити в ієрарсію успадкувань. І сторити функціонал з повною або частковою реалізацією, яку клас наслідник може імплементувати або перевизначити. 
+
+Інтерфейс в основному використовується тільки тоді, коли ми хочемо просто описати `API` використання класів які будуть імплементувати цей інтерфейс.
+
+Таких класів гіпотетично може бути декілька і швидше за все - це не єдиний інтерфейс який вони будуть імплементувати.
+
+Це саме той випадок коли інтерфейс є чи не єдиним правильним рішенням  
+
+
+### Extension methods 
+
+#### Slide
+
+```c#
+public static class StringExtensions
+{
+    public static int WordCount(this string str)
+    {
+        return str.Split(new char[] { ' ', '.', '?' },
+                         StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}
+
+string text = "Something like that!";  
+int amountOfWords = text.WordCount(); // 3
+```
+
+#### Text
+
+`Extension` методи дозволяють "додавати" методи до існуючих типів без створення нового похідного типу, перекомпіляції або модифікації оригінального типу.
+
+`Extension` метод це особливий статичним методом, який має обов'язково бути членом статичного класу.
+
+Наприкладі показано `Extension` метод для типу `String`. Статичний клас може мати довільну назву, в той час як назва методу має відрізнятись від уже існуючих методі у класі який ми розширюємо.
+
+Надалі ми можемо використовувати оголошений нами метод як і звичайні методи класу який ми розширюємо. 
+
+### Generics
+
+#### Slide
+
+```c#
+// Declare the generic class.
+class MyGenericClass<T>
+{
+    private T genericMemberVariable;
+
+    public MyGenericClass(T value)
+    {
+        genericMemberVariable = value;
+    }
+
+    public T GenericMethod(T genericParameter)
+    {
+        Console.WriteLine("Parameter type: {0}, value: {1}", typeof(T).ToString(),genericParameter);
+        Console.WriteLine("Return type: {0}, value: {1}", typeof(T).ToString(), genericMemberVariable);
+            
+        return genericMemberVariable;
+    }
+
+    public T genericProperty { get; set; }
+}
+```
+
+```c#
+class TestGenericClass
+{
+    static void Main()
+    {
+        // Declare an object of type int.
+        MyGenericClass<int> intGenericClass = new MyGenericClass<int>(10);
+
+        int val = intGenericClass.GenericMethod(100);    
+        /* Output:
+            Parameter type: int, value: 100 
+            Return type: int, value: 10
+        */
+    }
+}
+```
+
+#### Text
+
+`Дженеріки`. Вони були додані до мови `C#` з другої версії.
+
+`Дженеріки` привнесли в `.NET` концепт типізованих параметрів, що дозвоняє проектувати класи та методи, які відкладають визначення типу одного, або більше членів класу чи методу, допоки вони не будуть ініціалізовані тим, хто їх використовує.
+
+Наприклад: використовуючи загальний параметр типу `Т`, чи можемо написати єдиний клас, який може використовуватись клієнтським кодом без ризику здійснення оберацій `boxing-y` які є самі по собі важкими операціями і зловживати ними не є добре.  
+
+Як видно з наведеного вище коду, MyGenericClass визначений з `<T>`. `<>` вказує, що `MyGenericClass` є дженеріком, і тип `Т` буде визначено пізніше. Можете використовувати будь-які букви або слово замість `T`, це немає значення.
+
+Тепер компілятор призначає тип членів класу на основі типу, переданого  програмістом при створенні класу. Наприклад, наступний код використовує тип даних `int`.
+
+### Generics Example
+
+#### Slide
+
+![Generic Class](assets/generic-class.png)
+
+#### Text
+Наступний малюнок ілюструє, як компілятор замінить `T` на `int` в `MyGenericClass`.
+
+### Constraints in Generics
+
+#### Slide
+
+```c#
+class MyGenericClass<T> where T: class
+```
+
+```c#
+// Compile Time Error
+MyGenericClass<int> intGenericClass = new MyGenericClass<int>(10);
+```
+
+```c#
+class City { }
+
+MyGenericClass<City> cityGenericClass = new MyGenericClass<City>(new City());
+```
+
+#### Text
+
+У C# є `Constraint`-и, для того щоб обмежити які типи можна використовувати у дженерік класі. Наприклад, якщо `Constraint`-ом ми вказуємо що типом `Т` може бути тільки `reference type`, тобто `класи`, то не можна використати `value type`-и для створення екземпляру дженерік класу.
+
+Тож тепер ми не можемо використовувати структурні типи даний як int - це викличе помилку компіляції
+
+### All Constraints in Generics
+
+#### Slide
+
+![Constraints Types](assets/constraints-types.png)
+
+#### Text 
+
+Тут зібрані усі можливі Constraint-и, якими можна обмежувати типи, для використання в дженерік класах.
+
+
+### Tuples
+
+#### Slide
+
+```c#
+// Constructing the tuple instance
+var tpl = (1, 2);
+            
+// Using tuples with a dictionary
+var d = new Dictionary<(int x, int y), (byte a, short b)>();
+ 
+// Tuples with different names are compatible
+d.Add(tpl, (a: 3, b: 4));
+ 
+// Tuples have value semantic
+if (d.TryGetValue((1, 2), out var r))
+{
+    // Deconstructing the tuple ignoring the first element
+    var (_, b) = r;
+                
+    // Using named syntax as well as predefined name
+    Console.WriteLine($"a: {r.a}, b: {r.Item2}"); // `a: 3, b: 4`
+}
+```
+
+```c#
+class City
+{
+    public int code;
+    public string name;
+
+    public City(int code, string name)
+    {
+        this.code = code;
+        this.name = name;
+    }
+
+    public (string name, int codeNumber) MethodTuple(string namePrefix)
+    {
+        return (name: namePrefix + name, codeNumber: code);
+    }
+}
+
+static void Main(string[] args)
+{
+    City yorkCity = new City(12, "York");
+
+    var tupleObject = yorkCity.MethodTuple("New ");
+
+    Console.WriteLine($"City: {tupleObject.name}, code: {tupleObject.codeNumber}");
+    /* Output: 
+        City: New York, code: 12
+    */
+}
+```
+
+#### Text
+
+Якщо вам потрібно склеїти два значення, щоб повернути їх з функції або помістити два значення в хеш-набір, ви можете використовувати типи System.ValueTuple і створити їх за допомогою зручного синтаксису:
+
+1. Приклад створення кортежу
+2. Використання кортежу для типізування Dictionary
+3. Додавання елементу кортеду в Dictionary
+4. Дістаємо значення словника по ключу
+5. Деструктуризація елементу кортежу
+6. Доступ до членів кортежу по імені 
+7. Приклад того як повертати з функції значення в кортежі
+
+
+### Events & Delegates + Lambdas
+
+#### Slide
+
+![Events & Delegates](assets/events_and_delegates.jpg) 
+
+#### Text 
+
+Тепер переходимо до Подій та Делегатів. 
+
+Делегати це об'єкти, які вказують на методи. За допомогою них ми можемо викликати дані методи.
+
+Тут зібрані усі можливі Constraint-и, якими можна обмежувати типи, для використання в дженерік класах.
+
+
+### E & D + L  -  Program Example
+
+#### Slide
+
+```c#
+namespace DotNetLecture
+{
+    // Declate delegate signature
+    delegate void LogMessage(string messageToLog);
+
+    public class Program
+    {
+        static void LogRedMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+        }
+        
+        static void LogGreenMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+        }
+
+        static void Main(string[] args)
+        {
+            // Create delegate variable and assign method's address to it
+            LogMessage logMessage = LogRedMessage;
+            
+            // Invoke method assigned to this delegate(Invoke syntax)
+            logMessage.Invoke("Hello world!\n");
+
+            // Add another method to delegate's invocation list
+            logMessage += LogGreenMessage;
+            
+            // Invoke all methods assigned to this delegate
+            logMessage("Second message");
+
+            // Remove the method from the delegate
+            logMessage -= LogGreenMessage;
+        }
+    }
+}
+```
+
+![Program-result](assets/delegate-example-screenshow.png)
+
+#### Text 
+
+Спочатку ми оголошуємо сигнатуру делегату.
+
+Це означає, що методи, на які може вказувати делегат мають мати такі ж самі параметри та повартаючий тип, що і делегат.
+
+У нашому випадку делегат LogMessage має 1 параметр стрінг і повертає нічого.
+
+В класі програм ми оголосили 2 методи LogRedMessage та LogGreenMessage з тою самою сигнатурою що і у делегата, тому ми можемо присвоїти йому посилання на ці методи.
+
+Спочатку ми створюємо змінну делегату, присвоюючи йому адресу методу LogRedMessage і викликаємо його за допомогою методу делегата Invoke, передаючи у цей метод параметри - а саме 1-ну стрічку "Hello world!".
+
+Далі ми додаємо посилання на ще 1 метод LogGreenMessage цьому делегату і  при наступному виконанню делегата, ми уже викличемо 2 методи які ми заасайнили цьому делегату і у консоль виведуться 2 стрічки "Second message" червоного та зеленого кольору. 
+
+Викликати делегат можна і без Invoke, просто за допомогою круглих дужок, передавши аргументи.
+
+### E & D + L  -  Program Example
+
+#### Slide
+
+```c#
+namespace DotNetLecture
+{
+    // Declate delegate signature
+    delegate void LogMessage(string messageToLog);
+
+    public class Program
+    {
+        static void LogRedMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+        }
+        
+        static void LogGreenMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+        }
+
+        static void Main(string[] args)
+        {
+            // Create delegate variable and assign method's address to it
+            LogMessage logMessage = LogRedMessage;
+            
+            // Invoke method assigned to this delegate(Invoke syntax)
+            logMessage.Invoke("Hello world!\n");
+
+            // Add another method to delegate's invocation list
+            logMessage += LogGreenMessage;
+            
+            // Invoke all methods assigned to this delegate
+            logMessage("Second message");
+
+            // Remove the method from the delegate
+            logMessage -= LogGreenMessage;
+        }
+    }
+}
+```
+
+![Program-result](assets/delegate-example-screenshow.png)
+
+#### Text 
+
+Замість визначення нового типу делегата, можна використовувати делегати Action, Func і Predicate. 
+
+Дженерік делегат Action <T> призначений для ссилки на метод, що повертає void. Класу цього делегата можна передавати до 16 параметрів довільного типу.
+
+Делегат Action <in T1, in Т2> - для виклику методу з двома параметрами
+```c#
+static void Main(string[] args)
+{
+    Action<string, int> printString = (str, num) => Console.WriteLine(str + num);
+       
+    printActionDel("Printed by Action: ", 19);
+    // Printed by Action: 19
+}
+```
+
+--------------------------------
+
+Делегати Func можуть використовуватися аналогічним чином. Func дозволяє викликати методи які щось повертають. Йому так само можна передавати до 16 типів параметрів і 1 тип який він повертає. 
+
+Func <in T1, in Т2, out TResult> - для методу з двома параметрами.
+```c#
+// Accepts 2 `double` parameters, returns `int`
+Func<double,double, int> add = (a, b) => Convert.ToInt32(a + b);
+
+int result = add(5.5, 10.0);
+
+Console.WriteLine(result); // 16
+```
+
+--------------------------------
+
+Делегат Predicate, як правило, використовується для порівняння деякого об'єкта T певній умові. Він повертає true, якщо об'єкт задовільняє умову, і false, якщо ні.
+```c#
+Predicate<int> isPositive = x => x > 0;
+ 
+Console.WriteLine(isPositive(10)); // True
+Console.WriteLine(isPositive(-10)); // False
+```
+
+**Щоб підсумувати варто сказати, що суть делегатів у тому, що вони дозволяють представляти методи у вигляді об'єктів і передавати їх до функцій, використовувати як колбеки і так далі.**
+
+### Events & Delegates Flow
+
+#### Slide
+
+![Delegate-Event-Flow](assets/delegate-event-flow.png)
+
+#### Text 
+
+З делегатами розібралися, переходимо до подій... 
+
+Події дозволяють сигналізують системі про те, що відбулося певна дія.
+
+Існує така модель Видавець-Підписник.
+
+Підписник підписується на подію, визначає обробник і чекає допоки Видавець викличе цю подію.
+
+
+### Events & Delegates Flow
+
+#### Slide
+
+**Go To Live Demo in IDE**
+
+Files: Events/Wallet.cs i Program2.cs 
+
+![Demo-time](assets/demo-time.jpg)
+
+#### Text 
+
+Звучить просто, подивимся як буде на практиці i переходимо до **Demo**.
+
+Я підготував клас `Wallet` - гаманець. Говорити про поля і тд
+
+Події оголошуються в класі з допомогою ключового слова event, після якого йде назва делегата.
+
+Зв'язок з делегатом означає, що метод, який обробляє цю подію, має мати сигнатуру делегату.
+
+
+### Collections
+
+#### Slide
+
+![Constraints Hierarchy](assets/collections-hierarchy.jpg)
+
+#### Text
+
+Хоча в мові C# є `масиви`, які зберігають в собі набори однотипних об'єктів, але працювати з ними не завжди зручно.
+
+Так як масив зберігає фіксовану кількість об'єктів, а ми заздалегідь не знаємо, скільки у нас буде об'єктів, в цьому випадку набагато зручніше буде застосовувати колекції.
+
+Визначну роль у виборі колекцій може зіграти те, що деякі з них реалізують стандартні структури даних, такі як:
+* стек
+* чергу
+* словник
+* і так далі
+
+які можуть стати в нагоді для вирішення різних спеціальних завдань.
+
+Основою для створення всіх колекцій є реалізація інтерфейсів `IEnumerator` і `IEnumerable`. 
+
+Інтерфейс `IEnumerator` представляє `Перечислитель`, за допомогою якого стає можливий послідовний перебір колекції, наприклад, в циклі `foreach`.
+
+А інтерфейс `IEnumerable` через свій метод `GetEnumerator` надає Перечислитель всім класам, які реалізують даний інтерфейс.
+
+Тому інтерфейс `IEnumerable` є базовим для усіх колекцій.
+
+### ArrayList & List
+
+#### Slide
+
+```c#
+class Program
+{
+    static void Main(string[] args)
+    {
+        // non-generic collection ArrayList
+        ArrayList objectList = new ArrayList() { 0, "someString", 'c', 19.0d };
+        
+        // generic collection - List
+        List<string> countries = new List<string>() { "Lviv", "Kyiv", "Odessa", "Dnipro" };
+
+        object obj = 12.3;
+        objectList.Add(obj);
+
+        // Error - because object is not a string type
+        countries.Add(obj);
+
+        objectList.RemoveAt(0); // delete element with index 0 - first element of collection
+        foreach (object o in objectList)
+        {
+            Console.WriteLine(o);
+        }
+        Console.WriteLine($"Total amount of Collection's elements: {objectList.Count}");
+    }
+}
+```
+
+#### Text
+
+На прикладі використовуються дві колекції: `non-generic` - `ArrayList` та `generic` - `List`.
+
+Зараз хорошою практикою вважається використовувати дженерік версії коллекцій де це тільки можливо - через строгу типізацію та зручність у використанні.
+
+Більшість колекцій підтримують додавання елементів.
+
+Наприклад, в даному випадку додавання проводиться методом `Add`, але для інших колекцій назву методу може відрізнятися.
+
+Також більшість колекцій реалізують видалення (в даному прикладі проводиться за допомогою методу `RemoveAt`).
+
+За допомогою властивості `Count` у колекцій можна подивитися кількість елементів.
+
+І так як колекції реалізують інтерфейс `IEnumerable`, то всі вони підтримують перебір в циклі `foreach`.
+
+Конкретні методи і способи використання можуть відрізнятися від одного класу колекції до іншої, але загальні принципи будуть одні і ті ж для всіх класів колекцій.
+
+
+### List is Array wrapper
+
+#### Slide
+
+![Demo-time-again](assets/demo-time-again.jpg)
+
+**Collections Folder**
+
+#### Text
+
+По суті такі колекції як `ArrayList`, `List`, `Stack`, `Queue` та інші це ніщо інше як зручні обгонтки над `масивами` для роботи з набором даних, що я зараз і продемонструю реалізувавши власну колекцію яка буде називатись `CustomCollection`.
+
+And here we go to the live demo!
+
+<!-- ### Other Collections - Stack, Queue, Dictionaries
+
+#### Slide
+
+![Stack](assets/Stack_Csharp.jpg)
+
+```c#
+static void Main(string[] args)
+{
+    var stackCities = new Stack<string>();
+    stackCities.Push("Lviv");
+    stackCities.Push("Kyiv");
+    stackCities.Push("Odessa");
+    
+    var odessa = stackCities.Pop();
+    
+    Console.WriteLine("Deleted city: " + odessa)
+
+    foreach(string city in stackCities) {
+        Console.WriteLine(city);
+    }
+    /* Output:
+        Deleted city: Odessa
+        Lviv
+        Kyiv
+    */
+}
+```
+#### Text
+
+На попередніх слайдах ми розглянули прості види колекцій.
+
+Зараз познайомимся з більш специфічними типами.
+
+Перший у списку - класс Stack<T>. Він представляє колекцію, яка використовує алгоритм LIFO - last in - first out - ("останній прийшов - першим вийшов"). При такій організації даних кожен наступний доданий елемент поміщається поверх попереднього. Діставання елементів з колекції відбувається в зворотному порядку - витягується той елемент, який знаходиться вище всіх у стеці.
+
+У класі Stack можна виділити два основні методи, які дозволяють керувати елементами - це:
+* Push: додає елемент в стек на перше місце
+* Pop: дістає перший елемент з стеку
+* Peek: просто повертає перший елемент з стеку без його видалення
+
+На прикладі можна побачити як ми створюємо екземпляр коленції стеку стрічок. Добавляємо 3 міста - "Lviv", "Kyiv", "Odessa" за допомогою методу Push.
+
+Витягуємо елемент який ми додали останнім за допомогою методу Pop та виводимо результати на екран. -->
+
+// TODO: Maybe make similar slides about Queue & Dictionary
+
+
+### Exceptions
+
+#### Slide
+
+![try-catch-block](assets/try-catch-all.png)
+
+![exception](assets/exception-screenshot.png)
+
+#### Text
+
+Іноді при виконанні програми виникають помилки, які важко або неможливо передбачити. 
+
+Наприклад, при передачі файлу по мережі може обірватися підключення до мережі, такі ситуації називаються Exception-ами.
+
+Мова C# надає розробникам можливості для обробки таких ситуацій засобами конструкції try...catch...finally.
+
+При використанні блоку try...catch...finally спочатку виконуються всі інструкції в блоці try.
+
+Якщо в цьому блоці не виникло Exception-ів, то після нього  виконається блок finally і конструкція try..catch..finally завершить свою роботу.
+
+Якщо ж в блоці try виникає Exception, то звичайний флов виконання зупиняється, і CLR починає шукати блок catch, який може обробити цей Exception.
+
+Якщо блок catch знайдений, то він виконується, і після його завершення виконається блок finally.
+
+Якщо потрібний блок catch не знайдений, то програма аварійно завершує своє виконання.
+
+### Exceptions - Demo
+
+#### Slide
+
+![Demo-time-again](assets/demo-time-again.jpg)
+
+**Program - Section with exceptions**
+
+#### Text
+
+Покажу це все на практиці.
+
+... 
+
+Пишу код, вилітає помилка
+
+Пишу трай, кетч, ловлю помилку і розказую про властивості об'єкту помилки
+
+Базовим для всіх типів еxception-ів є тип Exception. Цей тип визначає ряд властивостей, за допомогою яких можна отримати інформацію про Exception.
+
+InnerException: зберігає інформацію про Exception, через який виник цей Exception
+
+Message: зберігає повідомлення про Exception, текст помилки
+
+Source: зберігає ім'я об'єкта або збірки, яка викинула Exception
+
+StackTrace: повертрає колл стек викликів, які привели до Exception-а
+
+TargetSite: повертає метод, в якому було відбувся Exception
+
+### Exceptions Hierarchy - Demo
+
+#### Slide
+
+![Exception-Class-Hierarchy](assets/Exception_Class_Hierarchy.jpg)
+
+#### Go back to the IDE
+
+#### Text
+
+У C# всі типи Exception-ів наслідуються від батьківського класу Exception, який додатково поділяється на дві гілки SystemException і ApplicationException.
+
+SystemException - це базовий клас для всіх помилок CLR або програмного коду.
+
+ApplicationException - це базовий клас для всіх Exception-ів, пов'язаних із додатком.
+
+У випадку ApplicationException, є можливість створювати свої власні типи Exception-ів, успадкувавшись від класу Exception
+
+SystemException містить всі відомі типи Exception, такі як DivideByZeroException або NullReferenceException і так далі.
+
+### throw - Demo
+
+#### Text
+
+Після оператора throw вказується об'єкт Exception-a, в конструктор якого ми можемо передати повідомлення про помилку. Замість типу Exception ми можемо використовувати об'єкт будь-якого іншого типу Exception.
+
+Подібним чином ми можемо генерувати Exception-и в будь-якому місці програми. Але існує також і інша форма використання оператора throw, коли після цього оператора нічого не вказується.
+
+У подібному вигляді оператор throw може використовуватися тільки в блоці catch.
+
+Різниця між ними у тому, що throw без нічого зберігає початковий stack trace, у той час як throw ех скидує stack trace до методу у якому зараз відбувається обробка Exception-у
+
+----------------------------------
+
+### C# Coding Standards and Naming Conventions
+
+#### Slide
+
+![Coding Standards](assets/coding-standards.jpg)
+
+[C# Coding Standards](https://www.dofactory.com/reference/csharp-coding-standards "C# Coding Standards")
+
+#### Text
+
+Так... `Coding Standards` and `Naming Conventions`. Це дуже важлива тема у тому сенсі що це набір найкращих практик по тому як огранізувати свій код, щоби він відповідав тим загальноприйнятим стандартам мови `С#`, яких дотримуються більшісь розробників на `.Net`. Це `essential` для того, щоб інші розробники могли легко та швидко зрозуміти що відбувається у вашому коді та використати його. 
+
+Ці конвеншини є абсолютно у всіх мовах програмування, не тільки в `С#`. І це вважається хорошою практикою завжди дотримуватись їх при написанні коду на тій чи іншій мові.
+
+Якщо ви прийшли з іншої мови програмування - наприклад з `JavaScript`-a, то будь ласка не намагайтесь принести звідти стиль написання коду, тому що інші розробники, які читатимуть ваш код будуть `confused` що тут відбувається і чому фігурна дужка не з початку нового рядка.
+
+Розповідати про кожен конвеншн немає сенсу, так як це займе багато часу і це нескладно освоїти та зрозуміти просто прочитавши кілька абзаців `Readme` з прикладами нескладного коду. Тому за цим посиланням на слайді ви зможете знайти список більшості `coding-standart`-ів мови `С#`.
+
+### DRY
+
+#### Slide
+
+### "Don't Repeat Yourself!"
+
+#### Text
+
+DRY - Don't Repeat Yourself!. 
+
+Це основний принцип розробки ПЗ, спрямований на зменшення повторюваності коду та логіки інформації
+
+У випадках коли ми вже порушили принцим DRY і нам треба швидко щось порефакторити або змінити частину бізнес логіки, нам доведеться її змінити її усюди де ми продублювали імплементацію методу чи навіть усього класу бо не знали як розшарити його між збірками, або просто було ліньки.
+
+Це веде до надзвичайно великих проблем на реальному проекті, коли уже написано кілька сотень тисяч рядків коду і у тебе Студія вже не вивозить двіж, а ти по імені методу намагаєшся знайти цей нещасний кусок коду, щоб поміняти у цьому 1 цифру. Так не робиться)
+
+Щоб досягнути DRY у вашому коді - діліть ваш код на маленькі кусочки, бачите що частина логіки повторюється - одразу виносьте, компонуйте функції.
+
+Чому потрібен DRY? Чим менше коду тим краще.
+
+Його легше підтримувати, менше часу йде на те щоб у ньому розібратися і також зменшується кількість багів.
+
+
+### KISS
+
+#### Slide
+
+```c#
+string weekday(int day) {
+    switch (day) {
+        case 1:
+            return "Monday";
+        case 2:
+            return "Tuesday";
+        case 3:
+            return "Wednesday";
+        case 4:
+            return "Thursday";
+        case 5:
+            return "Friday";
+        case 6:
+            return "Saturday";
+        case 7:
+            return "Sunday";
+        default:
+            throw new InvalidOperationException("Day must be in range 1 to 7");
+    }
+}
+```
+
+```c#
+string weekday(int day) {
+    if ((day < 1) || (day > 7))
+    {
+        throw new InvalidOperationException("Day must be in range 1 to 7");
+    }
+    
+    string[] days = {
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    };
+
+    return days[day - 1];
+}
+```
+
+#### Text
+
+KISS - Keep It Simple Stupid 
+
+Цей принцим говорить сам за себе. Чим код простіший і чистіший тим його легше зрозуміти інший розробникам і навіть тобі через тиждень.
+
+За ним кожен метод повинен вирішувати лише одну маленьку проблему, а не покривати багато юз кейсиів. Якщо у методі багато умов, розбийте їх на менші методи. Це буде легше читати, підтримувати і допоможе знайти помилки набагато швидше.
+
+Щоб показати KISS, найчастіше приводять приклад із визначенням дня тижня. На слайді показано два методи для вирішення цієї задачі.
+
+Перше рішення просте як двері - простий свіч з дефолтним кейсом, якщо день не знайдено.
+
+Другий метод теж працює, але для того щоб його зрозуміти потрібно у кілька разів довше читати. Дивишся на індексатор ага, з масиву днів по індексу день дістаєш день. Так день мінус 1. А чо мінус 1. ааа бо масив почитається з нуля і треба віднімати одиницю. Ясно, ну seems legin можна юзати.
+
+Такий код має причини на існування, але це нікому не потрібно 1 думаю 99% програмістів вибрали б перший варіант.
+
+Щоб досягнути KISS - просто старайтесь писати простий код. Якщо бачити важку ділянку коду, подумайте як простіше можна вирішити цю проблему і відрефакторіть вже нарешті ваш метод на 200 рядків!
+
+Дотримання KISS має очевидні бенефіти:
+* Перш за все це те що ви та ваші колеги розумієте що робить цей код - він декларативний та розбитий на невеликі частинки
+* По друге через те що він простий його легко рефакторити та шукати помилки
+* Ну і по 3-тє,якщо він простий як двері, його зачасту не потрібно дебажити - це і так зрозуміло, де потенційно проблема.
+
+
+
+### SOLID
+
+#### Slide
+
+![SOLID](assets/solid.jpeg)
+
+#### Text
+
+Ну і по логіці переходимо до SOLID. Це 5 принципів об'єктно-орієнтованого програмування, які описують архітектуру програмного забезпечення. А якщо простіше, то це правила, дотримуючись який, ви будете писати код, який буде легко зрозуміти, змінити чи замінити та використати повторно. 
+
+
+### SRP - Принцип єдиної відповідальності
+
+#### Slide
+
+![SRP](assets/SRP.png)
+
+#### Text
+
+Принцип єдиної відповідальності. Він означає, що кожен клас чи структура повинна відповідати лише за 1 ціль. Всі члени класу мають бути зв'язані єдиною метою і працювати разом щоб її досягти.  
+
+Принцип єдиної відповідальності дає нам спосіб щоб для визначення класів ще на етапі проектування програми. Хорошого розподілу обов'язків можна досягти лише тоді коли в нас є повна картина того,як має працювати програма і ми знаємо точно хто й за що має відповідати.
+
+### SRP - Код
+
+#### Slide
+
+```c#
+class Task
+{
+    public string Title { get; set; }
+    public string Description { get; set; }
+
+    // Adds task in Database
+    public bool Add(Task tast)
+    {
+        // Internal realization(Insert into DB)
+    }
+
+    // Estimate Task's duration
+    public void EstimateTaskDuration(Task tast)
+    {
+        // Calculation Task's difficulty, estimating
+    }
+}
+```
+
+```c#
+class Task
+{
+    public string Title { get; set; }
+    public string Description { get; set; }
+
+    // Adds task in Database
+    public bool Add(Task tast)
+    {
+        // Internal realization(Insert into DB)
+    }
+}
+
+class TaskEstimator
+{
+    // Estimate Task's duration
+    public void EstimateTaskDuration(Task tast)
+    {
+        // Calculation Task's difficulty, estimating
+    }
+}
+```
+
+#### Text
+
+На прикладі класу Task, можна показати, що він не відповідає Single Responsibility Principle, так як він відповідає і за збереження Задачі в Базу Данних а також виконує бізнес логіку по обрахуванню та визначенню часу потрібного на виріщення Задачі. 
+
+Клас Task не має нести відповідальність за обрахунок часу на її виконання, бо якщо через деякий час, у замовника поміняються вимоги до виконання усіх задач, тому що скоро реліз, або програмістів на проекті стало менше. І нам потрібно буде поміняти клас Task, якому взагалі по барабану на те що у вас реліз, Task-у треба зробити і все.
+
+Згідно Single Responsibility Principle, один клас має взяти на себе відповідальність, пому ми маємо створити окремий клас для естімейту Завдань, на основі бізнес логіки, задачі та зовнішніх чинників.
+
+
+### OCP - Принцип відкритості-закритості
+
+#### Slide
+
+![OCP](assets/OCP.png)
+
+#### Text
+
+Принцип відкритості-закритості. Головнa концепція даного принципу є те, що клас повинен бути відкритий для розширення, але закритий для модифікацій. 
+
+Наш модуль повинен бути розроблений так, щоб нова функціональність додавалась тільки при створенні нових вимог. 
+
+«Закритий для модифікацій» означає, що ми вже розробили клас, ми не повинні міняти його, тільки якщо не знайдемо помилки що виправити її. У мові C# для реазізації цього принципу ідеально підходить успадкування.
+
+### OCP - Код
+
+#### Slide
+
+```c#
+class Mockup
+{
+    public string ImageType { get; set; }
+
+    public Image ConvertImage(Image img)
+    {
+        if (ImageType == "tiff")
+        {
+            // Convert Image to the tiff format  
+        } 
+        
+        if (TypeReport == "cdr")
+        {
+            // Convert Image to the cdr format              
+        }
+    }
+}
+```
+
+```c#
+abstract class Mockup
+{
+    public virtual void ConvertImage(Image img)
+    {
+        // Base realization that common for each format
+    }
+}
+
+class MockupTiff : Mockup
+{
+    public override Image ConvertImage(Image img)
+    {
+        // Convert Image to the tiff format                      
+    }
+}
+
+class MockupCdr : Mockup
+{
+    public override Image ConvertImage(Image img)
+    {
+        // Convert Image to the cdr format                      
+    }
+}
+```
+
+#### Text
+
+Розглянемо приклад з мокапом. Проблема цього класу в тому, що коли замовник захоче подивитись на мокап який намалювали дизайнери, але у нього не відкриває картинки формату tiff чи cdr тоді треба буде вносити новий формату картинки наприклад png. І для цього ми будем змушені додати нову умову if, що противорічить Open Closed Principle. 
+
+На другому прикладі показано як це можна вирішити. Є базоний абстрактний клас Mockup, який частково реалізує конвертацію картинки, а дочірні класи реалізують конвертацію картинки в певний формат.
+
+І якщо ми захочемо добавити ще 1 формат, нам просто тре буде створити ще 1 клас унаслідуватись від Mockup і реазілувати метод.
+
+
+### LSP - Принцип пiдстановки Лiсков 
+
+#### Slide
+
+![LSP](assets/LSP.png)
+
+#### Text
+
+За принципом пiдстановки Лiсков ми повинні мати можливість використовувати будь-який похідних клас замість батьківського і використовувати його так само, не вносячи зміни.
+
+Дочірній клас не має порушувати визначення типу батькіського класу та його поведінку.
+
+### LSP - Код
+
+#### Slide
+
+![SOLID](assets/dev-js-c.png)
+
+#### Text
+
+Давайте подивимося приклад з Розробниками. Developer є батьківський класом для JavaScript i C# Developer-ів.
+
+Тепер розглянемо приклад:
+
+```c#
+abstract class Developer
+{
+    public virtual string CodeWebApp()
+    {
+        return "Coding Front-End Web App";
+    }
+    public virtual string CodeServer()
+    {
+        return "Coding Back-End Server";
+    }
+}
+class JavaScriptDeveloper: Developer
+{
+    public override string CodeWebApp()
+    {
+        return "Coding Front-End with Angular";
+    }
+    public override string CodeServer()
+    {
+        return "Coding Back-End with Node.js";
+    }
+}
+class CSharpDeveloper: Developer
+{
+    // C# Developer can't  create Front-End App
+    public override string CodeWebApp()
+    {
+        throw new NotImplementedException(); 
+    }
+    public override string CodeServer()
+    {
+        return "Coding Back-End with ASP.Net";
+    }
+}
+```
+
+```c#
+interface IFrontend
+{
+    string CodeWebApp();
+}
+
+interface IBackend
+{
+    string CodeServer();
+}
+
+class JavaScriptDeveloper: IFrontend, IBackend
+{
+    public string CodeWebApp()
+    {
+        return "Coding Front-End with Angular";
+    }
+    public string CodeServer()
+    {
+        return "Coding Back-End with Node.js";
+    }
+}
+
+class CSharpDeveloper: IBackend
+{
+    public string CodeServer()
+    {
+        return "Coding Back-End with ASP.Net";
+    }
+}
+```
+
+#### Text
+
+Як бачимо у нас клас Developer може створювати бекенд і фронтенд додатки. Здавалося б усе добре. JavaScript Developer успішно реалізовує 2 методи. А от з  C# Developer не все так просто, він може написати сервак на ASP.Net-і, але створити класного фронтенду. І якщо ми захочемо це зробити, то у нас вилетить Ексепшн.
+
+Для того щоб вирішити цю проблему нам потрібно розділити функціонал Developer-а на 2 частини: IFrontend та IBackend і реалізувати ці інтерфейси де ми маємо змогу.
+
+JavaScript Developer у нас реалізовує і Frontend і Backend, а C# Developer: тільки  Backend.
+
+
+### ISP - Принцип розділення інтерфейсів
+
+#### Slide
+
+![SOLID](assets/ISP.png)
+
+#### Text
+
+Принцип розділення інтерфейсів говорить, що клієнти не повинні примусово імплементовувати інтерфейси, які вони не використовують.  
+
+### ISP - Код
+
+#### Slide
+
+```c#
+interface IDeveloper
+{
+    string CodeDesktop();
+    string CodeServer();
+}
+```
+
+```c#
+interface IDesktop
+{
+    string CodeDesktop();
+}
+
+interface IBackend
+{
+    string CodeServer();
+}
+```
+
+#### Text
+
+Давайте припустимо, що у нас є Інтерфейс IDeveloper, який тепер вміє написати сервер і десктоп додаток. Як і до дого у нас є JavaScript та C# Developer-и які успішно можуть це зробити. На JavaScript-і писався би під Електрон, а на C# WPF додаток. Все класно, всі задоволені.
+
+Але не всьо так просто. Шеф сказав, що ті додатки на Електрон-і в нього лагають і взагалі дорого платити цим JavaScript-розробникам. Урізаєм проекти під десктоп на JavaScript-і, пишем тіки на WPF.
+
+Але виходить ми ломаємо принцип Interface Segregation, бо JavaScript розробники все ще пишуть декстоп проекти.
+
+І рішенням цієї проблеми буде знову ж таки розділення інтерфейсу на кілька. На IDesktop та на IBackend. Це похоже до минулого прикладу, але тут ми вирішуєм іншу поблему - не даємо класу робити більше ніж потрібно.
+
+
+### DIP - Принцип інверсії залежностей
+
+#### Slide
+
+![SOLID](assets/DIP.png)
+
+#### Text
+
+І тепер останній і мабуть найважчий для розуміння принцип - інверсії залежностей. 
+
+Цей принцип гласить, що:
+1. По-перше, класи високого рівня не повинні залежати від низькорівневих класів, при цьому обидва мають залежати від абстракцій.
+2. По-друге, абстракції не повинні залежати від деталей, але деталі мають залежати від абстракцій.
+
+Що це значить? А це значить, що класи високого рівня реалізують бізнес-правила або логіку в системі. Низькорівневі класи займаються більш детальними операціями, як от роботою з Базою Даних, передачею повідомлень в операційну систему і так далі.
+
+Щоб досягти інверсії залежностей ми повинні тримати ці високорівневі і низькорівневі класи настільки слабо зв'язними, наскільки можливо. Для цього нам потрібно зробити їх залежними від абстракцій, а не один від одного.
+
+### DIP - Код
+
+#### Slide
+
+```c#
+class Email
+{
+    public void Send()
+    {
+        // Code to send email-letter
+    }
+}
+
+class Notification
+{
+    private Email email;
+    public Notification()
+    {
+        email = new Email();
+    }
+
+    public void EmailDistribution()
+    {
+        email.Send();
+    }
+}
+```
+
+```c#
+interface IMessenger
+{
+    void Send();
+}
+
+class Email : IMessenger
+{
+    public void Send()
+    { /* Code to send email-letter */ }
+}
+
+class SMS : IMessenger
+{
+    public void Send()
+    { /* Code to send SMS */ }
+}
+
+class Notification
+{
+    public IMessenger Messenger { get; set; };
+    public Notification(IMessenger mess)
+    {
+        Messenger = mess;
+    }
+
+    public void Notify()
+    {
+        Messenger.Send();
+    }
+}
+
+static void Main(string[] args)
+{
+    var notification = new Notification(new Email());
+    notification.Notify(); // Sent email
+    notification.Messenger = new SMS(); // Change the provider
+    notification.Notify(); // Sent SMS
+}
+```
+
+#### Text
+
+Давайте розглянемо цей принцип на прикладі розсилки повідомлень. 
+
+На першому сніппеті коду клас Notification повністю залежить від класу Email, тому що він відправляє тільки один тип повідомлень. Якщо ми захочемо відправляти повідомлення якимсь іншим способом? Тоді нам треба буде перелопачувати всю систему повідомлень.
+
+Це є признаком того, що система є тісно св'язною. 
+
+Бля того щоб зробити її слабо зв'язною, нам потрібно абстрагуватися від провайдера відправки повідомлень, а саме - Емейл-у. 
+
+Для цього ми створюємо interface IMessenger з методом Send і реалізуємо його у двох класах - Email і SMS.
+
+Клас Notification ми дизайнимо так, щоб відв'язатись від конкретної реалізації розсилки повідомлень. В цьому випадку ми можемо використати принцим dependency injection, прокинувши об'єкт Messenger-а через конструктор. І в залежності від того, екземпляр якого класу це буде, такі повідомлення ми і будемо відсилати.
+
+Ось на прикладі ми створюємо Notification з Email Messenger-ом, посилаємо емейл. Далі ми захотіли поміняти провайдера, і присвоюємо властивості Messenger - SMS-провайдер. Наступний виклик методу Notify уже надішле SMS-ку.
+
+Отож, підсумовуючи можна сказати, що кожеш принцип SOLID пропонує нам шлях до написання логічного, надійного та зрозумілого коду а мова С# дає змогу дотримуватись цих принципипів та писати великі програми та легко розширювати їх.   
+
+
+export const metadata = {
+  author: "Rostyslav Diakiv",
+  title: ".NET ecosystem and C# best practices",
+  description: "",
+  keywords: ["hola", "guapa"]
+}
+
+export default Lecture;

@@ -774,12 +774,12 @@ fetch(API_URL)
 
 ```js
 fetch(API_URL)
-	.then(response => {
-		if (!response.ok) {
-			throw new Error('Failed load data');
-		}
-		return response.json();
-	})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed load data');
+    }
+    return response.json();
+  })
 ```
 
   </div>
@@ -1255,10 +1255,10 @@ rootElement.appendChild(fightersElement);
   <div class="details-body">
 
 ```js
-element.addEventListener('click', (event) => handleClick(event, 'wrapper'), false)
-imgElement.addEventListener('click', (event) => handleClick(event, 'image'), false)
+element.addEventListener('click', (event) => handleFighterClick(event, 'wrapper'), false)
+imageElement.addEventListener('click', (event) => handleFighterClick(event, 'image'), false)
 
-function handleClick(event, el) {
+function handleFighterClick(event, el) {
   console.log(el);
 }
 ```
@@ -1278,17 +1278,19 @@ function handleClick(event, el) {
   <div class="details-body">
 
 ```js
-fightersDetailsMap = new Map();
+const fightersDetailsMap = new Map();
+
+element.addEventListener('click', (event) => handleFighterClick(event, fighter), false)
 
 handleFighterClick(event, fighter) {
   const { _id } = fighter;
 
-  if(!this.fightersDetailsMap.has(_id)) {
+  if(!fightersDetailsMap.has(_id)) {
     // send request here
-    this.fightersDetailsMap.set(_id, fighter);
+    fightersDetailsMap.set(_id, fighter);
   }
 
-  console.log(this.fightersDetailsMap.get(_id));
+  console.log(fightersDetailsMap.get(_id));
 }
 ```
 

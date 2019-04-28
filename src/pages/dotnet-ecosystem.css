@@ -1,6 +1,14 @@
-.presentation-block {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5em;
-    margin-bottom: 2.5em;
+.dorov {
+    margin-right: 0.5em;
+}
+.a-eto-magazin {
+    height: 1.5em;
+    vertical-align: top;
+    position: relative;
+    border-radius: 100%;
+    transition: all 0.2s linear;
+}
+.a-eto-magazin:not(:hover) {
+    opacity: 0.5;
+    filter: grayscale(1) contrast(2) brightness(1);
 }

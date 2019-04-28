@@ -164,6 +164,9 @@
   margin: 0.25rem 0;
   padding: 0.5em;
 }
+.content pre:only-child {
+  margin: 0;
+}
 .content pre code {
   display: block;
   padding: 0;

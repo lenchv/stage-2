@@ -360,7 +360,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 2. <p>Add <strong>volodymyrkushnir.com</strong> as a submodule by running <code>git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com</code> <sup><strong><a href="https://git-scm.com/docs/git-submodule" title="git-submodule">[1]</a></strong></sup></p>
    
    <div class="bubble small subtle">
-     Keep in mind that <a href="https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/7646931"><strong>removing a submodule</strong></a> is somewhat a tricky process
+     If you run into errors — try to use <strong>https://</strong> endpoint. Also, keep in mind that <a href="https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/7646931"><strong>removing a submodule</strong></a> is somewhat a tricky process
    </div>
 
 3. <div>Use <strong>pre-commit</strong> git hook <sup><strong><a href="https://git-scm.com/docs/githooks" title="githooks">[1]</a></strong></sup> to generate new <strong>Service Worker</strong> based on <a href="https://developers.google.com/web/tools/workbox/" title="Workbox"><strong>Workbox</strong></a> before each commit</div>
@@ -391,7 +391,11 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
         Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
       </div>
 4. Add a webhook by setting up a basic CI/CD process using [**Travis CI**](https://travis-ci.org) and [**AWS**](https://aws.amazon.com)
-   1. Log in to [**AWS Console**](https://console.aws.amazon.com/), go to **S3** service, create two buckets named **homepage-staging** and **homepage-production**, edit their public access settings (uncheck everything), go to bucket properties and enable static website hosting, then go to **My Security Credentials** and generate a new set of access keys. Phew! 😌
+   1. Log in to [**AWS Console**](https://console.aws.amazon.com/), go to **S3** service, create two buckets for **staging** and **production** (choose unique names!), edit their public access settings (uncheck everything), go to bucket properties and enable static website hosting, then go to **My Security Credentials** and generate a new set of access keys. Phew! 😌
+   <div class="bubble small subtle">
+     <strong>S3 bucket names are globally unique.</strong> This means that if someone else has a bucket of a certain name, you cannot have a bucket with that same name.
+   </div>
+
    2. Create **.travis.yml**:
        ```yaml
        language: node_js
@@ -405,7 +409,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
            skip_cleanup: true
            access_key_id: $ACCESS_KEY_ID
            secret_access_key: $SECRET_ACCESS_KEY
-           bucket: homepage-staging
+           bucket: ________-staging
            region: eu-central-1
            acl: public_read
            on:
@@ -414,7 +418,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
            skip_cleanup: true
            access_key_id: $ACCESS_KEY_ID
            secret_access_key: $SECRET_ACCESS_KEY
-           bucket: homepage-production
+           bucket: ________-production
            region: eu-central-1
            acl: public_read
            on:

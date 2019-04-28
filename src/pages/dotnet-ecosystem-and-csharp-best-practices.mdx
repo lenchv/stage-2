@@ -46,7 +46,7 @@ import './dotnet-ecosystem.css';
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Доров.</strong>
+    <strong class="dorov">Доров.</strong>
     <span class="tooltip" data-tooltip="А это магазин?">
       <img src={aEtoMagazin} class="a-eto-magazin" alt="А это магазин?" />
     </span>
@@ -185,27 +185,77 @@ import './dotnet-ecosystem.css';
       </h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Сьогодні у <strong>.NET</strong> світі 3 найпоширеніші мови програмування це <strong>C#</strong>, `F#` та `Visual Basic`. У кожної є свій компілятор, який перетворює код написаний на цій мові у `IL - Intermediate Language Code`, який представляє з себе набір інструкцій для віртуальної машини <strong>.NET</strong> - `CLR - Common Language Runtime`. Основні етапи виконання програми <strong>.NET</strong>:</p>
-      <ol>
-        <li>Спочатку написаний нами код, компілятор перетворить C# code на IL.</li>
+      <p>Сьогодні у `.Net` світі 3 найпоширеніші мови програмування це `C#`, `F#` та `Visual Basic`.
+      У кожної є свій компілятор, який перетворює код написаний на цій мові у `IL - Intermediate Language Code`, який представляє з себе набір інструкцій для віртуальної машини `.Net` - `CLR - Common Language Runtime`.
+      Основні етапи виконання програми `.Net`:</p>
+      <ul>
+        <li class="details">
+          <input type="checkbox" id="accordion-2-1-1" />
+          <label class="summary" for="accordion-2-1-1">
+            Спочатку написаний нами код, компілятор перетворить C# у IL:
+          </label>
+          <div class="details-body" style="margin-bottom: 0.5em;">
+            <div class="columns">
+              <div class="column col-6">
+                Звичайний C# код
+<div>
+
+```csharp
+public void SumTwoNumbers()
+{
+    int firstNumber = 10;
+    var secondNumber = 200;
+
+    Console.WriteLine(firstNumber + secondNumber);
+}
+```
+
+</div>
+              </div>
+              <div class="column col-6">
+                C# код скомпільований в IL
+<div>
+
+```csharp
+.method public hidebysig 
+	instance void SumTwoNumbers () cil managed 
+{
+	// Method begins at RVA 0x2070
+	// Code size 18 (0x12)
+	.maxstack 2
+	.locals init (
+		[0] int32 firstNumber,
+		[1] int32 secondNumber
+	)
+
+	IL_0000: ldc.i4.s 10
+	IL_0002: stloc.0
+	IL_0003: ldc.i4 200
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: add
+	IL_000c: call void [mscorlib]System.Console::WriteLine(int32)
+	IL_0011: ret
+}
+```
+
+</div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li>Тоді, коли прийде час для виконання частини нашого коду в програмі - `CLR` за допомогою JIT - Just in Time компілятора перетворить код `IL` на `машинний код`.</li>
-      </ol>
-      <p>Важливо зазначити, що перетворення `IL` в `машинний код` відбувається лише тоді коли потрібно, тобто буде перетворена тільки та частина коду, яка має виконатись в теперішній момент часу. Результатом білда <strong>.NET</strong> програми є файл з розширенням `.exe` - executable файл, або: `dll` - `Dynamic Link Library`.</p>
+      </ul>
+      <p>Результатом білда `.Net` програми є файл з розширенням `.exe` - executable файл, або: `dll` - `Dynamic Link Library`.</p>
+      <div class="bubble small subtle">
+        Важливо зазначити, що перетворення `IL` в `машинний код` відбувається лише тоді коли потрібно, тобто буде перетворена тільки та частина коду, яка має виконатись в теперішній момент часу.
+      </div>
     </div>
   </li>
   <li class="details">
     <input type="checkbox" id="accordion-2-2" />
     <label class="summary" for="accordion-2-2">
-      <h5><strong>C# → IL Code</strong></h5>
-    </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Результат компіляції функції, написаної на <strong>C#</strong> у проміжну мову **IL**:
-      // TODO: тут потрібно просто вставити 2 сніппети коду</p>
-    </div>
-  </li>
-  <li class="details">
-    <input type="checkbox" id="accordion-2-3" />
-    <label class="summary" for="accordion-2-3">
       <h5><strong>Value and Reference types</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -237,8 +287,8 @@ import './dotnet-ecosystem.css';
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-2-4" />
-    <label class="summary" for="accordion-2-4">
+    <input type="checkbox" id="accordion-2-3" />
+    <label class="summary" for="accordion-2-3">
       <h5><strong>Stack and Heap</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -252,8 +302,8 @@ import './dotnet-ecosystem.css';
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-2-5" />
-    <label class="summary" for="accordion-2-5">
+    <input type="checkbox" id="accordion-2-4" />
+    <label class="summary" for="accordion-2-4">
       <h5><strong>ref, out parameters</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -262,8 +312,8 @@ import './dotnet-ecosystem.css';
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-2-6" />
-    <label class="summary" for="accordion-2-6">
+    <input type="checkbox" id="accordion-2-5" />
+    <label class="summary" for="accordion-2-5">
       <h5><strong>Boxing - Unboxing</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">

@@ -53,13 +53,14 @@ import './dotnet-ecosystem.css';
   <iframe
     id="presentation-iframe"
     src="https://slides.com/diakivrostyslav/dotnet-ecostystem/embed"
-    width="600"
-    height="400"
+    width="100%"
+    height="600"
     scrolling="no"
     frameborder="2"
     webkitallowfullscreen="true"
     mozallowfullscreen="true"
     allowfullscreen="true"
+    style="border: none; margin: 0; padding: 0;"
   />
 </div>
 
@@ -178,21 +179,6 @@ import './dotnet-ecosystem.css';
     </div>
   </li>
 </ul>
-
-# Nuget Package Manager
-
-Ключовий інструмент для будь-якої сучасної платформи розробки - це механізм, за допомогою якого розробники можуть створювати, передавати один одному і використовувати корисний код. 
-
-Часто такий код розподілений по "`пакетах`", що включає скомпільований код (у вигляді бібліотек `DLL`).
-
-Для `.NET`-у механізмом спільного використання коду є `NuGet`, який був створений та підтримується Microsoft.
-
-За допомогою `NuGet` ви можете скачувати пакети з кодом із центрального репозиторію `NuGet Gallery`, який уже налічує близько `100_000` унікальних пакетів. 
-
-Також якщо ви написали якусь круту бібліотеку для роботи з чимось - наприклад з файловою системою - whatever. Ви з легкістю можете самі створити `NuGet пакет` та запаблішити його, щоб інші розробники могли використовувати вашу працю.
-
-Простіше кажучи, пакет `NuGet` - це окремий `ZIP-файл` з розширенням .nupkg, який містить скомпільований код - `DLL`, метадані, інші файли, пов'язані з цим кодом та маніфест.
-
 
 <Level id="dotnet-under-the-hood" number="2" name=".NET під капотом" difficulty="Мамкин комп'юторщик." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
 
@@ -386,6 +372,8 @@ static void MethodReference(City city)
 Операція упаковки - `boxing`-гу характеризується виділенням пам'яті на кучі під об'єкт значимого типу - value type і присвоєння ссилки на цю ділянку пам'яті змінної в стеці.
 
 Розпакування `unboxing`, навпаки, виділяє пам'ять в стеку під об'єкт, отриманий з кучі по ссилці.
+
+<Level id="csharp-code- structures" number="3" name=".NET під капотом" difficulty="Мамкин комп'юторщик." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
 
 #### **Class vs Struct**
 

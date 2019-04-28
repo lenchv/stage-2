@@ -1641,7 +1641,7 @@ bird.fly();
 
 ```js
 "scripts": {
-  "build": "babel src -d dist"
+  "build": "babel index.js -d dist"
 }
 ```
 
@@ -1735,7 +1735,7 @@ import App from './src/javascript/app';
 
 import { fighterService } from './services/fightersService';
 
-import { callApi apiHelper } from '../helpers/apiHelper';
+import { callApi as apiHelper } from '../helpers/apiHelper';
 ```
 
   </div>
@@ -1802,20 +1802,24 @@ module.exports = {
 Rename **.babelrc** to **babel.config.js** and change it's content:
 
 ```js
-const preset = [[
-    "@babel/preset-env", 
+const presets = [
+  [
+    "@babel/preset-env",
     {
-        "targets": {
-          "chrome": "68",
-          "firefox": "60"
-        }
-    }    
-    ]
-]
+      targets: {
+        firefox: "60",
+        chrome: "67"
+      }
+    }
+  ]
+];
 
 const plugins = ["@babel/plugin-proposal-class-properties"];
-
-module.export = { preset, plugins }
+  
+module.exports = { 
+  presets, 
+  plugins 
+};
 ```
 
   </div>

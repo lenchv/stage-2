@@ -53,7 +53,7 @@ import rostyslavDiakivAvatar from "../assets/avatars/rostyslav-diakiv-2019.svg";
     linkTo: "#dotnet-platform-overview",
     title: "Огляд .NET платформи"
   }, {
-    linkTo: "#",
+    linkTo: "#dotnet-under-the-hood",
     title: ".NET під катопом"
   }, {
     linkTo: "#",
@@ -66,102 +66,106 @@ import rostyslavDiakivAvatar from "../assets/avatars/rostyslav-diakiv-2019.svg";
 
 <Level id="dotnet-platform-overview" number="1" name="Огляд .NET платформи" difficulty="Мамкин комп'юторщик." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
 
-#### **.NET platform**
-
-Зараз інфраструктура .NET-y виглядає наступним чином:
-
-<div class="columns text-center">
-  <div class="column col-4">
-    <div class="panel">
-      <div class="panel-header">
-        <strong>.NET framework</strong>
-      </div>
-      <div class="panel-body">
-        <div class="columns">
-          <div class="column col-2">WPF</div>
-          <div class="column col-7">Windows Forms</div>
-          <div class="column col-3">ASP.NET</div>
+<ul>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-1" />
+    <label class="summary" for="accordion-1-1">
+      <h5><strong>.NET platform</strong></h5>
+    </label>
+    <div class="details-body">
+      <p>Зараз інфраструктура .NET-y виглядає наступним чином:</p>
+      <div class="columns text-center">
+        <div class="column col-4">
+          <div class="panel">
+            <div class="panel-header">
+              <strong>.NET framework</strong>
+            </div>
+            <div class="panel-body">
+              <div class="columns">
+                <div class="column col-2">WPF</div>
+                <div class="column col-7">Windows Forms</div>
+                <div class="column col-3">ASP.NET</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column col-4">
+          <div class="panel">
+            <div class="panel-header">
+              <strong>.NET Core</strong>
+            </div>
+            <div class="panel-body">
+              <div class="columns">
+                <div class="column col-6">UWP</div>
+                <div class="column col-6">ASP.NET Core</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column col-4">
+          <div class="panel">
+            <div class="panel-header">
+              <strong>Xamarin</strong>
+            </div>
+            <div class="panel-body">
+              <div class="columns">
+                <div class="column col-4">iOS</div>
+                <div class="column col-4">MacOS</div>
+                <div class="column col-4">Android</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column col-12">
+          <div class="panel">
+            <div class="panel-header">
+              <strong>.NET Standard Library</strong>
+            </div>
+          </div>
+        </div>
+        <div class="column col-12">
+          <div class="panel">
+            <div class="panel-header">
+              <strong>Common infrastructure</strong>
+            </div>
+            <div class="panel-body">
+              <div class="columns">
+                <div class="column col-4">Compilers</div>
+                <div class="column col-4">Languages</div>
+                <div class="column col-4">Runtime components</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <p>Є 3 шляхи створення .NET-додатків:</p>
+      <ol>
+        <li>1. Це використовувати старий добрий `.Net Framework`, запускати його на віндовс і радіти життю</li>
+        <li>2. Це писати крос-платформні веб додатки за допомогою web-framework-y `ASP.NET Core`. Або ж гібридні додатки з `UWP- Universal Windows Platform`, що дозволяє запускати програму написану на цій технології на `Windows` машині, `X-Box`-i, `Hololens`-i та ще якісь біді від Майкрософт</li>
+        <li>3. І третій спосіб - Xamarin. Платформа для створення мобільних додатків для IOS i Android, використовуючи `C#` та `.Net`</li>
+      </ol>
+      <p>Код який написаний під спеціальний фреймворк, як `WPF`, `Asp.Net Core` чи `Android` не можна перевикористати на іншій платформі із зрозумілих сподіваюсь причин, так як він заточений для роботи з так званими `Platform-specific API` який відрізняється у них всіх.</p>
+      <p>Для вирішення цієї проблеми, а саме перевикористання коду бізнес-логіки, хелпер методів, меделей, класів і так далі у іншій платформі створили `.Net Standart` - який надає набір доступних `АPI`, що працює на усіх платформах:</p>
+      <ul>
+        <li>настільних програмах</li>
+        <li>веб-додатках</li>
+        <li>мобільних додатках і іграх</li>
+        <li>хмарних службах</li>
+      </ul>
     </div>
-  </div>
-  <div class="column col-4">
-    <div class="panel">
-      <div class="panel-header">
-        <strong>.NET Core</strong>
-      </div>
-      <div class="panel-body">
-        <div class="columns">
-          <div class="column col-6">UWP</div>
-          <div class="column col-6">ASP.NET Core</div>
-        </div>
-      </div>
+  </li>
+  <li class="details">
+    <input type="checkbox" id="accordion-1-2" />
+    <label class="summary" for="accordion-1-2">
+      <h5><strong>NuGet</strong></h5>
+    </label>
+    <div class="details-body">
+      <p>Ключовий інструмент для будь-якої сучасної платформи розробки - це механізм, за допомогою якого розробники можуть створювати, передавати один одному і використовувати корисний код. Часто такий код розподілений по "`пакетах`", що включає скомпільований код (у вигляді бібліотек `DLL`). Для `.NET`-у механізмом спільного використання коду, підтримуваним `Майкрософт`, є `NuGet`. За допомогою `NuGet` ви можете скачувати пакети з кодом із центрального репозиторія `NuGet Gallery`, який уже налічує близько `100_000` унікальних пакетів. Також якщо ви написали якусь круту бібліотеку для роботи з чимось - наприклад з файловою системою - whatever. Ви з легкістю можете самі створити `NuGet пакет` та запаблішити його, щоб інші розробники могли використовувати вашу працю. Простіше кажучи, пакет `NuGet` є окремим `ZIP-файл` з розширенням .nupkg, який містить скомпільований код -`DLL`, інші файли, пов'язані з цим кодом та маніфест.</p>
     </div>
-  </div>
-  <div class="column col-4">
-    <div class="panel">
-      <div class="panel-header">
-        <strong>Xamarin</strong>
-      </div>
-      <div class="panel-body">
-        <div class="columns">
-          <div class="column col-4">iOS</div>
-          <div class="column col-4">MacOS</div>
-          <div class="column col-4">Android</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="column col-12">
-    <div class="panel">
-      <div class="panel-header">
-        <strong>.NET Standard Library</strong>
-      </div>
-    </div>
-  </div>
-  <div class="column col-12">
-    <div class="panel">
-      <div class="panel-header">
-        <strong>Common infrastructure</strong>
-      </div>
-      <div class="panel-body">
-        <div class="columns">
-          <div class="column col-4">Compilers</div>
-          <div class="column col-4">Languages</div>
-          <div class="column col-4">Runtime components</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </li>
+</ul>
 
-Є 3 шляхи створення .NET-додатків:  
-1. Це використовувати старий добрий `.Net Framework`, запускати його на віндовс і радіти життю  
-2. Це писати крос-платформні веб додатки за допомогою web-framework-y `ASP.NET Core`. Або ж гібридні додатки з `UWP- Universal Windows Platform`, що дозволяє запускати програму 
-написану на цій технології на `Windows` машині, `X-Box`-i, `Hololens`-i та ще якісь біді від Майкрософт  
-3. І третій спосіб - Xamarin. Платформа для створення мобільних додатків для IOS i Android, використовуючи `C#` та `.Net`
-
-Код який написаний під спеціальний фреймворк, як `WPF`, `Asp.Net Core` чи `Android` не можна перевикористати на іншій платформі із зрозумілих сподіваюсь причин, так як він заточений для роботи з так званими `Platform-specific API` який відрізняється у них всіх.
-
-Для вирішення цієї проблеми, а саме перевикористання коду бізнес-логіки, хелпер методів, меделей, класів і так далі у іншій платформі створили `.Net Standart` - який надає набір доступних `АPI`, що працює на усіх платформах:
-* Настільних програмах
-* Веб-додатках
-* Мобільних додатках і іграх
-* А також хмарних службах
-
-#### **Nuget Package Manager**
-
-Ключовий інструмент для будь-якої сучасної платформи розробки - це механізм, за допомогою якого розробники можуть створювати, передавати один одному і використовувати корисний код. 
-
-Часто такий код розподілений по "`пакетах`", що включає скомпільований код (у вигляді бібліотек `DLL`).
-
-Для `.NET`-у механізмом спільного використання коду, підтримуваним `Майкрософт`, є `NuGet`.
-
-За допомогою `NuGet` ви можете скачувати пакети з кодом із центрального репозиторія `NuGet Gallery`, який уже налічує близько `100_000` унікальних пакетів. 
-
-Також якщо ви написали якусь круту бібліотеку для роботи з чимось - наприклад з файловою системою - whatever. Ви з легкістю можете самі створити `NuGet пакет` та запаблішити його, щоб інші розробники могли використовувати вашу працю.
-
-Простіше кажучи, пакет `NuGet` є окремим `ZIP-файл` з розширенням .nupkg, який містить скомпільований код -`DLL`, інші файли, пов'язані з цим кодом та маніфест.
+<Level id="dotnet-under-the-hood" number="2" name=".NET під капотом" difficulty="Мамкин комп'юторщик." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
 
 #### **CLR**
 

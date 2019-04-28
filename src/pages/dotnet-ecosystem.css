@@ -4,6 +4,7 @@
     vertical-align: top;
     position: relative;
     border-radius: 100%;
+    transition: all 0.2s linear;
 }
 .a-eto-magazin:not(:hover) {
     opacity: 0.5;

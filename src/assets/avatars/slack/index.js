@@ -1,0 +1,17 @@
+export { default as ryuAvatar } from "./ryu.png";
+export { default as donaldTrumpAvatar } from "./donald-trump.png";
+export { default as youAvatar } from "./you.png";
+export { default as alexandrTovmachAvatar } from "./alexandr-tovmach.png";
+export { default as alyonaRapovaAvatar } from "./alyona-rapova.png";
+export { default as andriiKarunAvatar } from "./andrii-karun.png";
+export { default as artemManukianAvatar } from "./artem-manukian.png";
+export { default as denisBeketskyAvatar } from "./denis-beketsky.png";
+export { default as katerynaSemenistaAvatar } from "./kateryna-semenista.png";
+export { default as myroslavDmytrusAvatar } from "./myroslav-dmytrus.png";
+export { default as nikitaPotapenkoAvatar } from "./nikita-potapenko.png";
+export { default as nikitaSemenistyiAvatar } from "./nikita-semenistyi.png";
+export { default as olegChulanovskyiAvatar } from "./oleg-chulanovskyi.png";
+export { default as oleksandrKovalovAvatar } from "./oleksandr-kovalov.png";
+export { default as pavelNemchenkoAvatar } from "./pavel-nemchenko.png";
+export { default as vitaliyOleynikovAvatar } from "./vitaliy-oleynikov.png";
+export { default as yuriyStetsulaAvatar } from "./yuriy-stetsula.png";

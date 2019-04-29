@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
 import SEO from "../../components/SEO/SEO";
+import Highlight from "../../components/Highlight/Highlight";
 import "./Lecture.scss";
 
 const Lecture = ({ children, metadata: { author, title, description, keywords } }) => (
@@ -49,7 +52,7 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
                     </g>
                   </svg>
                 </a>
-                <div><strong>Binary Studio Academy 2019 &bull; </strong>Stage 2 <span style={{ color: "grey", fontWeight: 300 }}>(alpha)</span></div>
+                <div><Link to="/" className="home"><strong>Binary Studio Academy 2019 &bull; </strong>Stage 2</Link> <span style={{ color: "grey", fontWeight: 300 }}>(alpha)</span></div>
               </div>
               <div className="navbar-section">
                 <a href="/whats-this/ua" className="btn btn-link">
@@ -65,7 +68,11 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
             </nav>
           </header>
           <article className="content">
-            {children}
+            <MDXProvider components={{
+              // pre: Highlight
+            }}>
+              {children}
+            </MDXProvider>
           </article>
           <footer className="hero hero-sm">
             <div className="text-gray">

@@ -187,11 +187,14 @@
   margin-bottom: 0.25rem;
 }
 .content pre {
-  margin: 0.25rem 0;
   padding: 0.5em;
+  margin: 0.25rem 0;
 }
-.content pre:only-child {
-  margin: 0;
+.content pre:first-child {
+  margin-top: 0;
+}
+.content pre:last-child {
+  margin-bottom: 0;
 }
 .content pre code {
   display: block;
@@ -480,4 +483,15 @@
 .accordion input:checked ~ .accordion-body,
 .accordion[open] .accordion-body {
   max-height: 100rem;
+}
+
+/* Gatsby overrides */
+.content .gatsby-highlight {
+  margin: 0.25rem 0;
+}
+.content .gatsby-highlight:first-child {
+  margin-top: 0;
+}
+.content .gatsby-highlight:last-child {
+  margin-bottom: 0;
 }

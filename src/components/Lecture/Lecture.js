@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import SEO from "../../components/SEO/SEO";
-import Highlight from "../../components/Highlight/Highlight";
+import "prismjs/themes/prism.css";
 import "./Lecture.scss";
 
 const Lecture = ({ children, metadata: { author, title, description, keywords } }) => (
@@ -68,11 +67,7 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
             </nav>
           </header>
           <article className="content">
-            <MDXProvider components={{
-              // pre: Highlight
-            }}>
-              {children}
-            </MDXProvider>
+            {children}
           </article>
           <footer className="hero hero-sm">
             <div className="text-gray">

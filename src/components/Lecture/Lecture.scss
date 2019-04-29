@@ -120,6 +120,10 @@
   height: 2em;
   display: block;
 }
+.navbar .home {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* Elements */
 .content hr {
@@ -186,8 +190,8 @@
   background: none;
   font-size: 85%;
   line-height: 1.4;
-  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
-    monospace;
+  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+  color: inherit;
 }
 .content :not(pre) > code {
   font-size: 85%;

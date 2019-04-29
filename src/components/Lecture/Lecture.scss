@@ -45,6 +45,12 @@
   color: white;
   font-weight: normal;
 }
+.content .bubble ol.inverted > li:before {
+  background: white;
+  color: #0084ff;
+  font-weight: bold;
+  border-radius: 100%;
+}
 
 /* Alternative to <details> compatible with Safari */
 .details > input {
@@ -114,6 +120,7 @@
   height: 2em;
   display: block;
 }
+
 /* Elements */
 .content hr {
   border: none;
@@ -143,6 +150,12 @@
 .content ol li:last-child,
 .content ul li:last-child {
   margin-bottom: 0;
+}
+.content ol.compact,
+.content ol.compact li,
+.content ul.compact,
+.content ul.compact li {
+  margin: 0;
 }
 .content p {
   margin-bottom: 0.25rem;

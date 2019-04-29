@@ -140,7 +140,7 @@ public static void Main(string[] args) {
 
 <h6>Startup.cs</h6>
 * <em>Configure</em> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests)
-* <em>ConfigureServices</em> — method for configuring services that are used by your application
+
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
@@ -148,14 +148,15 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
 		app.UseDeveloperExceptionPage();
 	}
 	else {
-		// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+		// The default HSTS value is 30 days. 
+        //You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 		app.UseHsts();
 	}
 	app.UseHttpsRedirection();
 	app.UseMvc();
 }
 ```
-
+* <em>ConfigureServices</em> — method for configuring services that are used by your application
 ```csharp
 public void ConfigureServices(IServiceCollection services) {
 	services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

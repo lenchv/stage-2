@@ -3,7 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faFacebookSquare, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { nikitaKrasnov2018Avatar } from "../../assets/images/avatars/intro-rounded";
+import SnippetL02S01 from "./assets/snippets/snippet-l02-s01.mdx"
+import SnippetL02S02 from "./assets/snippets/snippet-l02-s02.mdx"
+import SnippetL02S03 from "./assets/snippets/snippet-l02-s03.mdx"
+import SnippetL03S01 from "./assets/snippets/snippet-l03-s01.mdx"
+import SnippetL03S02 from "./assets/snippets/snippet-l03-s02.mdx"
+import SnippetL03S03 from "./assets/snippets/snippet-l03-s03.mdx"
+import SnippetL03S04 from "./assets/snippets/snippet-l03-s04.mdx"
+import SnippetL03S05 from "./assets/snippets/snippet-l03-s05.mdx"
+import SnippetL04S01 from "./assets/snippets/snippet-l04-s01.mdx"
+import SnippetL04S02 from "./assets/snippets/snippet-l04-s02.mdx"
+import SnippetL04S03 from "./assets/snippets/snippet-l04-s03.mdx"
+import SnippetL04S04 from "./assets/snippets/snippet-l04-s04.mdx"
+import SnippetL04S05 from "./assets/snippets/snippet-l04-s05.mdx"
+import SnippetL04S06 from "./assets/snippets/snippet-l04-s06.mdx"
 import './styles.css';
+
 
 <div><h1><strong>How ASP.NET Core works</strong></h1></div>
 
@@ -132,36 +147,17 @@ Create a new app by executing the next command: `dotnet new webapi`
 
 <h6>Program.cs</h6>
 This is how the entry point looks like: 
-```csharp
-public static void Main(string[] args) {
-	CreateWebHostBuilder(args).Build().Run();
-}
-```
+
+<SnippetL02S01 />
 
 <h6>Startup.cs</h6>
 * <em>Configure</em> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests)
 
+<SnippetL02S02 />
 
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
-	if (env.IsDevelopment()) {
-		app.UseDeveloperExceptionPage();
-	}
-	else {
-		// The default HSTS value is 30 days. 
-        //You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-		app.UseHsts();
-	}
-	app.UseHttpsRedirection();
-	app.UseMvc();
-}
-```
 * <em>ConfigureServices</em> — method for configuring services that are used by your application
-```csharp
-public void ConfigureServices(IServiceCollection services) {
-	services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-}
-```
+
+<SnippetL02S03 />
 
 <Level id="creating-controllers-and-services" number="3" name="Creating controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
 
@@ -184,32 +180,8 @@ Let’s practise a bit more and create a new controller.
 Create a new file called <em>UsersController</em> in <em>Controllers</em> folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example.
 
 Eventually you should have similar code:
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_Core_Lecture.Controllers { [Route("api/[controller]")][ApiController]
-	public class UsersController: ControllerBase {
-		// GET api/users
-		[HttpGet]
-		public ActionResult < IEnumerable < string >> Get() {
-			return new string[] {
-				"user1",
-				"user2"
-			};
-		}
-
-		// GET api/users/5
-		[HttpGet("{id}")]
-		public ActionResult < string > Get(int id) {
-			return $ "user{id}";
-		}
-	}
-}
-```
+<SnippetL03S01 />
 
 Start the application and go to https://localhost:5001/api/users/ to make sure that your new controller is available.
 
@@ -218,56 +190,13 @@ Start the application and go to https://localhost:5001/api/users/ to make sure t
 Writing business logic in controllers isn’t the best idea, so it would be better if we created a separate service for this purpose.
 
 <h6>UsersController.cs</h6>
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASP.NET_Core_Lecture.Services;
-using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_Core_Lecture.Controllers { [Route("api/[controller]")][ApiController]
-	public class UsersController: ControllerBase {
-		private UsersService usersService;
-		public UsersController() {
-			usersService = new UsersService();
-		}
-
-		// GET api/users
-		[HttpGet]
-		public ActionResult < IEnumerable < string >> Get() {
-			return Ok(usersService.GetUsers());
-		}
-
-		// GET api/users/5
-		[HttpGet("{id}")]
-		public ActionResult < string > Get(int id) {
-			return Ok(usersService.GetUser(id));
-		}
-	}
-}
-```
+<SnippetL03S02 />
 
 <h6>UsersService.cs</h6>
-```csharp
-using System.Collections.Generic;
 
-namespace ASP.NET_Core_Lecture.Services
-{
-    public class UsersService
-    {
-        public IEnumerable<string> GetUsers()
-        {
-            return new string[] { "user1", "user2" };
-        }
+<SnippetL03S03 />
 
-        public string GetUser(int id)
-        {
-            return $"user{id}";
-        }
-    }
-}
-```
 Run the application and test https://localhost:5001/api/users/ again to make sure everything works as before.
 
 In the next step I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service.
@@ -277,85 +206,12 @@ In order to serialize response we will need to add a package that works with JSO
 Use `dotnet add package Newtonsoft.Json` command to install the package.
 
 <h6>Updated UsersController.cs</h6>
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASP.NET_Core_Lecture.Services;
-using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_Core_Lecture.Controllers { [Route("api/[controller]")][ApiController]
-	public class UsersController: ControllerBase {
-		private UsersService usersService;
-		public UsersController() {
-			usersService = new UsersService();
-		}
-
-		// GET api/values
-		[HttpGet]
-		public async Task < ActionResult < List < User >>> Get() {
-			return Ok(await usersService.GetUsers());
-		}
-
-		// GET api/values/5
-		[HttpGet("{id}")]
-		public async Task < ActionResult < User >> Get(int id) {
-			return Ok(await usersService.GetUser(id));
-		}
-	}
-}
-```
+<SnippetL03S04 />
 
 <h6>Updates UsersService.cs</h6>
-```csharp
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
-namespace ASP.NET_Core_Lecture.Services {
-	public class UsersService {
-		private HttpClient _client {
-			get;
-			set;
-		}
-
-		public UsersService() {
-			_client = new HttpClient();
-		}
-
-		public async Task < List < User >> GetUsers() {
-			var users = await _client.GetStringAsync("https://jsonplaceholder.typicode.com/users");
-			return JsonConvert.DeserializeObject < List < User >> (users);
-		}
-
-		public string GetUser(int id) {
-			return $ "user{id}";
-		}
-	}
-
-	public class User {
-		public int id {
-			get;
-			set;
-		}
-		public string username {
-			get;
-			set;
-		}
-		public string email {
-			get;
-			set;
-		}
-		public string website {
-			get;
-			set;
-		}
-	}
-}
-```
-
+<SnippetL03S05 />
 
 <Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
 
@@ -377,37 +233,26 @@ There are a few service lifetime options:
 Let’s apply it for our UsersService:
 
 Add the next code to `ConfigureServices() [Startup.cs]`
-```csharp
-services.AddTransient<UsersService>();
-```
+
+<SnippetL04S01 />
 
 And update UsersController’s constructor:
-```csharp
-public UsersController(UsersService service) {
-	_usersService = service;
-}
-```
+
+<SnippetL04S02 />
 
 Going further, we can create an interface for UsersService. It will let us switch services in one place.
 
 Change the previous version of service registration to the next one:
 
-```csharp
-services.AddTransient<IUsersService, UsersService>();
-```
+<SnippetL04S03 />
 
 Update UsersController to operate with the interface (notice how we got rid of explicit class name):
-```csharp
-private IUsersService _usersService;
-public UsersController(IUsersService service) {
-	_usersService = service;
-}
-```
+
+<SnippetL04S04 />
 
 Don’t forget to inherit our UsersService from IUsersService:
-```csharp
-public class UsersService : IUsersService
-```
+
+`public class UsersService : IUsersService`
 
 <h4>Middleware</h4>
 Middleware is software that's assembled into an app pipeline to handle requests and responses.
@@ -419,13 +264,8 @@ For example, if you want to log all the requests, you can add a pipeline. <em>(I
 
 Add the next code info Configure method [Startup.cs]:
 
-```csharp
-app.Use(async(context, next) = >{
-	Console.WriteLine("Started handling request");
-	await next.Invoke();
-	Console.WriteLine("Finished handling request");
-});
-```
+<SnippetL04S05 />
+
 Then start the app, send request and see the console output.
 
 <h4>Routing</h4>
@@ -436,10 +276,8 @@ Routes are defined in the app and configured when the app starts. A route can op
 
 In WebAPI we define route using attribute Route.
 
-```csharp
-[Route("api/[controller]")][ApiController]
-public class UsersController: ControllerBase
-```
+<SnippetL04S06 />
+
 We can do the same for methods in controller.
 
 <h4>Razor pages (MVC app structure, return page from controller method, syntax)</h4>

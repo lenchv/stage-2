@@ -1,14 +1,21 @@
+/* Dorov & A eto magazin? */
 .dorov {
-    margin-right: 0.5em;
+  margin-right: 0.5em;
 }
 .a-eto-magazin {
-    height: 1.5em;
-    vertical-align: top;
-    position: relative;
-    border-radius: 100%;
-    transition: all 0.2s linear;
+  height: 1.5em;
+  vertical-align: top;
+  position: relative;
+  border-radius: 100%;
+  transition: all 0.2s linear;
 }
 .a-eto-magazin:not(:hover) {
-    opacity: 0.5;
-    filter: grayscale(1) contrast(2) brightness(1);
+  opacity: 0.5;
+  filter: grayscale(1) contrast(2) brightness(1);
+}
+
+/* Disclaimers */
+.content ol.disclaimers,
+.content ol.disclaimers li {
+  margin: 0;
 }

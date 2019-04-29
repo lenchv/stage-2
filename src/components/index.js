@@ -1,3 +1,4 @@
+export { default as Index } from "./Index/Index";
 export { default as Lecture } from "./Lecture/Lecture";
 export { default as Level } from "./Level/Level";
 export { default as Message } from "./Message/Message";

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 import SEO from "../SEO/SEO";
-import "prismjs/themes/prism.css";
-import "./Lecture.scss";
+import "./index.scss";
 
-const Lecture = ({ children, metadata: { author, title, description, keywords } }) => (
+const Index = ({ children, metadata: { author, title, description, keywords } }) => (
   <>
     <SEO title={title} description={description} keywords={keywords} />
     <div className="container grid-lg">
@@ -66,7 +65,7 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
               </div>
             </nav>
           </header>
-          <article className="content">
+          <article>
             {children}
           </article>
           <footer className="hero hero-sm">
@@ -80,4 +79,4 @@ const Lecture = ({ children, metadata: { author, title, description, keywords } 
   </>
 );
 
-export default Lecture;
+export default Index;

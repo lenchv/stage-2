@@ -13,9 +13,3 @@
   opacity: 0.5;
   filter: grayscale(1) contrast(2) brightness(1);
 }
-
-/* Disclaimers */
-.content ol.disclaimers,
-.content ol.disclaimers li {
-  margin: 0;
-}

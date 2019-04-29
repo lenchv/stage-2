@@ -15,31 +15,27 @@ import nikitaKrasnovAvatar from "../assets/avatars/nikita-krasnov-2018.svg";
       <h3 class="name">Никита Краснов</h3>
       <ul class="contacts">
         <li>
-          <a href="https://www.facebook.com/" rel="author" class="facebook">
+          <a href="https://www.facebook.com/krsnv" rel="author" class="facebook">
             <FontAwesomeIcon icon={faFacebookSquare} className="icon" />
-            <span>?</span>
+            <span>Nikita Krasnov</span>
           </a>
         </li>
         <li>
-          <a href="https://github.com/alexandrtovmach" rel="author" class="github">
+          <a href="https://github.com/EclipticaSonos" rel="author" class="github">
             <FontAwesomeIcon icon={faGithub} className="icon" />
-            <span>alexandrtovmach</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://alexandrtovmach.com/" rel="author" class="website">
-            <FontAwesomeIcon icon={faGlobe} className="icon" />
-            <span>https://alexandrtovmach.com/</span>
+            <span>EclipticaSonos</span>
           </a>
         </li>
       </ul>
       <p class="about">
-        Володя працює фулл-стек розробником у <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> вже 2 роки, де будує точні, адаптивні, швидкі, зручні в користуванні середовища, які гарно виглядають та добре виконують свої завдання. Улюбленими технологіями вважає <a href="#"><strong>React</strong></a> та <a href="#"><strong>GraphQL</strong></a>. Говорить російською із смішним акцентом.
+        Нікіта працює бекенд-розробником в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>, не вживає алкоголю, але вживає .NET фреймворки, електронну музику, функціональне програмування і футболки з приколами-прінтами. Відвідує технічні мітапи та конференції, і вам радить спробувати — після завершення домашнього завдання для цієї лекції :Р
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hey, hola, привіт!</strong><br />Вже за два абзаци розпочнеться лекція. Але! Спочатку пара коротеньких дісклеймерів: 1) деякі терміни та технології не пояснюються, лінки на документацію та ґайдлайни опціональні <em>(їх можна повністю проігнорувати, маючи сильну інтуїцію, багаж знань чи достатньо часу на експерименти)</em>; 2) лекція намагається бути фановою і максимально корисною, але не завжди так буде виходити в результаті &#x1F937;&#x200D;&#x2642;&#xFE0F; <em>(за бекання-мекання і вживання іншомовних слів пробачте, будь ласка)</em>. Між іншим, it's dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    <strong>Hello guys!</strong><br />I am giving notes for this lecture in English, because for every developer <em>(and I hope you are going to become ones!)</em> it is important to be able to read documentation, which is rarely translated from English. On the way I will give you all hints and guidelines neccessary to understand how our tech stack works, and by the end of this lesson you will have live web app in ASP.NET Core. 
+    <br />
+    Want to try it out? Set up your workplace and let's go!
   </div>
 </div>
 
@@ -88,13 +84,13 @@ Microsoft provides two options: .NET Runtime and .NET SDK. You can choose the on
 
 <h4>CLI-commands</h4>
 
-* <em>dotnet new</em> - Initializes a sample console C# project
-* <em>dotnet restore</em> - Restores the dependencies for a given application
-* <em>dotnet build</em> - Builds a .NET Core application
-* <em>dotnet publish</em> - Publishes a .NET portable or self-contained application
-* <em>dotnet run</em> - Runs the application from source
-* <em>dotnet test</em> - Runs tests using a test runner specified in the project.json
-* <em>dotnet pack</em> - Creates a NuGet package of your code
+* <em>dotnet new</em> — Initializes a sample console C# project
+* <em>dotnet restore</em> — Restores the dependencies for a given application
+* <em>dotnet build</em> — Builds a .NET Core application
+* <em>dotnet publish</em> — Publishes a .NET portable or self-contained application
+* <em>dotnet run</em> — Runs the application from source
+* <em>dotnet test</em> — Runs tests using a test runner specified in the project.json
+* <em>dotnet pack</em> — Creates a NuGet package of your code
 
 <h4>Visual Studio only? Rider, VSCode, Sublime, etc.</h4>
 <p>Since you are not limited to Windows only, you can choose whatever IDE/Text editor you want (<a href="https://visualstudio.microsoft.com/">Visual Studio</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="https://www.jetbrains.com/rider/">JetBrains Rider</a>, <a href="https://www.sublimetext.com/">Sublime</a>, <a href="https://atom.io/">Atom</a> and so on). You are able to write code using your favorite tool and execute needed actions using CLI.
@@ -141,8 +137,8 @@ public static void Main(string[] args)
 ```
 
 <h6>Startup.cs</h6>
-* <em>Configure</em> - how the application will respond to individual HTTP requests (you can setup pipelines which will process requests)
-* <em>ConfigureServices</em> - method for configuring services that are used by your application
+* <em>Configure</em> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests)
+* <em>ConfigureServices</em> — method for configuring services that are used by your application
 
 ```
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -370,16 +366,16 @@ namespace ASP.NET_Core_Lecture.Services
 
 <h4>Short review of Dependency Injection (Singleton, Scoped, Transient)</h4>
 
-<p><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2">Dependency injection (DI)</a> - software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion">Inversion of Control (IoC)</a> between classes and their dependencies.</p>
+<p><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2">Dependency injection (DI)</a> — software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion">Inversion of Control (IoC)</a> between classes and their dependencies.</p>
 
 <p>In our case UsersController depends on UsersService. 
 There might be a case when JsonPlaceholder won’t response to our requests. In this case we would want to use another implementation of UsersService (use another source or provide mocked data). We would need to go through our app and change class name manually in all places where it’s used.
 With DI we can do it easily in one place (ConfigureServices() in Startup.cs). Moreover, in .NET Core DI container can create instances of dependencies of dependencies. Otherwise we would need to do it manually in every service. In addition to that, .NET Core DI container takes on the responsibility of creating an instance of the dependency and disposing of it when it's no longer needed.</p>
 
 <p>There are a few service lifetime options:</p>
-* <em>Singleton</em> - services are created the first time they're requested (or when ConfigureServices is run and an instance is specified with the service registration). Every subsequent request uses the same instance.
-* <em>Scoped</em> - services are created once per client request (connection).
-* <em>Transient</em> - services are created each time they're requested from the service container. This lifetime works best for lightweight, stateless services.
+* <em>Singleton</em> — services are created the first time they're requested (or when ConfigureServices is run and an instance is specified with the service registration). Every subsequent request uses the same instance.
+* <em>Scoped</em> — services are created once per client request (connection).
+* <em>Transient</em> — services are created each time they're requested from the service container. This lifetime works best for lightweight, stateless services.
 
 <p>Let’s apply it for our UsersService:
 

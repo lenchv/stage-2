@@ -1,0 +1,11 @@
+export { default as alexandr-tovmach-2018.svg } from "./alexandr-tovmach-2018.svg";
+export { default as avatar.psd } from "./avatar.psd;
+export { default as nikita-krasnov-2018.svg } from "./nikita-krasnov-2018.svg";
+export { default as nikita-krasnov-2019.svg } from "./nikita-krasnov-2019.svg";
+export { default as pavel-nemchenko-2017.svg } from "./pavel-nemchenko-2017.svg";
+export { default as pavel-nemchenko-2019.svg } from "./pavel-nemchenko-2019.svg";
+export { default as roman-sahan-2017.svg } from "./roman-sahan-2017.svg";
+export { default as roman-sahan-2019.svg } from "./roman-sahan-2019.svg";
+export { default as rostyslav-diakiv-2019.svg } from "./rostyslav-diakiv-2019.svg";
+export { default as volodymyr-kushnir-2017.svg } from "./volodymyr-kushnir-2017.svg";
+export { default as volodymyr-kushnir-2019.svg } from "./volodymyr-kushnir-2019.svg";

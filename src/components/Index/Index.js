@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
-import SEO from "../SEO/SEO";
+import { SEO, Header, Footer } from "../";
 import "./Index.scss";
 
 const Index = ({ children, metadata: { author, title, description, keywords } }) => (

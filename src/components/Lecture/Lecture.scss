@@ -2,12 +2,12 @@
 @import "node_modules/spectre.css/src/spectre-exp";
 
 /* Spectre.css overrides */
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
+.content h1:not(:first-child),
+.content h2:not(:first-child),
+.content h3:not(:first-child),
+.content h4:not(:first-child),
+.content h5:not(:first-child),
+.content h6:not(:first-child) {
   margin-top: 0.5em;
 }  
 

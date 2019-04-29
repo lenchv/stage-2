@@ -1,0 +1,16 @@
+```csharp
+static void Main(string[] args)
+{
+    int d = 30;
+            
+    MethodValueRef(ref d);
+
+    Console.WriteLine(d); // 2
+}
+
+// pass value by reference 
+static void MethodValueRef(ref int variable)
+{
+    variable = 2;
+}
+```

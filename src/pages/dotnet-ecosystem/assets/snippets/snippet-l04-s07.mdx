@@ -1,0 +1,36 @@
+```csharp
+abstract class Developer
+{
+    public virtual string CodeWebApp()
+    {
+        return "Coding Front-End Web App";
+    }
+    public virtual string CodeServer()
+    {
+        return "Coding Back-End Server";
+    }
+}
+class JavaScriptDeveloper: Developer
+{
+    public override string CodeWebApp()
+    {
+        return "Coding Front-End with Angular";
+    }
+    public override string CodeServer()
+    {
+        return "Coding Back-End with Node.js";
+    }
+}
+class CSharpDeveloper: Developer
+{
+    // C# Developer can't  create Front-End App
+    public override string CodeWebApp()
+    {
+        throw new NotImplementedException(); 
+    }
+    public override string CodeServer()
+    {
+        return "Coding Back-End with ASP.Net";
+    }
+}
+```

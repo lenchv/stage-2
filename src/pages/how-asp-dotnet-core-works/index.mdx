@@ -58,14 +58,14 @@ import './styles.css';
 
 <div id="table-of-contents" class="table-of-contents">
   <TimelineOfContents timeline={[{
-    linkTo: "#Intro",
-    title: "Welcome word. Intro"
+    linkTo: "#intro-to-dotnet-core",
+    title: "Intro to .NET Core"
   }, {
-    linkTo: "#asp-net-core",
-    title: "ASP.NET Core. Start with creating a new app"
+    linkTo: "#creating-an-app",
+    title: "Creating an app"
   }, {
-    linkTo: "#creating-controllers-and-services",
-    title: "Creating controllers and services"
+    linkTo: "#controllers-and-services",
+    title: "Controllers and services"
   }, {
     linkTo: "#additional-features",
     title: "Additional Features"
@@ -73,56 +73,90 @@ import './styles.css';
 </div>
 
 
-<Level id="intro" number="1" name="Welcome word. Intro" difficulty="No worries" objectives="Familiarize yourself with .NET basics because you are going to be buddies." />
+<Level id="intro-to-dotnet-core" number="1" name="Intro to .NET Core" difficulty="No worries" objectives="Familiarize yourself with .NET basics because you are going to be buddies." />
 
 <h4>How Microsoft came up with .NET Core</h4>
-There were times when the term <strong>.NET</strong> meant Windows platform only. It imposed some restrictions for deploying, because most machines have Linux as operating system. So the guys in Microsoft gathered for a meeting and came up with .NET Core. The main idea of the framework is cross-platform apps, which means you can host your app on a variety of OS. Furthermore, it’s open-source, hence it has great community support.
+There were times when the term <strong>".NET"</strong> meant Windows platform only. It imposed some restrictions for deploying, because most machines have Linux as operating system. So the guys in Microsoft gathered for a meeting and came up with .NET Core. The main idea of the framework is cross-platform apps, which means you can host your app on a variety of OS. Furthermore, it’s open-source, hence it has great community support.
 
 <h4>Advantages</h4>
-* <strong>Cross-platform</strong> — Runs on Windows, Linux, MacOS.
-* <strong>Flexible deployment</strong> — The framework can be included in your app or installed side-by-side user-or machine-wide.
-* <strong>Command-line tools</strong> — .NET Core has great CLI, therefore all product scenarios can be executed using command-line.
-* <strong>Compatibility</strong> — .NET Core is compatible with .NET Framework, Xamarin and Mono, via the .NET Standard Library.
-* <strong>Open-source</strong> — The .NET Core platform is open source, using MIT and Apache 2 licenses. You are welcome to contribute.
-* <strong>Supported by Microsoft</strong> — Huge corporation forces .NET Core to develop and gain new features.
+
+1. **Cross-platform**  
+   Runs on Windows, Linux, macOS
+2. **Flexible deployment**  
+   The framework can be included in your app or installed side-by-side user-or machine-wide
+3. **Command-line tools**  
+   .NET Core has great CLI, therefore all product scenarios can be executed using command-line
+4. **Compatibility**  
+   .NET Core is compatible with .NET Framework, Xamarin and Mono, via the .NET Standard Library
+5. **Open-source**  
+   The .NET Core platform is open source, using MIT and Apache 2 licenses. You are welcome to contribute
+6. **Supported by Microsoft**  
+   Huge corporation forces .NET Core to develop and gain new features
 
 <h4>What you can build with .NET Core</h4>
-* <strong>ASP.NET Core MVC</strong> — Web apps which implement Model-View-Controller pattern and use Razor for HTML markdown with C# snippets.
-* <strong>ASP.NET Core WebAPI</strong> — Backend app which implements business logic and can be used by any client (whether it’s angular/react/whatever_framework-based frontend, mobile apps, etc.).
-* <strong>UWP (Universal Windows Platform)</strong> — Native applications for phones, laptops, tablets, XBox, IoT.
+<div class="columns">
+  <div class="column col-4">
+    <div class="panel">
+      <div class="panel-header">
+        <strong>ASP.NET Core MVC</strong>
+      </div>
+      <div class="panel-body">
+        Web apps which implement Model-View-Controller pattern and use Razor for HTML markdown with C# snippets
+      </div>
+    </div>
+  </div>
+  <div class="column col-4">
+    <div class="panel">
+      <div class="panel-header">
+        <strong>ASP.NET Core WebAPI</strong>
+      </div>
+      <div class="panel-body">
+        Backend app which implements business logic and can be used by any client <em>(whether it’s Angular-, React-, or WhateverFramework-based frontend, mobile apps, etc.)</em>
+      </div>
+    </div>
+  </div>
+  <div class="column col-4">
+    <div class="panel">
+      <div class="panel-header">
+        <strong>UWP (Universal Windows Platform)</strong>
+      </div>
+      <div class="panel-body">
+        Native applications for phones, laptops, tablets, XBox, IoT
+      </div>
+    </div>
+  </div>
+</div>
 
-<h4>What you need to start (Prerequisites, .NET SDK)</h4>
-You need to have a PC/laptop with Windows/Linux/MacOS system installed. 
-Microsoft provides two options: .NET Runtime and .NET SDK. You can choose the one here.
-* <strong>.NET Runtime</strong> includes just the resources required to run existing .NET Core applications. The runtime is included in the SDK.
-* <strong>.NET Core SDK</strong> includes everything you need to build and run .NET Core applications, using command line tools and any editor (including Visual Studio).
-
-In order to complete the homework you have to use <strong>.NET Core SDK</strong>.
+<h4>What you need to start</h4>
+You need to have a PC/laptop with Windows/Linux/macOS system installed.  
+Microsoft provides two options — .NET Runtime and .NET SDK:
+* **.NET Runtime** includes just the resources required to run existing .NET Core applications. This runtime is included in the SDK.
+* **.NET Core SDK** includes everything you need to build and run .NET Core applications, using command line tools and any editor (including Visual Studio).
+  
+  <div class="bubble small subtle">
+    Для выполнения домашки вам нужен <strong>.NET Core SDK</strong>.
+  </div>
 
 <h4>CLI-commands</h4>
 
-* `dotnet new` — Initializes a sample console C# project
-* `dotnet restore` — Restores the dependencies for a given application
-* `dotnet build` — Builds a .NET Core application
-* `dotnet publish` — Publishes a .NET portable or self-contained application
-* `dotnet run` — Runs the application from source
-* `dotnet test` — Runs tests using a test runner specified in the project.json
-* `dotnet pack` — Creates a NuGet package of your code
+* `dotnet new` — initializes a sample console C# project
+* `dotnet restore` — restores the dependencies for a given application
+* `dotnet build` — builds a .NET Core application
+* `dotnet publish` — publishes a .NET portable or self-contained application
+* `dotnet run` — runs the application from source
+* `dotnet test` — runs tests using a test runner specified in the project.json
+* `dotnet pack` — creates a NuGet package of your code
 
 <h4>Visual Studio only? Rider, VSCode, Sublime, etc.</h4>
-Since you are not limited to Windows only, you can choose whatever IDE/Text editor you want (<a href="https://visualstudio.microsoft.com/"><strong>Visual Studio</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://www.jetbrains.com/rider/"><strong>JetBrains Rider</strong></a>, <a href="https://www.sublimetext.com/"><strong>Sublime</strong></a>, <a href="https://atom.io/"><strong>Atom</strong></a> and so on). You are able to write code using your favorite tool and execute needed actions using CLI.
+Since you are not limited to Windows only, you can choose whatever IDE or text editor you want (<a href="https://visualstudio.microsoft.com/"><strong>Visual Studio</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://www.jetbrains.com/rider/"><strong>JetBrains Rider</strong></a>, <a href="https://www.sublimetext.com/"><strong>Sublime</strong></a>, <a href="https://atom.io/"><strong>Atom</strong></a>, and so on). You are able to write code using your favorite tool and execute needed actions using CLI.
+<div class="bubble small subtle">
+  Я б рекомендовал использовать <strong>Visual Studio Code</strong> для выполнения домашки.
+</div>
 
-I would recommend using <strong>Visual Studio Code</strong> for the homework.
-
-<Level id="asp-net-core" number="2" name="ASP.NET Core. Start with creating a new app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
+<Level id="creating-an-app" number="2" name="Creating an app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
 
 <h4>What is ASP.NET Core</h4>
-ASP.NET is a popular web-development framework for building web apps on the .NET platform.
-
-
-ASP.NET Core is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. ASP.NET Core was first released in 2016 and is a re-design of earlier Windows-only versions of ASP.NET.
-
-In comparison to ASP.NET, Core version provides:
+**ASP.NET** is a popular web-development framework for building web apps on the .NET platform. **ASP.NET Core** is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. It was first released in 2016 and is a re-design of earlier Windows-only versions of ASP.NET. In comparison to ASP.NET, Core version provides:
 
 * Cleaner and modular architecture
 * Tighter security
@@ -139,27 +173,26 @@ In comparison to ASP.NET, Core version provides:
 * Built on .NET Core, which supports true side-by-side app versioning
 * Ships entirely as NuGet packages
 * New tooling that simplifies modern web development
-* Build and run cross-platform ASP.NET apps on Windows, Linux and MacOS
+* Build and run cross-platform ASP.NET apps on Windows, Linux and macOS
 * Open-source and community focused
 
-<h4>Let’s create a new app</h4>
-Create a new app by executing the next command: `dotnet new webapi`
-
+<h4>Create a new app by running <code>dotnet new webapi</code> <sup><strong><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.2">[1]</a></strong></sup></h4>
 <h6>Program.cs</h6>
 This is how the entry point looks like: 
-
 <SnippetL02S01 />
-
 <h6>Startup.cs</h6>
-<strong>Configure</strong> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests)
+<ul>
+  <li>
+    <code>Configure</code> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests):
+    <SnippetL02S02 />
+  </li>
+  <li>
+    <code>ConfigureServices</code> — method for configuring services that are used by your application:
+    <SnippetL02S03 />
+  </li>
+</ul>
 
-<SnippetL02S02 />
-
-<strong>ConfigureServices</strong> — method for configuring services that are used by your application
-
-<SnippetL02S03 />
-
-<Level id="creating-controllers-and-services" number="3" name="Creating controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
+<Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
 
 I’m going to show you how we can write API using ASP.NET Core WebAPI. We will be able to get a list of users and get user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for data set.
 
@@ -169,9 +202,11 @@ To make sure that our API is working, we should send a request to the created by
 
 https://localhost:5001/api/values
 
-You should see `value1, value2` as a response.
+You should receive `["value1","value2"]` JSON as a response.
 
-<div class="bubble small subtle">P.S. You can use Postman for testing your API. But I would recommend using a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>.</div>
+<div class="bubble small subtle">
+  You can use Postman for testing your API. But I would recommend using a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>.
+</div>
 
 
 <h4>WebApi Controller</h4>

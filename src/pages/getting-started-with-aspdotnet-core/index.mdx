@@ -267,18 +267,18 @@ I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We w
 
 <Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
 
-<h5>Short review of Dependency Injection (Singleton, Scoped, Transient)</h5>
+<h5>A short review of Dependency Injection (Singleton, Scoped, Transient)</h5>
 
-[**Dependency injection (DI)**](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2) — software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion"><strong>Inversion of Control (IoC)</strong></a> between classes and their dependencies. In our case `UsersController` depends on `UsersService`. There might be a case when `JsonPlaceholder` won’t respond to our requests. In this case we would want to use another implementation of `UsersService` (use another source or provide mocked data). We would need to go through our app and change class name manually in all places where it’s used. With DI we can do it easily in one place (`ConfigureServices()` in **Startup.cs**). Moreover, in .NET Core DI container can create instances of dependencies of dependencies. Otherwise we would need to do it manually in every service. In addition to that, .NET Core DI container takes on the responsibility of creating an instance of the dependency and disposing of it when it's no longer needed. There are a few service lifetime options:
+[**Dependency injection (DI)**](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2) — software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion"><strong>Inversion of Control (IoC)</strong></a> between classes and their dependencies. In our case `UsersController` depends on `UsersService`. There might be a case when `JsonPlaceholder` won’t respond to our requests. In this case, we would want to use another implementation of `UsersService` (use another source or provide mocked data). We would need to go through our app and change class name manually in all places where it’s used. With DI we can do it easily in one place (`ConfigureServices()` in **Startup.cs**). Moreover, in .NET Core DI container can create instances of dependencies. Otherwise, we would need to do it manually in every service. In addition to that, .NET Core DI container takes on the responsibility of creating an instance of the dependency and disposing of it when it's no longer needed. There are a few service lifetime options:
 
 1. **Singleton** — services are created the first time they're requested (or when `ConfigureServices` is run and an instance is specified with the service registration). Every subsequent request uses the same instance.
 2. **Scoped** — services are created once per client request (connection).
 3. **Transient** — services are created each time they're requested from the service container. This lifetime works best for lightweight, stateless services. Let’s apply **Transient** to our `UsersService`:
-   1. Add the next code to `ConfigureServices()` in **Startup.cs**:
+   1. Add the following code to `ConfigureServices()` in **Startup.cs**:
       <SnippetL04S01 />
    2. Update `UsersController`’s constructor:
       <SnippetL04S02 />
-   3. Going further, we can create an interface for `UsersService`. It will let us switch services in one place. Change the    previous version of service registration to the next one:
+   3. Going further, we can create an interface for `UsersService`. It will let us switch services in one place. Change the previous version of service registration to the next one:
       <SnippetL04S03 />
    4. Update `UsersController` to operate with the interface (notice how we got rid of the explicit class name):
       <SnippetL04S04 />
@@ -291,13 +291,13 @@ Middleware is software that's assembled into an app pipeline to handle requests 
 
 ![php-fpm_nginx](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/index/_static/request-delegate-pipeline.png?view=aspnetcore-2.2)
 
-For example, if you want to log all the requests, you can add a pipeline (in the example below `Console.WriteLine` iis used for simplicity, you can use any logging framework there). So, add the next code info `Configure` method in **Startup.cs**:
+For example, if you want to log all the requests, you can add a pipeline (in the example below `Console.WriteLine` is used for simplicity, you can use any logging framework there). So, add the next code into the `Configure` method in **Startup.cs**:
 <SnippetL04S05 />
-Now start the app, send request and see the console output. 
+Now start the app, send a request and see the console output.
 
 <h5>Routing</h5>
 
-Routing is responsible for mapping request URIs to endpoint selectors and dispatching incoming requests to endpoints.  Routes are defined in the app and configured when the app starts. A route can optionally extract values from the URL contained in the request, and these values can then be used for request processing. Basically, routing is a middleware. Using the picture above, imagine how request comes to the server, then it’s being processed by a chain of middlewares and then routing middleware matches URL to controller and method names. In WebAPI we define route using attribute `Route`:
+Routing is responsible for mapping request URIs to endpoint selectors and dispatching incoming requests to endpoints.  Routes are defined in the app and configured when the app starts. A route can optionally extract values from the URL contained in the request, and these values can then be used for request processing. Basically, routing is a middleware. Using the picture above, imagine how request comes to the server, then it’s being processed by a chain of middlewares and then routing middleware matches URL to controller and method names. In WebAPI we define route using the `Route` attribute:
 <SnippetL04S06 />
 We can do the same for methods in the controller.
 

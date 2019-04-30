@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Message.css";
+import "./SlackMessage.css";
 
 const MINUTE = 1000 * 60;
 
-const Message = ({
+const SlackMessage = ({
   senderId = "",
   senderName = "",
   senderAvatarUrl = "",
@@ -60,7 +60,7 @@ const Message = ({
 }
 
 
-Message.propTypes = {
+SlackMessage.propTypes = {
   senderId: PropTypes.string,
   senderName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   senderAvatarUrl: PropTypes.string,
@@ -74,7 +74,7 @@ Message.propTypes = {
   }))
 };
 
-Message.defaultProps = {
+SlackMessage.defaultProps = {
   labels: {
     senderId: "",
     senderName: "",
@@ -84,4 +84,4 @@ Message.defaultProps = {
   }
 };
 
-export default Message;
+export default SlackMessage;

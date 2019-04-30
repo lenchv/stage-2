@@ -75,10 +75,11 @@ import './styles.css';
 
 <Level id="intro-to-dotnet-core" number="1" name="Intro to .NET Core" difficulty="No worries" objectives="Familiarize yourself with .NET basics because you are going to be buddies." />
 
-<h4>How Microsoft came up with .NET Core</h4>
+<h5>How did Microsoft come up with .NET Core</h5>
+
 There were times when the term <strong>".NET"</strong> meant Windows platform only. It imposed some restrictions for deploying, because most machines have Linux as operating system. So the guys in Microsoft gathered for a meeting and came up with .NET Core. The main idea of the framework is cross-platform apps, which means you can host your app on a variety of OS. Furthermore, it’s open-source, hence it has great community support.
 
-<h4>Advantages</h4>
+<h5>.NET Core advantages</h5>
 
 1. **Cross-platform**  
    Runs on Windows, Linux, macOS
@@ -93,7 +94,8 @@ There were times when the term <strong>".NET"</strong> meant Windows platform on
 6. **Supported by Microsoft**  
    Huge corporation forces .NET Core to develop and gain new features
 
-<h4>What you can build with .NET Core</h4>
+<h5>What you can build with .NET Core</h5>
+
 <div class="columns">
   <div class="column col-4">
     <div class="panel">
@@ -127,35 +129,22 @@ There were times when the term <strong>".NET"</strong> meant Windows platform on
   </div>
 </div>
 
-<h4>What you need to start</h4>
-You need to have a PC/laptop with Windows/Linux/macOS system installed.  
-Microsoft provides two options — .NET Runtime and .NET SDK:
-* **.NET Runtime** includes just the resources required to run existing .NET Core applications. This runtime is included in the SDK.
-* **.NET Core SDK** includes everything you need to build and run .NET Core applications, using command line tools and any editor (including Visual Studio).
-  
-  <div class="bubble small subtle">
-    Для выполнения домашки вам нужен <strong>.NET Core SDK</strong>.
-  </div>
+<h5>What you need to start</h5>
+* **.NET Core SDK** includes everything you need to build and run .NET Core applications. Since you are not limited to Windows only, you can choose whatever IDE or text editor you want (<a href="https://visualstudio.microsoft.com/"><strong>Visual Studio</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://www.jetbrains.com/rider/"><strong>JetBrains Rider</strong></a>, <a href="https://www.sublimetext.com/"><strong>Sublime</strong></a>, <a href="https://atom.io/"><strong>Atom</strong></a>, and so on). You are able to write code using your favorite tool and execute needed actions using the CLI. Some useful CLI commands are:
 
-<h4>CLI-commands</h4>
+  * `dotnet new` — initializes a sample console C# project
+  * `dotnet restore` — restores the dependencies for a given application
+  * `dotnet build` — builds a .NET Core application
+  * `dotnet publish` — publishes a .NET portable or self-contained application
+  * `dotnet run` — runs the application from source
+  * `dotnet test` — runs tests using a test runner specified in the project.json
+  * `dotnet pack` — creates a NuGet package of your code
 
-* `dotnet new` — initializes a sample console C# project
-* `dotnet restore` — restores the dependencies for a given application
-* `dotnet build` — builds a .NET Core application
-* `dotnet publish` — publishes a .NET portable or self-contained application
-* `dotnet run` — runs the application from source
-* `dotnet test` — runs tests using a test runner specified in the project.json
-* `dotnet pack` — creates a NuGet package of your code
-
-<h4>Visual Studio only? Rider, VSCode, Sublime, etc.</h4>
-Since you are not limited to Windows only, you can choose whatever IDE or text editor you want (<a href="https://visualstudio.microsoft.com/"><strong>Visual Studio</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://www.jetbrains.com/rider/"><strong>JetBrains Rider</strong></a>, <a href="https://www.sublimetext.com/"><strong>Sublime</strong></a>, <a href="https://atom.io/"><strong>Atom</strong></a>, and so on). You are able to write code using your favorite tool and execute needed actions using CLI.
-<div class="bubble small subtle">
-  Я б рекомендовал использовать <strong>Visual Studio Code</strong> для выполнения домашки.
-</div>
+* **.NET Runtime** includes just the resources required to run existing .NET Core applications (this runtime is included in the SDK)
 
 <Level id="creating-an-app" number="2" name="Creating an app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
 
-<h4>What is ASP.NET Core</h4>
+<h5>What is ASP.NET Core</h5>
 **ASP.NET** is a popular web-development framework for building web apps on the .NET platform. **ASP.NET Core** is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. It was first released in 2016 and is a re-design of earlier Windows-only versions of ASP.NET. In comparison to ASP.NET, Core version provides:
 
 * Cleaner and modular architecture
@@ -163,7 +152,7 @@ Since you are not limited to Windows only, you can choose whatever IDE or text e
 * Reduced servicing
 * Improved performance
 
-<h4>Why use it</h4>
+<h5>Why use it</h5>
 
 * Integration of modern client-side frameworks and development workflows
 * A cloud-ready environment-based configuration system
@@ -176,7 +165,7 @@ Since you are not limited to Windows only, you can choose whatever IDE or text e
 * Build and run cross-platform ASP.NET apps on Windows, Linux and macOS
 * Open-source and community focused
 
-<h4>Create a new app by running <code>dotnet new webapi</code> <sup><strong><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.2">[1]</a></strong></sup></h4>
+<h5>Create a new app by running <code>dotnet new webapi</code> <sup><strong><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.2">[1]</a></strong></sup></h5>
 <h6>Program.cs</h6>
 This is how the entry point looks like: 
 <SnippetL02S01 />
@@ -194,59 +183,69 @@ This is how the entry point looks like:
 
 <Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
 
-I’m going to show you how we can write API using ASP.NET Core WebAPI. We will be able to get a list of users and get user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for data set.
+I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We will be able to get a list of users and get user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for data set.
 
-But first, let’s run the application we’ve just created.
-You can use `dotnet run` command to start the server. 
-To make sure that our API is working, we should send a request to the created by default `ValuesController`.
+1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) — you should receive `["value1","value2"]` JSON as a response.
+   <div class="bubble small subtle">
+     Ты можешь использовать Postman для тестирования твоего API, но я рекомендую использовать расширение для VSCode ― <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>
+   </div>
 
-https://localhost:5001/api/values
-
-You should receive `["value1","value2"]` JSON as a response.
-
-<div class="bubble small subtle">
-  You can use Postman for testing your API. But I would recommend using a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>.
-</div>
-
-
-<h4>WebApi Controller</h4>
-Let’s practise a bit more and create a new controller. 
-
-Create a new file called `UsersController` in Controllers folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example.
-
-Eventually you should have similar code:
-
-<SnippetL03S01 />
-
-Start the application and go to https://localhost:5001/api/users/ to make sure that your new controller is available.
-
-<h4>UserService</h4>
-
-Writing business logic in controllers isn’t the best idea, so it would be better if we created a separate service for this purpose.
-
-<h6>UsersController.cs</h6>
-
-<SnippetL03S02 />
-
-<h6>UsersService.cs</h6>
-
-<SnippetL03S03 />
-
-Run the application and test https://localhost:5001/api/users/ again to make sure everything works as before.
-
-In the next step I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service.
-
-In order to serialize response we will need to add a package that works with JSON.
-
-Use `dotnet add package Newtonsoft.Json` command to install the package.
-
-<h6>Updated UsersController.cs</h6>
-
-<SnippetL03S04 />
-
-<h6>Updates UsersService.cs</h6>
-
-<SnippetL03S05 />
+2. Let’s practise a bit more and create a new **WebAPI Controller** controller. Create a new file called **UsersController.cs** in the **Controllers** folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example. Eventually you should have something like this:
+   <ul>
+     <li class="details">
+       <input type="checkbox" id="accordion-3-1" />
+       <label class="summary" for="accordion-3-1">
+         <strong>UsersController.cs</strong>
+       </label>
+       <div class="details-body">
+         <SnippetL03S01 />
+       </div>
+     </li>
+   </ul>
+3. Start the application and go check [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) to make sure that your new controller is available.
+4. Writing business logic in controllers isn’t the best idea, so it would be better if we created a separate service for this purpose — let's call it **UserService**:
+   <ul>
+     <li class="details">
+       <input type="checkbox" id="accordion-3-3" />
+       <label class="summary" for="accordion-3-3">
+         <strong>UsersService.cs</strong>
+       </label>
+       <div class="details-body">
+         <SnippetL03S03 />
+       </div>
+     </li>
+     <li class="details">
+       <input type="checkbox" id="accordion-3-2" />
+       <label class="summary" for="accordion-3-2">
+         <strong>UsersController.cs</strong>
+       </label>
+       <div class="details-body">
+         <SnippetL03S02 />
+       </div>
+     </li>
+   </ul>
+5. Run the application and test [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) again to make sure everything works as before.
+6. In the next step I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service. In order to serialize response we will need to add a package that works with JSON. Use `dotnet add package Newtonsoft.Json` command to install the package.
+   <ul>
+     <li class="details">
+       <input type="checkbox" id="accordion-3-4" />
+       <label class="summary" for="accordion-3-4">
+         <strong>UsersController.cs</strong>
+       </label>
+       <div class="details-body">
+         <SnippetL03S04 />
+       </div>
+     </li>
+     <li class="details">
+       <input type="checkbox" id="accordion-3-5" />
+       <label class="summary" for="accordion-3-5">
+         <strong>UsersService.cs</strong>
+       </label>
+       <div class="details-body">
+         <SnippetL03S05 />
+       </div>
+     </li>
+   </ul>
 
 <Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
 
@@ -314,8 +313,6 @@ In WebAPI we define route using attribute Route.
 <SnippetL04S06 />
 
 We can do the same for methods in controller.
-
-<h4>Razor pages (MVC app structure, return page from controller method, syntax)</h4>
 
 
 export const metadata = {

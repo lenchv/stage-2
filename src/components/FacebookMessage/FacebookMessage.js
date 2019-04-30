@@ -3,14 +3,14 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import "./FacebookMessage.css";
 
-
 const FacebookMessage = ({ children, small, subtle }) => {
-  return (<div className={classNames("bubble", {
-    "small": small,
-    "subtle": subtle
-  })}>{children}</div>);
+  return (
+    <div className={classNames("bubble", {
+      "small": small,
+      "subtle": subtle
+    })}>{children}</div>
+  );
 }
-
 
 FacebookMessage.propTypes = {};
 

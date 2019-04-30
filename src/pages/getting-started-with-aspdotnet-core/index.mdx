@@ -163,7 +163,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 * Built on .NET Core, which supports true side-by-side app versioning
 * Ships entirely as NuGet packages
 * New tooling that simplifies modern web development
-* Build and run cross-platform ASP.NET apps on Windows, Linux and macOS
+* Build and run cross-platform ASP.NET apps on Windows, Linux, and macOS
 * Open-source and community focused
 
 <h5>Create a new app by running <code>dotnet new webapi</code> <sup><strong><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.2">[1]</a></strong></sup></h5>
@@ -201,14 +201,14 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 
 <Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
 
-I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We will be able to get a list of users and get user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for data set.
+I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
 
 1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) — you should receive `["value1","value2"]` JSON as a response.
    <div class="bubble small subtle">
      Ты можешь использовать Postman для тестирования твоего API, но я рекомендую использовать расширение для VSCode ― <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>
    </div>
 
-2. Let’s practise a bit more and create a new **WebAPI Controller** controller. Create a new file called **UsersController.cs** in the **Controllers** folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example. Eventually you should have something like this:
+2. Let’s practice a bit more and create a new **WebAPI Controller** controller. Create a new file called **UsersController.cs** in the **Controllers** folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example. Eventually, you should have something like this:
    <ul>
      <li class="details">
        <input type="checkbox" id="accordion-3-1" />
@@ -243,7 +243,7 @@ I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We w
      </li>
    </ul>
 5. Run the application and test [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) again to make sure everything works as before.
-6. In the next step I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service. In order to serialize response we will need to add a package that works with JSON. Use `dotnet add package Newtonsoft.Json` command to install the package.
+6. In the next step, I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service. In order to serialize response, we will need to add a package that works with JSON. Use `dotnet add package Newtonsoft.Json` command to install the package.
    <ul>
      <li class="details">
        <input type="checkbox" id="accordion-3-4" />

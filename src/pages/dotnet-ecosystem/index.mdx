@@ -3,6 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin, faSkype } from "@fortawesome/free-brands-svg-icons";
 import { rostyslavDiakiv2019Avatar } from "../../assets/images/avatars/intro-rounded";
 import aEtoMagazin from "../../assets/images/a-eto-magazin.png";
+import SnippetL02S01 from "./assets/snippets/snippet-l02-s01.mdx";
+import SnippetL02S02 from "./assets/snippets/snippet-l02-s02.mdx";
+import SnippetL02S03 from "./assets/snippets/snippet-l02-s03.mdx";
+import SnippetL02S04 from "./assets/snippets/snippet-l02-s04.mdx";
+import SnippetL02S05 from "./assets/snippets/snippet-l02-s05.mdx";
+import SnippetL04S01 from "./assets/snippets/snippet-l04-s01.mdx";
+import SnippetL04S02 from "./assets/snippets/snippet-l04-s02.mdx";
+import SnippetL04S03 from "./assets/snippets/snippet-l04-s03.mdx";
+import SnippetL04S04 from "./assets/snippets/snippet-l04-s04.mdx";
+import SnippetL04S05 from "./assets/snippets/snippet-l04-s05.mdx";
+import SnippetL04S06 from "./assets/snippets/snippet-l04-s06.mdx";
+import SnippetL04S07 from "./assets/snippets/snippet-l04-s07.mdx";
+import SnippetL04S08 from "./assets/snippets/snippet-l04-s08.mdx";
+import SnippetL04S09 from "./assets/snippets/snippet-l04-s09.mdx";
+import SnippetL04S10 from "./assets/snippets/snippet-l04-s10.mdx";
+import SnippetL04S11 from "./assets/snippets/snippet-l04-s11.mdx";
+import SnippetL04S12 from "./assets/snippets/snippet-l04-s12.mdx";
 import "./styles.css";
 
 <div><h1><strong>.NET ecosystem and C# best practices</strong></h1></div>
@@ -208,15 +225,7 @@ import "./styles.css";
                 Звичайний C# код
 <div>
 
-```csharp
-public void SumTwoNumbers()
-{
-    int firstNumber = 10;
-    var secondNumber = 200;
-
-    Console.WriteLine(firstNumber + secondNumber);
-}
-```
+<SnippetL02S01 />
 
 </div>
               </div>
@@ -224,29 +233,7 @@ public void SumTwoNumbers()
                 C# код скомпільований в IL
 <div>
 
-```csharp
-.method public hidebysig 
-	instance void SumTwoNumbers () cil managed 
-{
-	// Method begins at RVA 0x2070
-	// Code size 18 (0x12)
-	.maxstack 2
-	.locals init (
-		[0] int32 firstNumber,
-		[1] int32 secondNumber
-	)
-
-	IL_0000: ldc.i4.s 10
-	IL_0002: stloc.0
-	IL_0003: ldc.i4 200
-	IL_0008: stloc.1
-	IL_0009: ldloc.0
-	IL_000a: ldloc.1
-	IL_000b: add
-	IL_000c: call void [mscorlib]System.Console::WriteLine(int32)
-	IL_0011: ret
-}
-```
+<SnippetL02S02 />
 
 </div>
               </div>
@@ -320,97 +307,28 @@ public void SumTwoNumbers()
         <div class="column col-6">
 <div>
 
-```csharp
-static void Main(string[] args)
-{
-    int c = 20;
-    
-    MethodValue(c);
-    
-    Console.WriteLine(c); // 20
-}
-
-// pass copy of the value
-static void MethodValue(int variableCopy)
-{
-    variableCopy = 1;
-}
-```
+<SnippetL02S03 />
 
 </div>
         </div>
         <div class="column col-6">
 <div>
 
-```csharp
-static void Main(string[] args)
-{
-    int d = 30;
-            
-    MethodValueRef(ref d);
-
-    Console.WriteLine(d); // 2
-}
-
-// pass value by reference 
-static void MethodValueRef(ref int variable)
-{
-    variable = 2;
-}
-```
+<SnippetL02S04 />
 
 </div>
         </div>
         <div class="column col-6">
 <div>
 
-```csharp
-static void Main(string[] args)
-{
-    int e;  
-    
-    MethodValueOut(out e);
-    
-    Console.WriteLine(e); // 3
-}
-
-// pass value by reference
-static void MethodValueOut(out int variable)
-{
-    variable = 3;
-}
-```
+<SnippetL02S05 />
 
 </div>
         </div>
         <div class="column col-6">
 <div>
 
-```csharp
-class City
-{
-    public int code;
-    public City(int code)
-    {
-        this.code = code;
-    }
-}
-    
-static void Main(string[] args)
-{
-    City city = new City(12);
-            
-    MethodReference(city);
-
-    Console.WriteLine(city.code); // 0
-}
-
-// pass the reference to the object on heap
-static void MethodReference(City city)
-{
-    city.code = 0;
-}
-```
+<SnippetL02S06 />
 
 </div>
         </div>
@@ -426,11 +344,7 @@ static void MethodReference(City city)
       <p>Операція упаковки - `boxing`-гу характеризується виділенням пам'яті на кучі під об'єкт значимого типу - value type і присвоєння ссилки на цю ділянку пам'яті змінної в стеці. Розпакування `unboxing`, навпаки, виділяє пам'ять в стеку під об'єкт, отриманий з кучі по ссилці.</p>
 <div>
 
-```csharp
-int i = 123;      // a value type
-object o = i;     // boxing
-int j = (int)o;   // unboxing
-```
+<SnippetL02S07 />
 
 </div>
     </div>
@@ -463,8 +377,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-3" />
+    <label class="summary" for="accordion-3-3">
       <h5><strong>Params</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -475,8 +389,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-4" />
+    <label class="summary" for="accordion-3-4">
       <h5><strong>Nullable</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -487,8 +401,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-5" />
+    <label class="summary" for="accordion-3-5">
       <h5><strong>Interface vs Abstract Class</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -526,8 +440,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-6" />
+    <label class="summary" for="accordion-3-6">
       <h5><strong>Interface vs Abstract Class - Conclusion</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -542,8 +456,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-7" />
+    <label class="summary" for="accordion-3-7">
       <h5><strong>Extension methods</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -554,8 +468,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-8" />
+    <label class="summary" for="accordion-3-8">
       <h5><strong>Generics</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -572,8 +486,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-9" />
+    <label class="summary" for="accordion-3-9">
       <h5><strong>Tuples</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -588,8 +502,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-10" />
+    <label class="summary" for="accordion-3-10">
       <h5><strong>Events & Delegates + Lambdas</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -599,8 +513,8 @@ int j = (int)o;   // unboxing
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
+    <input type="checkbox" id="accordion-3-11" />
+    <label class="summary" for="accordion-3-11">
       <h5><strong>Program Example</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
@@ -611,15 +525,6 @@ int j = (int)o;   // unboxing
       Спочатку ми створюємо змінну делегату, присвоюючи йому адресу методу LogRedMessage і викликаємо його за допомогою методу делегата Invoke, передаючи у цей метод параметри - а саме 1-ну стрічку "Hello world!".
       Далі ми додаємо посилання на ще 1 метод LogGreenMessage цьому делегату і  при наступному виконанню делегата, ми уже викличемо 2 методи які ми заасайнили цьому делегату і у консоль виведуться 2 стрічки "Second message" червоного та зеленого кольору. 
       Викликати делегат можна і без Invoke, просто за допомогою круглих дужок, передавши аргументи.</p>
-    </div>
-  </li>
-  <li class="details">
-    <input type="checkbox" id="accordion-3-2" />
-    <label class="summary" for="accordion-3-2">
-      <h5><strong></strong></h5>
-    </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <p></p>
     </div>
   </li>
 </ul>
@@ -827,28 +732,7 @@ SystemException містить всі відомі типи Exception, такі 
           <h6><strong>Simple</strong></h6>
 <div>
 
-```csharp
-string weekday(int day) {
-    switch (day) {
-        case 1:
-            return "Monday";
-        case 2:
-            return "Tuesday";
-        case 3:
-            return "Wednesday";
-        case 4:
-            return "Thursday";
-        case 5:
-            return "Friday";
-        case 6:
-            return "Saturday";
-        case 7:
-            return "Sunday";
-        default:
-            throw new Exception("Day must be in range 1 to 7");
-    }
-}
-```
+<SnippetL04S01 />
 
 </div>
         </div>
@@ -856,26 +740,7 @@ string weekday(int day) {
           <h6><strong>Stupid</strong></h6>
 <div>
 
-```csharp
-string weekday(int day) {
-    if ((day < 1) || (day > 7))
-    {
-        throw new Exception("Day must be in range 1 to 7");
-    }
-    
-    string[] days = {
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-    };
-
-    return days[day - 1];
-}
-```
+<SnippetL04S02 />
 
 </div>
         </div>
@@ -910,25 +775,7 @@ string weekday(int day) {
                 <h6><strong>Не SOLID 😢</strong></h6>
   <div>
 
-```csharp
-class Task
-{
-    public string Title { get; set; }
-    public string Description { get; set; }
-
-    // Adds task in Database
-    public bool Add(Task tast)
-    {
-        // Internal realization(Insert into DB)
-    }
-
-    // Estimate Task's duration
-    public void EstimateTaskDuration(Task tast)
-    {
-        // Calculation Task's difficulty, estimating
-    }
-}
-```
+<SnippetL04S03 />
 
   </div>
               </div>
@@ -936,28 +783,7 @@ class Task
                 <h6><strong>SOLID 😎</strong></h6>
 <div>
 
-```csharp
-class Task
-{
-  public string Title { get; set; }
-  public string Description { get; set; }
-
-  // Adds task in Database
-  public bool Add(Task tast)
-  {
-      // Internal realization(Insert into DB)
-  }
-}
-
-class TaskEstimator
-{
-    // Estimate Task's duration
-    public void EstimateTaskDuration(Task tast)
-    {
-        // Calculation Task's difficulty, estimating
-    }
-}
-```
+<SnippetL04S04 />
 
 </div>
               </div>
@@ -979,25 +805,7 @@ class TaskEstimator
                 <h6><strong>Не SOLID 😢</strong></h6>
 <div>
 
-```csharp
-class Mockup
-{
-    public string ImageType { get; set; }
-
-    public Image ConvertImage(Image img)
-    {
-        if (ImageType == "tiff")
-        {
-            // Convert Image to the tiff format
-        } 
-        
-        if (TypeReport == "cdr")
-        {
-            // Convert Image to the cdr format
-        }
-    }
-}
-```
+<SnippetL04S05 />
 
 </div>
               </div>
@@ -1005,31 +813,7 @@ class Mockup
                 <h6><strong>SOLID 😎</strong></h6>
 <div>
 
-```csharp
-abstract class Mockup
-{
-    public virtual void ConvertImage(Image img)
-    {
-        // Base realization that common for each format
-    }
-}
-
-class MockupTiff : Mockup
-{
-    public override Image ConvertImage(Image img)
-    {
-        // Convert Image to the tiff format
-    }
-}
-
-class MockupCdr : Mockup
-{
-    public override Image ConvertImage(Image img)
-    {
-        // Convert Image to the cdr format
-    }
-}
-```
+<SnippetL04S06 />
 
 </div>
               </div>
@@ -1052,42 +836,7 @@ class MockupCdr : Mockup
                 <h6><strong>Не SOLID 😢</strong></h6>
 <div>
 
-```csharp
-abstract class Developer
-{
-    public virtual string CodeWebApp()
-    {
-        return "Coding Front-End Web App";
-    }
-    public virtual string CodeServer()
-    {
-        return "Coding Back-End Server";
-    }
-}
-class JavaScriptDeveloper: Developer
-{
-    public override string CodeWebApp()
-    {
-        return "Coding Front-End with Angular";
-    }
-    public override string CodeServer()
-    {
-        return "Coding Back-End with Node.js";
-    }
-}
-class CSharpDeveloper: Developer
-{
-    // C# Developer can't  create Front-End App
-    public override string CodeWebApp()
-    {
-        throw new NotImplementedException(); 
-    }
-    public override string CodeServer()
-    {
-        return "Coding Back-End with ASP.Net";
-    }
-}
-```
+<SnippetL04S07 />
 
 </div>
               </div>
@@ -1095,37 +844,7 @@ class CSharpDeveloper: Developer
                 <h6><strong>SOLID 😎</strong></h6>
 <div>
 
-```csharp
-interface IFrontend
-{
-    string CodeWebApp();
-}
-
-interface IBackend
-{
-    string CodeServer();
-}
-
-class JavaScriptDeveloper: IFrontend, IBackend
-{
-    public string CodeWebApp()
-    {
-        return "Coding Front-End with Angular";
-    }
-    public string CodeServer()
-    {
-        return "Coding Back-End with Node.js";
-    }
-}
-
-class CSharpDeveloper: IBackend
-{
-    public string CodeServer()
-    {
-        return "Coding Back-End with ASP.Net";
-    }
-}
-```
+<SnippetL04S08 />
 
 </div>
               </div>
@@ -1147,13 +866,7 @@ class CSharpDeveloper: IBackend
                 <h6><strong>Не SOLID 😢</strong></h6>
 <div>
 
-```csharp
-interface IDeveloper
-{
-    string CodeDesktop();
-    string CodeServer();
-}
-```
+<SnippetL04S09 />
 
 </div>
               </div>
@@ -1161,17 +874,7 @@ interface IDeveloper
                 <h6><strong>SOLID 😎</strong></h6>
 <div>
 
-```csharp
-interface IDesktop
-{
-    string CodeDesktop();
-}
-
-interface IBackend
-{
-    string CodeServer();
-}
-```
+<SnippetL04S10 />
 
 </div>
               </div>
@@ -1199,29 +902,7 @@ interface IBackend
                 <h6><strong>Не SOLID 😢</strong></h6>
 <div>
 
-```csharp
-class Email
-{
-    public void Send()
-    {
-        // Code to send email-letter
-    }
-}
-
-class Notification
-{
-    private Email email;
-    public Notification()
-    {
-        email = new Email();
-    }
-
-    public void EmailDistribution()
-    {
-        email.Send();
-    }
-}
-```
+<SnippetL04S11 />
 
 </div>
               </div>
@@ -1229,46 +910,7 @@ class Notification
                 <h6><strong>SOLID 😎</strong></h6>
 <div>
 
-```csharp
-interface IMessenger
-{
-    void Send();
-}
-
-class Email : IMessenger
-{
-    public void Send()
-    { /* Code to send email-letter */ }
-}
-
-class SMS : IMessenger
-{
-    public void Send()
-    { /* Code to send SMS */ }
-}
-
-class Notification
-{
-    public IMessenger Messenger { get; set; };
-    public Notification(IMessenger mess)
-    {
-        Messenger = mess;
-    }
-
-    public void Notify()
-    {
-        Messenger.Send();
-    }
-}
-
-static void Main(string[] args)
-{
-    var notification = new Notification(new Email());
-    notification.Notify(); // Sent email
-    notification.Messenger = new SMS(); // Change the provider
-    notification.Notify(); // Sent SMS
-}
-```
+<SnippetL04S12 />
 
 </div>
               </div>

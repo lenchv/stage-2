@@ -1,0 +1,14 @@
+```csharp
+static void Main(string[] args) {
+	int e;
+
+	MethodValueOut(out e);
+
+	Console.WriteLine(e); // 3
+}
+
+// pass value by reference
+static void MethodValueOut(out int variable) {
+	variable = 3;
+}
+```

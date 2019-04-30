@@ -1,0 +1,11 @@
+```js
+let isAdmin = Symbol('isAdmin');
+
+let user = {
+  name: 'Jhon',
+  [isAdmin]: true
+}
+
+user.isAdmin; // undefined
+user[isAdmin]; // true
+```

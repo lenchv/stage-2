@@ -4,6 +4,7 @@ export { default as Index } from "./Index/Index";
 export { default as Lecture } from "./Lecture/Lecture";
 export { default as Level } from "./Level/Level";
 export { default as SlackMessage } from "./SlackMessage/SlackMessage";
+export { default as FacebookMessage } from "./FacebookMessage/FacebookMessage";
 export { default as SEO } from "./SEO/SEO";
 export { default as TimelineOfContents } from "./TimelineOfContents/TimelineOfContents";
 export { default as ThatsAllFolks } from "./ThatsAllFolks/ThatsAllFolks";

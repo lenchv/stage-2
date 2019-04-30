@@ -132,6 +132,7 @@ There were times when the term <strong>".NET"</strong> meant Windows platform on
 </div>
 
 <h5>What you need to start</h5>
+
 * **.NET Core SDK** includes everything you need to build and run .NET Core applications. Since you are not limited to Windows only, you can choose whatever IDE or text editor you want (<a href="https://visualstudio.microsoft.com/"><strong>Visual Studio</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://www.jetbrains.com/rider/"><strong>JetBrains Rider</strong></a>, <a href="https://www.sublimetext.com/"><strong>Sublime</strong></a>, <a href="https://atom.io/"><strong>Atom</strong></a>, and so on). You are able to write code using your favorite tool and execute needed actions using the CLI. Some useful CLI commands are:
 
   * `dotnet new` — initializes a sample console C# project
@@ -147,6 +148,7 @@ There were times when the term <strong>".NET"</strong> meant Windows platform on
 <Level id="creating-an-app" number="2" name="Creating an app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
 
 <h5>What is ASP.NET Core</h5>
+
 **ASP.NET** is a popular web-development framework for building web apps on the .NET platform. **ASP.NET Core** is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. It was first released in 2016 and is a re-design of earlier Windows-only versions of ASP.NET. In comparison to ASP.NET, Core version provides:
 
 * Cleaner and modular architecture
@@ -168,18 +170,35 @@ There were times when the term <strong>".NET"</strong> meant Windows platform on
 * Open-source and community focused
 
 <h5>Create a new app by running <code>dotnet new webapi</code> <sup><strong><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.2">[1]</a></strong></sup></h5>
-<h6>Program.cs</h6>
-This is how the entry point looks like: 
-<SnippetL02S01 />
-<h6>Startup.cs</h6>
+
 <ul>
-  <li>
-    <code>Configure</code> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests):
-    <SnippetL02S02 />
+  <li class="details">
+    <input type="checkbox" id="accordion-2-1" />
+    <label class="summary" for="accordion-2-1">
+      <strong>Program.cs</strong>
+    </label>
+    <div class="details-body">
+      This is how the entry point looks like:
+      <SnippetL02S01 />
+    </div>
   </li>
-  <li>
-    <code>ConfigureServices</code> — method for configuring services that are used by your application:
-    <SnippetL02S03 />
+  <li class="details">
+    <input type="checkbox" id="accordion-2-2" />
+    <label class="summary" for="accordion-2-2">
+      <strong>Startup.cs</strong>
+    </label>
+    <div class="details-body">
+      <ul>
+        <li>
+          <code>Configure</code> — how the application will respond to individual HTTP requests (you can setup pipelines which will process requests):
+          <SnippetL02S02 />
+        </li>
+        <li>
+          <code>ConfigureServices</code> — method for configuring services that are used by your application:
+          <SnippetL02S03 />
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>
 
@@ -251,70 +270,39 @@ I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We w
 
 <Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
 
-<h4>Short review of Dependency Injection (Singleton, Scoped, Transient)</h4>
+<h5>Short review of Dependency Injection (Singleton, Scoped, Transient)</h5>
 
-<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2"><strong>Dependency injection (DI)</strong></a> — software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion"><strong>Inversion of Control (IoC)</strong></a> between classes and their dependencies.
+[**Dependency injection (DI)**](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2) — software design pattern, which is a technique for achieving <a href="https://docs.microsoft.com/en-us/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion"><strong>Inversion of Control (IoC)</strong></a> between classes and their dependencies. In our case `UsersController` depends on `UsersService`. There might be a case when `JsonPlaceholder` won’t respond to our requests. In this case we would want to use another implementation of `UsersService` (use another source or provide mocked data). We would need to go through our app and change class name manually in all places where it’s used. With DI we can do it easily in one place (`ConfigureServices()` in **Startup.cs**). Moreover, in .NET Core DI container can create instances of dependencies of dependencies. Otherwise we would need to do it manually in every service. In addition to that, .NET Core DI container takes on the responsibility of creating an instance of the dependency and disposing of it when it's no longer needed. There are a few service lifetime options:
 
-In our case UsersController depends on UsersService. 
+1. **Singleton** — services are created the first time they're requested (or when `ConfigureServices` is run and an instance is specified with the service registration). Every subsequent request uses the same instance.
+2. **Scoped** — services are created once per client request (connection).
+3. **Transient** — services are created each time they're requested from the service container. This lifetime works best for lightweight, stateless services. Let’s apply **Transient** to our `UsersService`:
+   1. Add the next code to `ConfigureServices()` in **Startup.cs**:
+      <SnippetL04S01 />
+   2. Update `UsersController`’s constructor:
+      <SnippetL04S02 />
+   3. Going further, we can create an interface for `UsersService`. It will let us switch services in one place. Change the    previous version of service registration to the next one:
+      <SnippetL04S03 />
+   4. Update `UsersController` to operate with the interface (notice how we got rid of the explicit class name):
+      <SnippetL04S04 />
+   5. Don’t forget to inherit our `UsersService` from `IUsersService`:
+      `public class UsersService : IUsersService`
 
-There might be a case when JsonPlaceholder won’t response to our requests. In this case we would want to use another implementation of UsersService (use another source or provide mocked data). We would need to go through our app and change class name manually in all places where it’s used.
+<h5>Middleware</h5>
 
-With DI we can do it easily in one place (ConfigureServices() in Startup.cs). Moreover, in .NET Core DI container can create instances of dependencies of dependencies. Otherwise we would need to do it manually in every service. In addition to that, .NET Core DI container takes on the responsibility of creating an instance of the dependency and disposing of it when it's no longer needed.
-
-There are a few service lifetime options:
-<strong>Singleton</strong> — services are created the first time they're requested (or when ConfigureServices is run and an instance is specified with the service registration). Every subsequent request uses the same instance.
-<strong>Scoped</strong> — services are created once per client request (connection).
-<strong>Transient</strong> — services are created each time they're requested from the service container. This lifetime works best for lightweight, stateless services.
-
-Let’s apply it for our UsersService:
-
-Add the next code to `ConfigureServices() [Startup.cs]`
-
-<SnippetL04S01 />
-
-And update UsersController’s constructor:
-
-<SnippetL04S02 />
-
-Going further, we can create an interface for UsersService. It will let us switch services in one place.
-
-Change the previous version of service registration to the next one:
-
-<SnippetL04S03 />
-
-Update UsersController to operate with the interface (notice how we got rid of explicit class name):
-
-<SnippetL04S04 />
-
-Don’t forget to inherit our UsersService from IUsersService:
-
-`public class UsersService : IUsersService`
-
-<h4>Middleware</h4>
-Middleware is software that's assembled into an app pipeline to handle requests and responses.
-Long story short: the app applies all middlewares one by one for each request.
+Middleware is software that's assembled into an app pipeline to handle requests and responses. Long story short: the app applies all middlewares one by one for each request.
 
 ![php-fpm_nginx](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/index/_static/request-delegate-pipeline.png?view=aspnetcore-2.2)
 
-For example, if you want to log all the requests, you can add a pipeline. <em>(I use Console.WriteLine for simplicity. You can use any logging framework here.)</em>
-
-Add the next code info Configure method [Startup.cs]:
-
+For example, if you want to log all the requests, you can add a pipeline (in the example below `Console.WriteLine` iis used for simplicity, you can use any logging framework there). So, add the next code info `Configure` method in **Startup.cs**:
 <SnippetL04S05 />
+Now start the app, send request and see the console output. 
 
-Then start the app, send request and see the console output.
+<h5>Routing</h5>
 
-<h4>Routing</h4>
-
-Routing is responsible for mapping request URIs to endpoint selectors and dispatching incoming requests to endpoints. 
-
-Routes are defined in the app and configured when the app starts. A route can optionally extract values from the URL contained in the request, and these values can then be used for request processing. Basically, routing is a middleware. Using the picture above, imagine how request comes to the server, then it’s being processed by a chain of middlewares and then routing middleware matches URL to controller and method names.
-
-In WebAPI we define route using attribute Route.
-
+Routing is responsible for mapping request URIs to endpoint selectors and dispatching incoming requests to endpoints.  Routes are defined in the app and configured when the app starts. A route can optionally extract values from the URL contained in the request, and these values can then be used for request processing. Basically, routing is a middleware. Using the picture above, imagine how request comes to the server, then it’s being processed by a chain of middlewares and then routing middleware matches URL to controller and method names. In WebAPI we define route using attribute `Route`:
 <SnippetL04S06 />
-
-We can do the same for methods in controller.
+We can do the same for methods in the controller.
 
 
 export const metadata = {

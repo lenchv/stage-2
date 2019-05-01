@@ -10,6 +10,6 @@
   transition: all 0.2s linear;
 }
 .a-eto-magazin:not(:hover) {
-  opacity: 0.5;
+  opacity: 0.125;
   filter: grayscale(1) contrast(2) brightness(1);
 }

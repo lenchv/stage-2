@@ -17,20 +17,21 @@ namespace ASP.NET_Core_Lecture.Services {
       return JsonConvert.DeserializeObject<List<User>> (users);
     }
 
-    public string GetUser(int id) {
-      return $ "user{id}";
+    public async Task<User> GetUser(int id) {
+      var user = await _client.GetStringAsync($"https://jsonplaceholder.typicode.com/users/{id}");
+      return JsonConvert.DeserializeObject<User> (user);
     }
   }
 
   public class User
   {
-    [JsonProperty(“id”)]
+    [JsonProperty("id")]
     public int Id { get; set; }
-    [JsonProperty(“username”)]
+    [JsonProperty("username")]
     public string Username { get; set; }
-    [JsonProperty(“email”)]
+    [JsonProperty("email")]
     public string Email { get; set; }
-    [JsonProperty(“website”)]
+    [JsonProperty("website")]
     public string Website { get; set; }
   }
 }

@@ -207,7 +207,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 
 I’m going to show you how we can write API using **ASP.NET Core Web API**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
 
-1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) — you should receive `["value1","value2"]` JSON as a response.
+1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](https://localhost:5001/api/values) — you should receive `["value1","value2"]` JSON as a response.
    <div class="bubble small subtle">
      Ты можешь использовать Postman для тестирования твоего API, но я рекомендую использовать расширение для VSCode ― <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>
    </div>
@@ -224,7 +224,7 @@ I’m going to show you how we can write API using **ASP.NET Core Web API**. We 
        </div>
      </li>
    </ul>
-3. Start the application and go check [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) to make sure that your new controller is available.
+3. Start the application and go check [**https://localhost:5001/api/users**](https://localhost:5001/api/users) to make sure that your new controller is available.
 4. Writing business logic in controllers isn’t the best idea, so it would be better if we created a separate service for this purpose — let's call it **UserService**:
    <ul>
      <li class="details">
@@ -246,7 +246,7 @@ I’m going to show you how we can write API using **ASP.NET Core Web API**. We 
        </div>
      </li>
    </ul>
-5. Run the application and test [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) again to make sure everything works as before.
+5. Run the application and test [**https://localhost:5001/api/users**](https://localhost:5001/api/users) again to make sure everything works as before.
 6. In the next step, I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service. In order to serialize response, we will need to add a package that works with JSON. Use `dotnet add package Newtonsoft.Json` command to install the package.
    <ul>
      <li class="details">

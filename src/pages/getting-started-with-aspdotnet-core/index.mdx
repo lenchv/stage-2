@@ -146,7 +146,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 
 * **.NET Core Runtime** includes just the resources required to run existing .NET Core applications (this runtime is included in the SDK)
 
-<Level id="creating-an-app" number="2" name="Creating an app" difficulty="Gets warmer, typing is required." objectives="Test." />
+<Level id="creating-an-app" number="2" name="Creating an app" difficulty="Gets warmer, typing is required." objectives={<span>Learn <code>dotnet new</code>, understand the anatomy of ASP.NET Core app.</span>} />
 
 <h5>What is ASP.NET Core <sup><strong><a href="https://dotnet.microsoft.com/learn/web/what-is-aspnet-core">[1]</a> <a href="https://docs.microsoft.com/en-us/aspnet/core/">[2]</a></strong></sup></h5>
 
@@ -207,7 +207,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 
 I’m going to show you how we can write API using **ASP.NET Core Web API**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
 
-1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) — you should receive `["value1","value2"]` JSON as a response.
+1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](https://localhost:5001/api/values) — you should receive `["value1","value2"]` JSON as a response.
    <div class="bubble small subtle">
      Ты можешь использовать Postman для тестирования твоего API, но я рекомендую использовать расширение для VSCode ― <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>
    </div>
@@ -224,7 +224,7 @@ I’m going to show you how we can write API using **ASP.NET Core Web API**. We 
        </div>
      </li>
    </ul>
-3. Start the application and go check [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) to make sure that your new controller is available.
+3. Start the application and go check [**https://localhost:5001/api/users**](https://localhost:5001/api/users) to make sure that your new controller is available.
 4. Writing business logic in controllers isn’t the best idea, so it would be better if we created a separate service for this purpose — let's call it **UserService**:
    <ul>
      <li class="details">
@@ -246,7 +246,7 @@ I’m going to show you how we can write API using **ASP.NET Core Web API**. We 
        </div>
      </li>
    </ul>
-5. Run the application and test [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) again to make sure everything works as before.
+5. Run the application and test [**https://localhost:5001/api/users**](https://localhost:5001/api/users) again to make sure everything works as before.
 6. In the next step, I suggest implementing <strong>remote data loading</strong> using JsonPlaceholder service. In order to serialize response, we will need to add a package that works with JSON. Use `dotnet add package Newtonsoft.Json` command to install the package.
    <ul>
      <li class="details">
@@ -306,7 +306,6 @@ Routing is responsible for mapping request URIs to endpoint selectors and dispat
 We can do the same for methods in the controller.
 
 <ThatsAllFolks />
-
 <div class="bubble">
   Вот так вот вкратце об ASP.NET Core. На этом всё, спасибо большое за внимание 🎩! Задавайте вопросы и оставляйте отзыв на лекцию на сайте академии. Успехов с домашкой, скоро увидимся, пока! <span class="tooltip" data-tooltip="Садится на самокат,&#x000A;Уезжает в закат.&#x000A;Но обещал вернуться.">🛴</span>
 </div>

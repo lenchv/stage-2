@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using ASP.NET_Core_Lecture.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_Core_Lecture.Controllers { [Route("api/[controller]")][ApiController]
+namespace ASP.NET_Core_Lecture.Controllers {
+  [Route("api/[controller]")]
+  [ApiController]
   public class UsersController: ControllerBase {
     private UsersService usersService;
     

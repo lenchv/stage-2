@@ -6,18 +6,15 @@ using Newtonsoft.Json;
 
 namespace ASP.NET_Core_Lecture.Services {
   public class UsersService {
-    private HttpClient _client {
-      get;
-      set;
-    }
+    private HttpClient _client;
 
     public UsersService() {
       _client = new HttpClient();
     }
 
-    public async Task < List < User >> GetUsers() {
+    public async Task<List<User>> GetUsers() {
       var users = await _client.GetStringAsync("https://jsonplaceholder.typicode.com/users");
-      return JsonConvert.DeserializeObject < List < User >> (users);
+      return JsonConvert.DeserializeObject<List<User>> (users);
     }
 
     public string GetUser(int id) {
@@ -25,23 +22,16 @@ namespace ASP.NET_Core_Lecture.Services {
     }
   }
 
-  public class User {
-    public int id {
-      get;
-      set;
-    }
-    public string username {
-      get;
-      set;
-    }
-    public string email {
-      get;
-      set;
-    }
-    public string website {
-      get;
-      set;
-    }
+  public class User
+  {
+    [JsonProperty(“id”)]
+    public int Id { get; set; }
+    [JsonProperty(“username”)]
+    public string Username { get; set; }
+    [JsonProperty(“email”)]
+    public string Email { get; set; }
+    [JsonProperty(“website”)]
+    public string Website { get; set; }
   }
 }
 ```

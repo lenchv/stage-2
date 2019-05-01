@@ -76,7 +76,7 @@ import './styles.css';
 </div>
 
 
-<Level id="intro-to-dotnet-core" number="1" name={<span>Intro to <a href="https://dotnet.microsoft.com/download">.NET Core</a></span>} difficulty="No worries" objectives="Familiarize yourself with .NET basics because you are going to be buddies." />
+<Level id="intro-to-dotnet-core" number="1" name={<span>Intro to <a href="https://dotnet.microsoft.com/download">.NET Core</a></span>} difficulty="No worries." objectives="Familiarize yourself with .NET Core fundamentals because you are going to be buddies." />
 
 <h5>How Microsoft came up with .NET Core</h5>
 
@@ -146,7 +146,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
 
 * **.NET Core Runtime** includes just the resources required to run existing .NET Core applications (this runtime is included in the SDK)
 
-<Level id="creating-an-app" number="2" name="Creating an app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
+<Level id="creating-an-app" number="2" name="Creating an app" difficulty="Gets warmer, typing is required." objectives={<span>Learn <code>dotnet new</code>, understand the anatomy of ASP.NET Core app.</span>} />
 
 <h5>What is ASP.NET Core <sup><strong><a href="https://dotnet.microsoft.com/learn/web/what-is-aspnet-core">[1]</a> <a href="https://docs.microsoft.com/en-us/aspnet/core/">[2]</a></strong></sup></h5>
 
@@ -203,7 +203,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
   </li>
 </ul>
 
-<Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
+<Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding." objectives="Learn that services are no joke and business logic shouldn't live in controllers." />
 
 I’m going to show you how we can write API using **ASP.NET Core Web API**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
 
@@ -269,7 +269,7 @@ I’m going to show you how we can write API using **ASP.NET Core Web API**. We 
      </li>
    </ul>
 
-<Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
+<Level id="additional-features" number="4" name="Additional features" difficulty="Like the first one times five?" objectives="Troubleshoot, debug, extend, and wire up your app better." />
 
 <h5>A short review of Dependency Injection (Singleton, Scoped, Transient)</h5>
 
@@ -307,7 +307,7 @@ We can do the same for methods in the controller.
 
 <ThatsAllFolks />
 <div class="bubble">
-  Я можу довго говорити про C# та .NET, але в цій лекції поділився основним, на мою думку, для вас на даний момент. На тому все, дякую за увагу, ставте оцінку лекції в ваших особистих кабінетах, залишайте відгук, задавайте питання, робіть домашку і до зустрічі на код-рев'ю! 👋
+  Вот так вот вкратце об ASP.NET Core. На этом всё, спасибо большое за внимание 🎩! Задавайте вопросы и оставляйте отзыв на лекцию на сайте академии. Успехов с домашкой, скоро увидимся, пока!
 </div>
 
 export const metadata = {

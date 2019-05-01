@@ -1,19 +1,19 @@
 ```csharp
 abstract class Mockup {
-	public virtual void ConvertImage(Image img) {
-		// Base realization that common for each format
-	}
+  public virtual void ConvertImage(Image img) {
+    // Base realization that common for each format
+  }
 }
 
 class MockupTiff: Mockup {
-	public override Image ConvertImage(Image img) {
-		// Convert Image to the tiff format
-	}
+  public override Image ConvertImage(Image img) {
+    // Convert Image to the tiff format
+  }
 }
 
 class MockupCdr: Mockup {
-	public override Image ConvertImage(Image img) {
-		// Convert Image to the cdr format
-	}
+  public override Image ConvertImage(Image img) {
+    // Convert Image to the cdr format
+  }
 }
 ```

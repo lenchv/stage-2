@@ -44,18 +44,22 @@ import './styles.css';
         <li><a href="https://www.linkedin.com/in/nikita-krasnov-b51244116/" rel="author" class="linkedin"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14 icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg><span>nikita-krasnov</span></a></li>
       </ul>
       <p class="about">
-        Нікіта працює бекенд-розробником в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Він не вживає алкоголю, але вживає .NET-фреймворки, електронну музику, функціональне програмування і футболки з прінтами-мемами. Відвідує технічні мітапи та конференції, і вам радить спробувати — після завершення домашнього завдання для цієї лекції 🤪
+        Нікіта працює бекенд-розробником в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>. Категорично не вживає алкоголю, зате впевнено вживає .NET-фреймворки, електронну музику, функціональне програмування і футболки з прінтами мемів. Відвідує технічні мітапи та конференції і вам радить спробувати — після завершення домашнього завдання для цієї лекції 😉.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Hello guys!</strong><br />I am giving notes for this lecture in English, because for every developer <em>(and I hope you are going to become ones!)</em> it is important to be able to read documentation, which is rarely translated from English. On the way I will give you all hints and guidelines neccessary to understand how our tech stack works, and by the end of this lesson you will have live web app in ASP.NET Core. 
-    <br />
-    Want to try it out? Set up your workplace and let's go!
+    <strong>Привет, ребята!</strong> 👋<br />
+    Я делаю заметки для этой лекции на английском языке, потому что для каждого разработчика важно уметь читать документацию, которая редко переводится с английского. По пути я дам вам советы и рекомендации, чтобы вы лучше понимали, как работает наш технический стек, и к концу этого урока у вас будет веб-приложение на ASP.NET Core. Это — ознакомительная лекция, так что:
+    <ol class="compact inverted">
+      <li>некоторые вещи нужно будеть загуглить самому;</li>
+      <li>возможно вы уже всё это знаете (повторить всё равно не мешает).</li>
+    </ol>
+    Погнали! <span class="tooltip" data-tooltip="Да, я люблю самокаты!">🛴</span>
   </div>
 </div>
 
-<div id="table-of-contents" class="table-of-contents">
+<div id="table-of-contents" class="table-of-contents" style="margin-top: 1em;">
   <TimelineOfContents timeline={[{
     linkTo: "#intro-to-dotnet-core",
     title: "Intro to .NET Core"
@@ -72,7 +76,7 @@ import './styles.css';
 </div>
 
 
-<Level id="intro-to-dotnet-core" number="1" name={<span>Intro to <a href="https://dotnet.microsoft.com/download">.NET Core</a></span>} difficulty="No worries" objectives="Familiarize yourself with .NET basics because you are going to be buddies." />
+<Level id="intro-to-dotnet-core" number="1" name={<span>Intro to <a href="https://dotnet.microsoft.com/download">.NET Core</a></span>} difficulty="No worries." objectives="Familiarize yourself with .NET Core fundamentals because you are going to be buddies." />
 
 <h5>How Microsoft came up with .NET Core</h5>
 
@@ -109,7 +113,7 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
   <div class="column col-4">
     <div class="panel">
       <div class="panel-header">
-        <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/"><strong>ASP.NET Core WebAPI</strong></a>
+        <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/"><strong>ASP.NET Core Web API</strong></a>
       </div>
       <div class="panel-body">
         Backend app which implements business logic and can be used by any client <em>(whether it’s Angular-, React-, or WhateverFramework-based frontend, mobile apps, etc.)</em>
@@ -140,11 +144,11 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
   * `dotnet test` — runs tests using a test runner specified in the project.json
   * `dotnet pack` — creates a NuGet package of your code
 
-* **.NET Runtime** includes just the resources required to run existing .NET Core applications (this runtime is included in the SDK)
+* **.NET Core Runtime** includes just the resources required to run existing .NET Core applications (this runtime is included in the SDK)
 
-<Level id="creating-an-app" number="2" name="Creating an app" difficulty="It gets warmer, some actual copypasting is required" objectives="Bring a starter of ASP.NET Core web app to your console." />
+<Level id="creating-an-app" number="2" name="Creating an app" difficulty="Gets warmer, typing is required." objectives={<span>Learn <code>dotnet new</code>, understand the anatomy of ASP.NET Core app.</span>} />
 
-<h5>What is ASP.NET Core</h5>
+<h5>What is ASP.NET Core <sup><strong><a href="https://dotnet.microsoft.com/learn/web/what-is-aspnet-core">[1]</a> <a href="https://docs.microsoft.com/en-us/aspnet/core/">[2]</a></strong></sup></h5>
 
 **ASP.NET** is a popular web-development framework for building web apps on the .NET platform. **ASP.NET Core** is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. It was first released in 2016 and is a re-design of earlier Windows-only versions of ASP.NET. In comparison to ASP.NET, Core version provides:
 
@@ -199,16 +203,16 @@ There were times when the term ".NET" meant Windows platform only. It imposed so
   </li>
 </ul>
 
-<Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding" objectives="Write, run and test API." />
+<Level id="controllers-and-services" number="3" name="Controllers and services" difficulty="No kidding." objectives="Learn that services are no joke and business logic shouldn't live in controllers." />
 
-I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
+I’m going to show you how we can write API using **ASP.NET Core Web API**. We will be able to get a list of users and get the user by id. <a href="https://jsonplaceholder.typicode.com/"><strong>JsonPlaceholder</strong></a> will be used for the data set.
 
 1. First, let’s run the application we’ve just created. You can use `dotnet run` command to start the server. To make sure that our API is working, we should send a request to the `ValuesController` that was created by default. Open [**https://localhost:5001/api/values**](**https://localhost:5001/api/values**) — you should receive `["value1","value2"]` JSON as a response.
    <div class="bubble small subtle">
      Ты можешь использовать Postman для тестирования твоего API, но я рекомендую использовать расширение для VSCode ― <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><strong>REST Client</strong></a>
    </div>
 
-2. Let’s practice a bit more and create a new **WebAPI Controller** controller. Create a new file called **UsersController.cs** in the **Controllers** folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example. Eventually, you should have something like this:
+2. Let’s practice a bit more and create a new **Web API Controller** controller. Create a new file called **UsersController.cs** in the **Controllers** folder. Add two GET methods which will return a list of users and a user by his id. Use `ValuesController` as an example. Eventually, you should have something like this:
    <ul>
      <li class="details">
        <input type="checkbox" id="accordion-3-1" />
@@ -265,7 +269,7 @@ I’m going to show you how we can write API using **ASP.NET Core WebAPI**. We w
      </li>
    </ul>
 
-<Level id="additional-features" number="4" name="Additional features" difficulty="I know kung-fu" objectives="Learn how to talk in .NET dialect." />
+<Level id="additional-features" number="4" name="Additional features" difficulty="Like the first one times five?" objectives="Troubleshoot, debug, extend, and wire up your app better." />
 
 <h5>A short review of Dependency Injection (Singleton, Scoped, Transient)</h5>
 
@@ -301,6 +305,10 @@ Routing is responsible for mapping request URIs to endpoint selectors and dispat
 <SnippetL04S06 />
 We can do the same for methods in the controller.
 
+<ThatsAllFolks />
+<div class="bubble">
+  Вот так вот вкратце об ASP.NET Core. На этом всё, спасибо большое за внимание 🎩! Задавайте вопросы и оставляйте отзыв на лекцию на сайте академии. Успехов с домашкой, скоро увидимся, пока! <span class="tooltip" data-tooltip="Садится на самокат,&#x000A;Уезжает в закат.&#x000A;Но обещал вернуться.">🛴</span>
+</div>
 
 export const metadata = {
   author: "Nikita Krasnov",

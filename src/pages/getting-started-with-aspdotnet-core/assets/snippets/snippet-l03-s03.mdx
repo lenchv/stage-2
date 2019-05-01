@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace ASP.NET_Core_Lecture.Services
 {
-    public class UsersService
+  public class UsersService
+  {
+    public IEnumerable<string> GetUsers()
     {
-        public IEnumerable<string> GetUsers()
-        {
-            return new string[] { "user1", "user2" };
-        }
-
-        public string GetUser(int id)
-        {
-            return $"user{id}";
-        }
+      return new string[] { "user1", "user2" };
     }
+
+    public string GetUser(int id)
+    {
+      return $"user{id}";
+    }
+  }
 }
 ```

@@ -138,7 +138,7 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
       <li>"— А клікати на всі лінки на документацію і читати всі-всі статті?" Ну-у-у-у-у, up to you;</li>
       <li>все мало би бути цікаво та по максимуму інформативно, але тут вже як вийде... Have fun! 🙃</li>
     </ol>
-    <p>І ще один <strong>heads up</strong> — вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a> і <a href="https://github.com/sahanr/js-lecture"><strong>стартер проекту</strong></a> (складатиму його по ходу лекції)</p>
+    І ще один <strong>heads up</strong> — вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a> і <a href="https://github.com/sahanr/js-lecture"><strong>стартер проекту</strong></a> (складатиму його по ходу лекції). Готові? Біжимо.
   </div>
 </div>
 
@@ -258,8 +258,11 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
   <li>
     <p><strong><a href="https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83">Putting comments in code</a></strong></p>
     <p>The syntax of comments is the same as in C++ and in many other languages. Comments behave like white space and are discarded during script execution.</p>
-      <SnippetL01S01 />
-      <SnippetL01S02 />
+
+<SnippetS01L01 />
+
+<SnippetS01L02 />
+
   </li>
   <li>
     <p><strong>Declaring variables: <code>var</code>, <code>let</code> and <code>const</code></strong></p>
@@ -270,27 +273,33 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-3-1">
           <code>var</code> declares a variable, optionally initializing it to a value
         </label>
-        <div class="details-body">
-          <SnippetL01S03 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L03 />
+  
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-2" />
         <label class="summary" for="accordion-3-2">
           <code>let</code> declares a block-scoped, local variable, optionally initializing it to a value
         </label>
-        <div class="details-body">
-          <SnippetL01S04 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L04 />
+  
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-3" />
         <label class="summary" for="accordion-3-3">
           <code>const</code> declares a block-scoped, read-only named constant
         </label>
-        <div class="details-body">
-          <SnippetL01S05 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L05 />
+  
+  </div>
       </li>
     </ul>
   </li>
@@ -303,76 +312,99 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-4-1">
           <strong>Boolean</strong>
         </label>
-        <div class="details-body">
-          <p>The boolean type has two values: <code>true</code> and <code>false</code>.</p>
-          <SnippetL01S06 />
-        </div>
+  <div class="details-body">
+    <p>The boolean type has two values: <code>true</code> and <code>false</code>.</p>
+
+<SnippetS01L06 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-4-2" />
         <label class="summary" for="accordion-4-2">
           <strong>Number</strong>
         </label>
-        <div class="details-body">
-          <p>An integer or floating point number.</p>
-          <SnippetL01S07 />
-          <SnippetL01S08 />
-          The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
-          <SnippetL01S09 />
-        </div>
+  <div class="details-body">
+    <p>An integer or floating point number.</p>
+
+<SnippetS01L07 />
+
+<SnippetS01L08 />
+
+The number type has three symbolic values: `+Infinity`, `-Infinity`, and `NaN` (not-a-number).
+
+<SnippetS01L09 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-4-3" />
         <label class="summary" for="accordion-4-3">
           <strong>String</strong>
         </label>
-        <div class="details-body">
-          <p>A sequence of characters that represent a text value. JavaScript <strong>strings are immutable</strong>.</p>
-          <SnippetS01L010 />
-          <SnippetL01S11 />
-        </div>
+  <div class="details-body">
+    <p>A sequence of characters that represent a text value. JavaScript <strong>strings are immutable</strong>.</p>
+
+<SnippetS01L010 />
+
+<SnippetS01L11 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-4-4" />
         <label class="summary" for="accordion-4-4">
           <strong>null</strong>
         </label>
-        <div class="details-body">
-          <p><code>null</code> is a special keyword denoting a null value.</p>
-          <SnippetL01S12 />
-        </div>
+  <div class="details-body">
+    <p><code>null</code> is a special keyword denoting a null value.</p>
+
+<SnippetS01L12 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-4-5" />
         <label class="summary" for="accordion-4-5">
           <strong>undefined</strong>
         </label>
-        <div class="details-body">
-          <p><code>undefined</code> is a top-level property whose value is not defined.</p>
-          <SnippetL01S13 />
-        </div>
+  <div class="details-body">
+    <p><code>undefined</code> is a top-level property whose value is not defined.</p>
+
+<SnippetS01L13 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-4-6" />
         <label class="summary" for="accordion-4-6">
           <strong>Symbol</strong>
         </label>
-        <div class="details-body">
-          <p>A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.</p>
-          <SnippetL01S14 />
-        </div>
+  <div class="details-body">
+    <p>A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.</p>
+
+<SnippetS01L14 />
+
+  </div>
       </li>
     </ul>
   </li>
   <li>
     <p><strong><a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839">Type coercion</a></strong></p>
     <p>JavaScript variables can be converted to a new variable and another data type either by the use of a JavaScript function or automatically by JavaScript itself:</p>
-    <p>Converting to <strong>string</strong></p>
-    <SnippetL01S15 />
-    <p>Converting to <strong>numbers</strong></p>
-    <SnippetL01S16 />
-    <p>Converting to <strong>boolean</strong></p>
-    <SnippetL01S17 />
+
+Converting to **string**
+
+<SnippetS01L15 />
+
+Converting to **numbers**
+
+<SnippetS01L16 />
+
+Converting to **boolean**
+
+<SnippetS01L17 />
+
   </li>
   <li>
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" title="Control flow"><strong>Control flow</strong></a></p>
@@ -386,18 +418,22 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
             <label class="summary" for="accordion-6-1">
               <code>if...else</code> statement
             </label>
-            <div class="details-body">
-              <SnippetL01S18 />
-            </div>
+  <div class="details-body">
+
+<SnippetS01L18 />
+  
+  </div>
           </li>
           <li class="details">
             <input type="checkbox" id="accordion-6-2" />
             <label class="summary" for="accordion-6-2">
               <code>switch</code> statement
             </label>
-            <div class="details-body">
-              <SnippetL01S19 />
-            </div>
+  <div class="details-body">
+
+<SnippetS01L19 />
+  
+  </div>
           </li>
         </ul>
       </li>
@@ -412,45 +448,55 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-7-1">
           <code>for</code> statement, <code>break</code> statement, <code>continue</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL01S20 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L20 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-7-2" />
         <label class="summary" for="accordion-7-2">
           <code>while</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL01S21 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L21 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-7-3" />
         <label class="summary" for="accordion-7-3">
           <code>do...while</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL01S22 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L22 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-7-4" />
         <label class="summary" for="accordion-7-4">
           <code>for...of</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL01S23 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L23 />
+  
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-7-5" />
         <label class="summary" for="accordion-7-5">
           <code>for...in</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL01S24 />
-        </div>
+  <div class="details-body">
+
+<SnippetS01L24 />
+  
+  </div>
       </li>
     </ul>
   </li>
@@ -465,48 +511,58 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         Get data from remote API using <code>fetch</code>
       </label>
       <input type="checkbox" id="accordion-2-1-1" />
-      <div class="details-body">
-        <SnippetL02S01 />
-          <ul>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-1-2" />
-              <label class="summary" for="accordion-2-1-2">
-                What is a <code>Promise</code>?
-              </label>
-              <div class="details-body">
-                <SnippetL02S02 />
-                <img src="https://i.imgur.com/iB1wjrw.png"/>
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-1-3" />
-              <label class="summary" for="accordion-2-1-3">
-                Add <code>then</code> method
-              </label>
-              <div class="details-body">
-                <SnippetL02S03 />
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-1-4" />
-              <label class="summary" for="accordion-2-1-4">
-                Get response body
-              </label>
-              <div class="details-body">
-                <SnippetL02S04 />
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-1-5" />
-              <label class="summary" for="accordion-2-1-5">
-                Get file content and parse it (<code>Promise</code> chain)
-              </label>
-              <div class="details-body">
-                <SnippetL02S05 />
-              </div>
-            </li>
-          </ul>
-      </div>
+  <div class="details-body">
+
+<SnippetL02S01 />
+
+  <ul>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-1-2" />
+      <label class="summary" for="accordion-2-1-2">
+        What is a <code>Promise</code>?
+      </label>
+  <div class="details-body">
+
+<SnippetL02S02 />
+
+  <img src="https://i.imgur.com/iB1wjrw.png"/>
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-1-3" />
+      <label class="summary" for="accordion-2-1-3">
+        Add <code>then</code> method
+      </label>
+  <div class="details-body">
+
+<SnippetL02S03 />
+  
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-1-4" />
+      <label class="summary" for="accordion-2-1-4">
+        Get response body
+      </label>
+  <div class="details-body">
+
+<SnippetL02S04 />
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-1-5" />
+      <label class="summary" for="accordion-2-1-5">
+        Get file content and parse it (<code>Promise</code> chain)
+      </label>
+  <div class="details-body">
+
+<SnippetL02S05 />
+  
+  </div>
+    </li>
+  </ul>
+  </div>
     </div>
   </li>
   <li>
@@ -515,20 +571,24 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         Check data types from response (<code>Array</code> and <code>Object</code>)
       </label>
       <input type="checkbox" id="accordion-2-2-1" />
-      <div class="details-body">
-        <SnippetL02S06 />
-        <ul>
-          <li class="details">
-            <input type="checkbox" id="accordion-2-3-1" />
-            <label class="summary" for="accordion-2-3-1">
-              Understanding <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects"><strong>standard built-in objects</strong></a> (<code>RegExp</code>, <code>Date</code>, <code>JSON</code>, <code>Number</code>, <code>Math</code>, etc.)
-            </label>
-            <div class="details-body">
-              <SnippetL02S07 />       
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="details-body">
+
+<SnippetL02S06 />
+
+  <ul>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-3-1" />
+      <label class="summary" for="accordion-2-3-1">
+        Understanding <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects"><strong>standard built-in objects</strong></a> (<code>RegExp</code>, <code>Date</code>, <code>JSON</code>, <code>Number</code>, <code>Math</code>, etc.)
+      </label>
+  <div class="details-body">
+
+<SnippetL02S07 />
+  
+  </div>
+    </li>
+  </ul>
+  </div>
     </div>
   </li>
   <li>
@@ -537,9 +597,11 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         Display data using <strong>DOM API</strong> (<code>getElementById</code>, <code>getElementsByClassName</code>, <code>querySelector</code>, etc.)
       </label>
       <input type="checkbox" id="accordion-2-4-1" />
-      <div class="details-body">
-        <SnippetL02S08 />
-      </div>
+  <div class="details-body">
+
+<SnippetL02S08 />
+  
+  </div>
     </div>
   </li>
   <li>
@@ -550,82 +612,101 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-2-5-1">
           onRejected handler
         </label>
-        <div class="details-body">
-          <SnippetL02S09 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S09 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-2" />
         <label class="summary" for="accordion-2-5-2">
           <code>catch</code> method
         </label>
-        <div class="details-body">
-          <SnippetL02S10 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S10 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-3" />
         <label class="summary" for="accordion-2-5-3">
           <code>throw new Error</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S11 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S11 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-4" />
         <label class="summary" for="accordion-2-5-4">
           <code>Promise.reject</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S12 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S12 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-5" />
         <label class="summary" for="accordion-2-5-5">
           Add loading overlay
         </label>
-        <div class="details-body">
-          <SnippetL02S13 />
-          <SnippetL02S14 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S13 />
+
+<SnippetL02S14 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-6" />
         <label class="summary" for="accordion-2-5-6">
           <code>finally</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S15 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S15 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-7" />
         <label class="summary" for="accordion-2-5-7">
           <code>Promise.resolve</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S16 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S16 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-8" />
         <label class="summary" for="accordion-2-5-8">
           How to create a <code>new Promise</code>
         </label>
-      <div class="details-body">
-        <SnippetL02S17 />
-      </div>
+  <div class="details-body">
+
+<SnippetL02S17 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-5-9" />
         <label class="summary" for="accordion-2-5-9">
           <code>Promise.race</code> and <code>Promise.all</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S18 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S18 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -635,50 +716,62 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         Add more <strong>Functions</strong>
       </label>
       <input type="checkbox" id="accordion-2-6-1" />
-      <div class="details-body">
-        <SnippetL02S19 />
-          <ul>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-6-2" />
-              <label class="summary" for="accordion-2-6-2">
-                Arrow functions
-              </label>
-              <div class="details-body">
-                <SnippetL02S20 />
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-6-3" />
-              <label class="summary" for="accordion-2-6-3">
-                Default arguments
-              </label>
-              <div class="details-body">
-                <SnippetL02S21 />
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-6-4" />
-              <label class="summary" for="accordion-2-6-4">
-                Async functions
-              </label>
-              <div class="details-body">
-                <SnippetL02S22 />
-                <SnippetL02S23 />
-              </div>
-            </li>
-            <li class="details">
-              <input type="checkbox" id="accordion-2-6-5" />
-              <label class="summary" for="accordion-2-6-5">
-                Generators
-              </label>
-              <div class="details-body">
-                <SnippetL02S24 />
-                <SnippetL02S25 />
-              </div>
-            </li>
-          </ul>
-      </div>
-    </div>
+  <div class="details-body">
+
+<SnippetL02S19 />
+
+  <ul>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-6-2" />
+      <label class="summary" for="accordion-2-6-2">
+        Arrow functions
+      </label>
+  <div class="details-body">
+
+<SnippetL02S20 />
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-6-3" />
+      <label class="summary" for="accordion-2-6-3">
+        Default arguments
+      </label>
+  <div class="details-body">
+
+<SnippetL02S21 />
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-6-4" />
+      <label class="summary" for="accordion-2-6-4">
+        Async functions
+      </label>
+  <div class="details-body">
+
+<SnippetL02S22 />
+
+<SnippetL02S23 />
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-6-5" />
+      <label class="summary" for="accordion-2-6-5">
+        Generators
+      </label>
+  <div class="details-body">
+
+<SnippetL02S24 />
+
+<SnippetL02S25 />
+
+  </div>
+    </li>
+  </ul>
+  </div>
+  </div>
   </li>
   <li>
     <div class="details">
@@ -686,9 +779,11 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <strong>Handle errors</strong> using <code>try...catch</code> statement
       </label>
       <input type="checkbox" id="accordion-2-7-1" />
-      <div class="details-body">
-        <SnippetL02S26 />
-      </div>
+  <div class="details-body">
+
+<SnippetL02S26 />
+
+  </div>
     </div>
   </li>
   <li>
@@ -699,75 +794,91 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-2-8-1">
           Add helper function for creating a DOM element
         </label>
-        <div class="details-body">
-          <SnippetL02S27 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S27 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-8-2" />
         <label class="summary" for="accordion-2-8-2">
           Create name and image elements
         </label>
-        <div class="details-body">
-          <SnippetL02S28 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S28 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-8-3" />
         <label class="summary" for="accordion-2-8-3">
           Create fighter
         </label>
-        <div class="details-body">
-          <SnippetL02S29 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S29 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-8-4" />
         <label class="summary" for="accordion-2-8-4">
           Create fighters
         </label>
-        <div class="details-body">
-          <SnippetL02S30 />
-          <p>Using the <a href="https://medium.freecodecamp.org/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e"><strong>spread operator and rest parameter</strong></a>:</p>
-            <ul>
-              <li class="details">
-                <input type="checkbox" id="accordion-2-8-4-1" />
-                <label class="summary" for="accordion-2-8-4-1">
-                  How to <strong>spread</strong>?
-                </label>
-                <div class="details-body">
-                  <SnippetL02S31 />
-                </div>
-              </li>
-              <li class="details">
-                <input type="checkbox" id="accordion-2-8-4-2" />
-                <label class="summary" for="accordion-2-8-4-2">
-                  How to <strong>rest</strong>?
-                </label>
-                <div class="details-body">
-                  <SnippetL02S32 />
-                </div>
-              </li>
-            </ul>
-        </div>
+  <div class="details-body">
+
+<SnippetL02S30 />
+
+  <p>Using the <a href="https://medium.freecodecamp.org/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e"><strong>spread operator and rest parameter</strong></a>:</p>
+  <ul>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-8-4-1" />
+      <label class="summary" for="accordion-2-8-4-1">
+        How to <strong>spread</strong>?
+      </label>
+  <div class="details-body">
+
+<SnippetL02S31 />
+
+  </div>
+    </li>
+    <li class="details">
+      <input type="checkbox" id="accordion-2-8-4-2" />
+      <label class="summary" for="accordion-2-8-4-2">
+        How to <strong>rest</strong>?
+      </label>
+  <div class="details-body">
+
+<SnippetL02S32 />
+
+  </div>
+    </li>
+  </ul>
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-8-5" />
         <label class="summary" for="accordion-2-8-5">
           Append fighters to the root element
         </label>
-        <div class="details-body">
-          <SnippetL02S33 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S33 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-8-6" />
         <label class="summary" for="accordion-2-8-6">
           Add events
         </label>
-        <div class="details-body">
-          <SnippetL02S34 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S34 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -777,9 +888,11 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         Use <strong>keyed collection</strong> to hold key-value pairs (<code>Map</code> or <code>Set</code>)
       </label>
       <input type="checkbox" id="accordion-2-9-1" />
-      <div class="details-body">
-        <SnippetL02S35 />
-      </div>
+  <div class="details-body">
+
+<SnippetL02S35 />
+
+  </div>
     </div>
   </li>
   <li>
@@ -790,36 +903,44 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-2-10-0">
           Create <code>FighterService</code> class
         </label>
-        <div class="details-body">
-          <SnippetL02S36 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S36 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-10-1" />
         <label class="summary" for="accordion-2-10-1">
           Add <code>View</code> class
         </label>
-        <div class="details-body">
-          <SnippetL02S37 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S37 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-10-2" />
         <label class="summary" for="accordion-2-10-2">
           What are <em>getters</em> and <em>setters</em>?
         </label>
-        <div class="details-body">
-          <SnippetL02S38 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S38 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-10-3" />
         <label class="summary" for="accordion-2-10-3">
           Create <code>Fighters</code> and <code>Fighter</code> class
         </label>
-        <div class="details-body">
-          <SnippetL02S39 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S39 />
+
+  </div>
       </li>
       <li>
         What is <code>super()</code> and <code>super.parentMethod()</code>?
@@ -829,18 +950,22 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-2-10-4">
           Add <code>App</code> class
         </label>
-        <div class="details-body">
-          <SnippetL02S40 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S40 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-2-10-5" />
         <label class="summary" for="accordion-2-10-5">
           <code>bind</code>, <code>call</code>, and <code>apply</code>
         </label>
-        <div class="details-body">
-          <SnippetL02S41 />
-        </div>
+  <div class="details-body">
+
+<SnippetL02S41 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -860,45 +985,55 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-3-1-1">
           What's <code>__proto__</code>?
         </label>
-        <div class="details-body">
-          <SnippetL03S01 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S01 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-1-2" />
         <label class="summary" for="accordion-3-1-2">
           And the <code>constructor</code>?
         </label>
-        <div class="details-body">
-          <SnippetL03S02 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S02 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-1-3" />
         <label class="summary" for="accordion-3-1-3">
           How to create an instance?
         </label>
-        <div class="details-body">
-          <SnippetL03S03 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S03 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-1-4" />
         <label class="summary" for="accordion-3-1-4">
           How to add a method?
         </label>
-        <div class="details-body">
-          <SnippetL03S04 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S04 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-1-5" />
         <label class="summary" for="accordion-3-1-5">
           But how does inheritance works?
         </label>
-        <div class="details-body">
-          <SnippetL03S05 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S05 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -913,28 +1048,38 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
       </li>
       <li>
         Add <code>"scripts"</code> to the <strong>package.json</strong> file
-        <div>
-          <SnippetL03S06 />
-        </div>
+  <div>
+
+<SnippetL03S06 />
+
+  </div>
         and run <code>npm run build</code> in the terminal to see if it works
       </li>
       <li>
         Set up transpiling of ES2015+ code — <code>npm install @babel/preset-env --save-dev</code>, create a <strong>.babelrc</strong> in the root of your project, with the following content:
-        <div>
-          <SnippetL03S07 />
-        </div>
+  <div>
+
+<SnippetL03S07 />
+
+  </div>
       </li>
       <li>
         We need more nice things — <code>npm install @babel/plugin-proposal-class-properties --save-dev</code> and add that plugin to <strong>.babelrc</strong>:
-        <div>
-          <SnippetL03S08 />
-        </div>
+
+  <div>
+
+<SnippetL03S08 />
+
+  </div>
       </li>
       <li>
         Let's watch for changes by running <code>babel</code> with <code>-w</code> flag
-        <div>
-          <SnippetL03S09 />
-        </div>
+
+  <div>
+
+<SnippetL03S09 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -946,18 +1091,22 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
         <label class="summary" for="accordion-3-3-1">
           Export functions, objects, or primitive values from the module with <code>export</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL03S10 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S10 />
+
+  </div>
       </li>
       <li class="details">
         <input type="checkbox" id="accordion-3-3-2" />
         <label class="summary" for="accordion-3-3-2">
           👆Load that stuff with <code>import</code> statement
         </label>
-        <div class="details-body">
-          <SnippetL03S11 />
-        </div>
+  <div class="details-body">
+
+<SnippetL03S11 />
+
+  </div>
       </li>
     </ul>
   </li>
@@ -966,9 +1115,11 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
     <ul>
       <li>
         Install Webpack by running <code>npm install webpack webpack-cli --save-dev</code>, then create a file named <strong>webpack.config.js</strong> in the root of your project, with the following content:
-        <div>
-          <SnippetL03S12 />
-        </div>
+  <div>
+
+<SnippetL03S12 />
+
+  </div>
       </li>
       <li>
         Set <code>build</code> command in <strong>package.json</strong>'s <code>scripts</code> key to <code>"build": "webpack"</code>
@@ -981,30 +1132,40 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
             <label class="summary" for="accordion-3-4-1">
               Add <code>babel-loader</code> to transpile code, as was mentioned before
             </label>
-            <div class="details-body">
-              <code>npm install babel-loader --save-dev</code> and edit <strong>webpack.config.js</strong> to include <code>module</code> key:
-              <SnippetL03S13 />
-              Rename **.babelrc** to **babel.config.js** and change it's content:
-              <SnippetL03S14 />
-            </div>
+  <div class="details-body">
+
+<code>npm install babel-loader --save-dev</code> and edit <strong>webpack.config.js</strong> to include <code>module</code> key:
+
+<SnippetL03S13 />
+
+Rename **.babelrc** to **babel.config.js** and change it's content:
+
+<SnippetL03S14 />
+
+  </div>
           </li>
           <li class="details">
             <input type="checkbox" id="accordion-3-4-2" />
             <label class="summary" for="accordion-3-4-2">
               Add <code>style-loader</code> and <code>css-loader</code>, so that you could import styles in your JavaScript files with <code>import './src/styles/styles.css';</code>
             </label>
-            <div class="details-body">
-              As usual, just `npm install css-loader style-loader --save-dev` and edit <strong>webpack.config.js</strong> to include new rules:
-              <SnippetL03S15 />
-            </div>
+  <div class="details-body">
+
+As usual, just `npm install css-loader style-loader --save-dev` and edit <strong>webpack.config.js</strong> to include new rules:
+
+<SnippetL03S15 />
+
+  </div>
           </li>
         </ul>
       </li>
       <li>
         Add <a href="https://webpack.js.org/configuration/dev-server/"><strong>Webpack DevServer</strong></a> — <code>npm install webpack-dev-server --save-dev</code> and modify <strong>webpack.config.js</strong> to include <code>devServer</code> and <code>publicPath</code> keys:
-        <div>
-          <SnippetL03S16 />
-        </div>
+  <div>
+
+<SnippetL03S16 />
+
+  </div>
         <p>Add <code>"start": "webpack-dev-server"</code> to <strong>package.json</strong>'s <code>scripts</code> key</p>
       </li>
       <li>

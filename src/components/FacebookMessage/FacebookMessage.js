@@ -1,6 +1,6 @@
 import React from "react";
-import classNames from "classnames";
 import PropTypes from "prop-types";
+import { FacebookSelector } from "react-reactions";
 import "./FacebookMessage.css";
 
 const FacebookMessage = ({ children, small, subtle }) => {
@@ -9,6 +9,7 @@ const FacebookMessage = ({ children, small, subtle }) => {
       "small": small,
       "subtle": subtle
     })}>{children}</div>
+    <FacebookSelector />
   );
 }
 

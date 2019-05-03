@@ -1,9 +1,5 @@
 ```js
-Array.prototype.customFunction = function() {};
+const API_URL = 'https://api.github.com/repos/sahanr/street-fighter/contents/fighters.json';
 
-let weekends = ['Sat', 'Sun'];
-
-for (let i in weekends ) {
-  console.log(i); // 0, 1, "customFunction"
-}
+fetch(API_URL);
 ```

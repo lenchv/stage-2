@@ -1,0 +1,4 @@
+.home.badge[data-badge]:after {
+  font-size: 0.5rem;
+  height: .75rem;
+}

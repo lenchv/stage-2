@@ -4,14 +4,14 @@ import classNames from "classnames";
 import { FacebookSelector } from "react-reactions";
 import "./FacebookMessage.css";
 
-const FacebookMessage = ({ children, small, subtle }) => {
+const FacebookMessage = ({ children, small, subtle, withReactions }) => {
   return (
     <div className={classNames("bubble", {
       "small": small,
       "subtle": subtle
     })}>
       {children}
-      <FacebookSelector />
+      {withReactions && <FacebookSelector />}
     </div>
   );
 }

@@ -2,7 +2,8 @@ import { Lecture, SlackMessage, TimelineOfContents, Level, ThatsAllFolks } from 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin, faSkype } from "@fortawesome/free-brands-svg-icons";
 import { rostyslavDiakiv2018Avatar } from "../../assets/images/avatars/intro-rounded";
-import aEtoMagazin from "../../assets/images/a-eto-magazin.png";
+import aEtoMagazin from "./assets/images/a-eto-magazin.png";
+import exceptionClassHierarchy from "./assets/images/exception-class-hierarchy.jpg";
 import SnippetL02S01 from "./assets/snippets/snippet-l02-s01.mdx";
 import SnippetL02S02 from "./assets/snippets/snippet-l02-s02.mdx";
 import SnippetL02S03 from "./assets/snippets/snippet-l02-s03.mdx";
@@ -601,29 +602,29 @@ import "./styles.css";
   <li class="details">
     <input type="checkbox" id="accordion-3-12" />
     <label class="summary" for="accordion-3-12">
-      <h5><strong>Exceptional Coding</strong></h5>
+      <h5><strong><code>Exception</code>al Coding</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Іноді при виконанні програми виникають помилки, які важко або неможливо передбачити. Наприклад, при передачі файлу по мережі може обірватися підключення, інтернет пропаде, такі ситуації називаються <strong>Exception</strong>-ами.</p>
-      <p>Мова C# надає розробникам можливості для обробки таких ситуацій засобами конструкції <code>try...catch...finally</code>.</p> 
+      <p>Іноді при виконанні програми виникають помилки, які важко або неможливо передбачити (наприклад, при передачі файлу по мережі може обірватися підключення і інтернет пропаде). Такі ситуації називаються <strong>Exception</strong>-ами. Мова C# надає розробникам можливості для обробки таких ситуацій засобами конструкції <code>try...catch...finally</code>:</p>
       <SnippetL03S29 />
       <ol>
         <li>При використанні блоку <code>try...catch...finally</code> спочатку виконуються всі інструкції в блоці <code>try</code>.</li>
         <li>Якщо в цьому блоці не виникло <em>Exception</em>-ів, то після нього виконається блок <code>finally</code> і конструкція <code>try..catch..finally</code> завершить свою роботу.</li>
-        <li>Якщо ж в блоці <code>try</code> виникає <em>Exception</em>, то звичайний флоу виконання зупиняється, і CLR починає шукати блок <code>catch</code>, який може обробити цей Exception.</li>
-        <li>Якщо блок <code>catch</code> знайдений, то він виконується, і після його завершення виконається блок <code>finally</code>.</li>
+        <li>Якщо ж в блоці <code>try</code> виникає <em>Exception</em>, то звичайний потік виконання зупиняється і CLR починає шукати блок <code>catch</code>, який може обробити цей <em>Exception</em>.</li>
+        <li>Якщо блок <code>catch</code> знайдений, то він виконується, а після його завершення виконається блок <code>finally</code>.</li>
         <li>Якщо потрібний блок <code>catch</code> не знайдений, то програма аварійно завершує своє виконання.</li>
       </ol>
-      <p>Базовим для всіх типів еxception-ів є тип Exception. Цей тип визначає ряд властивостей, за допомогою яких можна отримати інформацію про Exception.</p>
+      <p>Базовим для всіх типів <em>еxception</em>-ів є тип <code>Exception</code>. Цей тип визначає ряд властивостей, за допомогою яких можна отримати інформацію про <em>exception</em>:</p>
       <ul>
-      <li><strong>InnerException</strong>: зберігає інформацію про Exception, через який виник цей Exception</li>
-      <li><strong>Message</strong>: зберігає повідомлення про Exception, текст помилки</li>
-      <li><strong>Source</strong>: зберігає ім'я об'єкта або збірки, яка викинула Exception</li>
-      <li><strong>StackTrace</strong>: повертає колл стек викликів, які привели до Exception-а</li>
-      <li><strong>TargetSite</strong>: повертає метод, в якому було відбувся Exception</li>
+      <li><code>InnerException</code> зберігає інформацію про <code>Exception</code>, через який виник цей <code>Exception</code></li>
+      <li><code>Message</code> зберігає повідомлення про <code>Exception</code>, текст помилки</li>
+      <li><code>Source</code> зберігає ім'я об'єкта або збірки, яка викинула <code>Exception</code></li>
+      <li><code>StackTrace</code> повертає колл стек викликів, які привели до <code>Exception</code>-а</li>
+      <li><code>TargetSite</code> повертає метод, в якому відбувся <code>Exception</code></li>
       </ul>
       <SnippetL03S30 />
       <h6><strong>Exceptions Hierarchy</strong></h6>
+      <img src={exceptionClassHierarchy} alt="" />
       <p>У C# всі типи Exception-ів наслідуються від батьківського класу Exception, який додатково поділяється на дві гілки <em>SystemException</em> і <em>ApplicationException</em>. SystemException - це базовий клас для всіх помилок CLR або програмного коду. ApplicationException - це базовий клас для всіх Exception-ів, пов'язаних із додатком.</p>
       <p>У випадку ApplicationException, є можливість створювати свої власні типи Exception-ів, успадкувавшись від класу Exception. SystemException містить всі відомі типи Exception, такі як <em>DivideByZeroException</em> або <em>NullReferenceException</em> і так далі.</p>
       <p>Після оператора <code>throw</code> вказується об'єкт Exception-a, в конструктор якого ми можемо передати повідомлення про помилку. Замість типу Exception ми можемо використовувати об'єкт будь-якого іншого типу Exception.</p>

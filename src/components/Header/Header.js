@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import "./Header.css";
 
 const Header = () => (
   <header className="hero hero-sm">
@@ -43,7 +44,11 @@ const Header = () => (
             </g>
           </svg>
         </a>
-        <div><Link to="/" className="home"><strong>Binary Studio Academy 2019 &bull; </strong>Stage 2</Link> <span style={{ color: "grey", fontWeight: 300 }}>(alpha)</span></div>
+        <div>
+          <Link to="/" className="home badge" data-badge="beta">		
+            <strong>Binary Studio Academy 2019 &bull; Stage 2</strong>		
+          </Link>
+        </div>
       </div>
       <div className="navbar-section">
         <a href="/whats-this/ua" className="btn btn-link">

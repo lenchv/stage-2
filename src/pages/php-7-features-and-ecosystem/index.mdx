@@ -1,4 +1,4 @@
-import { Lecture, Message, TimelineOfContents, Level, ThatsAllFolks } from "../../components";
+import { Lecture, SlackMessage, TimelineOfContents, Level, ThatsAllFolks } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faWikipediaW, faVk, faGoogle, faYahoo, faGithub, faSymfony, faLaravel, faWordpress, faJoomla, faDrupal, faMagento, faOpencart } from "@fortawesome/free-brands-svg-icons";
 import { pavelNemchenko2017Avatar } from "../../assets/images/avatars/intro-rounded";
@@ -28,22 +28,22 @@ import "./styles.css";
         </li>
       </ul>
       <p class="about">
-        Паша Немченко закончил курс Академии по РНР и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и иногда с удовольствием. Любит ходить на технические митапы, читать мемы, пить кофе и разбираться в новых технологиях по выходным.
+        Паша Немченко закончил курс Академии по РНР и с тех пор кодит в <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> с юмором и удовольствием. Знает о <a href="https://martinfowler.com/bliki/CQRS.html"><strong>CQRS</strong></a> и <a href="https://www.martinfowler.com/eaaDev/EventSourcing.html"><strong>event sourcing</strong></a>, а также пилит фронтенд на <a href="https://vuejs.org/"><strong>Vue</strong></a>. Любит ходить на технические митапы, читать мемы, смотреть Марвел, пить кофе и разбираться в новых технологиях по выходным.
       </p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Привет! 👋</strong><br />
-    Вашему вниманию первая профильная лекция или "Make PHP great again"! Но вначале дисклеймер:
-    <ol class="compact">
-      <li>часть материала вам уже знакома и это гуд 😊</li>
-      <li>лекция обещает быть интересной и познавательной <em>(за употребление слов-паразитов, жаргона и нецензурной брани сразу простите)</em></li>
+    <strong>Всем привет! 👋</strong><br />
+    Вашему вниманию первая профильная лекция «PHP 7 features and ecosystem» или «Make PHP great again»! Рассмотрим что нового в PHP и что будущее готовит. Но вначале дисклеймер:
+    <ol class="compact inverted">
+      <li>часть материала вам уже знакома и это гуд 😊;</li>
+      <li>лекция обещает быть интересной и познавательной <em>(за употребление слов-паразитов, жаргона и нецензурной брани простите)</em>.</li>
     </ol>
-    С собой: терминал (командная строка), <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a> или <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>
+    Да, кстати... С собой: терминал (командная строка), <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://code.visualstudio.com/"><strong>PHPStorm</strong></a> или <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>. Начнём?
   </div>
 </div>
 
-<div id="table-of-contents" class="table-of-contents">
+<div id="table-of-contents" class="table-of-contents" style="margin-top: 1em;">
   <TimelineOfContents timeline={[{
     linkTo: "#welcome-to-php",
     title: "Welcome to PHP"
@@ -1124,6 +1124,11 @@ server {
 <hr />
 
 ![i am neo](http://memesmix.net/media/created/6d6gtz.jpg)
+
+<ThatsAllFolks />		
+<div class="bubble">		
+  А на сегодня всё! Свои вопросы и отзывы оставляйте на сайте <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Желаю вам успехов в дальнейшем, не теряйте мотивации и учитесь с удовольствием. Спасибо за внимание! 🤙		
+</div>
 
 export const metadata = {
   author: "Pavel Nemchenko",

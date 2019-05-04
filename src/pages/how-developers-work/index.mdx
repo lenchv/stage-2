@@ -310,7 +310,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 11. Now switch to your primary branch (`git checkout develop`) and merge your latest developments into this branch by running `git merge patch/README.md`. Push to the remote with `git push`
 
     <div class="bubble small subtle">
-      Також можна мерджити гілки, використовуючи <code>git merge --squash patch/README.md</code> (зліпить всі комміти в один, тим самим відкидаючи історію), або ж <code>git rebase</code> (переграє локальні зміни після останнього комміту базової гілки)
+      Також можна мерджити гілки, використовуючи <code>git merge --squash patch/README.md</code> (зліпить всі локальні комміти в один і накатає поверх базової гілки, тим самим "замовчує" локальну історію), або ж <code>git rebase</code> (спочатку переключиться на останній комміт базової гілки, а потім вже поверху "переграє" всі локальні зміни)
     </div>
 
 12. Try to `git fetch`, `git status`, use GitHub online editor to create a new file named **dummy.html** in `develop` branch, and then try to `git fetch` and `git status` again. Finally, use `git pull --rebase`.

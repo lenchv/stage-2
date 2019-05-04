@@ -1,25 +1,144 @@
 @import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/spectre-exp";
+
+/* Spectre.css overrides */
+.content ul,
+.content ol {
+  list-style: none outside none;
+  padding-left: 1.5em;
+}
+.content ol {
+  counter-reset: ol-counter;
+}
+.content li {
+  list-style: none outside none;
+}
+.content ul:not(.step) > li:before {
+  content: "●";
+  font-family: "Arial";
+  float: left;
+  width: 1.5em;
+  margin-left: -1.5em;
+  text-align: center;
+}
+.content ol > li:before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  float: left;
+  width: 0.9rem;
+  border-radius: 0.25em;
+  background: transparent;
+  color: inherit;
+  font-weight: bold;
+  font-size: 0.7em;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(-1.5rem + 0.5rem / 2);
+  height: 0.9rem;
+  line-height: 1rem;
+  margin-top: calc((0.8rem * 1.5 - 1rem) / 2 + 0.05rem);
+}
+.content ol.inverted > li:before {
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+.content .bubble ol.inverted > li:before {
+  background: white;
+  color: #0084ff;
+  font-weight: bold;
+  border-radius: 100%;
+}
+
+/* Alternative to <details> compatible with Safari */
+.details > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background: none;
+  transition: 0.2s;
+  cursor: pointer;
+  width: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 1.5em;
+  vertical-align: top;
+  outline: none;
+}
+.details > input:after {
+  content: " ";
+  border-top: 0.35em solid transparent;
+  border-bottom: 0.35em solid transparent;
+  border-left: 0.5em solid black;
+  position: relative;
+  width: 0.5em;
+  height: 0.7em;
+  cursor: pointer;
+}
+.details > input:checked {
+  transform: rotate(90deg);
+}
+.details > label.summary {
+  cursor: pointer;
+  display: inline-block;
+}
+.details > input:checked ~ div {
+  display: block;
+}
+.details > div {
+  display: none;
+}
+.details > div.labels {
+  margin-top: 0.5em;
+}
+.details > div:after {
+  content: " ";
+  clear: both;
+  display: block;
+}
+
+/* Details as a list item */
+.content li.details {
+  list-style-type: none;
+}
+.content li.details:before {
+  display: none;
+}
+.content li.details > input {
+  float: left;
+  margin-left: -1.5em;
+}
 
 /* Navbar */
 .navbar .logo {
   height: 2em;
   display: block;
 }
+.navbar .home {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Elements */
 .content hr {
   border: none;
   height: 2px;
   background: lightgrey;
-  margin: 2em 0;
+  margin: 2rem 0;
 }
 .content hr.small {
   height: 1px;
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 .content ol,
 .content ul {
-  margin: 0.5rem 0 0.5rem 0.5rem;
-  padding-left: 1em;
+  margin: 0.25rem 0 0.5rem 0rem;
 }
 .content ol {
   list-style: outside decimal;
@@ -35,6 +154,12 @@
 .content ol li:last-child,
 .content ul li:last-child {
   margin-bottom: 0;
+}
+.content ol.compact,
+.content ol.compact li,
+.content ul.compact,
+.content ul.compact li {
+  margin: 0;
 }
 .content p {
   margin-bottom: 0.25rem;
@@ -53,8 +178,14 @@
   margin-bottom: 0.25rem;
 }
 .content pre {
-  margin: 0.25rem 0;
   padding: 0.5em;
+  margin: 0.25rem 0;
+}
+.content pre:first-child {
+  margin-top: 0;
+}
+.content pre:last-child {
+  margin-bottom: 0;
 }
 .content pre code {
   display: block;
@@ -62,8 +193,8 @@
   background: none;
   font-size: 85%;
   line-height: 1.4;
-  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
-    monospace;
+  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+  color: inherit;
 }
 .content :not(pre) > code {
   font-size: 85%;
@@ -77,17 +208,36 @@
   text-decoration: underline;
 }
 
+/* Collapsible */
+.content ul.collapsible li {
+  list-style: none outside none;
+}
+.content ul.collapsible .accordion .accordion-header {
+  padding: 0;
+  cursor: pointer;
+  margin-left: -1.25rem;
+}
+.content ul.collapsible .accordion .accordion-header .icon {
+  display: inline-block;
+  width: 1.25rem;
+  text-align: center;
+}
+.content ul.collapsible .accordion .accordion-body:last-child {
+  margin-bottom: 0;
+}
+
 /* Author */
 .content .author {
   font-size: 14px;
   padding: 1em;
   background: whitesmoke;
   border-radius: 0.5em;
+  display: flex;
 }
 
 /* Avatar */
 #avatar-wrapper {
-  float: left;
+  flex: 0 0 6em;
   width: 6em;
   margin-right: 1em;
   display: flex;
@@ -140,6 +290,9 @@
 .content .contacts li a.skype:hover {
   color: #00aff0;
 }
+.content .contacts li a.linkedin:hover {
+  color: #0077b5;
+}
 .content .contacts li a.phone:hover {
   color: dimgrey;
 }
@@ -155,9 +308,6 @@
 }
 
 /* Profile */
-.content .profile {
-  margin-left: 6em;
-}
 .content .profile .name {
   margin-bottom: 0;
   font-size: 1.4em;
@@ -243,6 +393,8 @@
 }
 .content .messages .message {
   margin-top: 0.5em;
+}
+.content .messages input + label ~ .message {
   display: none;
 }
 
@@ -316,4 +468,21 @@
 }
 .panel .panel-body:last-child {
   padding: 0 1em 1em;
+}
+
+/* Accordions */
+.accordion input:checked ~ .accordion-body,
+.accordion[open] .accordion-body {
+  max-height: 100rem;
+}
+
+/* Gatsby overrides */
+.content .gatsby-highlight {
+  margin: 0.25rem 0;
+}
+.content .gatsby-highlight:first-child {
+  margin-top: 0;
+}
+.content .gatsby-highlight:last-child {
+  margin-bottom: 0;
 }

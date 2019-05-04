@@ -1,0 +1,30 @@
+```csharp
+class City
+{
+    public int code;
+    public string name;
+
+    public City(int code, string name)
+    {
+        this.code = code;
+        this.name = name;
+    }
+
+    public (int codeNumber, string name) MethodTuple(string namePrefix)
+    {
+        return (codeNumber: code, name: namePrefix + name);
+    }
+}
+
+static void Main(string[] args)
+{
+    City yorkCity = new City(12, "York");
+
+    var tupleObject = yorkCity.MethodTuple("New ");
+
+    Console.WriteLine($"City: {tupleObject.name}, code: {tupleObject.codeNumber}");
+    /* Output: 
+        City: New York, code: 12
+    */
+}
+```

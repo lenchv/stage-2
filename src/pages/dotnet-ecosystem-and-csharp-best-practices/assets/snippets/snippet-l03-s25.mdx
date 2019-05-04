@@ -1,0 +1,26 @@
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        // non-generic collection ArrayList
+        ArrayList objectList = new ArrayList() { 0, "someString", 'c', 19.0d };
+        
+        // generic collection - List
+        List<string> countries = new List<string>() { "Lviv", "Kyiv", "Odessa", "Dnipro" };
+
+        object obj = 12.3;
+        objectList.Add(obj);
+
+        // Error - because object is not a string type
+        countries.Add(obj);
+
+        objectList.RemoveAt(0); // delete element with index 0 - first element of collection
+        foreach (object o in objectList)
+        {
+            Console.WriteLine(o);
+        }
+        Console.WriteLine($"Total amount of Collection's elements: {objectList.Count}");
+    }
+}
+```

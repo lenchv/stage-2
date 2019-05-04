@@ -141,7 +141,11 @@ import {
   <div class="message" data-from="you">?!</div>
 </div>
 
-Отже, в замовника немає портфоліо і специфікація для проекту теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Не тільки це, а ще й її треба розмістити на якомусь хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! О-о-о-о-о-го. Само собою, замовник хоче мати можливість слідкувати за процесом розробки. Студент радіє, бо це саме те, що він так довго мріяв робити! І тим не менше, варто було б дослідити суть завдання дещо глибше — раптом на ринку вже є рішення проблеми? Чи не зручніше буде долучитися до розробки схожого програмного продукту з відкритим кодом і "форкнути" (клонувати) його або запропонувати функціонал, якого не вистачає, замість створювати все з нуля? На радість, швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
+Отже, в замовника немає портфоліо і специфікація для проекту теж ще не визначена, зате є достатньо інформації, щоб скласти більш-менш адекватну сторінку резюме! Клієнт також хоче, щоб сторінка була адаптивною, доступною, інформативною, тощо. Крім того, її треба розмістити на якомусь безкоштовному хостингу, програмний код повинен бути чистим і зрозумілим, а також потрібна хороша документація! А ще весь процес розробки повинен звітуватись, щоб клієнт завжди був в курсі прогресу.
+
+Студент радіє, бо це саме те, що він так довго мріяв робити! Але не обов’язково робити з нуля — раптом в цих ваших інтернетах вже є рішення проблеми? Якщо знайти схожий проект з відкритим кодом, то можна "форкнути" (клонувати) його, розширити функціоналом, якого не вистачає — а це дуже скоротить процес розробки тої цілої сторінки.
+
+Припустимо, що швидкий пошук в GitHub каже, що схожа сторінка вже існує і навіть містить інструкцію як скласти аналогічну. З деякими технологіями доведеться працювати вперше, але інструкція порізана на частини і це допомагає легко спланувати, які конкретно завдання треба буде виконати і скільки часу орієнтовно на це треба буде затратити. Ммм, окей, студент відповідає замовнику...
 
 <SlackMessage
   senderId="you"
@@ -163,14 +167,12 @@ import {
     { name: "Vitaliy Oleynikov", avatarUrl: vitaliyOleynikovAvatar }
   ]}
 >
-  <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, don't worry about setting tasks and milestones, save your time, I'll create them myself accordingly to the tutorial I mentioned earlier. You'll be able to track progress in GitHub as soon as I set up the repository.
+  <strong>Yeah, sure, I'm on it, let's go!</strong> BTW, you don’t have to plan tasks and milestones — save your time, I'll create them myself right after setting up a GitHub repository. You'll be able to track the progress of the job on GitHub Projects.
 </SlackMessage>
 
-...і береться за створення сайту по тій інструкції.
+...і береться за створення сайту по цій інструкції:
 
-<hr />
-
-<div id="table-of-contents" class="table-of-contents">
+<div id="table-of-contents" class="table-of-contents" style="margin-top: 2em;">
   <h2><strong>How to create and host your own website using GitHub</strong></h2>
   <TimelineOfContents timeline={[{
     linkTo: "#setting-up-the-repository",
@@ -208,7 +210,7 @@ import {
    > A typical résumé contains a "summary" of relevant job experience and education, as its French origin implies. The résumé is usually one of the first items, along with a cover letter and sometimes an application for employment, which a potential employer sees regarding the job seeker and is typically used to screen applicants. ****The goal of this project is to create an online version of the résumé using HTML, CSS, and the minimum amount of JavaScript.****
 
    <div class="bubble small subtle">
-      Alright, mate, from now on all the tasks of this mission should be added to the GitHub Projects!
+      Alright, mate, from now on for every step of this mission you have to create a task in GitHub Projects! That way you remember what you are going to do, and your customer is aware of the work you are doing.
    </div>
 
 5. Update **README.md** _(you might want to take a look at [**GitHub Flavored Markdown**](https://guides.github.com/features/mastering-markdown/) and [**Documenting your projects on GitHub**](https://guides.github.com/features/wikis/))_
@@ -238,19 +240,22 @@ import {
    ```
    
    <div class="bubble small subtle">
-     That's right, <code>&amp;#x1F609;</code> is a <a href="http://unicode.org/emoji/charts-12.0/full-emoji-list.html#1f609"><strong>Unicode code for an emoji</strong></a>. BTW, please give your commits meaningful messages, maybe even <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
+     That's right, <code>&amp;#x1F609;</code> is a <a href="http://unicode.org/emoji/charts-12.0/full-emoji-list.html#1f609"><strong>Unicode code for an emoji</strong></a>. BTW, please give your commits meaningful messages, i.e. 🤗"Updated Résumé Contacts block (fixes #23)" instead of 🤮"qwerty12%._3456". Maybe even <a href="https://help.github.com/articles/closing-issues-using-keywords/"><strong>use keywords to close issues</strong></a>!
    </div>
 
 11. Create a pull request into <code>master</code>, set metadata _(reviewers, assignees, labels, projects, milestones)_, merge pull request using **Create merge commit**
 12. Go to **Settings — Options** and set up **GitHub Pages**, update repository description with the proper **website** link _(you might also want to learn how to host a static website powered by Jekyll in [**Getting Started with GitHub Pages**](https://guides.github.com/features/pages/))_
-13. Share the link to the repository with the "customer", poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
+13. Now that your repository is set up, you could share the link with the customer, poke around with your repository, see what's possible, explore, follow people, [**Be social**](https://guides.github.com/activities/socialize/)
+    <div class="bubble small subtle">
+      Given that the customer is imaginary you can't actually share the links, but keep them somewhere close, you might need 'em
+    </div>
 
 <Level id="researching-and-planning" number="2" name="Researching and planning" difficulty="Bring It On!" objectives="Master issues and project management." />
 
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
    <div class="bubble small subtle">
-     Вміння добре складати завдання, чітко описувати проблеми і звітувати про їх вирішення допоможе знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). Окрім  того, в світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues, тому розуміти як це працює — запорука успіху. Тепер це ваш Google (ну, може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі.
+     Вміння добре складати завдання, чітко описувати проблеми і звітувати про їх вирішення допоможе знайти спільну мову з проджект-менеджером замовника, якщо студент коли-небудь буде працювати в аутсорсі або фрілансі (а коли-небудь він буде). Окрім  того, в світі open source більшість корисних розмов та інформація щодо вирішення проблем знаходиться якраз в Issues, тому розуміти як це працює — запорука успіху. Тепер це ваш Google (ну, може ще трошки StackOverflow). Google все ще корисний для швидкого старту роботи з технологією, але коли щось пішло не так, то шукати спочатку треба ближче до коду тої технології і її документації, а вже потім по всій мережі
    </div>
 
    1. **Скласти інтро**  
@@ -289,7 +294,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 5. Edit README.md — add "**🧙Hocus-pocus!**" — and stage it with `git add README.md`
    
    <div class="bubble small subtle">
-     Аргументом цієї команди є <em>pathspec</em> <sup><strong><a href="https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec" title="pathspec">[1]</a></strong></sup>, тому можна вказувати як абсолютний шлях, так і паттерн (наприклад, <code>.</code> 😈). Між іншим, <code>git stash</code> врятує, якщо треба тимчасово запам'ятати "брудне" робоче дерево
+     Аргументом цієї команди є <em>pathspec</em> <sup><strong><a href="https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec" title="pathspec">[1]</a></strong></sup>, тому можна вказувати як абсолютний шлях, так і паттерн (наприклад, <code>.</code> 😈). Між іншим, <code>git stash</code> врятує, якщо треба тимчасово запам'ятати "брудне" робоче дерево (тобто, зміни у файлах зроблені і збережені, але ще не коммітнуті)
    </div>
 
 6. Commit staged file to Git history with `git commit -m "Abracadabra"` (add a tag with `git tag abracadabra`)
@@ -322,13 +327,13 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 13. Dismiss everything you did with `git reset --hard abracadabra^`, do `git clean --force` if necessary
 
     <div class="bubble small subtle">
-      Режим за промовчанням — <code>--mixed</code> — ресетне індекс, але не робоче дерево, тому всі зміни будуть збережені, а файли треба буде самостійно застейджити для комміту. <code>--hard</code> ресетне все, тому всі зміни будуть втрачені. <code>--soft</code> переставить HEAD на вказаний комміт, але не зачіпатиме індекс чи робоче дерево.
+      Режим за промовчанням — <code>--mixed</code> — ресетне індекс, але не робоче дерево, тому всі зміни будуть збережені, а файли треба буде самостійно застейджити для комміту. <code>--hard</code> ресетне все, тому всі зміни будуть втрачені. <code>--soft</code> переставить HEAD на вказаний комміт, але не зачіпатиме індекс чи робоче дерево
     </div>
 
 14. Force-push your local repository to the origin with `git push --force`
 
     <div class="bubble small subtle">
-      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому певні "юс-кейси" для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>.
+      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому певні "юс-кейси" для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>
     </div>
 
 <Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
@@ -338,7 +343,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
    1. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update [**`<head>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#head):
       
       <div class="bubble small subtle">
-        Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (<code>release</code>), яка готова до релізу (шляхом злиття в <code>master</code>), а також ще версію, в якій ведеться основна розробка (<code>develop</code>). А в одній єдиній гілці так не вийде. Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав 😁.
+        Розділяючи свою роботу на багато гілок, можна швидко і вправно виправляти баги на сервері, мати окремо стабільну версію (<code>release</code>), яка готова до релізу (шляхом злиття в <code>master</code>), а також ще версію, в якій ведеться основна розробка (<code>develop</code>). А в одній єдиній гілці так не вийде. Мерджіть свої гілки pull request-ами, бо так треба. І потім, так можна частково зняти з себе відповідальність, адже той, хто approve-нув поганий код, допустив не меншу помилку, аніж той, хто його написав 😁
       </div>
       
       1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
@@ -366,7 +371,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
    
 <GradingHometask1 />
 <div class="bubble small subtle">
-  Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить навпаки. В першу чергу варто робити те, що подобається, і отримати максимум задоволення від процесу. Якщо при цьому всьому ще й зайти в незнайому чи некомфортну для cебе область і досягти успіхів там — то це взагалі супер! В кінці кінців, ми більше зацікавлені в тому, щоби побачити, що розробники можуть створити в короткий строк, аніж нав'язувати наше бачення правильного чи неправильного способу виконання абстрактних завдань.
+  Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить навпаки. В першу чергу варто робити те, що подобається, і отримати максимум задоволення від процесу. Якщо при цьому всьому ще й зайти в незнайому чи некомфортну для cебе область і досягти успіхів там — то це взагалі супер! В кінці кінців, ми більше зацікавлені в тому, щоби побачити, що розробники можуть створити в короткий строк, аніж нав'язувати наше бачення правильного чи неправильного способу виконання абстрактних завдань
 </div>
 
 <Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives={<span>Learn <code>git</code> internals and advanced GitHub features. Well, basically, survive.</span>} />
@@ -403,12 +408,12 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
       fi
       ```
       <div class="bubble small subtle">
-        Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system.
+        Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system
       </div>
 4. Add a webhook by setting up a basic CI/CD process using [**Travis CI**](https://travis-ci.org) and [**AWS**](https://aws.amazon.com)
    1. Log in to [**AWS Console**](https://console.aws.amazon.com/), go to **S3** service, create two buckets for **staging** and **production** (choose unique names!), edit their public access settings (uncheck everything), go to bucket properties and enable static website hosting, then go to **My Security Credentials** and generate a new set of access keys. Phew! 😌
    <div class="bubble small subtle">
-     <strong>S3 bucket names are globally unique.</strong> This means that if someone else has a bucket of a certain name, you cannot have a bucket with that same name.
+     <strong>S3 bucket names are globally unique.</strong> This means that if someone else has a bucket of a certain name, you cannot have a bucket with that same name
    </div>
 
    2. Create **.travis.yml**:

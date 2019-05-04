@@ -16,10 +16,8 @@ class SMS: IMessenger {
 }
 
 class Notification {
-  public IMessenger Messenger {
-    get;
-    set;
-  };
+  public IMessenger Messenger { get; set; }
+
   public Notification(IMessenger mess) {
     Messenger = mess;
   }

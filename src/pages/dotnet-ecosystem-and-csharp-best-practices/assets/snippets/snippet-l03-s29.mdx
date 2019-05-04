@@ -1,0 +1,19 @@
+```csharp
+static void Main(string[] args)
+{
+    StreamReader file = new StreamReader(@"D:\test.txt");
+    char[] buffer = new char[10];
+    try
+    {
+        file.ReadBlock(buffer, 123, buffer.Length);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+    finally
+    {
+        file?.Close();
+    }
+}
+```

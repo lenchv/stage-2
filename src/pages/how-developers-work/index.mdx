@@ -208,7 +208,7 @@ import {
     title: "Researching and planning"
   }, {
     linkTo: "#learning-git",
-    title: <code>git</code>
+    title: <span>Learning <code>git</code></span>
   }, {
     linkTo: "#putting-the-website-together",
     title: "Putting the website together"
@@ -225,7 +225,7 @@ import {
 2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé.", initialize with **README**, ignore **.gitignore**, but choose **"MIT License"**
 3. Add topics _(e.g. "personal website homepage resume gh-pages html css binary-studio-academy bsa19")_
   <FacebookMessage small subtle>
-
+    Hmmm, adding proper topics helps to SEO your repository...
   </FacebookMessage>
 4. Create two projects — **"Homepage"** and **"Resume"** ― using **Automated kanban** as a project template for both. Here's the description for the **Homepage** project:
 
@@ -329,7 +329,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
      <code>--all</code> можна використовувати для того, щоби закоммітити всі змінені і видалені файли (нові файли не коммітнуться). <code>--amend</code> можна використати, щоби змінити повідомлення комміту (обережно, ця операція переписує історію!)
    </div>
 
-7. Try to upload your local changes with `git push --tags`. If it fails, it's most likely because there's no such branch on the remote server. Follow Git suggestion and use `--set-upstream origin patch/README.md`
+7. Try to upload your local changes with `git push --tags` and `git push`. If it fails, it's most likely because there's no such branch on the remote server. Follow Git suggestion and use `--set-upstream origin patch/README.md`
 
    <div class="bubble small subtle">
      По замовчуванню <code>git</code> не пушить теги, тому ключ <code>--tags</code> корисний для того, щоб запушити теги, якщо вони є. У випадку, якщо їх немає, можна просто використовувати <code>git push</code>
@@ -338,6 +338,11 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 8. Look at the current history with `git log`, view detailed information about particular commit with `git show` (`HEAD`, `HEAD~1`, `HEAD^1`)
 9. Remove last line from the README.md and see the difference! Using `git diff`, that is. Commit with `git commit -a -m "Undobracadabra"`, add a tag to the latest commit with `git tag undobracadabra`
 10. Revert the latest commit with `git revert undobracadabra`, add a tag `git tag redobracadabra`
+
+    <div class="bubble small subtle">
+      На майбутнє — зміни, які ще не були коммітнуті (файли відредаговані і збережені, але не коммітнуті до історії), можна відмінити командою <code>git checkout .</code> (також замість <code>.</code> можна вказувати конкретні файли)
+    </div>
+
 11. Now switch to your primary branch (`git checkout develop`) and merge your latest developments into this branch by running `git merge patch/README.md`. Push to the remote with `git push`
 
     <div class="bubble small subtle">
@@ -359,7 +364,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 14. Force-push your local repository to the origin with `git push --force`
 
     <div class="bubble small subtle">
-      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому певні "юс-кейси" для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>
+      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому свої випадки для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>
     </div>
 
 <Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />

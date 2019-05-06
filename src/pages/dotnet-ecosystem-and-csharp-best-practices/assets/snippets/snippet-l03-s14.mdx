@@ -1,0 +1,13 @@
+```csharp
+public static class StringExtensions
+{
+    public static int WordCount(this string str)
+    {
+        return str.Split(new char[] { ' ', '.', '?' },
+                         StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}
+
+string text = "Something like that!";  
+int amountOfWords = text.WordCount(); // 3
+```

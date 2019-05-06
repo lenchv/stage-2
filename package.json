@@ -1,0 +1,85 @@
+{
+  "name": "bsa19-stage-2",
+  "private": true,
+  "description": "",
+  "version": "0.1.0",
+  "author": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.17",
+    "@fortawesome/free-brands-svg-icons": "5.8.1",
+    "@fortawesome/free-regular-svg-icons": "5.8.1",
+    "@fortawesome/free-solid-svg-icons": "5.8.1",
+    "@fortawesome/pro-light-svg-icons": "5.8.1",
+    "@fortawesome/pro-regular-svg-icons": "5.8.1",
+    "@fortawesome/pro-solid-svg-icons": "5.8.1",
+    "@fortawesome/react-fontawesome": "0.1.4",
+    "@mdx-js/mdx": "1.0.15",
+    "@mdx-js/react": "1.0.15",
+    "@mdx-js/tag": "0.20.3",
+    "chart.js": "2.8.0",
+    "chartjs-plugin-dragdata": "0.3.1",
+    "classnames": "2.2.6",
+    "gatsby": "2.3.33",
+    "gatsby-image": "2.0.40",
+    "gatsby-mdx": "0.6.2",
+    "gatsby-plugin-manifest": "2.0.29",
+    "gatsby-plugin-offline": "2.0.25",
+    "gatsby-plugin-react-helmet": "3.0.12",
+    "gatsby-plugin-sass": "2.0.11",
+    "gatsby-plugin-sharp": "2.0.35",
+    "gatsby-remark-prismjs": "3.2.8",
+    "gatsby-source-filesystem": "2.0.32",
+    "gatsby-transformer-remark": "2.3.12",
+    "gatsby-transformer-sharp": "2.1.18",
+    "lodash": "4.17.11",
+    "node-sass": "4.12.0",
+    "prism-themes": "1.1.0",
+    "prismjs": "1.16.0",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-copy-to-clipboard": "5.0.1",
+    "react-dom": "16.8.6",
+    "react-helmet": "5.2.0",
+    "react-markdown": "4.0.8",
+    "react-reactions": "randomdipesh/react-reactions",
+    "spectre.css": "0.5.8"
+  },
+  "devDependencies": {
+    "gh-pages": "2.0.1",
+    "husky": "2.1.0",
+    "lint-staged": "8.1.5",
+    "prettier": "1.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "prettify": "prettier --write {src/**/*.{js,jsx,json,css,scss},gatsby*.js}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "predeploy": "gatsby clean && gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volodymyr-kushnir/lectures"
+  },
+  "bugs": {
+    "url": "https://github.com/volodymyr-kushnir/lectures/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,scss},gatsby*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

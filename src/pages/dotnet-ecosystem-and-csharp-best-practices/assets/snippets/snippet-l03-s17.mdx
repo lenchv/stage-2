@@ -1,0 +1,20 @@
+```csharp
+class MyGenericClass<T> where T: class 
+{
+}
+
+class City 
+{
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Compile Time Error
+        MyGenericClass<int> intGenericClass = new MyGenericClass<int>(10);
+
+        MyGenericClass<City> cityGenericClass = new MyGenericClass<City>(new City());
+    }
+}
+```

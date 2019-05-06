@@ -1,0 +1,21 @@
+```csharp
+class City {
+  public int code;
+  public City(int code) {
+    this.code = code;
+  }
+}
+
+static void Main(string[] args) {
+  City city = new City(12);
+
+  MethodReference(city);
+
+  Console.WriteLine(city.code); // 0
+}
+
+// pass the reference to the object on heap
+static void MethodReference(City city) {
+  city.code = 0;
+}
+```

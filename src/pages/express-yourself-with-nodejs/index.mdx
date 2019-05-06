@@ -1,0 +1,136 @@
+import { Lecture, SlackMessage, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../../components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
+import { faFacebookSquare, faGithub, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import { alexandrTovmach2018Avatar } from "../../assets/images/avatars/intro-rounded";
+
+<div><h1><strong>Express yourself with Node.js</strong></h1></div>
+
+<div>
+  <div class="author">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={alexandrTovmach2018Avatar} role="img" aria-label="Alex profile picture"></object>
+    </div>
+    <div class="profile">
+      <h3 class="name">Александр Товмач</h3>
+      <ul class="contacts">
+        <li>
+          <a href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach?tab=profile" rel="author" class="facebook">
+            <FontAwesomeIcon icon={faStackOverflow} className="icon" />
+            <span>alexandr-tovmach</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/alexandrtovmach" rel="author" class="github">
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+            <span>alexandrtovmach</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://alexandrtovmach.com/" rel="author" class="website">
+            <FontAwesomeIcon icon={faGlobe} className="icon" />
+            <span>https://alexandrtovmach.com</span>
+          </a>
+        </li>
+      </ul>
+      <p class="about">
+        Full-stack разработчик из <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> ― Александр. 
+        На <a href="https://dou.ua/users/aleksandr-tovmach/articles/"><strong>DOU</strong></a> и <a href="https://habr.com/ru/users/alexandrtovmach/posts"><strong>Habr</strong></a> пишет статьи, на <a href="https://reactjs.org/"><strong>React</strong></a> и <a href="https://angular.io/"><strong>Angular</strong></a> пишет код, на <strong>заборе</strong> и <span class="tooltip" data-tooltip="if (true) {&#x000A;// какой-то код&#x000A;} else {&#x000A;// a вот тут чистый profit&#x000A;}"><strong>хинди</strong></span> не пишет. Хочет изменить этот мир, но никак руки не доходят.</p>
+    </div>
+  </div>
+  <div class="bubble" style="margin: -0.5em 1em 1em;">
+    <strong>Приветствую!</strong><br />Опережая всех хейтеров прошу прощения ― эта лекция будет на русском. Я вырос в русскоязычной семье в городе Кривой Рог и для меня более привычно так изъяснятся, особенно в технических вопросах.<br /> Лекция разделена на блоки, которые максимально независимы друг от друга, поэтому если вы, прочитав заголовок, чувствуете что это уже пройденный этап, смело его пропускайте.<br />Желаю удачи!
+  </div>
+</div>
+
+
+<div class="messages">
+  Ryu оставшись очень довольным онлайн-файтингом, начал хвастаться ним перед своими друзьями. Поначалу, игра вызвала небывалый интерес, но не успел Ryu начать переговоры с Capcom, как ажиотаж спал. Все отметили, что персонажей в игре слишком мало и их характеристики не соответствуют действительности, из-за чего играть становится неинтересно. Раздосадованный Ryu, снова обращается к разработчикам чтобы исправить ситуацию:
+</div>
+<SlackMessage
+  senderId="ryu"
+  senderName="Ryu"
+  senderAvatarUrl="http://fast1.onesite.com/capcom-unity.com/user/gregaman/blog_photos/9c9a08a03cfcdb05c7c03ddfaeddc041.png?v=57600"
+  reactions={[
+    { emoji: "👍", count: 42 }
+  ]}
+  replies={[
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+  ]}
+>
+  <p>Sraka motika</p>
+</SlackMessage>
+
+Студент встречает студента. Один студент спрашивает другого: "Студент, какова твоя профессия? Ты милиционер?". "Не-ет, — отвечает Студент. — Моя главная профессия — Студент!"
+
+<SlackMessage
+  senderId="you"
+  senderName="You"
+  senderAvatarUrl="https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-64"
+  reactions={[
+    { emoji: "👍", count: 13 },
+    { emoji: "🏁", count: 8 },
+    { emoji: "🚀", count: 10 },
+    { emoji: "👏", count: 6 }
+  ]}
+  replies={[
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
+    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
+  ]}
+>
+  Ebala jaba gaduku
+</SlackMessage>
+
+Да начнется битва
+
+<hr />
+
+<div id="table-of-contents" class="table-of-contents">
+  <h2><strong>How to create and host your own website using GitHub</strong></h2>
+  <TimelineOfContents timeline={[{
+    linkTo: "#setting-up-the-repository",
+    title: "Setting up the repository",
+    time: undefined
+  }, {
+    linkTo: "#researching-and-planning",
+    title: "Researching and planning",
+    time: undefined
+  }, {
+    linkTo: "#setting-up-the-repository",
+    title: <code>git</code>,
+    time: undefined
+  }, {
+    linkTo: "#putting-the-website-together",
+    title: "Putting the website together",
+    time: undefined
+  }, {
+    linkTo: "#using-advanced-features",
+    title: "Using advanced features",
+    time: undefined
+  }]} />
+</div>
+
+<Level id="setting-up-the-repository" number="1" name="Setting up the repository" difficulty="I Can Win." objectives="Get to the &#x1F681; Internet! Learn the GitHub platform while you're at it." />
+
+<Level id="researching-and-planning" number="2" name="Researching and planning" difficulty="Bring It On!" objectives="Master issues and project management." />
+
+<Level id="learning-git" number="3" name={<span>Learning <code>git</code></span>} difficulty="Hurt Me Plenty." objectives={<span>Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</span>} />
+
+<Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
+
+<Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives="Survive." />
+
+<ThatsAllFolks />
+<div class="bubble">
+  Что в конце сказать-то? <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a> 👋
+</div>
+
+export const metadata = {
+  title: "Express yourself with Node.js",
+  description: "",
+  keywords: ["nodejs", "alexandrtovmach", "lecture-3"]
+}
+
+export default Lecture;

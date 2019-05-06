@@ -1,0 +1,36 @@
+```csharp
+Dictionary<char, City> cities = new Dictionary<char, City>();
+cities.Add('l', new City() { Name = "Lviv" });
+cities.Add('k', new City() { Name = "Kyiv" });
+cities.Add('o', new City() { Name = "Odessa" });
+
+foreach (KeyValuePair<char, City> keyValue in cities)
+{
+    // keyValue.Value is instance of class City                     
+    Console.WriteLine(keyValue.Key + " - " + keyValue.Value.Name);
+}
+/*
+    l - Lviv
+    k - Kyiv
+    o - Odessa
+*/
+
+foreach (char c in cities.Keys)
+{
+    Console.WriteLine(c);
+}
+
+foreach (City c in cities.Values)
+{
+    Console.WriteLine(c.Name);
+}
+
+// get element by key
+City city = cities['o'];
+
+// object modification
+cities['k'] = new City() { Name = "Kharkiv" };
+
+// remove by key
+cities.Remove('l');
+```

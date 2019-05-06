@@ -1,0 +1,40 @@
+```csharp
+namespace DotNetLecture
+{
+    // Declate delegate signature
+    delegate void LogMessage(string messageToLog);
+
+    public class Program
+    {
+        static void LogRedMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+        }
+        
+        static void LogGreenMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+        }
+
+        static void Main(string[] args)
+        {
+            // Create delegate variable and assign method's address to it
+            LogMessage logMessage = LogRedMessage;
+            
+            // Invoke method assigned to this delegate(Invoke syntax)
+            logMessage.Invoke("Hello world!\n");
+
+            // Add another method to delegate's invocation list
+            logMessage += LogGreenMessage;
+            
+            // Invoke all methods assigned to this delegate
+            logMessage("Second message");
+
+            // Remove the method from the delegate
+            logMessage -= LogGreenMessage;
+        }
+    }
+}
+```

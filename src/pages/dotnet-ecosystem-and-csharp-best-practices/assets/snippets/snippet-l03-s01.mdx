@@ -1,0 +1,31 @@
+```csharp
+class Wallet
+{
+    public static int Bonus = 100;
+    public int balance;
+    public Wallet(int bal)
+    {
+        balance = bal; 
+    }
+
+    public int GetBalance()
+    {
+        return balance + Bonus;
+    }
+
+    public static int GetPureBalance()
+    {
+        // Error: Cannot access non-static field in static context
+        return balance;
+    }
+}
+
+static void Main(string[] args)
+{
+    Console.WriteLine(Wallet.Bonus);      // 100
+    Wallet.Bonus += 200;
+     
+    var wallet1 = new Wallet(150);
+    Console.WriteLine(wallet1.GetBalance());   // 450
+}
+```

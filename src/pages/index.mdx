@@ -1,0 +1,118 @@
+import { Index } from "../components";
+import "./index.css";
+import {
+   volodymyrKushnir2017Avatar,
+   romanSahan2017Avatar,
+   alexandrTovmach2018Avatar,
+   pavelNemchenko2017Avatar,
+   rostyslavDiakiv2018Avatar,
+   nikitaKrasnov2018Avatar
+ } from "../assets/images/avatars/intro-rounded";
+
+<a href="./how-developers-work">How developers work</a>
+
+<a href="./es6-for-everyone">ES6 for everyone</a>
+
+<a href="./express-yourself-with-nodejs">Express yourself with Node.js</a>
+
+<a href="./php-7-features-and-ecosystem">PHP 7 features and ecosystem</a>
+
+<a href="./getting-started-with-aspdotnet-core">Getting started with ASP.NET Core</a>
+
+<a href="./dotnet-ecosystem-and-csharp-best-practices">.NET ecosystem and C# best practices</a>
+
+<div class="columns">
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={volodymyrKushnir2017Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={romanSahan2017Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={alexandrTovmach2018Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={pavelNemchenko2017Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={rostyslavDiakiv2018Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+  <div class="column col-2">
+    <div id="avatar-wrapper">
+      <object id="avatar" data={nikitaKrasnov2018Avatar} role="img" aria-label="My profile picture"></object>
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column col-12">
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/images/how-developers-work.png" class="img-responsive" />
+      </div>
+      <div style="position: absolute; bottom: 1em; left: 1em; background: black; color: white; padding: 0 0.35em; border-radius: 0.25em; font-size: 2em; font-weight: bold;">How developers work</div>
+    </div>
+  </div>
+  <div class="column col-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/images/i-have-no-idea-what-im-doing-in-nodejs.png" class="img-responsive" />
+      </div>
+      <div style="position: absolute; bottom: 0.5em; left: 0.5em; background: black; color: white; padding: 0 0.35em; border-radius: 0.25em; font-size: 1em; font-weight: bold;">I have no idea what I'm doing in Node.js</div>
+    </div>
+  </div>
+  <div class="column col-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="img/osx-el-capitan.jpg" class="img-responsive" />
+      </div>
+      <div class="card-header">
+        <div class="card-title h5">...</div>
+        <div class="card-subtitle text-gray">...</div>
+      </div>
+      <div class="card-body">
+        ...
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">...</button>
+      </div>
+    </div>
+  </div>
+  <div class="column col-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="img/osx-el-capitan.jpg" class="img-responsive" />
+      </div>
+      <div class="card-header">
+        <div class="card-title h5">...</div>
+        <div class="card-subtitle text-gray">...</div>
+      </div>
+      <div class="card-body">
+        ...
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+export const metadata = {
+  author: "Contributors",
+  title: "Welcome",
+  description: "",
+  keywords: ["hola", "guapa"]
+}
+
+export default Index;

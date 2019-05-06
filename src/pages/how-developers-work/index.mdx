@@ -338,6 +338,11 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 8. Look at the current history with `git log`, view detailed information about particular commit with `git show` (`HEAD`, `HEAD~1`, `HEAD^1`)
 9. Remove last line from the README.md and see the difference! Using `git diff`, that is. Commit with `git commit -a -m "Undobracadabra"`, add a tag to the latest commit with `git tag undobracadabra`
 10. Revert the latest commit with `git revert undobracadabra`, add a tag `git tag redobracadabra`
+
+    <div class="bubble small subtle">
+      На майбутнє — зміни, які ще не були коммітнуті (файли відредаговані і збережені, але не коммітнуті до історії), можна відмінити командою <code>git checkout .</code> (також замість <code>.</code> можна вказувати конкретні файли)
+    </div>
+
 11. Now switch to your primary branch (`git checkout develop`) and merge your latest developments into this branch by running `git merge patch/README.md`. Push to the remote with `git push`
 
     <div class="bubble small subtle">
@@ -359,7 +364,7 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 14. Force-push your local repository to the origin with `git push --force`
 
     <div class="bubble small subtle">
-      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому певні "юс-кейси" для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>
+      Мммммм, обережно з цим... З іншої сторони — я сам, поки записував цю лекцію, кілька разів ресетив репозиторій, переписував історію і пушив нагору, тому свої випадки для використання команди звичайно ж є. Треба лиш пам'ятати, що якщо історія затреться ще й на віддаленому сервері, то дістати її назад вже не буде звідки <em>(насправді можна з кешу, але то дуже залежить)</em>
     </div>
 
 <Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />

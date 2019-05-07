@@ -2,7 +2,7 @@ import React from "react";
 import { SEO, Header, Footer } from "../";
 import "./Index.scss";
 
-const Index = ({ children, metadata: { author, title, description, keywords } }) => (
+const Index = ({ children, metadata: { title, description, keywords } }) => (
   <>
     <SEO title={title} description={description} keywords={keywords} />
     <div className="container grid-lg">
@@ -12,7 +12,7 @@ const Index = ({ children, metadata: { author, title, description, keywords } })
           <article>
             {children}
           </article>
-          <Footer author={author} />
+          <Footer />
         </div>
       </div>
     </div>

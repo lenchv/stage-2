@@ -63,8 +63,8 @@ import "./styles.css";
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={rostyslavDiakiv2018Avatar} role="img" aria-label="My profile picture"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={rostyslavDiakiv2018Avatar} role="img" aria-label="My profile picture"></object>
     </div>
     <div class="profile">
       <h3 class="name">Ростислав Дяків</h3>
@@ -863,10 +863,13 @@ import "./styles.css";
 </div>
 
 export const metadata = {
-  author: "Rostyslav Diakiv",
+  orderId: 4,
+  author: "Ростислав Дяків",
   title: ".NET ecosystem and C# best practices",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "Ростік робить детальний огляд екосистеми <strong>.NET</strong>, розповідає про особливості роботи з пам'яттю, на прикладах показує всі важливі поняття мови програмування <strong>С#</strong>, а завершує універсальною підбіркою кращих практик написання чистого коду, які актуальні для будь-якої мови.",
+  keywords: ["hola", "guapa"],
+  // duration: "1 год 15 хв",
+  publishedAt: "2019-05-08 18:00:00"
 }
 
 export default Lecture;

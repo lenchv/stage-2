@@ -23,8 +23,8 @@ import './styles.css';
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={nikitaKrasnov2018Avatar} role="img" aria-label="My profile picture"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={nikitaKrasnov2018Avatar} role="img" aria-label="My profile picture"></object>
     </div>
     <div class="profile">
       <h3 class="name">Никита Краснов</h3>
@@ -311,10 +311,13 @@ We can do the same for methods in the controller.
 </div>
 
 export const metadata = {
-  author: "Nikita Krasnov",
+  orderId: 6,
+  author: "Никита Краснов",
   title: "Getting started with ASP.NET Core",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "После небольшого вступления, где речь пойдет о преимуществах <strong>.NET Core</strong>, Никита покажет как создать приложение на <strong>ASP.NET Core</strong> с использованием <strong>ASP.NET Core Web API</strong>, закодит сервисы и контроллеры, а затем объяснит, что такое dependency injection, роутинг и middleware.",
+  keywords: ["hola", "guapa"],
+  // duration: "1 год 15 хв",
+  publishedAt: "2019-05-07 18:00:00"
 }
 
 export default Lecture;

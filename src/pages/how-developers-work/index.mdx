@@ -28,8 +28,8 @@ import {
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={volodymyrKushnir2017Avatar} role="img" aria-label="Volodymyr Kushnir"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={volodymyrKushnir2017Avatar} role="img" aria-label="Volodymyr Kushnir"></object>
     </div>
     <div class="profile">
       <h3 class="name">Володимир Кушнір</h3>
@@ -502,10 +502,13 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 </div>
 
 export const metadata = {
-  author: "Volodymyr Kushnir",
+  orderId: 1,
+  author: "Володимир Кушнір",
   title: "How developers work",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "Воркшоп по <strong><code>git</code></strong> та <strong>GitHub</strong>, в ході якого Володя показує, як створити і доглядати за репозиторієм, вести проект і документацію, працювати в команді, коммітити, використовуючи термінал та клієнти з графічним інтерфейсом, а також складає просту веб-сторінку і хостить її через <strong>GitHub Pages</strong>.",
+  keywords: ["hola", "guapa"],
+  duration: "1 год 15 хв",
+  publishedAt: "2019-05-07 10:00:00"
 }
 
 export default Lecture;

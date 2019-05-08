@@ -8,8 +8,8 @@ import { alexandrTovmach2018Avatar } from "../../assets/images/avatars/intro-rou
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={alexandrTovmach2018Avatar} role="img" aria-label="Alex profile picture"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={alexandrTovmach2018Avatar} role="img" aria-label="Alex profile picture"></object>
     </div>
     <div class="profile">
       <h3 class="name">Александр Товмач</h3>
@@ -128,9 +128,13 @@ import { alexandrTovmach2018Avatar } from "../../assets/images/avatars/intro-rou
 </div>
 
 export const metadata = {
+  orderId: 6,
+  author: "Александр Товмач",
   title: "Express yourself with Node.js",
-  description: "",
-  keywords: ["nodejs", "alexandrtovmach", "lecture-3"]
+  description: "Александр расскажет о микросервисах в вебе, как работать с бекендом с помощью <strong>Node.js</strong>, покажет как настроить необходимые инструменты и на <strong>Express.js</strong> поднимет сервер, обрабатывающий запросы и данные.",
+  keywords: ["nodejs", "alexandrtovmach", "lecture-3"],
+  // duration: "1 год 15 хв",
+  publishedAt: "2019-05-12 18:00:00"
 }
 
 export default Lecture;

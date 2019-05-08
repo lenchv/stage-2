@@ -8,8 +8,8 @@ import "./styles.css";
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={pavelNemchenko2017Avatar} role="img" aria-label="My profile picture"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={pavelNemchenko2017Avatar} role="img" aria-label="My profile picture"></object>
     </div>
     <div class="profile">
       <h3 class="name">Павел Немченко</h3>
@@ -1131,10 +1131,13 @@ server {
 </div>
 
 export const metadata = {
-  author: "Pavel Nemchenko",
+  orderId: 3,
+  author: "Павел Немченко",
   title: "PHP 7 features and ecosystem",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "Павел проводит экскурс в фундаментальные понятия и новинки <strong>PHP 7</strong>, объясняет в каких случаях используются наиболее распостраненные фреймворки, показывает как работать с <strong>Composer</strong> и рассказывает о типичном рабочем окружении PHP-программиста.",
+  keywords: ["hola", "guapa"],
+  // duration: "1 год 15 хв",
+  publishedAt: "2019-05-08 10:00:00"
 }
 
 export default Lecture;

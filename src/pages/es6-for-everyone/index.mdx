@@ -100,8 +100,8 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
 
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={romanSahan2017Avatar} role="img" aria-label="Roman Sahan"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={romanSahan2017Avatar} role="img" aria-label="Roman Sahan"></object>
     </div>
     <div class="profile">
       <h3 class="name">Роман Саган</h3>
@@ -1211,10 +1211,13 @@ As usual, just `npm install css-loader style-loader --save-dev` and edit <strong
 </div>
 
 export const metadata = {
-  author: "Roman Sahan",
+  orderId: 2,
+  author: "Роман Саган",
   title: "ES6 for everyone",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "Роман швиденько розказує про основні поняття <strong>JavaScript</strong>, потім пише фронтенд для простої інтерактивної веб-сторінки, використовуючи <strong>DOM API</strong> для створення елементів та найбільш популярні функції <strong>ES6</strong> для обробки даних, а також пояснює про модулі, транспайлери, бандлери.",
+  keywords: ["hola", "guapa"],
+  // duration: "1 год 15 хв",
+  publishedAt: "2019-05-08 10:00:00"
 }
 
 export default Lecture;

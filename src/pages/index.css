@@ -1,3 +1,4 @@
+/* Link to the main page */
 .mainpage-link {
   margin: 0;
   display: flex;
@@ -21,6 +22,25 @@
   transform: scale(1.05);
   transform-origin: center center;
 }
+
+/* Handwave */
+.waving-hand {
+  animation: wave 0.4s alternate infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 100%;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
+}
+
+/* Lecture panel */
 .lecture-panel {
   height: 100%;
 }

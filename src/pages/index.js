@@ -42,7 +42,7 @@ const Index = ({ data: { allMdx: { edges: data } } }) => (
           <article>
             <div className="hero">
               <div class="hero-body text-center">
-                <div><strong>— Hey, привіт, привет 👋!</strong> Це — лекції другого етапу для</div>
+                <div><strong>— Hey, привіт, привет <span class="waving-hand">👋</span>!</strong> Це — лекції другого етапу для</div>
                 <h1 className="mainpage-link">
                   <a href="https://academy.binary-studio.com/" title="Binary Studio Academy">
                     <svg

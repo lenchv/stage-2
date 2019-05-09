@@ -1,22 +1,21 @@
 import React from "react";
 import { SEO, Header, Footer } from "../";
-import "./Index.scss";
 
-const Index = ({ children, metadata: { author, title, description, keywords } }) => (
+const Page = ({ children, metadata: { title, description, keywords } }) => (
   <>
-    <SEO title={title} description={description} keywords={keywords} />
+    <SEO title={title} description={description.replace(/<(?:.|\n)*?>/gm, "")} keywords={keywords} />
     <div className="container grid-lg">
       <div className="columns">
         <div className="column">
           <Header />
-          <article>
+          <article className="content">
             {children}
           </article>
-          <Footer author={author} />
+          <Footer />
         </div>
       </div>
     </div>
   </>
 );
 
-export default Index;
+export default Page;

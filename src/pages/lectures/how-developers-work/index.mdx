@@ -1,9 +1,9 @@
-import { Lecture, SlackMessage, FacebookMessage, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../../components";
+import { Lecture, VideoWrapper, SlackMessage, FacebookMessage, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
 import { faFacebookSquare, faGithub, faSkype } from "@fortawesome/free-brands-svg-icons";
-import { volodymyrKushnir2017Avatar } from "../../assets/images/avatars/intro-rounded";
+import { volodymyrKushnir2017Avatar } from "../../../assets/images/avatars/intro-rounded";
 import {
   ryuAvatar,
   donaldTrumpAvatar,
@@ -22,14 +22,18 @@ import {
   pavelNemchenkoAvatar,
   vitaliyOleynikovAvatar,
   yuriyStetsulaAvatar
-} from "../../assets/images/avatars/slack-squared";
+} from "../../../assets/images/avatars/slack-squared";
 
 <div><h1><strong>How developers work</strong></h1></div>
 
+<VideoWrapper duration="03:03">
+  <iframe src="https://www.youtube.com/embed/Erzsn5SoczI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
 <div>
   <div class="author">
-    <div id="avatar-wrapper">
-      <object id="avatar" data={volodymyrKushnir2017Avatar} role="img" aria-label="Volodymyr Kushnir"></object>
+    <div class="avatar-wrapper">
+      <object class="avatar-object" data={volodymyrKushnir2017Avatar} role="img" aria-label="Volodymyr Kushnir"></object>
     </div>
     <div class="profile">
       <h3 class="name">Володимир Кушнір</h3>
@@ -113,7 +117,7 @@ import {
       { name: "Denis Beketsky", avatarUrl: denisBeketskyAvatar }
     ]}
   >
-    <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money on the Internet, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, then maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here's what I want to build ― for starters just a quick intro page to let me know what I’m all about. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
+    <p>Hadouken! Pleased to meet you. After defeating Sagat and M. Bison for the nth time, I’ve decided to downshift my martial arts career a little bit and get into this IT thing ― sensei tells me that there’s a lot of money on the Internet, and a whole lot less getting punched in the face. I’d like to build a little website to market my personal brand, then maybe sell a few t-shirts, nunchucks, that sort of thing ― I think it’ll be a big hit <em>(TO THE SOLAR PLEXUS IYKWIM HAHAHA!.. woo, goddamn, I love hitting people...)</em>. Anyhow, here's what I want to build ― for starters just a quick intro page to let me know <a href="https://github.com/binary-studio-academy/stage-2-how-developers-work/blob/master/ryu"><strong>what I’m all about</strong></a>. By the way, can you do animated GIFs of me kicking people across the screen? No? Well, fine, I trust your judgement. Just make sure I look badass, okay? Thanks, man, I’m off to the Shaolin temple for a few weeks (teambuilding excersice, such bullshit, ugh). And remember, <strong>winners never lose</strong>! &#x270c;Peace!</p>
   </SlackMessage>
   <SlackMessage
     senderId="donald-trump"
@@ -221,7 +225,11 @@ import {
 
 <Level id="setting-up-the-repository" number="1" name="Setting up the repository" difficulty="I Can Win." objectives="Get to the &#x1F681; Internet! Learn the GitHub platform while you're at it." />
 
-1. Well, [**this is Git**](https://xkcd.com/1597/), [**you'll need it**](../../assets/images/y-u-no-git.png).
+<VideoWrapper duration="19:55">
+  <iframe src="https://www.youtube.com/embed/cGpHHjOxaUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
+1. Well, [**this is Git**](https://xkcd.com/1597/), [**you'll need it**](../../../assets/images/y-u-no-git.png).
    <div><strong>GitHub</strong> <sup><strong><a href="https://github.com/about/facts" title="GitHub Facts">[1]</a><a href="https://github.com/about/milestones" title="GitHub Milestones">[2]</a><a href="https://github.com/features" title="How developers work">[3]</a><a href="https://github.blog" title="The GitHub Blog">[4]</a><a href="https://education.github.com" title="GitHub Education">[5]</a><a href="https://help.github.com" title="GitHub Help">[6]</a><a href="https://lab.github.com" title="GitHub Learning Lab">[7]</a></strong></sup> will host it for you. First things first, skim through <a href="https://guides.github.com/introduction/flow/"><strong>Understanding the GitHub flow</strong></a> and <a href="https://guides.github.com/activities/hello-world/"><strong>Hello World</strong></a> guides to get an overview of terminology and core concepts <sup><strong><a href="https://git-scm.com/docs/gitglossary" title="gitglossary">[1]</a></strong></sup></div>
 2. Open up [**GitHub**](https://github.com/) and sign in. Create a new repository named **"homepage"** (e.g. **volodymyr-kushnir/homepage**), set description to "My very own personal website. Basically this is just a résumé.", initialize with **README**, ignore **.gitignore**, but choose **"MIT License"**
 3. Add topics _(e.g. "personal website homepage resume gh-pages html css binary-studio-academy bsa19")_
@@ -279,6 +287,10 @@ import {
 
 <Level id="researching-and-planning" number="2" name="Researching and planning" difficulty="Bring It On!" objectives="Master issues and project management." />
 
+<VideoWrapper duration="04:35">
+  <iframe src="https://www.youtube.com/embed/RsWBdoKhd4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
 1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
 
    <div class="bubble small subtle">
@@ -297,6 +309,10 @@ import {
 2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
 
 <Level id="learning-git" number="3" name={<span>Learning <code>git</code></span>} difficulty="Hurt Me Plenty." objectives={<span>Learn basic <code>bash</code> and <code>git</code> commands, gain some confidence.</span>} />
+
+<VideoWrapper duration="16:55">
+  <iframe src="https://www.youtube.com/embed/0n7E8U6b9Pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
 
 Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em>
 
@@ -370,6 +386,10 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 
 <Level id="putting-the-website-together" number="4" name="Putting the website together" difficulty="Hardcore." objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO." />
 
+<VideoWrapper duration="20:25">
+  <iframe src="https://www.youtube.com/embed/JAOpdKpXT18" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
 1. Use [**GitHub Desktop**](https://desktop.github.com/) to clone the repository on your PC
 2. Build a website using the stylesheet from [**https://volodymyrkushnir.com/**](https://volodymyrkushnir.com/) as a foundation _(see [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference)_:
    1. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update [**`<head>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#head):
@@ -408,6 +428,10 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 
 <Level id="using-advanced-features" number="5" name="Using advanced features" difficulty="Nightmare!" objectives={<span>Learn <code>git</code> internals and advanced GitHub features. Well, basically, survive.</span>} />
 
+<VideoWrapper duration="22:46">
+  <iframe src="https://www.youtube.com/embed/pdOHgfuDY4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
 1. <div>Exclude <strong>.DS_Store</strong> from the repository by either adding it to <strong>.gitignore</strong> <sup><strong><a href="https://git-scm.com/docs/gitignore" title="gitignore">[1]</a><a href="https://github.com/github/gitignore" title="github/gitignore">[2]</a></strong></sup> or by setting an <code>export-ignore</code> attribute for it in <strong>.gitattributes</strong> <sup><strong><a href="https://git-scm.com/docs/gitattributes" title="gitattributes">[1]</a><a href="https://github.com/alexkaratarakis/gitattributes" title="alexkaratarakis/gitattributes">[2]</a></strong></sup></div>
 2. <p>Add <strong>volodymyrkushnir.com</strong> as a submodule by running <code>git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com</code> <sup><strong><a href="https://git-scm.com/docs/git-submodule" title="git-submodule">[1]</a></strong></sup></p>
    
@@ -443,6 +467,11 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
         Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if necessary. Keep in mind that Windows is definitely not a Unix-like OS, so you'd have to fix the script by providing the proper path to the <code>sh</code> executable on your system
       </div>
 4. Add a webhook by setting up a basic CI/CD process using [**Travis CI**](https://travis-ci.org) and [**AWS**](https://aws.amazon.com)
+   
+   <div class="bubble small subtle">
+     Travis is free for public repositories. AWS has an <a href="https://aws.amazon.com/s3/pricing/" title="Amazon S3 Pricing"><strong>AWS Free Usage Tier</strong></a>, which should cover the needs of this tutorial, but you can also get $30 in AWS credits if you join the <a href="https://aws.amazon.com/education/awseducate/" title="AWS Educate"><strong>AWS Educate</strong></a> program. Or you can get a <a href="https://education.github.com/pack" title="GitHub Student Developer Pack"><strong>GitHub Student Developer Pack</strong></a>.
+   </div>
+   
    1. Log in to [**AWS Console**](https://console.aws.amazon.com/), go to **S3** service, create two buckets for **staging** and **production** (choose unique names!), edit their public access settings (uncheck everything), go to bucket properties and enable static website hosting, then go to **My Security Credentials** and generate a new set of access keys. Phew! 😌
    <div class="bubble small subtle">
      <strong>S3 bucket names are globally unique.</strong> This means that if someone else has a bucket of a certain name, you cannot have a bucket with that same name
@@ -492,15 +521,23 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 <hr />
 
 <ThatsAllFolks />
+
+<VideoWrapper duration="00:20">
+  <iframe src="https://www.youtube.com/embed/tEYBK7FKGCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</VideoWrapper>
+
 <div class="bubble">
   Дякую за увагу 🙏! Cподобалася лекція? Лайк, шейр, репост, сабскра-а-а-айб! Коментуй та задавай питання під цією лекцією у свому особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Успіхів у виконанні домашнього завдання і до нових зустрічей, чірз! 👋
 </div>
 
 export const metadata = {
-  author: "Volodymyr Kushnir",
+  orderId: 1,
+  author: "Володимир Кушнір",
   title: "How developers work",
-  description: "",
-  keywords: ["hola", "guapa"]
+  description: "Воркшоп по <strong><code>git</code></strong> та <strong>GitHub</strong>, в ході якого Володя показує, як створити і доглядати за репозиторієм, вести проект і документацію, працювати в команді, коммітити, використовуючи термінал та клієнти з графічним інтерфейсом, а також складає просту веб-сторінку і хостить її через <strong>GitHub Pages</strong>.",
+  keywords: ["hola", "guapa"],
+  duration: "1 год 15 хв",
+  publishedAt: "2019-05-07 10:00:00"
 }
 
 export default Lecture;

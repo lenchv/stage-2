@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import rodrigoRodriguezShakuhachiFluteAudio from "../../assets/audio/rodrigo-rodriguez-shakuhachi-flute.mp3";
+import rodrigoRodriguezShakuhachiFluteAudio from "./assets/audio/rodrigo-rodriguez-shakuhachi-flute.mp3";
 import "./Flute.css";
 
 class Flute extends Component {

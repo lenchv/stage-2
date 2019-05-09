@@ -91,7 +91,7 @@ const Index = ({ data: { allMdx: { edges: data } } }) => (
                 </h2>;
                 const isPublished = isDateInThePast(publishedAt);
                 return (
-                  <div key={index} className="column col-6">
+                  <div key={index} className="column col-6 col-sm-12">
                     <div className={classNames("panel", "lecture-panel", {
                       "disabled": !isPublished
                     })}>

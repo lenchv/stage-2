@@ -1,6 +1,7 @@
 export { default as Header } from "./Header/Header";
 export { default as Footer } from "./Footer/Footer";
 export { default as Lecture } from "./Lecture/Lecture";
+export { default as VideoWrapper } from "./VideoWrapper/VideoWrapper";
 export { default as Page } from "./Page/Page";
 export { default as Level } from "./Level/Level";
 export { default as SlackMessage } from "./SlackMessage/SlackMessage";

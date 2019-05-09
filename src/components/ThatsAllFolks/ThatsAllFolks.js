@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import thatsAllFolksAudio from "../../assets/audio/thats-all-folks.mp3";
+import thatsAllFolksAudio from "./assets/audio/thats-all-folks.mp3";
 import "./ThatsAllFolks.css";
 
 class ThatsAllFolks extends Component {

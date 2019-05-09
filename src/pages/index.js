@@ -139,7 +139,7 @@ export const pageQuery = graphql`
   query {
     allMdx (filter: {
       fileAbsolutePath: {
-        regex: "/pages\/.*\/index[.]mdx$/"
+        regex: "/pages\/lectures\/.*\/index[.]mdx$/"
       }
     }, sort: {
       fields: [exports___metadata___orderId]

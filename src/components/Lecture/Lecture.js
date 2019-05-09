@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO, Header, Footer } from "../";
+import { SEO, Header, Footer, ShrugMessage } from "../";
 import { isDateInThePast } from "../../utils";
 import "prismjs/themes/prism.css";
 import "./Lecture.scss";
@@ -17,7 +17,10 @@ const Lecture = ({ children, metadata: { author, title, description, keywords, p
               {
                 isPublished
                 ? children
-                : <div>Nah, not yet!</div>
+                : <ShrugMessage>
+                    <h4>— Пробач, але лекція <strong>«{title}»</strong> ще не опублікована.</h4>
+                    <p>Заглянь сюди трішки пізніше, будь ласка.</p>
+                  </ShrugMessage>
               }
             </article>
             <Footer author={author} />

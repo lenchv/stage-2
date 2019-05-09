@@ -11,7 +11,7 @@ const Header = () => (
         </Link>
       </div>
       <div className="navbar-section">
-        <a href="/whats-this/ua" className="btn btn-link">
+        <a href="/whats-this" className="btn btn-link">
           Це як?
         </a>
         <a href="/whats-this/en" className="btn btn-link">

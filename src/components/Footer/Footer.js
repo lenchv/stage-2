@@ -9,8 +9,8 @@ const Footer = ({ author }) => (
         </div>
       </section>
       <section class="navbar-section">
-        <div className="text-gray">
-          Made with 🧠, 🤲, 💻, and ❤️.
+        <div class="text-gray">
+          Made with 🧠🤲💻❤️
         </div>
       </section>
     </div>

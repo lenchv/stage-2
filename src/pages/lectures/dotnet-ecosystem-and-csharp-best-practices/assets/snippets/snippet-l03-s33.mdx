@@ -1,0 +1,7 @@
+```csharp
+catch (DivideByZeroException e)
+{
+    // thow new exception
+    throw new HttpStatusCodeException(400, "Can't divide by 0");
+}
+```

@@ -1,0 +1,42 @@
+```csharp
+class MyFile : IDisposable
+{
+    private FileStream MyFileStream { get; set; }
+    private StreamWriter MyStream { get; set; }
+
+    public MyFile(string filePath)
+    {
+        MyFileStream = File.Create(filePath);
+        // Open stream for working 
+        MyStream = new StreamWriter(MyFileStream);
+    }
+
+    public void AddTextToFile(string text) => MyStream?.Write(text);
+
+    // Free unmanaged resources
+    public void Dispose()
+    {
+        MyStream?.Dispose();
+        MyFileStream?.Dispose();
+    }
+}
+  
+static void Main(string[] args) 
+{  
+    MyFile file = null;
+    try 
+    {
+        file = new MyFile("D://file.txt")
+    }
+    finally 
+    {
+        file.Dispose();
+    }
+
+    // The same - but shorter way
+    using (MyFile file = new MyFile("D://file2.txt")) 
+    {  
+        file.AddTextToFile("Hello"); 
+    }
+}
+```

@@ -8,6 +8,8 @@ import boxingUnboxing from "./assets/images/boxing-unboxing.gif";
 import constraintsTypes from "./assets/images/constraints-types.png";
 import nugetLogo from "./assets/images/nuget-logo.png";
 import dotnet5Platform from "./assets/images/dotnet5_platform.png";
+import lambdaExpressionStructure from "./assets/images/lambda-expression-structure.png";
+import delegateEventFlow from "./assets/images/delegate-event-flow.png";
 import stackAndHeap from "./assets/images/stack-and-heap.gif";
 import SnippetL02S01 from "./assets/snippets/snippet-l02-s01.mdx";
 import SnippetL02S02 from "./assets/snippets/snippet-l02-s02.mdx";
@@ -364,7 +366,7 @@ import "./styles.css";
     </div>
   </li>
 </ul>
-<Level id="csharp-essential-topics" number="3" name="Найважливіші теми C#" difficulty="Мамкин комп'юторщик." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
+<Level id="csharp-essential-topics" number="3" name="Найважливіші теми C#" difficulty="Ну таке собі." objectives="Зрозуміти SDK." labels={{ level: "Розділ", backToTop: "нагору", difficulty: "Складність:", objectives: "Мета:" }} />
 <ul>
   <li class="details">
     <input type="checkbox" id="accordion-3-1" />
@@ -563,10 +565,11 @@ import "./styles.css";
       <h5><strong>Nullable</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Явно <em>структурному типу даних</em> ми не можемо присвоїти <code>null</code>. Щоб це зробити, нам потрібно оголосити змінну з модифікатором <code>?</code>. Цей модифікатор являється аліасом до структури <code>Nullable&lt;T&gt;</code>, що є так званою обгорткою для структур, що і показано на сигнатурі.</p>
+      <p>Явно <em>структурному типу даних</em> ми не можемо присвоїти значення<code>null</code>. Щоб це зробити, нам потрібно оголосити змінну з модифікатором <code>?</code>. Цей модифікатор являється аліасом до структури <code>Nullable&lt;T&gt;</code></p>
       <SnippetL03S18 />
-      <p>Коли ми обгортаємо змінну в <code>Nullable</code> тип, у нас з'являється новий АРІ для взаємодії з цією змінною.</p>
+      <p>Сигнатура <code>Nullable&lt;T&gt;</code>:</p>      
       <SnippetL03S19 />
+      <p>Коли ми обгортаємо змінну в <code>Nullable</code> тип, у нас з'являється новий <strong>АРІ</strong> для взаємодії з цією змінною:</p>
       <ul>
         <li>Властивіть <code>HasValue</code>, повертає <code>true</code>, якщо змінна містить значення, або <code>false</code>, якщо вона <code>null</code></li>
         <SnippetL03S20 />
@@ -575,42 +578,21 @@ import "./styles.css";
     </div>
   </li>
   <li class="details">
-    <input type="checkbox" id="accordion-3-9" />
-    <label class="summary" for="accordion-3-9">
-      <h5><strong>Tuples</strong></h5>
-    </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Якщо вам потрібно склеїти два значення, щоб повернути їх з функції або помістити два значення в хеш-набір, ви можете використовувати типи System.ValueTuple, які створюються за допомогою зручного синтаксису:</p>
-      <SnippetL03S27 />
-      <ol>
-        <li>Приклад створення кортежу</li>
-        <li>Використання кортежу для типізування Dictionary</li>
-        <li>Додаємо елементу кортежу в Dictionary</li>
-        <li>Дістаємо значення словника по ключу</li>
-        <li>Деструктуризація елементу кортежу</li>
-        <li>Доступ до членів кортежу по імені</li>
-        <li>Приклад того як повертається з функції значення в кортежі</li>
-      </ol>
-      <SnippetL03S28 />
-    </div>
-  </li>
-  <li class="details">
     <input type="checkbox" id="accordion-3-10" />
     <label class="summary" for="accordion-3-10">
       <h5><strong>Events & Delegates + Lambdas</strong></h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
-      <p>Тепер переходимо до <strong>Подій та Делегатів</strong>.</p>
-      <p><em>Делегати</em> — це об'єкти, які вказують на методи; з допомогою цих вказівників ми викликаємо відповідні методи.</p>
+      <p><em>Делегати</em> — це об'єкти, які вказують на методи; за допомогою них ми можемо викликати методи, які ми присвоїли делегату.</p>
+      <p><em>Події</em> — це об'єкти типу делегат, які повідомляють про це що сталась якась подія (відбувся <em>action</em>).</p>
+      <p><em>Лямбда-вирази</em> — представляють з себе спрощений запис анонімних методів. Це дозволяє створити лаконічні методи, які можуть повертати якесь значення.</p>
+      // TODO: Create nested list with accordeons
+      <p>Ламбда-вирази мають наступний синтаксис:</p>
+      <img src={lambdaExpressionStructure} alt="lambdaExpressionStructure" />
+      <p>Приклад використання делегату:</p>
       <SnippetL03S21 />
-      <p>Спочатку ми оголошуємо <em>сигнатуру делегату</em> - його параметри і повертаючий тип. Відтепер він може вказувати тільки на методи, які мають такі ж параметри і повертаючий тип.</p>
-      <p>У нашому випадку делегат <code>LogMessage</code> має один параметр <code>string</code> і нічого не повертає.</p>
-      <p>В класі програм ми оголосили два методи: <code>LogRedMessage</code> та <code>LogGreenMessage</code> з тою самою сигнатурою, що і у делегата, тому ми спокійно можемо присвоїти йому посилання на ці методи.</p>
-      <p>Спочатку ми створюємо змінну делегату, присвоюючи йому адресу методу <code>LogRedMessage</code> і викликаємо його за допомогою методу делегата <code>Invoke</code>, передаючи у цей метод параметри, а саме <code>"Hello world!"</code>.</p>
-      <p>Далі ми додаємо посилання на ще один метод <code>LogGreenMessage</code> цьому делегату, і  при наступному виконанню делегата ми викличемо вже два методи, призначені цьому делегату, а у консоль виведуться два рядки "Second message" червоного та зеленого кольору.</p>
-      <p>Викликати делегат можна і без <code>Invoke</code>, просто за допомогою круглих дужок, передавши аргументи.</p>
       <h6><strong>Action, Func і Predicate</strong></h6>
-      <p>Замість визначення нового типу делегата, можна використовувати делегати <em>Action</em>, <em>Func</em> і <em>Predicate</em>.</p>
+      <p>Замість визначення нового типу делегата, можна використовувати уже визначені делегати <em>Action</em>, <em>Func</em> і <em>Predicate</em>.</p>
       <ul>
           <li>Дженерік делегат <em>Action &lt;T&gt;</em> призначений для посилання на метод, що повертає <code>void</code>. Класу цього делегата можна передавати до 16 параметрів довільного типу.
           <SnippetL03S22 />
@@ -624,8 +606,10 @@ import "./styles.css";
       </ul>
       <div class="bubble" style="margin: -0.5em 1em 1em;">В підсумку, суть делегатів у тому, що вони дозволяють представляти методи у вигляді об'єктів і передавати їх до функцій, використовувати як колбеки і так далі.</div>
       <h6><strong>Events & Delegates Flow</strong></h6>
-      <p>З делегатами розібралися, переходимо до <strong>подій</strong>. Події дозволяють сигналізують системі про те, що відбулося певна дія.</p>
-      <p>Існує така модель: Видавець-Підписник. Підписник підписується на подію, визначає обробник і чекає допоки Видавець викличе цю подію.</p>
+      <img src={delegateEventFlow} alt="delegateEventFlow" />
+      <p><strong>Події</strong> дозволяють сигналізують системі про те, що відбулося певна дія.</p>
+      <p>Існує така модель: Publisher-Subscriber(Видавець-Підписник). Підписник підписується на подію, визначає обробник і чекає допоки Видавець виконає цю подію, щоб його викликати.</p>
+      <p>Приклад використання подій та делегатів ви зможете знайти за посиланням на <a href="#">репозиторій</a> із кодом з лекції</p>
     </div>
   </li>
   <li class="details">
@@ -655,6 +639,26 @@ import "./styles.css";
       <h6><strong>ʼList is Arrayʼ wrapper</strong></h6>
       <p>По суті такі колекції як <code>ArrayList</code>, <code>List</code>, <code>Stack</code>, <code>Queue</code> та інші це ніщо інше як зручні обгортки над <em>масивами</em> для роботи з набором даних.</p>
       <p>Зараз я продемонструю створення власноЇ колекції на основі масиву та покажу як можна проходитись по ній циклом <code>forEach</code>. Kолекція буде називатись <code>CustomCollection</code>.</p>
+    </div>
+  </li>
+    <li class="details">
+    <input type="checkbox" id="accordion-3-9" />
+    <label class="summary" for="accordion-3-9">
+      <h5><strong>Tuples</strong></h5>
+    </label>
+    <div class="details-body" style="margin-bottom: 0.5em;">
+      <p>Якщо вам потрібно склеїти два значення, щоб повернути їх з функції або помістити два значення в хеш-набір, ви можете використовувати типи System.ValueTuple, які створюються за допомогою зручного синтаксису:</p>
+      <SnippetL03S27 />
+      <ol>
+        <li>Приклад створення кортежу</li>
+        <li>Використання кортежу для типізування Dictionary</li>
+        <li>Додаємо елементу кортежу в Dictionary</li>
+        <li>Дістаємо значення словника по ключу</li>
+        <li>Деструктуризація елементу кортежу</li>
+        <li>Доступ до членів кортежу по імені</li>
+        <li>Приклад того як повертається з функції значення в кортежі</li>
+      </ol>
+      <SnippetL03S28 />
     </div>
   </li>
   <li class="details">
@@ -931,6 +935,7 @@ export const metadata = {
   keywords: ["hola", "guapa"],
   // duration: "1 год 15 хв",
   publishedAt: "2019-05-10 18:00:00"
+  // TODO: Change to proper date - May 15
 }
 
 export default Lecture;

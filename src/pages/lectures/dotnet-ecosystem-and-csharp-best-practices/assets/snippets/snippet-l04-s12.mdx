@@ -1,0 +1,36 @@
+```csharp
+interface IMessenger {
+  void Send();
+}
+
+class Email: IMessenger {
+  public void Send() {
+    /* Code to send email-letter */
+  }
+}
+
+class SMS: IMessenger {
+  public void Send() {
+    /* Code to send SMS */
+  }
+}
+
+class Notification {
+  public IMessenger Messenger { get; set; }
+
+  public Notification(IMessenger mess) {
+    Messenger = mess;
+  }
+
+  public void Notify() {
+    Messenger.Send();
+  }
+}
+
+static void Main(string[] args) {
+  var notification = new Notification(new Email());
+  notification.Notify(); // Sent email
+  notification.Messenger = new SMS(); // Change the provider
+  notification.Notify(); // Sent SMS
+}
+```

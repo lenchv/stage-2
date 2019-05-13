@@ -240,8 +240,7 @@ class GradingHometask1 extends Component {
                       <div className="panel-header">
                         <div className="panel-title">
                           <h6>
-                            <span role="img" aria-label="rainbow">🌈</span>
-                            <strong>A-a-a-A-A-aweso-o-O-O-oomene-e-E-E-ess!</strong>
+                            <strong><span role="img" aria-label="rainbow">🌈</span>A-a-a-A-A-aweso-o-O-O-oomene-e-E-E-ess!</strong>
                             <span className="text-gray"><small>#6</small></span>
                           </h6>
                         </div>

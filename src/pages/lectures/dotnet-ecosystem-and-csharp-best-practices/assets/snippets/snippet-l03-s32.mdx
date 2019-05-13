@@ -1,0 +1,22 @@
+```csharp
+static void Main(string[] args)
+{
+    var stackCities = new Stack<string>();
+    stackCities.Push("Lviv");
+    stackCities.Push("Kyiv");
+    stackCities.Push("Odessa");
+    
+    var odessa = stackCities.Pop();
+    
+    Console.WriteLine("Deleted city: " + odessa)
+
+    foreach(string city in stackCities) {
+        Console.WriteLine(city);
+    }
+    /* Output:
+        Deleted city: Odessa
+        Lviv
+        Kyiv
+    */
+}
+```

@@ -1,12 +1,18 @@
 module.exports = {
   pathPrefix: `/stage-2`,
   siteMetadata: {
-    title: `BSA19 2nd stage lectures`,
+    title: `Binary Studio Academy 2019 • Stage 2`,
     description: `Lectures for the 2nd stage of the Binary Studio Academy 2019`,
     author: ``
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-135348958-2"
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -56,6 +62,13 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/src/pages/`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

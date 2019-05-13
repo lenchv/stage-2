@@ -7,23 +7,22 @@ import "chartjs-plugin-dragdata";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faCopy, faUndo } from "@fortawesome/pro-regular-svg-icons";
 import { faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
-import "./GradingHometask1.css";
+import "./GradingHometask2.css";
 
-class GradingHometask1 extends Component {
+class GradingHometask2 extends Component {
   constructor() {
     super();
     this.state = {
       labels: [
-        "Repository management",
-        "Project management",
-        "git + GitFlow",
-        "HTML / CSS / JS",
+        "Matching requirements",
+        "Usage of ES features",
         "UI / UX",
-        "Awesomeness"
+        "Readability / Reusability",
+        "\"wow\"-factor"
       ],
       datasets: [{
         label: "You",
-        data: [6, 5, 5, 5, 2, 0],
+        data: [2, 10, 3, 10, 4],
         dragData: true,
         borderColor: "rgba(0, 173, 238, 1)",
         backgroundColor: "rgba(0, 173, 238, 0.125)",
@@ -37,7 +36,7 @@ class GradingHometask1 extends Component {
         pointHitRadius: 30
       }, {
         label: "Joe Average",
-        data: [6, 5, 5, 5, 2, 0],
+        data: [2, 10, 3, 10, 4],
         dragData: false,
         borderColor: "rgba(0, 0, 0, 0.1)",
         backgroundColor: "rgba(0, 0, 0, 0.05)",
@@ -141,7 +140,7 @@ class GradingHometask1 extends Component {
             <div className="container">
               <div className="columns">
                 <div className="column">
-                  Завдання комплексне, тому й оцінюватися буде в шести напрямках, а середнє арифметичне тих шести чисел і буде кінцевою оцінкою:
+                  Завдання комплексне, тому й оцінюватися буде в п'яти напрямках, а середнє арифметичне тих п'яти чисел і буде кінцевою оцінкою:
                 </div>
               </div>
               <small>
@@ -151,13 +150,13 @@ class GradingHometask1 extends Component {
                       <div className="panel-header">
                         <div className="panel-title">
                           <h6>
-                            <strong>Repository management</strong>
+                            <strong>Matching requirements</strong>
                             <span className="text-gray"><small>#1</small></span>
                           </h6>
                         </div>
                       </div>
                       <div className="panel-body">
-                        <p>Репозиторій створений, топіки додані, README.md на місці, а GitHub Pages увімкнено. Може навіть є якась Wiki? А якщо знайду?!</p>
+                        <p>Впровадьте всі необхідні features і постарайтеся виловити з них всі баги.</p>
                       </div>
                     </div>
                   </div>
@@ -166,53 +165,13 @@ class GradingHometask1 extends Component {
                       <div className="panel-header">
                         <div className="panel-title">
                           <h6>
-                            <strong>Project management</strong>
+                            <strong>Usage of ES features</strong>
                             <span className="text-gray"><small>#2</small></span>
                           </h6>
                         </div>
                       </div>
                       <div className="panel-body">
-                        Проекти заведені, майлстоуни визначені, таски створюються, проблеми описуються, лейби прикріплюються.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="column col-4">
-                    <div className="panel">
-                      <div className="panel-header">
-                        <div className="panel-title">
-                          <h6>
-                            <strong>
-                              <code>git</code>
-                              <span style={{ fontWeight: 300 }}> + </span>
-                              GitFlow
-                            </strong>
-                            <span className="text-gray"><small>#3</small></span>
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="panel-body">
-                        Робота ведеться в декількох гілках, кожна інтуїтивно зрозуміла, а для їх злиття у основну гілку використовуються pull request-и. Може навіть комміти мають нормальні назви.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="column col-4">
-                    <div className="panel">
-                      <div className="panel-header">
-                        <div className="panel-title">
-                          <h6>
-                            <span>
-                              <span style={{ fontWeight: 900 }}>HTML</span>
-                              <span style={{ fontWeight: 300 }}> / </span>
-                              <strong>CSS</strong>
-                              <span style={{ fontWeight: 300 }}> / </span>
-                              JS
-                            </span>
-                            <span className="text-gray"><small>#4</small></span>
-                          </h6>
-                        </div>
-                      </div>
-                      <div className="panel-body">
-                        Майстер копіпасту 80-го рівня — валідна HTML-розмітка, CSS не пошакалений, а JS (якщо є) робить нормальні речі.
+                        <p><code>rest</code>, <code>spread</code>, <code>const</code>, <code>let</code>, тощо. Є в коді <code>var</code>? Є мінус бал. Пам-пам! 😆</p>
                       </div>
                     </div>
                   </div>
@@ -226,12 +185,12 @@ class GradingHometask1 extends Component {
                               <span style={{ fontWeight: 300 }}> / </span>
                               <span style={{ fontWeight: 900 }}>UX</span>
                             </span>
-                            <span className="text-gray"><small>#5</small></span>
+                            <span className="text-gray"><small>#3</small></span>
                           </h6>
                         </div>
                       </div>
                       <div className="panel-body">
-                        Сторінка доступна, інформативна, зручна, читабельна, чиста, приємна, цікава, адаптивна, швидка.
+                        Якось нормально воно все має бути. Клацнув кнопку — запустився бій.
                       </div>
                     </div>
                   </div>
@@ -240,8 +199,27 @@ class GradingHometask1 extends Component {
                       <div className="panel-header">
                         <div className="panel-title">
                           <h6>
-                            <strong><span role="img" aria-label="rainbow">🌈</span>A-a-a-A-A-aweso-o-O-O-oomene-e-E-E-ess!</strong>
-                            <span className="text-gray"><small>#6</small></span>
+                            <span>
+                              <strong>Readability</strong>
+                              <span style={{ fontWeight: 300 }}> / </span>
+                              <span style={{ fontWeight: 900 }}>Reusability</span>
+                            </span>
+                            <span className="text-gray"><small>#4</small></span>
+                          </h6>
+                        </div>
+                      </div>
+                      <div className="panel-body">
+                        <a href="https://en.wikipedia.org/wiki/KISS_principle">Keep it simple, stupid</a>, <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">don't repeat yourself</a>. Охайним код повинен бути, чистим.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="column col-4">
+                    <div className="panel">
+                      <div className="panel-header">
+                        <div className="panel-title">
+                          <h6>
+                            <strong><span role="img" aria-label="wow">🤯</span> "wow"-factor</strong>
+                            <span className="text-gray"><small>#5</small></span>
                           </h6>
                         </div>
                       </div>
@@ -275,4 +253,4 @@ class GradingHometask1 extends Component {
   }
 }
 
-export default GradingHometask1;
+export default GradingHometask2;

@@ -1,4 +1,4 @@
-import { Lecture, SlackMessage, TimelineOfContents, Level, Flute, ThatsAllFolks, GradingHometask1 } from "../../../components";
+import { Lecture, SlackMessage, TimelineOfContents, Level, Flute, ThatsAllFolks, GradingHometask2 } from "../../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { romanSahan2017Avatar } from "../../../assets/images/avatars/intro-rounded";
@@ -138,7 +138,7 @@ import SnippetL03S16 from "./assets/snippets/snippet-l03-s16.mdx";
       <li>"— А клікати на всі лінки на документацію і читати всі-всі статті?" Ну-у-у-у-у, up to you;</li>
       <li>все мало би бути цікаво та по максимуму інформативно, але тут вже як вийде... Have fun! 🙃</li>
     </ol>
-    <p>І ще один <strong>heads up</strong> — вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a> і <a href="https://github.com/sahanr/js-lecture"><strong>стартер проекту</strong></a> (складатиму його по ходу лекції). Готові? Біжимо.</p>
+    <p>І ще один <strong>heads up</strong> — вам знадобиться <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>, <a href="https://nodejs.org/en/"><strong>Node.js</strong></a> і <a href="https://github.com/binary-studio-academy/stage-2-es6-for-everyone"><strong>стартер проекту</strong></a> (складатиму його по ходу лекції). Готові? Біжимо.</p>
   </div>
 </div>
 
@@ -1041,7 +1041,7 @@ Converting to **boolean**
     <p>Let's learn more about the <strong>transpilers</strong> — tools that read source code written in one programming language, and produce the equivalent code in another language. The most popular one, <a href="https://babeljs.io/"><strong>Babel</strong></a>, is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Let's try it out:</p>
     <ul>
       <li>
-        Install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>, open <strong>Terminal</strong> in Visual Studio Code <sup><em>Terminal</em> &rarr; <em>New Terminal</em></sup>, and run <code>npm init</code>.
+        Install <a href="https://nodejs.org/en/"><strong>node.js</strong></a>, open <strong>Terminal</strong> in Visual Studio Code <sup><em>(Terminal</em> &rarr; <em>New Terminal)</em></sup>, and run <code>npm init</code>.
       </li>
       <li>
         Now install <strong>babel</strong> with <code>npm install --save-dev @babel/core @babel/cli</code>
@@ -1181,7 +1181,8 @@ As usual, just `npm install css-loader style-loader --save-dev` and edit <strong
 <hr />
 
 <h4>👊 <strong>Добити проект</strong></h4>
-<ol>
+<p>Можна продовжити в свому репозиторії (якщо теж складав його по ходу лекції), а можна і склонувати <a href="https://github.com/binary-studio-academy/stage-2-es6-for-everyone"><strong>готовий стартер</strong></a>. А далі:</p>
+<ol class="inverted">
   <li>У класі <code>FighterService</code> створити метод для отримання детальної інформації про бійця. Додати можливість її перегляду — для цього реалізувати метод, який би опрацьовував клік по бійцю і, якщо інформації про нього ще немає на клієнті, то надіслати запит і записати інформацію у колекцію. Дані можна відобразити у вигляді невеликого діалогового вікна з можливістю їх редагування.</li>
   <li>
     Створити клас <code>Fighter</code>, який міститиме інформацію необхідну бійцю для бою (<code>name</code>, <code>health</code>, <code>attack</code>, <code>defense</code>, etc.), а також методи
@@ -1202,6 +1203,7 @@ As usual, just `npm install css-loader style-loader --save-dev` and edit <strong
   </li>
   <li>Cтворити додаткові елементи для реалізації гри — елемент для вибору бійців для бійки (може бути звичайний "<input type="checkbox" />"), кнопка, яка починає бійку, індикатор здоров'я, тощо.</li>
 </ol>
+<GradingHometask2 />
 
 <hr />
 
@@ -1217,7 +1219,7 @@ export const metadata = {
   description: "Роман швиденько розказує про основні поняття <strong>JavaScript</strong>, потім пише фронтенд для простої інтерактивної веб-сторінки, використовуючи <strong>DOM API</strong> для створення елементів та найбільш популярні функції <strong>ES6</strong> для обробки даних, а також пояснює про модулі, транспайлери, бандлери.",
   keywords: ["hola", "guapa"],
   // duration: "1 год 15 хв",
-  publishedAt: "2019-05-15T10:00:00"
+  publishedAt: "2019-05-10T10:00:00"
 }
 
 export default Lecture;

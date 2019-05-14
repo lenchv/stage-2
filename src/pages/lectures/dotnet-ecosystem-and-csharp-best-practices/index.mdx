@@ -7,7 +7,8 @@ import exceptionClassHierarchy from "./assets/images/exception-class-hierarchy.j
 import boxingUnboxing from "./assets/images/boxing-unboxing.gif";
 import constraintsTypes from "./assets/images/constraints-types.png";
 import nugetLogo from "./assets/images/nuget-logo.png";
-import dotnet5Platform from "./assets/images/dotnet5_platform.png";
+import dotnetPlatform from "./assets/images/dotnet-platform.jpg";
+import dotnet5Platform from "./assets/images/dotnet-5-platform.png";
 import lambdaExpressionStructure from "./assets/images/lambda-expression-structure.png";
 import delegateEventFlow from "./assets/images/delegate-event-flow.png";
 import collectionsHierarchy from "./assets/images/collections-hierarchy.jpg";
@@ -148,12 +149,13 @@ import "./styles.css";
   <li class="details">
     <input type="checkbox" id="accordion-1-1" />
     <label class="summary" for="accordion-1-1">
-      <h5 style="display: flex; align-items: center;">
-        <span style="margin-right: 0.25em;">Теперішній вигляд <strong>.NET Platform</strong></span>
+      <h5>
+        Платформа <strong>.NET</strong> зараз
       </h5>
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
-      <div class="columns text-center">
+      <img src={dotnetPlatform} alt="dotnet-platform" />
+      <div class="columns text-center" style="display: none;">
         <div class="column col-4">
           <div class="panel">
             <div class="panel-header">
@@ -228,7 +230,9 @@ import "./styles.css";
   <li class="details">
     <input type="checkbox" id="accordion-1-2" />
     <label class="summary" for="accordion-1-2">
-      <h5><strong>.NET 5</strong></h5>
+      <h5>
+        Платформа <strong>.NET 5</strong>
+      </h5>
     </label>
     <div class="details-body details-body-with-image" style="margin-bottom: 0.5em;">
       <img src={dotnet5Platform} alt="dotnet5-platform" class="top-image"/>
@@ -666,7 +670,7 @@ import "./styles.css";
             <img src={delegateEventFlow} alt="delegateEventFlow" />
             <p><strong>Події</strong> дозволяють сигналізують системі про те, що відбулося певна дія.</p>
             <p>Існує така модель: <strong>Publisher-Subscriber</strong><em>(Видавець-Підписник)</em>. <em>Підписник</em> підписується на подію, визначає обробник і чекає допоки <em>Видавець</em> виконає цю подію, щоб його викликати.</p>       
-            <p>Приклад використання подій та делегатів ви зможете знайти за посиланням на <a href="https://github.com/rostyslav-diakiv/dotnet-ecosystem-code" target="_blank">репозиторій</a> із кодом з лекції</p>
+            <p>Приклад використання подій та делегатів ви зможете знайти <a href="https://github.com/binary-studio-academy/stage-2-dotnet-ecosystem-and-csharp-best-practices"><strong>тут</strong></a>.</p>
           </div> 
         </li>
       </ul>
@@ -835,27 +839,27 @@ import "./styles.css";
                 <table>
                 	<tbody>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.data#System_Exception_Data" target="_blank">Data</a></td>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.idictionary" target="_blank">IDictionary</a>, що містить дані в парах ключ-значення.</td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.data#System_Exception_Data">Data</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.idictionary">IDictionary</a>, що містить дані в парах ключ-значення.</td>
                 		</tr>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.helplink#System_Exception_HelpLink" target="_blank">HelpLink</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.helplink#System_Exception_HelpLink">HelpLink</a></td>
                 			<td>Може містити URL (або URN) до файлу справки, яка надає вичерпуючу інформацію про причину викиникення помилки.</td>
                 		</tr>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception#System_Exception_InnerException" target="_blank">InnerException</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception#System_Exception_InnerException">InnerException</a></td>
                 			<td>Ця властивість може використовуватися для створення та збереження ланцюга помилок під час обробки <em>Exception</em>-a. Ви можете використовувати його для створення нового виключення, яке містить попередні <em>Exception</em>-и.</td>
                 		</tr>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.message#System_Exception_Message" target="_blank">Message</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.message#System_Exception_Message">Message</a></td>
                 			<td>Надає детальну інформацію про причину винятку.</td>
                 		</tr>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.source#System_Exception_Source" target="_blank">Source</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.source#System_Exception_Source">Source</a></td>
                 			<td>Містить назву програми або об'єкту, у якому виникла помилка.</td>
                 		</tr>
                 		<tr>
-                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.stacktrace#System_Exception_StackTrace" target="_blank">StackTrace</a></td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.stacktrace#System_Exception_StackTrace">StackTrace</a></td>
                 			<td>Містить <em>stack trace</em> який можна використати, щоб визначити де виникла помилка. <em>Stack trace</em> включає назву вихідного файлу та номер рядка програми, якщо доступна <em>debug інформація</em>.</td>
                 		</tr>
                 	</tbody>
@@ -878,7 +882,7 @@ import "./styles.css";
           </div>
         </li>
       </ul>
-      <p>Приклад обробки виняткових ситуацій ви зможете знайти за посиланням на <a href="https://github.com/rostyslav-diakiv/dotnet-ecosystem-code" target="_blank">репозиторій</a> із кодом з лекції</p>  
+      <p>Приклад обробки виняткових ситуацій ви зможете знайти <a href="https://github.com/binary-studio-academy/stage-2-dotnet-ecosystem-and-csharp-best-practices"><strong>тут</strong></a>.</p>
     </div>
   </li>
 </ul>
@@ -1113,21 +1117,24 @@ import "./styles.css";
     </div>
   </li>
 </ul>
-<div>
-  <h3>Корисні ресурси</h3>
-  <p>Книги:</p>
-  <ul>
-    <li>«C# in Depth» 4th edition by Jon Skeet</li>
-    <li>«C# 7.0 in a Nutshell» by Joseph Albahari, Ben Albahari</li>
-    <li>«C# 7.0 Pocket Reference» by Joseph Albahari, Ben Albahari</li>
-  </ul>
-
-  <p>Посилання:</p>  
-  <ul>
-    <li><a href="https://devdigest.today/" target="_blank">Dev digest</a></li>
-    <li><a href="https://dou.ua/lenta/articles/net-for-beginners/" target="_blank">How to learn .NET</a></li>
-    <li><a href="https://github.com/quozd/awesome-dotnet/" target="_blank">Awesome .NET</a></li>
-  </ul>
+<Level id="bonus" number="" name="Корисні ресурси" difficulty="" objectives="" labels={{ level: "Бонус", backToTop: "нагору", difficulty: "", objectives: "" }} />
+<div class="columns">
+  <div class="column col-6 col-sm-12">
+    <p><strong>Books</strong> 📕</p>
+    <ul>
+      <li>«C# in Depth» <em>(4<sup>th</sup> edition)</em> by Jon Skeet</li>
+      <li>«C# 7.0 in a Nutshell» by Joseph Albahari, Ben Albahari</li>
+      <li>«C# 7.0 Pocket Reference» by Joseph Albahari, Ben Albahari</li>
+    </ul>
+  </div>
+  <div class="column col-6 col-sm-12">
+    <p><strong>Links</strong> 🔗</p>  
+    <ul>
+      <li><a href="https://devdigest.today/">Dev digest</a></li>
+      <li><a href="https://dou.ua/lenta/articles/net-for-beginners/">How to learn .NET</a></li>
+      <li><a href="https://github.com/quozd/awesome-dotnet/">Awesome .NET</a></li>
+    </ul>
+  </div>
 </div>
 <ThatsAllFolks />
 <div class="bubble">
@@ -1141,8 +1148,7 @@ export const metadata = {
   description: "Ростік робить детальний огляд екосистеми <strong>.NET</strong>, розповідає про особливості роботи з пам'яттю, на прикладах показує всі важливі поняття мови програмування <strong>С#</strong>, а завершує універсальною підбіркою кращих практик написання чистого коду, які актуальні для будь-якої мови.",
   keywords: ["hola", "guapa"],
   // duration: "1 год 15 хв",
-  publishedAt: "2019-05-10T18:00:00"
-  // TODO: Change to proper date - May 15
+  publishedAt: "2019-05-14T22:00:00"
 }
 
 export default Lecture;

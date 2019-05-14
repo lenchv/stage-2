@@ -230,8 +230,8 @@ import "./styles.css";
     <label class="summary" for="accordion-1-2">
       <h5><strong>.NET 5</strong></h5>
     </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <img src={dotnet5Platform} alt="dotnet5-platform" />
+    <div class="details-body details-body-with-image" style="margin-bottom: 0.5em;">
+      <img src={dotnet5Platform} alt="dotnet5-platform" class="top-image"/>
       <p>Після релізу <strong>.NET Core 3.0</strong> в цьому році компанія Microsoft випустить платформу <strong>.NET 5</strong>, яка стане серйозним поліпшенням системи розробки в цілому.
          Головним нововведенням, в порівнянні з <strong>.NET Framework 4.8</strong>, буде забезпечення підтримки <strong>Linux</strong>, <strong>macOS</strong>, <strong>iOS</strong>, <strong>Android</strong>, <strong>tvOS</strong>, <strong>watchOS</strong> і <strong>WebAssembly</strong>. 
          При цьому версія Framework 4.8 залишиться останньою, далі розвиватися буде тільки сімейство Core.
@@ -247,8 +247,8 @@ import "./styles.css";
     <label class="summary" for="accordion-1-3">
       <h5><strong>NuGet</strong></h5>
     </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <img src={nugetLogo} alt="nuget-logo" />
+    <div class="details-body details-body-with-image" style="margin-bottom: 0.5em;">
+      <img src={nugetLogo} alt="nuget-logo" class="top-image"/>
       <p>Кожному програмісту рано чи пізно гарантовано потрібно імплементовувати функціонал, який частково або повністю хтось раніше вже створив і навіть опублікував (як правило у вигляді <i>DLL бібліотеки</i>). Розробники називають такі модулі "пакетами", в які складено скомпільований код, додаткові файли-ассети та маніфест, що пояснює мету та спосіб використання пакету. У більшості мов програмування є власні платформи для обміну такими корисними модулями, у .NET це <strong>NuGet</strong>, пітримуваний Microsoft-ом. Розробники, які створили крутий інструмент чи, наприклад, бібліотеку для роботи з файловою системою, мають можливість опублікувати свою роботу як <strong>NuGet-пакет</strong> в вигляді <em>zip-файлу</em> з розширенням <strong>.nupkg</strong>. Ви можете шукати та скачувати модулі, які пришвидшать розробку вашого додатку, з центрального репозиторію <strong>NuGet Gallery</strong> ― він налічує вже близько 100000 унікальних пакетів і там може знайтись щось корисне.</p>
     </div>
   </li>
@@ -338,8 +338,8 @@ import "./styles.css";
     <label class="summary" for="accordion-2-3">
       <h5><strong>Stack</strong> and <strong>Heap</strong></h5>
     </label>
-    <div class="details-body" style="margin-bottom: 0.5em;">
-      <img src={stackAndHeap} alt="stack-and-heap" />
+    <div class="details-body details-body-with-image" style="margin-bottom: 0.5em;">
+      <img src={stackAndHeap} alt="stack-and-heap" class="top-image"/>
       <p>У <strong>.NET</strong> пам'ять ділиться на два типи: <strong>стек</strong> і <strong>кучу</strong>.
       <strong> Стек</strong> являє собою структуру даних, яка росте знизу вгору: кожен новий елемент розміщується поверх попереднього.
       У стеку зберігаються <em>значимі типи</em> та <em>посилання на ссилочні типи</em>, які, у свою чергу розміщуються на кучі.</p>
@@ -391,10 +391,10 @@ import "./styles.css";
     </label>
     <div class="details-body" style="margin-bottom: 0.5em;">
       <p>Операція упаковки — <strong>boxing</strong> — це виділення пам'яті на кучі під об'єкт значимого типу — value type, і присвоєння ссилки на цю ділянку пам'яті змінній в стеці. Розпакування — <strong>unboxing</strong>, навпаки, виділяє пам'ять в стеку під об'єкт, отриманий з кучі по ссилці.</p>
-      <div>
+      <div class="paralell-blocks">
         <SnippetL02S07 />
+        <img src={boxingUnboxing} alt="boxing-unboxing" />
       </div>
-      <img src={boxingUnboxing} class="boxing-unboxing-image" alt="boxing-unboxing" />
     </div>
   </li>
 </ul>
@@ -808,10 +808,10 @@ import "./styles.css";
           <label class="summary" for="accordion-3-Exceptions-Hierarchy">
             <code>Exceptions</code> Hierarchy
           </label>
-          <div class="details-body" style="margin-bottom: 0.5em;">
+          <div class="details-body details-body-with-image" style="margin-bottom: 0.5em;">
             <p>У C# всі типи <em>Exception</em>-ів наслідуються від батьківського класу <code>Exception</code>, який додатково поділяється на дві гілки <code>SystemException</code> і <code>ApplicationException</code>.</p>
             <p><code>SystemException</code> — це базовий клас для всіх помилок <em>CLR</em> або програмного коду, таких як <code>DivideByZeroException</code> або <code>NullReferenceException</code> і так далі.</p>
-            <img src={exceptionClassHierarchy} alt="exceptionClassHierarchy" />
+            <img src={exceptionClassHierarchy} alt="exceptionClassHierarchy" class="bottom-image"/>
           </div> 
         </li>
         <li class="details">
@@ -836,27 +836,27 @@ import "./styles.css";
                 	<tbody>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.data#System_Exception_Data" target="_blank">Data</a></td>
-                			<td>An <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.idictionary" target="_blank">IDictionary</a> that holds arbitrary data in key-value pairs.</td>
+                			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.idictionary" target="_blank">IDictionary</a>, що містить дані в парах ключ-значення.</td>
                 		</tr>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.helplink#System_Exception_HelpLink" target="_blank">HelpLink</a></td>
-                			<td>Can hold a URL (or URN) to a help file that provides extensive information about the cause of an exception.</td>
+                			<td>Може містити URL (або URN) до файлу справки, яка надає вичерпуючу інформацію про причину викиникення помилки.</td>
                 		</tr>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception#System_Exception_InnerException" target="_blank">InnerException</a></td>
-                			<td>This property can be used to create and preserve a series of exceptions during exception handling. You can use it to create a new exception that contains previously caught exceptions.</td>
+                			<td>Ця властивість може використовуватися для створення та збереження ланцюга помилок під час обробки <em>Exception</em>-a. Ви можете використовувати його для створення нового виключення, яке містить попередні <em>Exception</em>-и.</td>
                 		</tr>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.message#System_Exception_Message" target="_blank">Message</a></td>
-                			<td>Provides details about the cause of an exception.</td>
+                			<td>Надає детальну інформацію про причину винятку.</td>
                 		</tr>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.source#System_Exception_Source" target="_blank">Source</a></td>
-                			<td>Gets or sets the name of the application or the object that causes the error.</td>
+                			<td>Містить назву програми або об'єкту, у якому виникла помилка.</td>
                 		</tr>
                 		<tr>
                 			<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.exception.stacktrace#System_Exception_StackTrace" target="_blank">StackTrace</a></td>
-                			<td>Contains a stack trace that can be used to determine where an error occurred. The stack trace includes the source file name and program line number if debugging information is available.</td>
+                			<td>Містить <em>stack trace</em> який можна використати, щоб визначити де виникла помилка. <em>Stack trace</em> включає назву вихідного файлу та номер рядка програми, якщо доступна <em>debug інформація</em>.</td>
                 		</tr>
                 	</tbody>
                 </table>

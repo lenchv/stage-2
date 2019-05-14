@@ -13,3 +13,20 @@
   opacity: 0.125;
   filter: grayscale(1) contrast(2) brightness(1);
 }
+.details-body-with-image {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+.top-image {
+  margin-bottom: 15px;
+}
+.bottom-image {
+  margin-top: 15px;
+}
+.paralell-blocks {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}

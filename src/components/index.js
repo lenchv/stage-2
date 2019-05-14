@@ -14,3 +14,6 @@ export { default as Flute } from "./Flute/Flute";
 export {
   default as GradingHometask1
 } from "./GradingHometask1/GradingHometask1";
+export {
+  default as GradingHometask2
+} from "./GradingHometask2/GradingHometask2";

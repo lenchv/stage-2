@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faFacebookSquare, faGithub, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import { alexandrTovmach2018Avatar } from "../../../assets/images/avatars/intro-rounded";
+import audio from "../../../assets/audio/in_the_end.mp3";
 
 <div><h1><strong>Express yourself with Node.js</strong></h1></div>
 
@@ -35,11 +36,11 @@ import { alexandrTovmach2018Avatar } from "../../../assets/images/avatars/intro-
       </ul>
       <p class="about">
         Full-stack разработчик из <a href="https://binary-studio.com"><strong>Binary Studio</strong></a> ― Александр. 
-        На <a href="https://dou.ua/users/aleksandr-tovmach/articles/"><strong>DOU</strong></a> и <a href="https://habr.com/ru/users/alexandrtovmach/posts"><strong>Habr</strong></a> пишет статьи, на <a href="https://reactjs.org/"><strong>React</strong></a> и <a href="https://angular.io/"><strong>Angular</strong></a> пишет код, на <strong>заборе</strong> и <span class="tooltip" data-tooltip="if (true) {&#x000A;// какой-то код&#x000A;} else {&#x000A;// a вот тут чистый profit&#x000A;}"><strong>хинди</strong></span> не пишет. Хочет изменить этот мир, но никак руки не доходят.</p>
+        На <a href="https://dou.ua/users/aleksandr-tovmach/articles/"><strong>DOU</strong></a> и <a href="https://habr.com/ru/users/alexandrtovmach/posts"><strong>Habr</strong></a> пишет статьи, на <a href="https://reactjs.org/"><strong>React</strong></a> и <a href="https://angular.io/"><strong>Angular</strong></a> пишет код, на <a href="https://thumbs.dreamstime.com/b/computer-code-graffiti-abstract-white-brick-wall-52481211.jpg"><strong>стенах</strong></a> и <a href="https://translate.google.com.ua/?hl=ru#view=home&op=translate&sl=hi&tl=en&text=%E0%A4%85%E0%A4%97%E0%A4%B0%20(%E0%A4%B8%E0%A4%9A)%20%7B%0A%20%20%2F%2F%20%E0%A4%87%E0%A4%B8%20%E0%A4%95%E0%A5%8B%E0%A4%A1%20%E0%A4%95%E0%A5%8B%20%E0%A4%B9%E0%A4%B0%20%E0%A4%B8%E0%A4%AE%E0%A4%AF%20%E0%A4%9A%E0%A4%B2%E0%A4%BE%E0%A4%8F%E0%A4%82%0A%7D%20%E0%A4%B5%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%7B%0A%20%20%2F%2F%20%E0%A4%87%E0%A4%B8%20%E0%A4%95%E0%A5%8B%E0%A4%A1%20%E0%A4%95%E0%A5%8B%20%E0%A4%95%E0%A4%AD%E0%A5%80%20%E0%A4%A8%20%E0%A4%9A%E0%A4%B2%E0%A4%BE%E0%A4%8F%E0%A4%82%0A%7D"><strong>хинди</strong></a> не пишет ничего. Хочет изменить этот мир, но руки не доходят.</p>
     </div>
   </div>
   <div class="bubble" style="margin: -0.5em 1em 1em;">
-    <strong>Приветствую!</strong><br />Опережая всех хейтеров прошу прощения ― эта лекция будет на русском. Я вырос в русскоязычной семье в городе Кривой Рог и для меня более привычно так изъяснятся, особенно в технических вопросах.<br /> Лекция разделена на блоки, которые максимально независимы друг от друга, поэтому если вы, прочитав заголовок, чувствуете что это уже пройденный этап, смело его пропускайте.<br />Желаю удачи!
+    <strong>Приветствую!</strong><br />Вспоминая себя на месте студента, я постарался не нагружать лекцию лишней и <span class="tooltip" data-tooltip="тоже запнулся когда читал это слово?"><u>трудноусваиваемой</u></span> информацией, которая не пригодится тебе в ближайшие пару месяцев. С другой стороны, разбираться в деталях это похвально поэтому, для любознательных, я приложу ссылки на материалы и статьи. Лекция разделена на блоки, которые максимально независимы друг от друга, поэтому если прочитав заголовок, понимаешь что к чему, смело переходи к следующему блоку.<br />Желаю удачи!
   </div>
 </div>
 
@@ -121,7 +122,17 @@ import { alexandrTovmach2018Avatar } from "../../../assets/images/avatars/intro-
         linkTo: "#first-project",
         title: "Первый проект",
         time: undefined
-      }
+      },
+      {
+        linkTo: "#finish",
+        title: "Вывод",
+        time: undefined
+      },
+      {
+        linkTo: "#special",
+        title: "Бонус",
+        time: undefined
+      },
     ]}
   />
 </div>
@@ -151,175 +162,13 @@ import { alexandrTovmach2018Avatar } from "../../../assets/images/avatars/intro-
 Современный подход в серверной разработке рекомендует использовать микросервисную архитектуру в своих приложениях.
 ![microservice](../assets/images/microservice.jpg)
 
-<Level
-  id="researching-and-planning"
-  number="2"
-  name="Researching and planning"
-  difficulty="Bring It On!"
-  objectives="Master issues and project management."
-/>
-
-1. Add the following tasks to the **"Resume"** project and convert them to issues — it would be very nice if you could use GitHub's **Labels**, **Assignees**, and **Milestones** features at this point _([**Mastering Issues**](https://guides.github.com/features/issues/) explains why and how)_:
-
-   1. **Скласти інтро**  
-      Скласти інтро _(вступ)_, де в 2-4 реченнях описати, що замовник робить, що подобається робити, що хочеться робити краще, що важливо робити, тощо.
-   2. **Скласти блок контактної інформації**  
-      Посилання на соцмережі _(Facebook чи Instagram, тощо)_, номер телефону чи адреса електронної скриньки, тощо. Може не всі лінки в світі, а тільки ті, що дійсно доречні.
-   3. **Скласти таймлайн**  
-      Скласти список всіх _(важливих)_ життєвих подій, визначних дат, досягнень, періодів, що дали приємний і неприємний досвід, тощо. В цьому конкретному випадку довгих списків не буває, натомість бувають погано згорнуті, тому пакуємо сюди все підряд, а про _"лишні"_ події можна буде промовчати пізніше. Список повинен бути систематизованим і посортованим в такий спосіб, щоб читач швидко зрозумів _"паттерн"_ і міг легко орієнтуватись в просторі і часі цього резюме.
-   4. **Скласти додаткові інформаційні блоки**  
-      Можна зробити резюме менш формальним, додавши додаткові блоки, які містять корисну інформацію, але подають її в _"розважальній"_ формі. Наприклад, що подобається і не подобається, сильні і слабкі сторони, перелік навиків чи хобі, інфографіка або ж інтерактивні модулі, тощо. Варто написати контент такого блоку раніше, ніж починати верстку, бо його розміри впливатимуть на розміщення елементів на сторінці.
-
-2. Move tasks to <strong>"In progress"</strong> while you're working on them. Leave comments under issues, assign proper labels and milestones, close issues and tasks when done
-
-<Level
-  id="learning-git"
-  number="3"
-  name={
-    <span>
-      Learning <code>git</code>
-    </span>
-  }
-  difficulty="Hurt Me Plenty."
-  objectives={
-    <span>
-      Learn basic <code>bash</code> and <code>git</code> commands, gain some
-      confidence.
-    </span>
-  }
-/>
-
-1. Let's download the repository using the command line. [**Git Handbook**](https://guides.github.com/introduction/git-handbook/) won't help us much here, so let's just keep [**Git Reference Manual**](https://git-scm.com/docs) open in case we get stuck with something and need assistance. Open your favorite terminal, change working directory (<code>cd</code>) to where you'd like to keep the repository, and ― if it's all right <em>(check directory content with</em> <code>ls</code> <em>or</em> <code>dir</code><em>)</em> ― execute `git clone` to copy the repository via ssh or https
-
-   <div class="bubble small subtle">
-     Let's take a pause and be a caveman for a second — or a hacker, if you will
-     — let's go and see how it looks like for the guys without graphical user
-     interface
-   </div>
-
-2. `git status`
-3. `git branch`
-4. `git checkout` (`--branch`)
-5. `git add` (`.` and why mask is bad)
-6. `git commit` (`--amend`)
-7. `git log`
-8. `git show` (`HEAD`, `HEAD^`, `HEAD^1`, `HEAD^2`, `HEAD^^`, `HEAD~4`)
-9. `git tag`
-10. `git revert`
-11. `git merge` (різні стратегії)
-12. `git reset` (різні стратегії)
-13. `git pull`
-14. `git diff`
-15. `git remote`
-16. `git clean`
-17. `git stash`
-18. `git fetch`
-
-<Level
-  id="putting-the-website-together"
-  number="4"
-  name="Putting the website together"
-  difficulty="Hardcore."
-  objectives="Get better at copy-pasting and debugging, make the résumé page look better, learn some HTML, CSS, and basic SEO."
-/>
-
-1. Use [**GitHub Desktop**](https://desktop.github.com/) to clone the repository on your PC
-2. Build a website using the stylesheet from [**https://volodymyrkushnir.com/**](https://volodymyrkushnir.com/) as a foundation _(see [**Résumé Wiki**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9) for reference)_:
-
-   1. Create a new branch named `feature/head` _(see [**GitFlow workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for reasons why)_ and use it to update [**`<head>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#head):
-      1. At the very least add `<link rel="stylesheet" href="https://volodymyrkushnir.com/assets/stylesheets/base.css">`, but you may also add other meta tags
-      2. When done ― push the branch to the remote, create a new pull request and merge into `develop`
-   2. Create a new branch named `feature/body` and use it to edit [**`<body>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#body):
-
-      1. Add [**`<main>`**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#main)
-      2. Add [**Content**](https://github.com/volodymyr-kushnir/volodymyrkushnir.com/wiki/R%C3%A9sum%C3%A9#content)
-      3. Preview the website in a browser
-
-         <div class="bubble small subtle">
-           One way to do it is to <code>npm install --global serve</code> and
-           then <code>cd</code> to your working directory and run{" "}
-           <code>serve</code>
-         </div>
-
-      4. Create `patch/content/primary` branch and add primary content _(e.g. avatar, name, job, contacts, intro, etc.)_
-      5. Create `patch/content/secondary` branch and add secondary content _(e.g. languages, skills, character, etc.)_
-      6. Iterate further and fix bugs, add metadata, implement your own additional features and add more visual effects _(if necessary)_, maybe run [**Lighthouse**](https://developers.google.com/web/tools/lighthouse/) audits and check if the page is responsive and accessible, etc.
-      7. Merge both branches into `feature/body` using pull requests
-
-   3. Merge `feature/body` into `develop` using pull request
-   4. Open a pull request and merge `develop` into `master`. 💥**Boom, done, готово!**
-
-<GradingHometask1 />
-<div class="bubble small subtle">
-  Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить навпаки. В першу чергу постарайся робити те, що тобі подобається і отримати максимум задоволення від процесу. Якщо ти при цьому всьому ще й зможеш зайти в незнайому чи некомфортну для cебе область і досягнеш успіхів там — то це взагалі супер! В кінці кінців, ми більше зацікавлені в тому, щоби побачити, що розробники можуть створити в короткий строк, аніж нав'язувати наше бачення правильного чи неправильного способу виконання абстрактних завдань.
-</div>
-
-<Level
-  id="using-advanced-features"
-  number="5"
-  name="Using advanced features"
-  difficulty="Nightmare!"
-  objectives="Survive."
-/>
-
-1. <div>
-     Exclude <strong>.DS_Store</strong> from the repository by either adding it
-     to <strong>.gitignore</strong>{" "}
-     <sup>
-       <strong>
-         <a href="https://git-scm.com/docs/gitignore" title="gitignore">
-           [1]
-         </a>
-         <a href="https://github.com/github/gitignore" title="github/gitignore">
-           [2]
-         </a>
-       </strong>
-     </sup>{" "}
-     or by setting an <code>export-ignore</code> attribute for it in{" "}
-     <strong>.gitattributes</strong>{" "}
-     <sup>
-       <strong>
-         <a href="https://git-scm.com/docs/gitattributes" title="gitattributes">
-           [1]
-         </a>
-         <a
-           href="https://github.com/alexkaratarakis/gitattributes"
-           title="alexkaratarakis/gitattributes"
-         >
-           [2]
-         </a>
-       </strong>
-     </sup>
-   </div>
-2. Add a **Service Worker** based on [**Workbox**](https://developers.google.com/web/tools/workbox/) using **pre-commit** git hook that will generate new **sw.js** before each commit. **.git/hooks/pre-commit** file should look roughly like this:
-   ```bash
-   #!/bin/sh
-   if workbox generateSW workbox-config.js ; then
-     git add sw.js
-     exit 0
-   else
-     echo "Cannot generate sw.js"
-     echo "Aborting"
-   fi
-   ```
-   <div class="bubble small subtle">
-     Make sure it's executable, <code>chmod +x .git/hooks/pre-commit</code> if
-     necessary. Keep in mind that Windows is definitely not a Unix-like OS, so
-     you'd have to fix the script by providing the proper path to the{" "}
-     <code>sh</code> executable on your system.
-   </div>
-3. gitmodules
-   ```bash
-   git submodule add git@github.com:volodymyr-kushnir/volodymyrkushnir.com.git dependencies/volodymyrkushnir.com
-   ```
-4. Webhooks. Integrations. Deploy keys
-5. Continuous Integration and Continuous Deployment (Travis CI + AWS, Zeit Now)
-6. [GitHub Actions](https://github.com/features/actions/)
-7. [GitHub Developer](https://developer.github.com/)
-
-<ThatsAllFolks />
+<ThatsAllFolks
+  source={audio}
+>
+  <b>The End!</b>
+</ThatsAllFolks>
 <div class="bubble">
-  Дякую за увагу 🙏! Cподобалася лекція? Лайк, шейр, репост, сабскра-а-а-айб! Коментуйте та задавайте питання під цією лекцією у вашому особистому кабінеті <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Успіхів у виконанні домашнього завдання і до нових зустрічей, чірз! 👋
+  Оставляй вопросы и отзывы в личном кабинете <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Удачи с домашкой и не забывай про дедлайны 😉
 </div>
 
 export const metadata = {
@@ -329,7 +178,7 @@ export const metadata = {
   description: "Александр расскажет о микросервисах в вебе, как работать с бекендом с помощью <strong>Node.js</strong>, покажет как настроить необходимые инструменты и на <strong>Express.js</strong> поднимет сервер, обрабатывающий запросы и данные.",
   keywords: ["nodejs", "alexandrtovmach", "lecture-3"],
   // duration: "1 год 15 хв",
-  publishedAt: "2019-05-20T18:00:00"
+  publishedAt: "2019-05-15T18:00:00"
 }
 
 export default Lecture;

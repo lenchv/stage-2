@@ -60,10 +60,10 @@ import './style.scss';
     { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
   ]}
 >
-  <p>Sraka motika</p>
+  <p>Hi, I need to increase the number of characters in the fighting game. I also want to be able to change the properties of the players, their appearance, damage, vulnerability and names (because among us there are French who are offended when their name is spelled incorrectly)</p>
 </SlackMessage>
 
-Студент встречает студента. Один студент спрашивает другого: "Студент, какова твоя профессия? Ты милиционер?". "Не-ет, — отвечает Студент. — Моя главная профессия — Студент!"
+Студент понимая, что простая страничка начинает разростаться в серъезное приложение с бизнес-логикой и управлением пользователями, а так же не имея возможности хранить большие объемы данных на клиенте, решает что пришло время бекенда
 
 <SlackMessage
   senderId="you"
@@ -82,10 +82,10 @@ import './style.scss';
     { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
   ]}
 >
-  Ebala jaba gaduku
+  Yes, I think we can implement all this using a server.
 </SlackMessage>
 
-Да начнется битва
+И так как студент пишет на JS, то и выбор для технологии становится очевидным ― Node.js. Осталось только самая малость ― <span class="tooltip" data-tooltip='ну даааа, именно "самая малость"'><u>изучить эту технологию</u></span>.
 <hr />
 
 <div id="table-of-contents" class="table-of-contents">
@@ -837,6 +837,59 @@ npm i express-generator -g
 
   </div>
 </div>
+
+<div class="details">
+  <input type="checkbox" id="accordion-6-4" />
+  <label class="summary" for="accordion-6-4">
+    <strong>Для простейшего API-сервера, на не нужна папка <i>/public</i> как и инициализация рендера шаблонов, поэтому мы просто удаляем их</strong>
+  </label>
+  <div class="details-body">
+
+1) удаляем папку _/public_ со всем содержимым  
+2) вносим изменения в _/routes/index.js_  
+```js
+/* /routes/index.js */
+
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.send('Express');
+});
+
+module.exports = router;
+```
+
+3) вносим изменения в _app.js_  
+
+```js
+/* app.js */
+
+var express = require('express');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;
+
+```
+
+  </div>
+</div>
+
 
 
 <Level

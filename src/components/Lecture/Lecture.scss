@@ -123,6 +123,11 @@
   justify-content: space-around;
 }
 
+/* Details as a standalone block */
+div.details {
+  padding-left: 1.5em;
+}
+
 /* Details as a list item */
 .content li.details {
   list-style-type: none;

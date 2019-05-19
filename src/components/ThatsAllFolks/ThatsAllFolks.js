@@ -6,13 +6,20 @@ class ThatsAllFolks extends Component {
   play = () => this.audio && this.audio.play();
   pause = () => this.audio && this.audio.pause();
   render() {
+    const { source, children } = this.props;
     return (
       <h4 className="thats-all-folks">
         <span onMouseEnter={this.play} onMouseLeave={this.pause}>
-          <strong><em>― That's all, folks!</em></strong> 🐷
+          {
+            children || (
+              <>
+                <strong><em>― That's all, folks!</em></strong> 🐷
+              </>
+            )
+          }
         </span>
         <audio ref={audio => this.audio = audio} preload="auto">
-          <source src={thatsAllFolksAudio} type="audio/mpeg" />
+          <source src={source || thatsAllFolksAudio} type="audio/mpeg" />
         </audio>
       </h4>
     );

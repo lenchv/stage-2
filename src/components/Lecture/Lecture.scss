@@ -103,6 +103,26 @@
   display: block;
 }
 
+.details > input:checked ~ div.details-body-with-image {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-image {
+  margin-bottom: 15px;
+}
+.bottom-image {
+  margin-top: 15px;
+}
+
+.details > input:checked ~ div.paralell-blocks {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 /* Details as a list item */
 .content li.details {
   list-style-type: none;

@@ -124,8 +124,8 @@
 }
 
 /* Details as a standalone block */
-div.details {
-  padding-left: 1.5em;
+div.details:not(:last-child) {
+  margin-bottom: 0.25rem;
 }
 
 /* Details as a list item */
@@ -135,7 +135,7 @@ div.details {
 .content li.details:before {
   display: none;
 }
-.content .details > input {
+.content li.details > input {
   float: left;
   margin-left: -1.5em;
 }
@@ -369,6 +369,10 @@ div.details {
 }
 .content p + div > .bubble:first-child {
   margin-top: -0.25rem;
+}
+.content .bubble + p,
+.content .bubble + div {
+  margin-top: 0.25rem;
 }
 
 /* Messages */

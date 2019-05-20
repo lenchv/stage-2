@@ -12,6 +12,9 @@
   font-weight: bold;
   margin-bottom: 0;
 }
+.level .level__meta {
+  display: inline-block;
+}
 .level .level__back-to-top {
   display: inline-flex;
   align-items: center;

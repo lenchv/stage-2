@@ -86,7 +86,6 @@
 }
 .details > label.summary {
   cursor: pointer;
-  display: inline-block;
 }
 .details > input:checked ~ div {
   display: block;
@@ -103,12 +102,18 @@
   display: block;
 }
 
+/* What is this sorcery? */
 .details > input:checked ~ div.details-body-with-image {
   display: flex !important;
   flex-direction: column;
   align-items: center;
 }
-
+.details > input:checked ~ div.paralell-blocks {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 .top-image {
   margin-bottom: 15px;
 }
@@ -116,11 +121,20 @@
   margin-top: 15px;
 }
 
-.details > input:checked ~ div.paralell-blocks {
-  display: flex !important;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+/* Details as a standalone block */
+div.details:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+div.details > input:first-child {
+  float: left;
+}
+div.details > input:first-child + label {
+  width: calc(100% - 1.5em);
+  padding: 0;
+  display: inline-block;
+}
+div.details > input:first-child + label + .details-body {
+  padding-left: 1.5em;
 }
 
 /* Details as a list item */
@@ -133,6 +147,9 @@
 .content li.details > input {
   float: left;
   margin-left: -1.5em;
+}
+.content li.details > label.summary {
+  display: inline-block;
 }
 
 /* Navbar */
@@ -364,6 +381,10 @@
 }
 .content p + div > .bubble:first-child {
   margin-top: -0.25rem;
+}
+.content .bubble + p,
+.content .bubble + div {
+  margin-top: 0.25rem;
 }
 
 /* Messages */

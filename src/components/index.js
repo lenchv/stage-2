@@ -17,3 +17,6 @@ export {
 export {
   default as GradingHometask2
 } from "./GradingHometask2/GradingHometask2";
+export {
+  default as GradingHometask3
+} from "./GradingHometask3/GradingHometask3";

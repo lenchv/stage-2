@@ -80,9 +80,6 @@ import './style.scss';
     { emoji: "👏", count: 6 }
   ]}
   replies={[
-    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0HNH9ZJ8-7d2cf5865525-24" },
-    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U5QLD4NTZ-2f05886097c3-24" },
-    { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-USLACKBOT-sv41d8cd98f0-24" },
     { name: "N/A", avatarUrl: "https://ca.slack-edge.com/T036H63TN-U0L5E8JG1-0179af4ceca2-24" }
   ]}
 >
@@ -212,7 +209,7 @@ import './style.scss';
   <li>
     <h5><strong>История Node.js</strong></h5>
     <div class="bubble small subtle">
-      Пссст, парень, держи хоку:
+      Любишь хоку?:
       <blockquote>
         <a href="https://twitter.com/ryanmdahl"><strong>Райан Даль</strong></a>,<br />
         <a href="https://www.youtube.com/watch?v=ysSxxIqKNN0"><strong>2009 год</strong></a>,<br />
@@ -836,10 +833,19 @@ npm i express-generator -g
   </div>
 </div>
 
+Обратите внимание на поле `scripts`, в _package.json_, в нем содержатся npm-скрипты для работы с приложением, и для того чтобы запустить сервер нам нужно будет использовать команду `npm start`.
+
+<div class="bubble small subtle">
+
+  Статья ["Автоматизация задач с помощью npm run"](https://frontender.info/task_automation_with_npm_run/)
+    
+</div>
+
+
 <div class="details">
   <input type="checkbox" id="accordion-6-4" />
   <label class="summary" for="accordion-6-4">
-    <strong>Для простейшего API-сервера, на не нужна папка <i>/public</i> как и инициализация рендера шаблонов, поэтому мы просто удаляем их</strong>
+    <strong>Для простейшего API-сервера, нам не нужна папка <i>/public</i> как и инициализация рендера шаблонов, поэтому мы просто удаляем их</strong>
   </label>
   <div class="details-body">
 
@@ -889,6 +895,171 @@ module.exports = app;
 </div>
 
 
+На данный момент в нашем проекте реализован только один слой **routes**, который должен отвечать **ТОЛЬКО** за работу с HTTP-запросами.
+
+<div class="bubble small subtle">
+
+  Почему так радикльно? _... должен отвечать **ТОЛЬКО** за работу ..._. Грамотное разделение приложения по слоям ― это залог поддерживаемости кода, за счет удобства работы и понятной структуры. Если слой работает только с HTTP-запросами, то в нем не должно быть никакой бизнес-логики или обработки данных и наоборот. 
+      
+</div>
+
+Давайте сделаем наш сервер не умным, и подарим ему <span class="tooltip" data-tooltip="🕵️ 007 🔫"><u>логику, бизнес-логику</u></span>. В мире Express-приложений за неё отвечает слой называемый **services**, и поскольку он не генерируется автоматически, мы создадим его сами.
+
+
+<div class="details">
+  <input type="checkbox" id="accordion-6-5" />
+  <label class="summary" for="accordion-6-5">
+    <strong>Создание и тестирование слоя services</strong>
+  </label>
+  <div class="details-body">
+
+
+1) Создаем папку _/services_  
+2) Создаем файл _/services/user.service.js_  
+3) Добавляем функцию в файл и експортируем её:
+```js
+/* services/user.service.js */
+
+const getName = (user) => {
+  if (user) {
+    return user.name;
+  } else {
+    return null;
+  }
+};
+
+module.exports = {
+  getName
+};
+```
+4) Импортируем функцию из сервиса в роутер исплоьзуем её для получения имени
+```js
+/* routes/users.js */
+
+var express = require('express');
+var router = express.Router();
+
+const { getName } = require("../services/user.service");
+
+router.get('/', function(req, res, next) {
+  res.send(`Welcome!`);
+});
+
+router.post('/', function(req, res, next) {
+  const result = getName(req.body);
+
+  if (result) {
+    res.send(`Your name is ${result}`);
+  } else {
+    res.status(400).send(`Some error`);
+  }
+});
+
+module.exports = router;
+```
+5) Запускаем сервер `npm start`  
+6) Отправляем POST-запрос на _/users_ и смотрим на ответ, содержащий переданное имя
+![service_test](../../../assets/images/service_test.jpg)
+
+  </div>
+</div>
+
+Сервер умеет что то делать, а что если мы хотим сохранять данные? Для этого существует слой **repositories**, и его мы сейчас реализуем.
+
+
+<div class="details">
+  <input type="checkbox" id="accordion-6-6" />
+  <label class="summary" for="accordion-6-6">
+    <strong>Создание и тестирование слоя repositories</strong>
+  </label>
+  <div class="details-body">
+
+
+1) Создаем папку _/repositories_  
+2) Создаем файл _/repositories/user.repository.js_  
+3) Добавляем функцию в файл и експортируем её:
+
+```js
+/* repositories/user.repository.js */
+
+const saveData = (data) => {
+  // код по сохранению данных в БД
+  if (data) {
+    console.log(`${data} is saved`);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+module.exports = {
+  saveData
+};
+```
+
+<div class="bubble small subtle">
+
+  Мы не затрагиваем Базы Данных в данной лекции, поэтому наш код является имитацией работы с ней, на самом деле в этом слое должна осуществляться вся работа с данными их получение из хранилища, запись и обновление.
+
+</div>
+
+4) Импортируем функцию из репозитория в сервис и добавим функцию `saveName()`:
+```js
+/* services/user.service.js */
+const { saveData } = require("../repositories/user.repository");
+
+const getName = (user) => {
+  if (user) {
+    return user.name;
+  } else {
+    return null;
+  }
+};
+
+const saveName = (user) => {
+  if (user) {
+    return saveData(user.name);
+  } else {
+    return null;
+  }
+};
+
+module.exports = {
+  getName,
+  saveName
+};
+```
+
+5) Импортируем функцию из сервиса в роутер и используем её для работы с телом запроса:
+```js
+/* routes/users.js */
+var express = require('express');
+var router = express.Router();
+
+const { saveName } = require("../services/user.service");
+
+router.get('/', function(req, res, next) {
+  res.send(`Welcome!`);
+});
+
+router.post('/', function(req, res, next) {
+  const result = saveName(req.body);
+
+  if (result) {
+    res.send(`Name is saved ― ${result}`);
+  } else {
+    res.status(400).send(`Some error`);
+  }
+});
+
+module.exports = router;
+```
+6) Запускаем сервер `npm start`  
+7) Отправляем POST-запрос на _/users_ и смотрим на ответ "Name is saved ― true", потому что функция из репозитория вернула такое значение.
+![repository_test](../../../assets/images/repository_test.jpg)
+
+  </div>
+</div>
 
 <Level
   id="finish"

@@ -16,9 +16,9 @@ class GradingHometask3 extends Component {
       labels: [
         "Рабочий сервер",
         "Синтаксис ES6+",
-        "UI / UX",
-        "Readability / Reusability",
-        "\"wow\"-factor"
+        "Реализация",
+        "Использование пакетов",
+        "Legacy code"
       ],
       datasets: [{
         label: "You",

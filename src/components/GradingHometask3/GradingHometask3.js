@@ -220,6 +220,26 @@ class GradingHometask3 extends Component {
                       </div>
                     </div>
                   </div>
+                  <div className="column col-4">
+                    <div className="panel">
+                      <div className="panel-header">
+                        <div className="panel-title">
+                          <h6>
+                            <strong>Дополнительные баллы</strong>
+                            <span className="text-gray"><small>#6</small></span>
+                          </h6>
+                        </div>
+                      </div>
+                      <div className="panel-body">
+                        Бонусные очки могут быть получены за:
+                        <ol>
+                          <li>соблюдение дедлайна</li>
+                          <li>деплоймент сервера</li>
+                          <li>оформление README.md файла</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </small>
             </div>

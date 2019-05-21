@@ -824,6 +824,13 @@ server.listen(port, (err) => {
 
 Снижаем высоту и вернемся к нашему коду. Для выполняемых ним операций он выглядит слишком громоздким, потому что он оперирует слишком [низкоуровневыми](https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%B7%D0%BA%D0%BE%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) операциями. О том как перейти на более [высокий уровень](https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) абстракции с помощью Express.js мы поговорим в следующем блоке.
 
+<div class="bubble small subtle">
+
+  [Репозиторий с кодом этого блока](https://github.com/binary-studio-academy/stage-2-express-yourself-with-nodejs/tree/nodejs-basics)
+
+</div>
+
+<br />
 
 <Level
   id="basic-express-js"
@@ -957,6 +964,14 @@ node express.js
 </div>
 
 Это пожалуй достаточная основа в **Express.js** для новичка и дальше мы можем посмотреть на то как масштабируется весь этот код в реальной жизни.
+
+<div class="bubble small subtle">
+
+  [Репозиторий с кодом этого блока](https://github.com/binary-studio-academy/stage-2-express-yourself-with-nodejs/tree/expressjs-basics)
+
+</div>
+
+<br />
 
 <Level
   id="first-project"
@@ -1333,6 +1348,15 @@ module.exports = router;
 </div>
 
 И это пожалуй всё что касается основ в структуре Express-приложений. Напоследок хотел бы обратить ваше внимание на то, что в каждом из слоев написаны `if..else` блоки для перехвата ошибок. Смысл заключается в том, что мы придерживаемся микросервисной архитектуры, при которой каждый блок является независимым и заменяемым. Если бы мы отлавливали ошибки лишь в одном из слоев, то правило взаимозаменяемости не работало бы, поэтому мыслите о каждом слое максимально абстрактно и независимо.
+
+
+<div class="bubble small subtle">
+
+  [Репозиторий с кодом этого блока](https://github.com/binary-studio-academy/stage-2-express-yourself-with-nodejs)
+
+</div>
+
+<br />
 
 <Level
   id="finish"

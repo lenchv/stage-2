@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import copy from "copy-to-clipboard";
 import { isEqual } from "lodash";
 import { roundToTwoDecimals } from "../../utils";
 import Chart from "chart.js";
@@ -48,6 +49,26 @@ class GradingHometask1 extends Component {
     }
     this.createOptions = this.createOptions.bind(this);
     this.resetMyGrades = this.resetMyGrades.bind(this);
+    this.copyGradesByCategories = this.copyGradesByCategories.bind(this);
+  }
+
+  copyGradesByCategories(grades) {
+    const feedbackStarters = [    
+      `по категоріях оцінювання цієї домашки отримуєш такі бали: $1.`,
+      `по категоріях (4-ий розділ конспекту, радар-чарт під спойлером) бали такі — $1.`,
+      `$1 вийшло по категоріях (4-ий розділ конспекту, радар-чарт під спойлером).`,
+      `$1 (категорії описані в 4-му розділі конспекту).`,
+      `радар-чарт один на всіх (в 4-му розділі в конспекті), тому поїхали по ньому — $1.`,
+      `$1 в мене виходить по тих категоріях (там в 4-му розділі конспекту є радар-чарт з категоріями).`,
+      `знаєш той чарт в 4-му розділі конспекту, під спойлером? поїхали — $1.`,
+      `по категоріях виходить $1 (це ті, що в 4-му розділі конспекту, під спойлером чарт є).`,
+      `$1 (спайдервеб-чарт є під спойлером в 4-му розділі конспекту).`,
+      `по категоріях з 4-го розділу (там спайдервеб-чарт є під спойлером) — $1.`,
+      `окей, в нас там є чарт в 4-му розділі і я все рівно маю по ньому піти — $1.`,
+      `$1 по радар-чарту з 4-го розділу конспекту.`,
+      `по радар-чарту (4-ий блок, конспект, під спойлером) — $1.`
+    ];
+    copy(feedbackStarters[Math.floor(Math.random() * (feedbackStarters.length - 1))].replace("$1", grades.join('-')));
   }
 
   createOptions() {
@@ -261,6 +282,9 @@ class GradingHometask1 extends Component {
                   <FontAwesomeIcon icon={faUndo} className="icon" /> Reset
                 </button>
               }
+              <button className="grades-by-categories" onClick={() => this.copyGradesByCategories(myGrades)}>
+                <FontAwesomeIcon icon={faCopy} className="icon" />
+              </button>
               <CopyToClipboard text={roundToTwoDecimals(myGradesAverage)}>
                 <button className="final-grade">
                   {roundToTwoDecimals(myGradesAverage)}

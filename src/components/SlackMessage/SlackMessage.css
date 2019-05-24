@@ -40,6 +40,7 @@
   overflow: visible;
   background: white;
   display: flex;
+  flex-wrap: wrap;
 }
 .content .message__reply {
   border-radius: 5px;

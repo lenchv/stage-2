@@ -2,3 +2,20 @@
   font-size: 0.5rem;		
   height: .75rem;		
 }
+
+/* Spectre.css overrides */
+header .navbar .navbar-section:first-child:not(:last-child) {
+  flex: 1 0 auto;
+  align-items: initial;
+}
+header .navbar .navbar-section:not(:first-child):last-child {
+  flex: 0 0 auto;
+  align-items: initial;
+  justify-content: initial;
+}
+header .navbar .navbar-section:not(:first-child):last-child a {
+  text-decoration: none;
+}
+header .navbar .navbar-section:not(:first-child):last-child a:not(:last-child) {
+  margin-right: 0.5rem;
+}

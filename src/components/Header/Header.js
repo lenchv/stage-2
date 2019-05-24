@@ -11,13 +11,13 @@ const Header = () => (
         </Link>
       </div>
       <div className="navbar-section">
-        <Link to="/whats-this" className="btn btn-link">
+        <Link to="/whats-this">
           Це як?
         </Link>
-        <Link to="/whats-this/en" className="btn btn-link">
+        <Link to="/whats-this/en">
           What's this?
         </Link>
-        <Link to="/whats-this/ru" className="btn btn-link">
+        <Link to="/whats-this/ru">
           Как это?
         </Link>
       </div>

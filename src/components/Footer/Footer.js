@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = ({ author }) => (
   <footer className="hero hero-sm">

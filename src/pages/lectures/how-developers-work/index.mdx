@@ -1,4 +1,4 @@
-import { Lecture, VideoWrapper, SlackMessage, FacebookMessage, TimelineOfContents, Level, GradingHometask1, ThatsAllFolks } from "../../../components";
+import { Lecture, VideoWrapper, SlackMessage, FacebookMessage, TimelineOfContents, Level, GradingHometask, ThatsAllFolks } from "../../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faGlobe } from "@fortawesome/pro-solid-svg-icons";
 import { faLongArrowUp } from "@fortawesome/pro-regular-svg-icons";
@@ -425,7 +425,156 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
       8. Merge `feature/body` into `develop` using pull request
    4. Open a pull request and merge `develop` into `master`. 💥**Boom, done, готово!**
    
-<GradingHometask1 />
+<GradingHometask
+  labels={[
+    "Repository management",
+    "Project management",
+    "git + GitFlow",
+    "HTML / CSS / JS",
+    "UI / UX",
+    "Awesomeness"
+  ]}
+  datasets={[{
+    label: "You",
+    data: [6, 5, 5, 5, 2, 0],
+    dragData: true,
+    borderColor: "rgba(0, 173, 238, 1)",
+    backgroundColor: "rgba(0, 173, 238, 0.125)",
+    pointBorderColor: "white",
+    pointBackgroundColor: context => context.dataIndex % 2 === 0 ? "rgb(255, 199, 18)" : "rgb(236, 24, 72)",
+    pointHoverBorderColor: "white",
+    pointRadius: 5,
+    pointHoverRadius: 8,
+    pointBorderWidth: 3,
+    pointHoverBorderWidth: 3,
+    pointHitRadius: 30
+  }, {
+    label: "Joe Average",
+    data: [6, 5, 5, 5, 2, 0],
+    dragData: false,
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: "rgba(0, 0, 0, 0.05)",
+    pointRadius: 0,
+    pointHitRadius: 0,
+    pointHoverRadius: 0
+  }]}
+>
+  <div className="container">
+    <div className="columns">
+      <div className="column">
+        Завдання комплексне, тому й оцінюватися буде в шести напрямках, а середнє арифметичне тих шести чисел і буде кінцевою оцінкою:
+      </div>
+    </div>
+    <small>
+      <div className="columns">
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <strong>Repository management</strong>
+                  <span className="text-gray"><small>#1</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              <p>Репозиторій створений, топіки додані, README.md на місці, а GitHub Pages увімкнено. Може навіть є якась Wiki? А якщо знайду?!</p>
+            </div>
+          </div>
+        </div>
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <strong>Project management</strong>
+                  <span className="text-gray"><small>#2</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              Проекти заведені, майлстоуни визначені, таски створюються, проблеми описуються, лейби прикріплюються.
+            </div>
+          </div>
+        </div>
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <strong>
+                    <code>git</code>
+                    <span style={{ fontWeight: 300 }}> + </span>
+                    GitFlow
+                  </strong>
+                  <span className="text-gray"><small>#3</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              Робота ведеться в декількох гілках, кожна інтуїтивно зрозуміла, а для їх злиття у основну гілку використовуються pull request-и. Може навіть комміти мають нормальні назви.
+            </div>
+          </div>
+        </div>
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <span>
+                    <span style={{ fontWeight: 900 }}>HTML</span>
+                    <span style={{ fontWeight: 300 }}> / </span>
+                    <strong>CSS</strong>
+                    <span style={{ fontWeight: 300 }}> / </span>
+                    JS
+                  </span>
+                  <span className="text-gray"><small>#4</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              Майстер копіпасту 80-го рівня — валідна HTML-розмітка, CSS не пошакалений, а JS (якщо є) робить нормальні речі.
+            </div>
+          </div>
+        </div>
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <span>
+                    <strong>UI</strong>
+                    <span style={{ fontWeight: 300 }}> / </span>
+                    <span style={{ fontWeight: 900 }}>UX</span>
+                  </span>
+                  <span className="text-gray"><small>#5</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              Сторінка доступна, інформативна, зручна, читабельна, чиста, приємна, цікава, адаптивна, швидка.
+            </div>
+          </div>
+        </div>
+        <div className="column col-4">
+          <div className="panel">
+            <div className="panel-header">
+              <div className="panel-title">
+                <h6>
+                  <strong><span role="img" aria-label="rainbow">🌈</span>A-a-a-A-A-aweso-o-O-O-oomene-e-E-E-ess!</strong>
+                  <span className="text-gray"><small>#6</small></span>
+                </h6>
+              </div>
+            </div>
+            <div className="panel-body">
+              Творчість, старанність, увага до деталей, гумор, оригінальність, "што-о-о-о?!".
+            </div>
+          </div>
+        </div>
+      </div>
+    </small>
+  </div>
+</GradingHometask>
 <div class="bubble small subtle">
   Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить навпаки. В першу чергу варто робити те, що подобається, і отримати максимум задоволення від процесу. Якщо при цьому всьому ще й зайти в незнайому чи некомфортну для cебе область і досягти успіхів там — то це взагалі супер! В кінці кінців, ми більше зацікавлені в тому, щоби побачити, що розробники можуть створити в короткий строк, аніж нав'язувати наше бачення правильного чи неправильного способу виконання абстрактних завдань
 </div>

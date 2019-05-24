@@ -11,12 +11,6 @@ export { default as SEO } from "./SEO/SEO";
 export { default as TimelineOfContents } from "./TimelineOfContents/TimelineOfContents";
 export { default as ThatsAllFolks } from "./ThatsAllFolks/ThatsAllFolks";
 export { default as Flute } from "./Flute/Flute";
-export {
-  default as GradingHometask1
-} from "./GradingHometask1/GradingHometask1";
-export {
-  default as GradingHometask2
-} from "./GradingHometask2/GradingHometask2";
-export {
-  default as GradingHometask3
-} from "./GradingHometask3/GradingHometask3";
+export { default as GradingHometask } from "./GradingHometask/GradingHometask";
+export { default as GradingHometask2 } from "./GradingHometask2/GradingHometask2";
+export { default as GradingHometask3 } from "./GradingHometask3/GradingHometask3";

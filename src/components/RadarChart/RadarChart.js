@@ -1,23 +1,26 @@
 import React, { Component } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import copy from "copy-to-clipboard";
 import { isEqual } from "lodash";
 import { roundToTwoDecimals } from "../../utils";
 import Chart from "chart.js";
 import "chartjs-plugin-dragdata";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCopy, faUndo } from "@fortawesome/pro-regular-svg-icons";
-import { faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
-import "./GradingHometask.css";
+import { faCopy, faUndo } from "@fortawesome/pro-regular-svg-icons";
+import "./RadarChart.css";
 
-class GradingHometask extends Component {
+class RadarChart extends Component {
   constructor(props) {
     super();
     const { labels, datasets } = props;
     this.state = { labels, datasets };
     this.createOptions = this.createOptions.bind(this);
     this.resetMyGrades = this.resetMyGrades.bind(this);
+    this.copyFinalGrade = this.copyFinalGrade.bind(this);
     this.copyGradesByCategories = this.copyGradesByCategories.bind(this);
+  }
+
+  copyFinalGrade(grade) {
+    copy(grade);
   }
 
   copyGradesByCategories(grades) {
@@ -115,43 +118,25 @@ class GradingHometask extends Component {
     const myGradesAverage = myGrades.reduce((memo, value) => memo += value, 0) / myGrades.length;
     const defaultGrades = this.state.datasets[1].data;
     const areMyGradesDefault = isEqual(myGrades, defaultGrades);
-    const { children } = this.props;
     return (
-      <div className="grading-hometask">
-        <div className="accordion">
-          <input type="checkbox" id="grading-hometask" name="accordion-checkbox" hidden />
-          <label className="accordion-header" htmlFor="grading-hometask">
-            <FontAwesomeIcon icon={faQuestionCircle} />
-            <span className="title"><strong>Як буде оцінюватися проект</strong></span>
-            <span className="icon">
-              <FontAwesomeIcon icon={faChevronRight} fixedWidth />
-            </span>
-          </label>
-          <div className="accordion-body">
-            {children}
-            <div className="radar-chart">
-              <canvas ref={el => this.el = el} />
-              {
-                !areMyGradesDefault &&
-                <button className="reset-grades" onClick={this.resetMyGrades}>
-                  <FontAwesomeIcon icon={faUndo} className="icon" /> Reset
-                </button>
-              }
-              <button className="grades-by-categories" onClick={() => this.copyGradesByCategories(myGrades)}>
-                <FontAwesomeIcon icon={faCopy} className="icon" />
-              </button>
-              <CopyToClipboard text={roundToTwoDecimals(myGradesAverage)}>
-                <button className="final-grade">
-                  {roundToTwoDecimals(myGradesAverage)}
-                  <FontAwesomeIcon icon={faCopy} className="icon" />
-                </button>
-              </CopyToClipboard>
-            </div>
-          </div>
-        </div>
+      <div className="radar-chart">
+        <canvas ref={el => this.el = el} />
+        {
+          !areMyGradesDefault &&
+          <button className="reset-grades" onClick={this.resetMyGrades}>
+            <FontAwesomeIcon icon={faUndo} className="icon" /> Reset
+          </button>
+        }
+        <button className="grades-by-categories" onClick={() => this.copyGradesByCategories(myGrades)}>
+          <FontAwesomeIcon icon={faCopy} className="icon" />
+        </button>
+        <button className="final-grade" onClick={() => this.copyFinalGrade(roundToTwoDecimals(myGradesAverage))}>
+          {roundToTwoDecimals(myGradesAverage)}
+          <FontAwesomeIcon icon={faCopy} className="icon" />
+        </button>
       </div>
     );
   }
 }
 
-export default GradingHometask;
+export default RadarChart;

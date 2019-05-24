@@ -2,7 +2,6 @@ export { default as Accordion } from "./Accordion/Accordion";
 export { default as FacebookMessage } from "./FacebookMessage/FacebookMessage";
 export { default as Flute } from "./Flute/Flute";
 export { default as Footer } from "./Footer/Footer";
-export { default as GradingHometask } from "./GradingHometask/GradingHometask";
 export { default as GradingHometask2 } from "./GradingHometask2/GradingHometask2";
 export { default as GradingHometask3 } from "./GradingHometask3/GradingHometask3";
 export { default as Header } from "./Header/Header";

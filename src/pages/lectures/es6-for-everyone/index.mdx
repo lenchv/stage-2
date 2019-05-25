@@ -1,5 +1,7 @@
-import { Lecture, SlackMessage, TimelineOfContents, Level, Flute, ThatsAllFolks, VideoWrapper, GradingHometask2 } from "../../../components";
+import { Lecture, SlackMessage, TimelineOfContents, Level, Flute, ThatsAllFolks, VideoWrapper, Accordion, RadarChart } from "../../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/pro-regular-svg-icons";
 import { faFacebookSquare, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { romanSahan2017Avatar } from "../../../assets/images/avatars/intro-rounded";
 import {
@@ -1219,7 +1221,146 @@ As usual, just `npm install css-loader style-loader --save-dev` and edit <strong
   </li>
   <li>Cтворити додаткові елементи для реалізації гри — елемент для вибору бійців для бійки (може бути звичайний "<input type="checkbox" />"), кнопка, яка починає бійку, індикатор здоров'я, тощо.</li>
 </ol>
-<GradingHometask2 />
+<div className="grading-hometask">
+  <Accordion>
+    <Accordion.Header>
+      <FontAwesomeIcon icon={faQuestionCircle} />
+      <span className="title"><strong>Як буде оцінюватися проект</strong></span>
+      <span className="icon">
+        <FontAwesomeIcon icon={faChevronRight} fixedWidth />
+      </span>
+    </Accordion.Header>
+    <Accordion.Body>
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            Завдання комплексне, тому й оцінюватися буде в п'яти напрямках, а середнє арифметичне тих п'яти чисел і буде кінцевою оцінкою:
+          </div>
+        </div>
+        <small>
+          <div className="columns">
+            <div className="column col-4">
+              <div className="panel">
+                <div className="panel-header">
+                  <div className="panel-title">
+                    <h6>
+                      <strong>Matching requirements</strong>
+                      <span className="text-gray"><small>#1</small></span>
+                    </h6>
+                  </div>
+                </div>
+                <div className="panel-body">
+                  <p>Впровадьте всі необхідні features і постарайтеся виловити з них всі баги.</p>
+                </div>
+              </div>
+            </div>
+            <div className="column col-4">
+              <div className="panel">
+                <div className="panel-header">
+                  <div className="panel-title">
+                    <h6>
+                      <strong>Usage of ES features</strong>
+                      <span className="text-gray"><small>#2</small></span>
+                    </h6>
+                  </div>
+                </div>
+                <div className="panel-body">
+                  <p><code>rest</code>, <code>spread</code>, <code>const</code>, <code>let</code>, тощо. Є в коді <code>var</code>? Є мінус бал. Пам-пам! 😆</p>
+                </div>
+              </div>
+            </div>
+            <div className="column col-4">
+              <div className="panel">
+                <div className="panel-header">
+                  <div className="panel-title">
+                    <h6>
+                      <span>
+                        <strong>UI</strong>
+                        <span style={{ fontWeight: 300 }}> / </span>
+                        <span style={{ fontWeight: 900 }}>UX</span>
+                      </span>
+                      <span className="text-gray"><small>#3</small></span>
+                    </h6>
+                  </div>
+                </div>
+                <div className="panel-body">
+                  Якось нормально воно все має бути. Клацнув кнопку — запустився бій.
+                </div>
+              </div>
+            </div>
+            <div className="column col-4">
+              <div className="panel">
+                <div className="panel-header">
+                  <div className="panel-title">
+                    <h6>
+                      <span>
+                        <strong>Readability</strong>
+                        <span style={{ fontWeight: 300 }}> / </span>
+                        <span style={{ fontWeight: 900 }}>Reusability</span>
+                      </span>
+                      <span className="text-gray"><small>#4</small></span>
+                    </h6>
+                  </div>
+                </div>
+                <div className="panel-body">
+                  <a href="https://en.wikipedia.org/wiki/KISS_principle">Keep it simple, stupid</a>, <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">don't repeat yourself</a>. Охайним код повинен бути, чистим.
+                </div>
+              </div>
+            </div>
+            <div className="column col-4">
+              <div className="panel">
+                <div className="panel-header">
+                  <div className="panel-title">
+                    <h6>
+                      <strong><span role="img" aria-label="wow">🤯</span> "wow"-factor</strong>
+                      <span className="text-gray"><small>#5</small></span>
+                    </h6>
+                  </div>
+                </div>
+                <div className="panel-body">
+                  Творчість, старанність, увага до деталей, гумор, оригінальність, "што-о-о-о?!".
+                </div>
+              </div>
+            </div>
+          </div>
+        </small>
+      </div>
+      <RadarChart
+        labels={[
+          "Matching requirements",
+          "Usage of ES features",
+          "UI / UX",
+          "Readability / Reusability",
+          "\"wow\"-factor"
+        ]}
+        datasets={[{
+          label: "You",
+          data: [2, 10, 3, 10, 4],
+          dragData: true,
+          borderColor: "rgba(0, 173, 238, 1)",
+          backgroundColor: "rgba(0, 173, 238, 0.125)",
+          pointBorderColor: "white",
+          pointBackgroundColor: context => context.dataIndex % 2 === 0 ? "rgb(255, 199, 18)" : "rgb(236, 24, 72)",
+          pointHoverBorderColor: "white",
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          pointBorderWidth: 3,
+          pointHoverBorderWidth: 3,
+          pointHitRadius: 30
+        }, {
+          label: "Joe Average",
+          data: [2, 10, 3, 10, 4],
+          dragData: false,
+          borderColor: "rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(0, 0, 0, 0.05)",
+          pointRadius: 0,
+          pointHitRadius: 0,
+          pointHoverRadius: 0
+        }]}
+      />
+    </Accordion.Body>
+  </Accordion>
+</div>
 
 <hr />
 

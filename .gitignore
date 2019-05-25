@@ -56,9 +56,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# npmrc file
-.npmrc 
-
 # gatsby files
 .cache/
 public/

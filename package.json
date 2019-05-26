@@ -1,9 +1,35 @@
 {
-  "name": "bsa19-stage-2",
+  "name": "binary-studio-academy-2019-stage-2",
   "private": true,
-  "description": "",
+  "description": "Lectures for Binary Studio Academy 2019 Stage 2",
   "version": "0.1.0",
-  "author": "",
+  "author": {
+    "name": "Volodymyr Kushnir",
+    "email": "volodymyr.kushnir@me.com",
+    "url": "https://volodymyrkushnir.com"
+  },
+  "contributors": [
+    {
+      "name": "Roman Sahan"
+    },
+    {
+      "name": "Alexandr Tovmach"
+    },
+    {
+      "name": "Pavel Nemchenko"
+    },
+    {
+      "name": "Rostyslav Diakiv"
+    },
+    {
+      "name": "Nikita Krasnov"
+    },
+    {
+      "name": "Dasha Korotkykh",
+      "email": "dasha.korotkykh@me.com",
+      "url": "https://dariakorotkykh.com"
+    }
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.18",
     "@fortawesome/free-brands-svg-icons": "5.8.2",
@@ -13,22 +39,22 @@
     "@fortawesome/pro-regular-svg-icons": "5.8.2",
     "@fortawesome/pro-solid-svg-icons": "5.8.2",
     "@fortawesome/react-fontawesome": "0.1.4",
-    "@mdx-js/mdx": "1.0.19",
-    "@mdx-js/react": "1.0.16",
+    "@mdx-js/mdx": "1.0.20",
+    "@mdx-js/react": "1.0.20",
     "@mdx-js/tag": "0.20.3",
     "chart.js": "2.8.0",
     "chartjs-plugin-dragdata": "0.3.1",
     "classnames": "2.2.6",
     "copy-to-clipboard": "3.2.0",
     "gatsby": "2.7.1",
-    "gatsby-image": "2.1.0",
+    "gatsby-image": "2.1.1",
     "gatsby-mdx": "0.6.3",
-    "gatsby-plugin-google-analytics": "^2.0.19",
+    "gatsby-plugin-google-analytics": "2.0.20",
     "gatsby-plugin-manifest": "2.1.1",
     "gatsby-plugin-offline": "2.1.1",
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-sass": "2.0.11",
-    "gatsby-plugin-sharp": "2.1.0",
+    "gatsby-plugin-sharp": "2.1.1",
     "gatsby-remark-prismjs": "3.2.9",
     "gatsby-source-filesystem": "2.0.37",
     "gatsby-transformer-remark": "2.3.12",
@@ -39,11 +65,9 @@
     "prismjs": "1.16.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
-    "react-copy-to-clipboard": "5.0.1",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
     "react-markdown": "4.0.8",
-    "react-reactions": "randomdipesh/react-reactions",
     "spectre.css": "0.5.8"
   },
   "devDependencies": {
@@ -68,10 +92,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyr-kushnir/lectures"
+    "url": "https://github.com/binary-studio-academy/stage-2"
   },
   "bugs": {
-    "url": "https://github.com/volodymyr-kushnir/lectures/issues"
+    "url": "https://github.com/binary-studio-academy/stage-2/issues"
   },
   "husky": {
     "hooks": {

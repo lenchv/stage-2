@@ -1,9 +1,35 @@
 {
-  "name": "bsa19-stage-2",
+  "name": "binary-studio-academy-2019-stage-2",
   "private": true,
-  "description": "",
+  "description": "Lectures for Binary Studio Academy 2019 Stage 2",
   "version": "0.1.0",
-  "author": "",
+  "author": {
+    "name": "Volodymyr Kushnir",
+    "email": "volodymyr.kushnir@me.com",
+    "url": "https://volodymyrkushnir.com"
+  },
+  "contributors": [
+    {
+      "name": "Roman Sahan"
+    },
+    {
+      "name": "Alexandr Tovmach"
+    },
+    {
+      "name": "Pavel Nemchenko"
+    },
+    {
+      "name": "Rostyslav Diakiv"
+    },
+    {
+      "name": "Nikita Krasnov"
+    },
+    {
+      "name": "Dasha Korotkykh",
+      "email": "dasha.korotkykh@me.com",
+      "url": "https://dariakorotkykh.com"
+    }
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.18",
     "@fortawesome/free-brands-svg-icons": "5.8.2",
@@ -23,7 +49,7 @@
     "gatsby": "2.7.1",
     "gatsby-image": "2.1.1",
     "gatsby-mdx": "0.6.3",
-    "gatsby-plugin-google-analytics": "^2.0.19",
+    "gatsby-plugin-google-analytics": "2.0.20",
     "gatsby-plugin-manifest": "2.1.1",
     "gatsby-plugin-offline": "2.1.1",
     "gatsby-plugin-react-helmet": "3.0.12",
@@ -42,7 +68,6 @@
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
     "react-markdown": "4.0.8",
-    "react-reactions": "randomdipesh/react-reactions",
     "spectre.css": "0.5.8"
   },
   "devDependencies": {
@@ -67,10 +92,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyr-kushnir/lectures"
+    "url": "https://github.com/binary-studio-academy/stage-2"
   },
   "bugs": {
-    "url": "https://github.com/volodymyr-kushnir/lectures/issues"
+    "url": "https://github.com/binary-studio-academy/stage-2/issues"
   },
   "husky": {
     "hooks": {
